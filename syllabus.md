@@ -12,7 +12,7 @@ Good data analysis requires a number of skills (including the munging
 of messy data files, data diagnostics, exploratory data visualization,
 identifying an appropriate statistical model, deriving a good-enough
 estimator, quantifying uncertainty, assessing model fit, and organizing reproducible
-analyses). but also a way of thinking about data. The goal for this
+analyses) but also a way of thinking about data. The goal for this
 course is to help students improve their skills in exploring and
 answering questions with data. This will be accomplished with a series
 of case studies, a set of skill-oriented tutorials, and substantial
