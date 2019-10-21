@@ -8,21 +8,37 @@ description: Syllabus for BMI 826, Advanced data analysis
 [University of Wisconsin-Madison](https://wisc.edu) <br/>
 (3 credits)
 
+Good data analysis requires a number of skills (including the munging
+of messy data files, data diagnostics, exploratory data visualization,
+identifying an appropriate statistical model, deriving a good-enough
+estimator, quantifying uncertainty, assessing model fit, and organizing reproducible
+analyses). but also a way of thinking about data. The goal for this
+course is to help students improve their skills in exploring and
+answering questions with data. This will be accomplished with a series
+of case studies, a set of skill-oriented tutorials, and substantial
+project-based homework assignments.
+
+**Prerequisite**: BMI/Stat 541, Stat 571, Stat 610, or Stat 850
+
 **Course meetings**: Tu/Thu 11:00-12:15, [192 Babcock Hall](https://map.wisc.edu/s/ekyvbu0b)
 
-**Instructor**: [Karl Broman](https://kbroman.org), 2126
-[Genetics-Biotechnology Center](https://map.wisc.edu/s/2tie3nen)
+**Instructor**: [Karl Broman](https://kbroman.org),
+[2126 Genetics-Biotechnology Center](https://map.wisc.edu/s/2tie3nen)
 
 **Office hours**: Tu 9:30-10:30, Fr 11-12, or by appointment
-
-[_Description to be added._]
 
 
 ### Learning outcomes
 
-- Learning outcomes to be added.
+Students will be able to:
 
-
+- communicate data analysis goals, methods, and results.
+- extract the statistical problem from a scientific problem.
+- develop, characterize, and implement suitable analysis methods to
+  answer questions from data.
+- evaluate the validity of analysis methods.
+- organize data and software so that quantitative analyses are
+  meaningful and reproducible.
 
 
 ### Course grade
