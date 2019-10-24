@@ -22,16 +22,16 @@ description: Schedule for BMI 826, Advanced data analysis
 | 3 Mar     |    | Data diagnostics for multiparent populations
 | 5 Mar     |    | _Writing clear code_
 | 10 Mar    |    | Bayes/MCMC: Transposon mutagenesis
-| 12 Mar    |    | _Writing R packages; roxygen2_
+| 12 Mar    |    | _Wrangling messy data files_
 | 17,19 Mar |    | **No class (spring break)** |
 | 24 Mar    |    | Bootstrap confidence intervals for QTL location
-| 26 Mar    |    | _Software testing and debugging_
+| 26 Mar    |    | _Writing R packages; roxygen2_
 | 31 Mar    |    | Permutation test with selective genotyping
-| 2 Apr     |    | _Big jobs/simulations; caching computations_
+| 2 Apr     |    | _Software testing and debugging_
 | 7 Apr     |    | Multiple-QTL analysis
-| 9 Apr     |    | _R Markdown for papers_
+| 9 Apr     |    | _Big jobs/simulations; caching computations_
 | 14 Apr    |    | High-dimensional QTL mapping results
-| 16 Apr    |    | _Python for data/text manipulations_
+| 16 Apr    |    | _R Markdown for papers_
 | 21 Apr    |    | Fine-mapping an eQTL
 | 23 Apr    |    | **No class**
 | 28 Apr    |    | Developing, maintaining, and supporting software: R/qtl
