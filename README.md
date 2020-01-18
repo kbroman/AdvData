@@ -1,9 +1,10 @@
 ## BMI 826: Advanced data analysis
 
-This repository contains the source for the website for the course
+This repository contains the materials for the course
 [Advanced data analysis](https://kbroman.org/AdvData),
 a graduate course at
-[UW-Madison](https://wisc.edu).
+[UW-Madison](https://wisc.edu). The files for the website are in the
+[`docs/`](docs/) subdirectory.
 
 ---
 
