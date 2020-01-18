@@ -1,5 +1,5 @@
-_site
-Gemfile.lock
+docs/_site
+docs/Gemfile.lock
 notes
 2020
 refs
