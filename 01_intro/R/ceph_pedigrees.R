@@ -125,9 +125,14 @@ for(i in 1:length(couples)) {
 thepch <- 1-sex
 thepch2 <- thepch+15
 
+# adjust text location; move circles up a bit
+text_y <- fam.y
+text_x <- fam.x
+fam.y <- fam.y + thepch*0.2
+fam.x <- fam.x - thepch*0.1
 points(fam.x,fam.y, pch=thepch2,cex=2.5, col=bgcolor)
 points(fam.x,fam.y, pch=thepch, cex=2.5)
-text(fam.x, fam.y, lab, cex=0.8)
+text(text_x, text_y, lab, cex=0.8)
 
 dy <- 1.1
 pin <- par("pin")
