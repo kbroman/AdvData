@@ -1,0 +1,80 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title info
+\title{BMI 826}
+\subtitle{Advanced Data Analysis}
+\author{\href{https://kbroman.org}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\\[-4pt]
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{https://kbroman.org/AdvData}{\tt kbroman.org/AdvData}}
+}
+
+
+\begin{document}
+
+% title slide
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+  \note{This is the introductory lecture for a special topics course at
+    UW{\textendash}Madison on advanced data analysis.
+}
+} }
+
+
+
+
+
+\begin{frame}[c]{What is data analysis?}
+
+\onslide<2->{\bbi}
+\onslide<2->{\item Answer questions with data}
+\onslide<3->{\item Identify/develop appropriate methods to do so}
+\onslide<4->{\item Quantify uncertainty}
+\onslide<4->{\item Assess appropriateness of the method}
+\onslide<4->{\item Identify problems in the data}
+\onslide<4->{\item Understand where the data came from and possible
+  biases or other limitations}
+\onslide<4->{\item Manage and organize data}
+\onslide<4->{\item Manage/organize/develop/test software and analyses
+  so they are reproducible and correct}
+\onslide<2->{\ei}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\hfill \begin{minipage}{0.9\textwidth}
+\bbi
+\item[\hilit Principle 1:] You'll never know all the methods
+
+\item[\hilit Principle 2:] Focus on the question and data, not the method
+
+\item[\hilit Principle 3:] ``Because you can'' is not a good reason to do something
+\ei
+\end{minipage}
+
+\end{frame}
+
+
+
+
+\end{document}

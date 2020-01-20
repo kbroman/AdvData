@@ -3,3 +3,9 @@ docs/Gemfile.lock
 notes
 2020
 refs
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
