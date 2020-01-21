@@ -101,6 +101,102 @@
 \end{frame}
 
 
+\begin{frame}[c]{Eucalypt genetic map}
+
+\figh{Figs/eucalypt_map.pdf}{0.75}
+
+\vspace{5mm}
+
+\hfill {\lolit \scriptsize
+Byrne et al., Theor Appl Genet 91:869--875, 1995}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Meiosis}
+
+\figh{Figs/meiosis.png}{0.95}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Ordering markers}
+
+\vspace{5mm}
+
+$$
+\begin{array}{c} \mathsf{A} \\ \mathsf{B} \\ \mathsf{C} \end{array}
+\left|
+\begin{array}{c} \mathsf{a} \\ \mathsf{b} \\ \mathsf{c} \end{array}
+\right.
+\hspace*{1cm} \longrightarrow \hspace*{1cm}
+\begin{array}{ccc} \mathsf{ABC} & \hspace*{3mm} & \mathsf{abc} \\
+\only<3>{\vhilit} \mathsf{ABc} & \hspace*{3mm} & \only<3>{\vhilit} \mathsf{abC} \\
+\only<4>{\vhilit} \mathsf{Abc} & \hspace*{3mm} & \only<4>{\vhilit} \mathsf{aBC} \\
+\only<2>{\vhilit} \mathsf{AbC} & \hspace*{3mm} & \only<2>{\vhilit}\mathsf{aBc} \end{array}
+$$
+
+\vspace{5mm}
+\begin{center}
+
+{\hilit Marker orders: \hspace{5mm}
+{ \only<2>{ \vhilit } A--B--C } \hspace{5mm} { \only<3>{ \vhilit }
+  A--C--B } \hspace{5mm} { \only<4>{ \vhilit } B--A--C }}
+
+\vspace{15mm}
+
+\onslide<5>{
+With {\hilit $\mathsf{M}$} markers, there are {\hilit
+  $\mathsf{M}!/\mathsf{2}$} possible orderings.
+
+\vspace{3mm}
+
+For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
+    \approx {\vhilit 10^{157}}}$}
+}
+
+\end{center}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{CEPH pedigrees}
+
+\figw{Figs/ceph_pedigrees.pdf}{1.1}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Marshfield genetic maps: Tasks}
+
+\bbi
+\item Assemble data
+
+\item Understand marker names
+
+  \bi
+  \item[] AFM, UT, CHLC (GATA etc.), Mfd, D*S*
+  \ei
+
+\item Identify cryptic duplicates
+
+\item Order markers and identify genotyping errors
+
+  \bi
+  \item[] Removed 764 / 969,425 genotypes
+  \ei
+\ei
+
+\end{frame}
+
+
 
 
 \end{document}
