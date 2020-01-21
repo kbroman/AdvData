@@ -7,7 +7,7 @@ description: Schedule for BMI 826, Advanced data analysis
 
 | Date      | &nbsp;&nbsp;&nbsp;&nbsp;   | Topic/Reading  |
 | :-------- | -- | :----- |
-| 21 Jan    |    | Introductory case study
+| 21 Jan    |    | Introductory case study [![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](01_intro.pdf)
 | 23 Jan    |    | _Reproducible research_
 | 28 Jan    |    | Simulations: genomes of recombinant inbred lines
 | 30 Jan    |    | _Know the command line; know your editor_
