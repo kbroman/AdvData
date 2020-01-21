@@ -1,5 +1,8 @@
 R_OPTS=--no-save --no-restore --no-init-file --no-site-file
 
+../docs/01_intro.pdf: 01_intro.pdf
+	cp $< $@
+
 01_intro.pdf: 01_intro.tex ../LaTeX/header.tex \
 			  Figs/autozygosity.pdf \
 			  Figs/ceph_pedigrees.pdf \
