@@ -12,7 +12,8 @@ x <- read.table("chr22.map")
 x <- x[!is.na(x[,5]),]
 x <- x[order(x[,5]),]
 
-plot(x[,5], x[,2], type="l", lwd=2, xlab="Sequence Position (Mbp)", ylab="Genetic map position (cM)")
+plot(x[,5], x[,2], type="l", lwd=2, xlab="Sequence Position (Mbp)", ylab="Genetic map position (cM)",
+     yaxs="i", xaxs="i", xlim=c(15, 48.5), ylim=c(0, 63))
 wh <- which(x[,1]=="UT7213")
 points(x[wh,5], x[wh,2], col=bgcolor, pch=15)
 points(x[wh,5], x[wh,2], lwd=2, col=point_color)
