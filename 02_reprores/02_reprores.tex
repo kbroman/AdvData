@@ -1035,6 +1035,81 @@ RawData/rawdata.csv: Python/xls2csv.py RawData/rawdata.xls
 
 
 
+\begin{frame}[fragile]{Fancier example}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+FIG_DIR = Figs
+
+mypaper.pdf: mypaper.tex ${FIG_DIR}/fig1.pdf ${FIG_DIR}/fig2.pdf
+    pdflatex mypaper
+
+# One line for both figures
+${FIG_DIR}/%.pdf: R/%.R
+    cd R;R CMD BATCH $(<F)
+
+# Use "make clean" to remove the PDFs
+clean:
+    rm *.pdf Figs/*.pdf
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{As I said, you can get really fancy with GNU Make.
+
+  Use variables for directory names or compiler flags. (This example
+  is not a good one.)
+
+  Use pattern rules and automatic variables to avoid repeating
+  yourself. With {\tt \%}, we have one line covering both
+  {\tt fig1.pdf} and {\tt fig2.pdf}. The {\tt \$(<F)}
+  is the file part of
+  the first dependency.
+
+  Look at the manual for make and the many online tutorials, such as
+  the one from Software Carpentry.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{How do you use make?}
+
+\vspace{6pt}
+
+{\small
+\bi
+\item If you name your make file {\tt Makefile}, then just go into the
+directory containing that file and type {\tt \color{hilit} make}
+
+\item If you name your make file {\tt something.else}, then type \\
+{\tt \color{hilit} make -f something.else}
+
+\item Actually, the commands above will build the {\color{vhilit} first}
+  target listed in the make file. So I'll often include something like
+  the following.
+
+\begin{quote}
+{\tt \color{hilit} all: target1 target2 target3}
+\end{quote}
+
+  Then typing {\tt \color{hilit} make all} (or just {\tt
+    \color{hilit} make}, if {\tt \color{hilit} all} is listed
+  first in the file) will build all of those
+  things.
+
+\item To be build a specific target, type {\tt \color{hilit} make target}.
+  For example, {\tt \color{hilit} make Figs/fig1.pdf}
+\ei
+}
+
+\note{I can't believe that I forgot to explain this the first time
+  I gave this lecture.
+}
+\end{frame}
+
+
+
 
 
 \begin{frame}[c]{Write modular code}
