@@ -8,7 +8,7 @@ color2 <- brocolors("web")[c("silver", "purple", "green")]
 x <- read.table("chrompic_chr6_fam884.txt", stringsAsFactors=FALSE)
 mat <- matrix(unlist(strsplit(x[,4], "")), nrow=nrow(x), byrow=TRUE)
 
-pdf("../Figs/autozygosity.pdf", width=10, height=6,
+pdf("../Figs/autozygosity.pdf", width=11.3, height=6,
     pointsize=12, onefile=TRUE)
 par(mar=rep(0.1,4),bty="n")
 plot(0,0,type="n",xlab="",ylab="",xaxt="n",yaxt="n",

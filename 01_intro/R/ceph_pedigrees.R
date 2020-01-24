@@ -7,7 +7,7 @@ bgcolor <- "white"
 text_color <- brocolors("web")["blue"]
 seg_color <- brocolors("web")["red"]
 
-pdf("../Figs/ceph_pedigrees.pdf", width=10, height=6,
+pdf("../Figs/ceph_pedigrees.pdf", width=11.8, height=6,
     pointsize=12, onefile=TRUE)
 par(mar=rep(0.1,4),lwd=1,bty="n")
 plot(0,0,type="n",xlab="",ylab="",xaxt="n",yaxt="n",
@@ -128,8 +128,6 @@ thepch2 <- thepch+15
 # adjust text location; move circles up a bit
 text_y <- fam.y
 text_x <- fam.x
-fam.y <- fam.y + thepch*0.2
-fam.x <- fam.x - thepch*0.1
 points(fam.x,fam.y, pch=thepch2,cex=2.5, col=bgcolor)
 points(fam.x,fam.y, pch=thepch, cex=2.5)
 text(text_x, text_y, lab, cex=0.8)
