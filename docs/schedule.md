@@ -10,13 +10,13 @@ description: Schedule for BMI 826, Advanced data analysis
 | 21 Jan    |    | Introductory case study [![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](01_intro.pdf)
 | 23 Jan    |    | _Reproducible research_ [![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](02_reprores.pdf)
 | 28 Jan    |    | Simulations: genomes of recombinant inbred lines
-| 30 Jan    |    | _Know the command line; know your editor_
+| 30 Jan    |    | _R Markdown_
 | 4 Feb     |    | EM algorithm: T cell frequencies
-| 6 Feb     |    | _Git and GitHub_
+| 6 Feb     |    | _Know the command line; know your editor_
 | 11 Feb    |    | EM algorithm: QTL mapping with a cure model
-| 13 Feb    |    | _Git/GitHub laboratory_
+| 13 Feb    |    | _Git and GitHub_
 | 18 Feb    |    | Model misspecification: Estimating allele frequencies
-| 20 Feb    |    | _R Markdown_
+| 20 Feb    |    | _Git/GitHub laboratory_
 | 25 Feb    |    | Sample mix-ups in eQTL data
 | 27 Feb    |    | _Organizing projects; capturing exploratory analysis_
 | 3 Mar     |    | Data diagnostics for multiparent populations
