@@ -13,11 +13,15 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/riself.pdf \
 			 Figs/ri8.pdf \
 			 Figs/ri8self.pdf \
-			 Figs/hs.pdf
+			 Figs/hs.pdf \
+			 Figs/ri8genome1.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
 
 Figs/%.pdf: R/%_fig.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/ri8genome1.pdf: R/ri8_genome_fig.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
