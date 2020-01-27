@@ -4,7 +4,6 @@
 
 n.lines <- 80
 
-bgcolor <- broman::brocolors("bg")
 color <- qtl2::CCcolors
 
 pdf("../Figs/hs.pdf", width=9.75, height=5.5, pointsize=16, onefile=TRUE)
