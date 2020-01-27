@@ -1,0 +1,141 @@
+\documentclass[aspectratio=169,12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title info
+\title{Computer simulations}
+\subtitle{The genomes of recombinant inbred lines}
+\author{\href{https://kbroman.org}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics \\ Univ.\ Wisconsin{\textendash}Madison}
+\date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\\[-4pt]
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+}
+
+
+\begin{document}
+
+% title slide
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+  \note{}
+
+} }
+
+
+
+\begin{frame}[c]{}
+
+\vspace*{-1mm} \hspace*{-2mm}
+\figw{Figs/inbredmice.jpg}{1.2}
+
+\end{frame}
+
+
+
+
+\begin{frame}{}
+
+\vspace*{18mm}
+
+\centerline{
+\begin{minipage}[t]{50mm}
+\includegraphics[height=50mm]{Figs/da-vinci-man.jpg}
+\end{minipage}
+\hspace{15mm}
+\begin{minipage}[t]{50mm}
+\includegraphics[height=50mm]{Figs/vitruvian_mouse.jpg}
+\hspace{5mm}
+\href{http://daviddeen.com}{\scriptsize \lolit \tt daviddeen.com}
+\end{minipage}
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Intercross}
+\figw{Figs/intercross.pdf}{1.0}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{QTL mapping}
+
+\vspace{5mm}
+\figw{Figs/lodcurve_insulin_with_effects.pdf}{0.96}
+\end{frame}
+
+
+\begin{frame}[c]{Congenic line/NIL}
+
+\figw{Figs/congenic.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Advanced intercross lines}
+
+  \figw{Figs/ail.pdf}{1.0}
+
+\end{frame}
+
+
+\begin{frame}[c]{Recombinant inbred lines}
+
+  \only<1>{\figw{Figs/rilines.pdf}{1.0}}
+  \only<2>{\figw{Figs/riself.pdf}{1.0}}
+
+\end{frame}
+
+
+\begin{frame}[c]{Collaborative Cross}
+
+  \figw{Figs/ri8.pdf}{1.0}
+
+\end{frame}
+
+
+\begin{frame}[c]{MAGIC}
+
+  \figw{Figs/ri8self.pdf}{1.0}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Heterogeneous stock}
+
+  \vspace{2mm}
+
+  \figh{Figs/hs.pdf}{0.9}
+
+\end{frame}
+
+
+\begin{frame}[c]{Collaborative Cross}
+
+  \figw{Figs/ri8.pdf}{1.0}
+
+\end{frame}
+
+
+\end{document}
