@@ -14,7 +14,9 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/ri8.pdf \
 			 Figs/ri8self.pdf \
 			 Figs/hs.pdf \
-			 Figs/ri8genome1.pdf
+			 Figs/ri8genome1.pdf \
+			 Figs/basic_genetics.pdf \
+			 Figs/rf_by_sim.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R

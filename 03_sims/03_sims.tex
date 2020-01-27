@@ -149,6 +149,105 @@
 \end{frame}
 
 
+\begin{frame}[c]{Recombination fraction}
+  \figw{Figs/basic_genetics.pdf}{1.0}
+\end{frame}
+
+
+\begin{frame}[c]{Simulation results}
+  \figw{Figs/rf_by_sim.pdf}{1.0}
+\end{frame}
+
+
+\begin{frame}[c]{Haldane \& Waddington 1931}
+
+  \figw{Figs/haldane_title.pdf}{0.7}
+
+\end{frame}
+
+
+\begin{frame}[c]{Result for selfing}
+
+  \figw{Figs/haldane_selfing.png}{0.7}
+
+\end{frame}
+
+
+\begin{frame}[c]{Result for sib-mating}
+
+  \only<1>{\figw{Figs/haldane_sibmating3.png}{0.7}}
+  \only<2>{\figw{Figs/haldane_sibmating4.png}{0.7}}
+
+\end{frame}
+
+
+\begin{frame}[c]{Simulation results}
+  \figw{Figs/rf_by_sim_genformula.pdf}{1.0}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Non-linear regression}
+
+\vspace{5mm}
+
+{
+\verb|    out <- nls(| {\tt \vhilit R \verb|~| a*r/(1 + b*r)}\verb|,| \\
+\verb|               data = data.frame(r=r, R=R),| \\
+\verb|               start = list(a=4, b=6))| \\
+\verb|    summary(out)|
+}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Non-linear regression}
+\addtocounter{framenumber}{-1}
+
+\vspace{5mm}
+
+\verb|    out <- nls(| {\tt \vhilit R \verb|~| a*r/(1 + b*r)}\verb|,| \\
+\verb|               data = data.frame(r=r, R=R),| \\
+\verb|               start = list(a=4, b=6))| \\
+\verb|    summary(out)|
+
+\vspace{8mm}
+
+{\hilit
+\verb|                          | \\
+\verb|      Estimate  Std. Error| \\
+\verb|    a    7.016       0.011| \\
+\verb|    b    6.023       0.016|
+}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Non-linear regression}
+\addtocounter{framenumber}{-1}
+
+\vspace{5mm}
+
+\verb|    out <- nls(| {\tt \vhilit R \verb|~| a*r/(1 + b*r)}\verb|,| \\
+\verb|               data = data.frame(r=r, R=R),| \\
+\verb|               start = list(a=4, b=6))| \\
+\verb|    summary(out)|
+
+\vspace{8mm}
+
+{\hilit
+\verb|                                       More data      | \\
+\verb|      Estimate  Std. Error        Estimate  Std. Error| \\
+\verb|    a    7.016       0.011      a    7.003       0.008| \\
+\verb|    b    6.023       0.016      b    6.005       0.012|
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{Simulation results}
+  \figw{Figs/rf_by_sim_moredata.pdf}{1.0}
+\end{frame}
 
 
 
