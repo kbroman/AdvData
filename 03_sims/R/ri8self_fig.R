@@ -2,15 +2,7 @@
 # 8-way RI lines by selfing
 ##############################
 
-color <- c(rgb(102,203,254,maxColorValue=255),
-#           rgb(254,102,254,maxColorValue=255),
-           rgb(254,  0,128,maxColorValue=255),
-           rgb(102,254,102,maxColorValue=255),
-           rgb(128,  0,128,maxColorValue=255),
-           rgb(203,102,254,maxColorValue=255),
-           rgb(254,203,102,maxColorValue=255),
-           rgb(  0,128,128,maxColorValue=255),
-           rgb(102,102,102,maxColorValue=255))
+color <- qtl2::CCcolors
 
 #bitmap(file="../Figs/ri8.bmp", width=9, height=5, res=288,
 #       pointsize=14)
