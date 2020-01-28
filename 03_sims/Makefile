@@ -17,7 +17,11 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/ri8genome1.pdf \
 			 Figs/basic_genetics.pdf \
 			 Figs/rf_by_sim.pdf \
-			 Figs/ngen99.pdf
+			 Figs/ngen99.pdf \
+			 Figs/threepoints.pdf \
+			 Figs/coincidence_ni.pdf \
+			 Figs/3pt_symmetry.pdf \
+			 Figs/3pt_markov1.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
@@ -30,4 +34,13 @@ Figs/ri8genome1.pdf: R/ri8_genome_fig.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
 
 Figs/ngen99.pdf: R/genome_plots.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/coincidence_ni.pdf: R/coincidence_figs.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/3pt_markov1.pdf: R/3pt_markov.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/3pt_symmetry.pdf: R/3pt_symmetry.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

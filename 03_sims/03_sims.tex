@@ -327,6 +327,157 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 
 
 
+\begin{frame}[c]{3-point coincidence}
+
+\hfill \includegraphics[scale=0.5]{Figs/threepoints.pdf}
+
+\vspace*{-15mm}
+
+  \bbi
+
+\item $\mathsf{r_{ij}}$ = recombination fraction for interval (i, j)
+
+{\hilit Assume $\mathsf{r_{12} = r_{23} = r}$.}
+
+\item {\vhilit Coincidence} = $\mathsf{c = Pr(\text{double
+  recombinant}) / r^2}$
+
+\hspace{20mm} {\hilit = $\mathsf{Pr(\text{rec'n in 23} \ | \ \text{rec'n in 12}) /
+  Pr(\text{rec'n in 12})}$}
+
+\item
+No interference { \hilit = 1 }
+
+Positive interference { \hilit $<$ 1 }
+
+Negative interference { \hilit $>$ 1  }
+
+
+\item Generally {\hilit $\mathsf{c}$} is a function of {\hilit $\mathsf{r}$}
+
+  \ei
+
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Coincidence}
+\only<1>{\figw{Figs/coincidence_ni.pdf}{1.0}}
+\only<2>{\figw{Figs/coincidence_i.pdf}{1.0}}
+\end{frame}
+
+
+
+\begin{frame}[c]{Coincidence in 8-way RILs}
+
+
+\bbi
+\item The trick that allowed us to get the coincidence for 2-way RILs
+  doesn't work for 8-way RILs.
+
+\item It's sufficient to consider 4-way RILs.
+
+\item Calculations for 3 points in 4-way RILs is still {\vhilit
+  astoundingly complex}.
+
+
+\bi
+\item {\hilit 2 points in 2-way RILs by sib mating:}
+
+55 parental types $\rightarrow$ {\vhilit 22 states} by symmetry
+
+\item {\hilit 3 points in 4-way RILs by sib mating:}
+
+2,164,240 parental types $\rightarrow$ {\vhilit 137,488 states}
+by symmetry
+\ei
+
+\item Even {\vhilit counting} the states was difficult.
+\ei
+\end{frame}
+
+
+
+\begin{frame}[c]{Coincidence}
+\figw{Figs/coincidence_8way.pdf}{1.0}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{The formula}
+
+{ \fontsize{8.2pt}{9.2}\selectfont
+
+
+$$ \mathsf{C = \frac{(1+6r)[280 + 1208r - 848r^2 + 5c(7-28r - 368r^2 + 344r^3)
+  - 2c^2(49 - 324r + 452r^2)r^2 - 16c^3(1-2r)r^4]}{49 (1+12r-12cr^2)
+    [5+10r-4(2+c)r^2+8cr^3]} }$$
+
+}
+
+
+\end{frame}
+
+
+
+\begin{frame}[c]{3-point symmetry}
+
+\centerline{\hspace*{15mm} \hilit
+$\mathsf{Pr(M_2 = x \ | \ M_1 = A, M_2 \ne A, M_3 = A)}$
+}
+\figw{Figs/3pt_symmetry.pdf}{1.0}
+
+\end{frame}
+
+
+\begin{frame}[c]{Markov property}
+
+\centerline{\hspace*{15mm} \hilit
+$ \mathsf{log_2 \left\{ \frac{Pr(M_3 = A \ | \ M_2 = A, M_1 = x)}{Pr(M_3 = A \ | \ M_2 = A)} \right\} }$
+}
+\figw{Figs/3pt_markov1.pdf}{1.0}
+
+\end{frame}
+
+\begin{frame}[c]{Markov property}
+
+\centerline{\hspace*{15mm} \hilit
+$ \mathsf{log_2 \left\{ \frac{
+    Pr(M_3 = A \ | \ M_2 = {\vhilit B}, M_1 = x)}{
+    Pr(M_3 = A \ | \ M_2 = {\vhilit B})}\right\}}$
+}
+\figw{Figs/3pt_markov2.pdf}{1.0}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Markov property}
+
+\centerline{\hspace*{15mm} \hilit
+$ \mathsf{log_2 \left\{ \frac{
+    Pr(M_3 = A \ | \ M_2 = {\vhilit C}, M_1 = x)}{
+    Pr(M_3 = A \ | \ M_2 = {\vhilit C})}\right\}}$
+}
+\figw{Figs/3pt_markov3.pdf}{1.0}
+
+\end{frame}
+
+
+\begin{frame}[c]{Markov property}
+
+\centerline{\hspace*{15mm} \hilit
+$ \mathsf{log_2 \left\{ \frac{
+    Pr(M_3 = A \ | \ M_2 = {\vhilit E}, M_1 = x)}{
+    Pr(M_3 = A \ | \ M_2 = {\vhilit E})}\right\}}$
+}
+\figw{Figs/3pt_markov4.pdf}{1.0}
+
+\end{frame}
+
+
 
 \begin{frame}[c]{Whole genome simulations}
 
