@@ -1,4 +1,4 @@
-\documentclass[12pt,t]{beamer}
+\documentclass[aspectratio=169,12pt,t]{beamer}
 \usepackage{graphicx}
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
@@ -81,9 +81,9 @@
 \bi
 \itemsep24pt
 \item Figures/tables + email
-\item Static \LaTeX\ or Word document
-\item knitr/Sweave + \LaTeX\ $\rightarrow$ PDF
-\item knitr + Markdown $\rightarrow$ Web page
+\item Static Word document
+\item \LaTeX\ + R $\rightarrow$ PDF
+\item R Markdown = knitr + Markdown $\rightarrow$ Web page
 \ei
 
 \note{Statisticians write a lot of reports. You do a bunch of
@@ -100,8 +100,7 @@
   PDF. But that was a lot of work, and if I later wanted to re-run
   things (e.g., if additional data were added), it was a real hassle.
 
-  Sweave + \LaTeX\ was a big help, but it's a pain to deal with page
-  breaks.
+  It's also a pain to deal with page breaks in PDF documents.
 
   Web pages, produced with knitr and Markdown, are ideal. You can make
   super-tall multi-panel figures that show the full details, without
@@ -909,6 +908,58 @@ Focus your compulsive behavior on things that matter.
   solution.  Or you can modify your desires to more closely match what
   you get without any effort.
 }
+\end{frame}
+
+
+
+\begin{frame}[c]{Standard scientific article}
+
+  \bbi
+\item Abstract
+\item Introduction/background
+\item Materials and methods
+\item Results
+\item Conclusions/discussion
+  \ei
+
+  \vspace{10mm}
+
+  \centerline{\hilit Why this format?}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{What should a report contain?}
+
+  \bbi
+\item Explain your shared goals
+\item Describe the data
+\item Explain what you did
+\item Show your results
+\item Explain your conclusions
+\item When you're done, go back and write an \emph{\hilit executive
+  summary}
+  \ei
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Further suggestions}
+
+  \bbi
+\item Tailor the report for the audience
+\item Try not to be boring
+\item Limit equations and code; details in an appendix
+\item Break it up into sections; simple and clear language and structure
+\item Lots of figures, ideally interactive; {\vhilit explain} the figures
+\item At the end, include \verb|sessionInfo()| or
+  \verb|devtools::session_info()|
+\item Maybe also \verb|getwd()|
+\item What do + and -- mean (regarding coefficients/effects)?
+  \ei
+
 \end{frame}
 
 
