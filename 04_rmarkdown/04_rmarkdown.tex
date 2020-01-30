@@ -58,18 +58,6 @@
 } }
 
 
-\begin{frame}[c]{knitr in a knutshell}
-
-\centerline{\Large \href{https://kbroman.org/knitr_knutshell}{\tt kbroman.org/knitr\_knutshell}}
-
-\note{I wrote a short tutorial on knitr, covering a bit more than I'll
-  cover in this lecture.
-
-  I'd be glad for suggestions, corrections, or questions.
-}
-\end{frame}
-
-
 
 
 
@@ -137,9 +125,19 @@ What if you used the wrong version of the data?
 \end{frame}
 
 
-\begin{frame}[fragile]{knitr code chunks}
+\begin{frame}[c]{knitr in a knutshell}
 
-\vspace{6pt}
+\centerline{\Large \href{https://kbroman.org/knitr_knutshell}{\tt kbroman.org/knitr\_knutshell}}
+
+\note{I wrote a short tutorial on knitr, covering a bit more than I'll
+  cover in this lecture.
+
+  I'd be glad for suggestions, corrections, or questions.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{knitr code chunks}
 
 \href{https://github.com/kbroman/Tools4RR/blob/master/03_KnitrMarkdown/Examples/example1.Rmd}{Input to knitr}:
 \begin{lstlisting}
@@ -357,6 +355,77 @@ And it's easy to create links, like to
 \end{frame}
 
 
+
+\begin{frame}[fragile,c]{YAML header}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+---
+title: "knitr/R Markdown example"
+author: "Karl Broman"
+date: "28 January 2015"
+output: html_document
+---
+\end{lstlisting}
+
+\vspace{36pt}
+
+
+\begin{lstlisting}
+---
+title: "Another knitr/R Markdown example"
+author: "[Karl Broman](https://kbroman.org)"
+date: "`r Sys.Date()`"
+output: word_document
+---
+\end{lstlisting}
+
+
+
+\note{At the top of your Rmd file, it's best to include a header like
+  the above examples. (YAML is a simple text-based format for
+  specifying data, sort of like JSON but more human-readable.)
+
+  You don't have to include any of these things, but it's good to at
+  least specify {\tt output:} (which can be also be {\tt
+  pdf\_document}). There are a lot more options; see {\tt rmarkdown.rstudio.com}.
+
+  Note my use of a hyperlink and some R code in the second
+  example. These will carry over to the final document.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{}
+
+
+\vspace{20mm}
+
+\centerline{\Large \tt ?rmarkdown::html\_document}
+
+\onslide<2>{
+\vspace*{5mm}
+
+  \bi
+\item {\tt toc\_float}
+\item {\tt toc\_depth}
+\item {\tt code\_folding}
+\item {\tt theme}
+\item {\tt df\_print}
+  \ei
+}
+
+\end{frame}
+
+
+
+
+
+
+
 \begin{frame}[fragile]{Code chunks, again}
 
 \vspace{6pt}
@@ -544,47 +613,6 @@ autosomes.  The genotype data is quite complete.
   Remember my anecdote earlier in this lecture: if I hadn't mentioned
   sample sizes, my collaborator wouldn't have noticed that I was using
   an old version of the data.
-}
-\end{frame}
-
-
-\begin{frame}[fragile,c]{YAML header}
-
-\vspace{24pt}
-
-\begin{lstlisting}
----
-title: "knitr/R Markdown example"
-author: "Karl Broman"
-date: "28 January 2015"
-output: html_document
----
-\end{lstlisting}
-
-\vspace{36pt}
-
-
-\begin{lstlisting}
----
-title: "Another knitr/R Markdown example"
-author: "[Karl Broman](https://kbroman.org)"
-date: "`r Sys.Date()`"
-output: word_document
----
-\end{lstlisting}
-
-
-
-\note{At the top of your Rmd file, it's best to include a header like
-  the above examples. (YAML is a simple text-based format for
-  specifying data, sort of like JSON but more human-readable.)
-
-  You don't have to include any of these things, but it's good to at
-  least specify {\tt output:} (which can be also be {\tt
-  pdf\_document}). There are a lot more options; see {\tt rmarkdown.rstudio.com}.
-
-  Note my use of a hyperlink and some R code in the second
-  example. These will carry over to the final document.
 }
 \end{frame}
 
@@ -837,18 +865,8 @@ x <- rnorm(100)
 y <- 2*x + rnorm(100)
 out <- lm(y ~ x)
 coef_tab <- summary(out)$coef
-library(kable)
+library(knitr)
 kable(coef_tab, digits=2)
-```
-\end{lstlisting}
-
-\vspace{6pt}
-
-\begin{lstlisting}
-```{r pander}
-library(pander)
-panderOptions("digits", 2)
-pander(out, caption="Regression coefficients")
 ```
 \end{lstlisting}
 
@@ -862,7 +880,14 @@ print(tab, type="html")
 ```
 \end{lstlisting}
 
+\vspace{6pt}
 
+\begin{lstlisting}
+```{r gt}
+library(gt)
+gt( round(coef_tab, 2) )
+```
+\end{lstlisting}
 
 
 \note{In informal reports, I'll often just print out a matrix or data
@@ -875,13 +900,12 @@ print(tab, type="html")
   {\tt kable} in the knitr package is simple but can't be customized
   too much. But it can produce output as pandoc, markdown, html, or latex.
 
-  The {\tt pander} package produces pandoc-based tables, which even
-  work if you're making a Word document, and has a bit more control
-  than {\tt kable}.
-
   The {\tt xtable} package gives you quite complete control,
   but only produces latex or html output. You need to be sure to use
   {\tt results="asis"} in the code chunk.
+
+  The {\tt gt} package is the latest and greatest tidy-compliant
+  package for making nice tables.
 }
 \end{frame}
 
