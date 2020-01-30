@@ -22,6 +22,8 @@ description: Resources for BMI 826, Advanced data analysis
 - [blogdown](https://bookdown.org/yihui/blogdown/) for websites
 - [bookdown](https://bookdown.org/yihui/bookdown/) for book-like objects
 - [xaringan](https://github.com/yihui/xaringan) for slides
+- [pagedown](https://pagedown.rbind.io/) for paged documents (like
+  resumes or letters)
 
 
 ## Karl's tutorials
