@@ -10,7 +10,7 @@ description: Schedule for BMI 826, Advanced data analysis
 | 21 Jan    |    | [Introductory case study ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](01_intro.pdf)
 | 23 Jan    |    | [_Reproducible research_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](02_reprores.pdf)
 | 28 Jan    |    | [Simulations: genomes of recombinant inbred lines ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](03_sims.pdf)
-| 30 Jan    |    | _R Markdown_
+| 30 Jan    |    | [_R Markdown_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](04_rmarkdown.pdf)
 | 4 Feb     |    | EM algorithm: T cell frequencies
 | 6 Feb     |    | _Know the command line; know your editor_
 | 11 Feb    |    | EM algorithm: QTL mapping with a cure model
