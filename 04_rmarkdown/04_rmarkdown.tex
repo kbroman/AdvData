@@ -144,6 +144,12 @@ What if you used the wrong version of the data?
 
 \centerline{\Large \href{https://kbroman.org/knitr_knutshell}{\tt kbroman.org/knitr\_knutshell}}
 
+\onslide<2>{
+  \vspace{10mm}
+
+\centerline{\Large \href{https://rmarkdown.rstudio.com}{\tt rmarkdown.rstudio.com}}
+}
+
 \note{I wrote a short tutorial on knitr, covering a bit more than I'll
   cover in this lecture.
 
@@ -981,10 +987,39 @@ Focus your compulsive behavior on things that matter.
 }
 \end{frame}
 
+\begin{frame}[c]{What should a report contain?}
+
+\end{frame}
 
 
+\begin{frame}[c,fragile]{What should a report contain?}
+
+\addtocounter{framenumber}{-1}
+
+\begin{center}
+\begin{minipage}[c]{9.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=9.3cm]
+ Karl -- this is very interesting,
+ however you used an old version of
+ the data (n=143 rather than n=226).
+
+ I'm really sorry you did all that
+ work on the incomplete dataset.
+
+ Bruce
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+
+\end{frame}
 
 \begin{frame}[c]{What should a report contain?}
+
+\addtocounter{framenumber}{-1}
 
   \bbi
 \item Explain your shared goals
@@ -995,6 +1030,7 @@ Focus your compulsive behavior on things that matter.
 \item When you're done, go back and write an \emph{\hilit executive
   summary}
   \ei
+
 
 \end{frame}
 
