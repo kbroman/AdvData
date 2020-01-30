@@ -616,6 +616,38 @@ autosomes.  The genotype data is quite complete.
 }
 \end{frame}
 
+\begin{frame}[fragile]{Python in R Markdown}
+
+You can have python code chunks in R Markdown. And information is
+remembered between chunks.
+
+\begin{lstlisting}
+```{python define_something}
+x = [2, 3, 5, 7, 9, 11, 13, 17]
+```
+
+```{python list_comprehension}
+y = [v*2 for v in x]
+```
+\end{lstlisting}
+
+It seems like you can't use python in-line. But if load the
+package `reticulate`, you can get access to python objects with R
+code.
+
+\begin{lstlisting}
+  The first value in `x` is `r py$x[1]`, while the first value in `y` is
+  `r py$y[1]`.
+\end{lstlisting}
+
+\vfill
+
+\centerline{More at \href{https://rstudio.github.io/reticulate/}{\tt rstudio.github.io/reticulate/}}
+
+
+\end{frame}
+
+
 
 \begin{frame}{Rounding}
 
