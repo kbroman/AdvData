@@ -33,7 +33,7 @@ a. Consider the data in [`hw1_mitesA.txt`](data/hw1_mitesA.txt).
 At each of seven doses we have the number of dead out of ten, for
 between 11 and 14 groups of ten. Use this data to examine the
 hypothesis that at any given dose the mites are dying independently
-with a constant probability.
+with a constant probability. Consider using computer simulations.
 
 b. Make the binomial assumption for mites at each dose and pool the
 data across groups. Then fit a dose-response curve of a standard type
