@@ -53,6 +53,12 @@ e. Repeat (a)-(d) for data on a second strain of mites, in
 f. Assess whether the does-response curves for the two strains are
 parallel.
 
+### Resources
+
+- Venables and Ripley (2002) Modern applied statistics with S, 4th
+  edition, chapter 7 [![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](http://www.bagualu.net/wordpress/wp-content/uploads/2015/10/Modern_Applied_Statistics_With_S.pdf)
+- [GLM documentation for python module statmodels](https://www.statsmodels.org/stable/examples/notebooks/generated/glm.html)
+
 ---
 
 This assignment is a slightly modified version of one designed by [Terry
