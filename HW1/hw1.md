@@ -29,7 +29,7 @@ dead in each group of ten at the end of the interval was recorded.
 This was done for each of seven doses, expressed in grams of active
 ingredient per 100 liters.
 
-a. Consider the data in [`mitesA.txt`](data/mitesA.txt).
+a. Consider the data in [`hw1_mitesA.txt`](data/hw1_mitesA.txt).
 At each of seven doses we have the number of dead out of ten, for
 between 11 and 14 groups of ten. Use this data to examine the
 hypothesis that at any given dose the mites are dying independently
@@ -48,7 +48,7 @@ d. How might you need to modify your analyses in (b) and (c) in light
 of your conclusions in (a)?
 
 e. Repeat (a)-(d) for data on a second strain of mites, in
-[`mitesB.txt`](data/mitesB.txt).
+[`hw1_mitesB.txt`](data/hw1_mitesB.txt).
 
 f. Assess whether the does-response curves for the two strains are
 parallel.

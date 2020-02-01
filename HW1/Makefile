@@ -1,4 +1,4 @@
-all: ../docs/hw1.md ../docs/data/mitesA.txt ../docs/data/mitesB.txt
+all: ../docs/hw1.md ../docs/data/hw1_mitesA.txt ../docs/data/hw1_mitesB.txt
 
 ../docs/hw1.md: hw1.md
 	cp $< $@
