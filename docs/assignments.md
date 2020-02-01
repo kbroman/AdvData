@@ -25,7 +25,7 @@ repository would be ideal but use of git is not required.
 You are encouraged to talk to each other about the assignments, but
 the analysis reports should be written individually.
 
-- [Homework 1: spider mites](hw1.md) due 2020-02-20
+- [Homework 1: spider mites](hw1.html) due 2020-02-20
 
   data: [`hw1_mitesA.txt`](data/hw1_mitesA.txt), [`hw1_mitesB.txt`](data/hw1_mitesB.txt)
 
