@@ -1,17 +1,31 @@
-## Important lessons
+## Lessons
+
+- Follow up artifacts; they might be the most interesting results
+
+- The simplest things can be the most important
+
+- Including data summaries in an analysis report can help to catch
+  errors
 
 - file organization, documentation, version control: investments that
   pay off in the long term
+
+- Computer simulations have a lot of great uses
+
+
+## Principles
+
+- Modify your desires to match the defaults; focus your compulsive
+  behavior on things that matter.
+
+
+## Further lessons
 
 - the most important thing is that you get the right answer
 
 - always ask: does this make sense?
 
 - if it seems too good to be true, it probably is
-
-- artifacts can sometimes be the most interesting finding, so follow
-  up on them to figure out what's going on. They're usually just
-  error, though. But still important to follow up.
 
 - time to solve a computational problem includes the time to formulate a solution,
   to write the program, to run the program, and to make sense of the
