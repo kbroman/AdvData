@@ -177,6 +177,8 @@
 
 \begin{frame}[c]{Model}
 
+  \vspace{3mm}
+
   k$_{ij}$ = Number of responding cells (unobserved)
 
   y$_{ij}$ = square-root of response
@@ -199,5 +201,28 @@
   \figw{Figs/model_distribution.pdf}{1.0}
 
 \end{frame}
+
+
+
+
+\begin{frame}[c]{log Likelihood}
+
+
+  \begin{eqnarray*}
+    l(\boldsymbol{\lambda}, a, b, \sigma)
+       & = & \sum_{i,j} \log \text{Pr}(y_{ij} | \lambda_i, a, b, \sigma) \\
+    & = & \sum_{i,j} \log \left[ \sum_k
+      \text{Pr}(k | \lambda_i)
+      \text{Pr}(y_{ij} | k, a, b, \sigma)
+      \right] \\
+    & = & \sum_{i,j} \log \left[ \sum_k
+      \left(\frac{e^{-\lambda_i} \lambda_i^k}{ k! }\right) \, \phi\left( \frac{y_{ij} - a -
+        bk}{\sigma} \right)
+      \right]
+  \end{eqnarray*}
+
+\end{frame}
+
+
 
 \end{document}
