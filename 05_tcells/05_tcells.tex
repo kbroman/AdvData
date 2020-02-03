@@ -38,5 +38,129 @@
 } }
 
 
+\begin{frame}[c]{}
+
+  \begin{columns}[c]
+    \column{0.3\textwidth}
+    \fontsize{10pt}{11}\selectfont
+      \bbi
+      \item[\hilit Goal:] Estimate the frequency of T-cells in a blood
+        sample that respond to two test antigens.
+
+      \item[\hilit Real goal:] Determine whether a vaccine causes an
+        increase in the frequency of responding T-cells.
+      \ei
+
+      \vspace{10mm}
+
+      \hspace*{-0.2\textwidth} {\fontsize{6pt}{6}\selectfont Broman K, Speed T, Tigges M (1996)
+        J Immunol Meth 198:119-132
+        \href{https://doi.org/b54v33}{\tt doi.org/b54v33}}
+
+
+    \column{0.5\textwidth}
+        \figw{Figs/immunology.png}{1.0}
+
+  \end{columns}
+
+
+\end{frame}
+
+
+
+\begin{frame}[c]{The assay}
+
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+    \fontsize{10pt}{11}\selectfont
+
+    \bbi
+  \item Combine:
+    \bi
+  \item diluted blood cells + growth medium
+  \item antigen
+  \item $^{\text{3}}$H-thymidine
+    \ei
+
+    \item Replicating cells take up $^{\text{3}}$H-thymidine.
+
+    \item Extract the DNA and measure its radioactivity
+      \ei
+
+    \column{0.5\textwidth}
+        \figw{Figs/assay.png}{1.0}
+
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Usual approaches}
+
+  \bbi
+
+\item Use 3 wells with antigen and 3 wells without antigen,
+  and take the ratio of the averages
+
+  \item Limiting dilution assay
+    \bi
+  \item Several dilutions of cells
+  \item Many wells at each dilution
+    \ei
+    \ei
+
+\end{frame}
+
+
+\begin{frame}[c]{Our assay}
+
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+    Study a single plate or pair of plates at a single dilution.
+
+    \column{0.5\textwidth}
+    \figw{Figs/microtiter_plate.png}{1.0}
+
+
+  \end{columns}
+
+
+\end{frame}
+
+\begin{frame}[c]{Data}
+  \figh{Figs/lda713_data.png}{1.0}
+\end{frame}
+
+
+\begin{frame}[c]{Traditional analysis}
+  \bbi
+  \item Split wells into +/-- using a cutoff (e.g., mean + 3 SD of
+    ``cells alone'' wells)
+    \bi
+  \item[positive =] one or more responding cells
+  \item[negative =] no responding cells
+    \ei
+
+  \item Imagine that the number of responding cells in a well is
+    Poission($\lambda_i$) for group $i$
+
+    \vspace{4mm}
+
+  \qquad Pr(no resp. cells) = $e^{-\lambda_i}$
+
+    \vspace{4mm}
+
+  \qquad $\hat{\lambda}_i = -\log\left(\frac{\text{\# negative wells}}{\text{\# wells}}\right)$
+
+    \ei
+
+\end{frame}
+
+\begin{frame}[c]{Analysis}
+  \figh{Figs/simple_method.png}{0.9}
+\end{frame}
+
+
+
 
 \end{document}
