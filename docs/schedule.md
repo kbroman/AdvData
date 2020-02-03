@@ -16,7 +16,7 @@ description: Schedule for BMI 826, Advanced data analysis
 | 11 Feb    |    | EM algorithm: QTL mapping with a cure model
 | 13 Feb    |    | _Git and GitHub_
 | 18 Feb    |    | Model misspecification: Estimating allele frequencies
-| 20 Feb    |    | _Git/GitHub laboratory_
+| 20 Feb    |    | _Git/GitHub laboratory_ \[[**homework 1 due**](hw1.html)\]
 | 25 Feb    |    | Sample mix-ups in eQTL data
 | 27 Feb    |    | _Organizing projects; capturing exploratory analysis_
 | 3 Mar     |    | Data diagnostics for multiparent populations
