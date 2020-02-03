@@ -179,22 +179,22 @@
 
   \vspace{3mm}
 
-  k$_{ij}$ = Number of responding cells (unobserved)
+  $k_{ij}$ = Number of responding cells (unobserved)
 
-  y$_{ij}$ = square-root of response
+  $y_{ij}$ = square-root of response
 
   \vspace{10mm}
 
-  Assume {\hilit k$_{ij}$ $\sim \text{Poisson}(\lambda_i)$}
+  Assume {\hilit $k_{ij}$ $\sim \text{Poisson}(\lambda_i)$}
 
   \vspace{2mm}
 
-  \hspace*{15mm} {\hilit y$_{ij}$ $|$ k$_{ij}$ $\sim \text{Normal}(a +
+  \hspace*{15mm} {\hilit $y_{ij}$ $|$ $k_{ij}$ $\sim \text{Normal}(a +
     b k_{ij}, \sigma)$}
 
   \vspace{2mm}
 
-  \hspace*{15mm} {\hilit (k$_{ij}$, y$_{ij}$) mutually independent}
+  \hspace*{15mm} {\hilit ($k_{ij}$, $y_{ij}$) mutually independent}
 
   \vspace{5mm}
 
@@ -223,6 +223,133 @@
 
 \end{frame}
 
+
+
+\begin{frame}{EM algorithm}
+
+\vspace{-3mm}
+
+  \bbi
+  \item Iterative algorithm useful when there is missing data that if
+    observed would make things easy
+  \item Dempster et al. (1977) JRSS-B 39:1-22
+    \href{https://doi.org/gfxzrv}{\tt doi.org/gfxzrv}
+  \item Start with some initial estimates
+  \item {\hilit E-step}: expected value of missing data given current estimates
+  \item {\hilit M-step}: MLEs replacing missing data with their expected values
+  \item {\hilit Advantages}
+    \bi
+  \item often easy to code
+  \item usually super stable
+  \item log likelihood is non-decreasing
+    \ei
+    \ei
+
+\end{frame}
+
+
+
+\begin{frame}{This case}
+
+  (give details of E and M step here)
+
+\end{frame}
+
+
+
+
+\begin{frame}{Oops that didn't work}
+
+  (show log likelihood vs iterations)
+
+\end{frame}
+
+
+
+
+\begin{frame}{EM algorithm, more formally}
+
+  get expected complete-data log likelihood given observed data
+
+  usually a function of the sufficient statistics
+
+  Here, we need not just $\sum k$ and $\sum k y$ but also $\sum k^2$
+
+\end{frame}
+
+
+
+\begin{frame}{EM algorithm, again}
+
+  $\text{E}(k)$ and $\text{E}(k^2)$
+
+  How to use them to get estimates of a,b,sigma
+
+\end{frame}
+
+
+
+\begin{frame}{Ah, now it works}
+
+  plot of log likelihood vs iterations, again
+
+\end{frame}
+
+
+\begin{frame}{Difficulties}
+
+\bbi
+\item Starting values
+\item Multiple modes
+\ei
+
+\end{frame}
+
+
+
+
+\begin{frame}{Multiple modes}
+
+(Figure with maximized log likelihood vs trials)
+
+\end{frame}
+
+
+
+
+\begin{frame}{Multiple modes}
+
+(Table with estimates + log likelihood)
+
+\end{frame}
+
+
+\begin{frame}{Lessons}
+
+  \bbi
+\item Start with an understanding of the problem
+\item Think about a model for the process
+\item EM algorithm is really useful
+\item Use the log likelihood as a diagnostic when implementing an EM
+  algorithm
+  \ei
+\end{frame}
+
+
+
+\begin{frame}{Impact}
+
+  \bbi
+\item I'm pretty sure that the vaccine they were working on didn't
+  work well.
+\item R package \href{https://github.com/kbroman/npem}{\tt npem}, but
+  I never put it on \href{https://cran.r-project.org}{CRAN}, and no
+  one has ever asked me about it.
+\item Our paper has like 9 citations: no one has ever really used the
+  method.
+  \ei
+
+\end{frame}
 
 
 \end{document}
