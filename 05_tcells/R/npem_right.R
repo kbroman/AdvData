@@ -1,4 +1,5 @@
 library(npem)
+library(broman)
 
 data(p713)
 
@@ -6,10 +7,6 @@ pl <- 1
 dat <- matrix(c(p713$counts[[pl]], NA, NA), ncol=4)
 dat <- as.list(as.data.frame(dat))
 dat <- lapply(dat, function(a) a[!is.na(a)])
-
-start <- npem.start(p713$counts[[1]], p713$cells[1])
-out <- npem.em(p713$counts[[1]], start, p713$cells[1])
-
 
 estep <-
     function(data, theta, maxk=20)
@@ -70,12 +67,24 @@ loglik <-
     ll
 }
 
-n_step <- 100
-ll <- rep(NA, n_step)
-m <- npem.start(unlist(dat))
-ll[1] <- loglik(dat, m)
-for(i in 2:n_step) {
-    e <- estep(dat, m)
-    m <- mstep(dat, e)
-    ll[i] <- loglik(dat, m)
+file <- "_cache/npem_right.rds"
+if(file.exists(file)) {
+    ll <- readRDS(file)
+} else {
+    n_step <- 25
+    ll <- rep(NA, n_step)
+    m <- npem.start(unlist(dat))
+    ll[1] <- loglik(dat, m)
+    for(i in 2:n_step) {
+        e <- estep(dat, m)
+        m <- mstep(dat, e)
+        ll[i] <- loglik(dat, m)
+    }
+    saveRDS(ll, file)
 }
+
+
+pdf("../Figs/em_loglik_right.pdf", height=5.5, width=10)
+par(mar=c(5.1,4.1,0.6,0.6))
+grayplot(ll, xlab="EM iteration", ylab="log likelihood")
+dev.off()
