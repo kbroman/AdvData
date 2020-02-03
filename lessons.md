@@ -12,8 +12,14 @@
 
 - Computer simulations have a lot of great uses
 
+- The EM algorithm is really useful; use the log likelihood as a diagnostic
+
 
 ## Principles
+
+- Start with an understanding of the problems and data
+
+- Think about a model for the data-generating process
 
 - Modify your desires to match the defaults; focus your compulsive
   behavior on things that matter.
