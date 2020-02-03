@@ -422,4 +422,29 @@
 \end{frame}
 
 
+\begin{frame}{Further things}
+
+  \bbi
+
+\item Standard errors should always be required.
+  \bi
+\item But usually painful to obtain
+\item We used the SEM algorithm of Meng and Rubin (1991)
+  \href{https://doi.org/10.1080/01621459.1991.10475130}{\tt
+    doi.org/10.1080/01621459.1991.10475130}
+  \ei
+
+\item Could more formally investigate the appropriate transformation
+  \bi
+\item See Box and Cox (1964) \href{https://doi.org/10.1111/j.2517-6161.1964.tb00553.x}{
+  \tt doi.org/10.1111/j.2517-6161.1964.tb00553.x}
+\item Box-Cox transformation is $g(y) = (y^c-1)/c$ for $c \ne 0$ and
+  $= \log y$ for $c=0$
+\item Key issue is change-of-variables in the density; as a result you
+  add $\sum_{ij} (c-1) \log y_{ij}$ to the log likelihood
+    \ei
+    \ei
+\end{frame}
+
+
 \end{document}
