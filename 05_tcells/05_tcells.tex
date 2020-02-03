@@ -249,9 +249,32 @@
 
 
 
-\begin{frame}{This case}
+\begin{frame}{Normal/Poisson model}
 
-  (give details of E and M step here)
+  {\hilit E-step}:
+
+\vspace{-3mm}
+
+  \begin{eqnarray*}
+      \text{Pr}(k = s | y, \lambda, a, b, \sigma) & = & \frac{\text{Pr}(k = s | \lambda)
+      \text{Pr}(y | k = s, a, b, \sigma)}{\sum_s \text{Pr}(k = s | \lambda)
+        \text{Pr}(y | k = s, a, b, \sigma)} \\
+      & = & \frac{\left(\frac{e^{-\lambda} \lambda^s}{s!}\right) \phi\left(\frac{y-a-bs}{\sigma}\right)}{
+\sum_s \left(\frac{e^{-\lambda} \lambda^s}{s!}\right)
+\phi\left(\frac{y-a-bs}{\sigma}\right)} \\[18pt]
+      \text{E}(k | y, \lambda, a, b, \sigma)
+      & = & \frac{\sum_s s \left(\frac{e^{-\lambda}
+          \lambda^s}{s!}\right)
+        \phi\left(\frac{y-a-bs}{\sigma}\right)}{\sum_s
+        \left(\frac{e^{-\lambda} \lambda^s}{s!}\right)
+        \phi\left(\frac{y-a-bs}{\sigma}\right)}
+  \end{eqnarray*}
+
+
+  \vspace{5mm}
+
+  {\hilit M-step}: Regress y on $\text{E}(k|y)$
+
 
 \end{frame}
 
@@ -267,21 +290,51 @@
 
 \begin{frame}{EM algorithm, more formally}
 
-  get expected complete-data log likelihood given observed data
+  \bbi
 
-  usually a function of the sufficient statistics
+  \item Calculate expected complete-data log likelihood, given
+    observed data and observed parameters, and then maximize that.
 
-  Here, we need not just $\sum k$ and $\sum k y$ but also $\sum k^2$
+    $$ l^{(s)}(\theta) = \text{E}\{\log f(y, k | \theta) | y,
+    \hat{\theta}^{(s)}\} $$
+
+  \item In practice, it's usually a linear combination of the
+    sufficient statistics, so you focus on those.
+
+  \item Here, we need not just $\sum k$ and $\sum k y$, but also $\sum k^2$.
+
+    \ei
 
 \end{frame}
 
-
-
 \begin{frame}{EM algorithm, again}
 
-  $\text{E}(k)$ and $\text{E}(k^2)$
+{\hilit E step}: we also need
 
-  How to use them to get estimates of a,b,sigma
+\vspace{-4mm}
+
+\begin{eqnarray*}
+      \text{E}(k^2 | y, \lambda, a, b, \sigma)
+      & = & \frac{\sum_s s^2 \left(\frac{e^{-\lambda}
+          \lambda^s}{s!}\right)
+        \phi\left(\frac{y-a-bs}{\sigma}\right)}{\sum_s
+        \left(\frac{e^{-\lambda} \lambda^s}{s!}\right)
+        \phi\left(\frac{y-a-bs}{\sigma}\right)}
+\end{eqnarray*}
+
+\vspace{5mm}
+
+{\hilit M step}: we want $\hat{\beta} = (X'X)^{-1}(X'y)$
+
+\begin{eqnarray*}
+\text{where }  (X'X) & \text{ is like } &
+  \begin{pmatrix} n & \sum k \\ \sum k & \sum k^2 \end{pmatrix}
+  \\[18pt]
+\text{ and }  (X'y) & \text{ is like } &
+  \begin{pmatrix}\sum y \\ \sum k y \end{pmatrix}
+\end{eqnarray*}
+
+
 
 \end{frame}
 
