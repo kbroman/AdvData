@@ -43,5 +43,21 @@ mle[match(u_ll, ll_round),]
 tab[,1:7] <- mle[match(u_ll, ll_round),]
 tab <- round(tab,2)
 tab <- tab[order(tab[,"loglik"], decreasing=TRUE), ]
+xtable::xtable(tab)
+
+
+pdf("../Figs/starting_pts.pdf", height=5.5, width=10)
+par(mfrow=c(2,4), mar=c(3.1, 3.1, 2.1, 0.6))
+for(i in 1:7) {
+    grayplot(starts[,i], mle[,i],
+             main=c(expression(lambda[0]),
+                    expression(lambda[D]),
+                    expression(lambda[B]),
+                    expression(lambda[T]),
+                    "a", "b", expression(sigma))[i],
+             xlab="Starting point", ylab="Estimate",
+             mgp.x=c(1.6, 0.1, 0), mgp.y=c(1.6, 0.3, 0))
+}
+dev.off()
 
 # proportion of starts that give the best value
