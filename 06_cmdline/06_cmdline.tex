@@ -156,7 +156,7 @@ analyses.
 \begin{frame}[c]{The shell}
 
 
-\centerline{\includegraphics[width=\textwidth]{Figs/shell.png}}
+\figh{Figs/shell.png}{0.8}
 
 Options: \href{http://en.wikipedia.org/wiki/Tcsh}{tcsh}, \href{http://www.gnu.org/software/bash/manual/bashref.html}{bash}, \href{http://www.zsh.org/}{zsh}
 
@@ -174,9 +174,9 @@ things about {\tt zsh}.
 
 \begin{frame}{Basics}
 
-\vspace{18pt}
+\vspace{-4pt}
 \bi
-\itemsep18pt
+\itemsep16pt
 \item Directory structure
 
 {\color{lolit} Absolute vs. relative paths
@@ -227,7 +227,6 @@ noclobber=1    # prevent overwriting of files
 IGNOREEOF=1    # disable Ctrl-D as a way to exit
 HISTCONTROL=ignoredups
 
-alias cl='clear;cd'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
@@ -236,7 +235,6 @@ alias 'l.'='ls -d .[a-zA-Z]*'
 alias ll='ls -lh'
 alias md='mkdir'
 alias rd='rmdir'
-alias rmb='rm .*~ *~ *.bak *.bk!'
 
 alias Rb='R CMD build --force --resave-data'
 alias Ri='R CMD INSTALL --library=/Users/kbroman/Rlibs'
@@ -595,7 +593,7 @@ file. {\tt x} for extract, {\tt c} for combine, {\tt t} for test, {\tt
 
 \begin{frame}[fragile]{Further useful tools}
 
-\vspace{-12pt}
+\vspace{-22pt}
 
 \begin{semiverbatim}
 \begin{lstlisting}
@@ -608,7 +606,6 @@ $ pwd
 $ head afile.txt
 $ tail afile.txt
 $ head -n20 afile.txt
-
 $ man head
 
 $ kill 8453
