@@ -25,5 +25,5 @@ project-based homework assignments.
 
 - [schedule](schedule.html)
 - [syllabus](syllabus.html)
-- [assignments](assignments.html)
+- [assignments](assignments.html) \[[homework 1](hw1.html) due 20 Feb\]
 - [resources](resources.html)
