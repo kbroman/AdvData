@@ -47,7 +47,7 @@ description: Resources for BMI 826, Advanced data analysis
   resumes or letters)
 
 
-### Unix command line
+## Unix command line
 
 - [Survival guide for Unix newbies](http://matt.might.net/articles/basic-unix/)
 - [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
