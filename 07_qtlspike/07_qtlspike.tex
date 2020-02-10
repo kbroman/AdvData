@@ -3,6 +3,7 @@
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
 \usepackage{listings}
+\usepackage{eepic}
 
 \input{../LaTeX/header.tex}
 
@@ -185,6 +186,55 @@ Or use the {\hilit hidden Markov model (HMM)} technology
 \ei
 }
 
+\end{frame}
+
+
+
+
+
+\begin{frame}{The normal mixtures}
+
+\vspace{-5mm}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\setlength{\unitlength}{0.18\textwidth}
+\begin{center}
+\begin{picture}(4.5,1)
+\small
+% lines
+\Thicklines
+\put(0.25,0.5){\line(1,0){4}}
+\put(0.25,0.35){\line(0,1){0.3}}
+\put(1.65,0.35){\line(0,1){0.3}}
+\put(4.25,0.35){\line(0,1){0.3}}
+
+% text
+\put(0.25,0.1){\makebox(0,0){$\mathsf{M_1}$}}
+\put(4.25,0.1){\makebox(0,0){$\mathsf{M_2}$}}
+\put(1.65,0.1){\makebox(0,0){$\mathsf{Q}$}}
+\put(0.95,0.8){\makebox(0,0){7 cM}}
+\put(2.95,0.8){\makebox(0,0){13 cM}}
+\end{picture} \end{center}
+\vspace{5mm}
+
+\sbi
+\itemsep18pt
+\item Two markers separated by 20 cM, with the QTL closer to the left marker.
+\item The figure at right shows the distributions of the phenotype
+conditional on the genotypes at the two markers.
+\item The dashed curves correspond to the components of the mixtures.
+\ei
+
+
+\column{0.5\textwidth}
+
+\vspace*{-5mm}
+
+\figw{Figs/mixtures.pdf}{1.0}
+
+\end{columns}
 \end{frame}
 
 
