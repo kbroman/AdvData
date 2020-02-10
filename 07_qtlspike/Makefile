@@ -6,7 +6,10 @@ R_OPTS=--no-save --no-restore --no-init-file --no-site-file
 
 $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/intercross.pdf \
-			 Figs/lodcurve_insulin_with_effects.pdf
+			 Figs/lodcurve_insulin_with_effects.pdf \
+			 Figs/pheno.pdf \
+			 Figs/genodata.pdf \
+			 Figs/geneticmap.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
