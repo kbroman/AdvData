@@ -10,10 +10,14 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/pheno.pdf \
 			 Figs/genodata.pdf \
 			 Figs/geneticmap.pdf \
-			 Figs/anova.pdf
+			 Figs/anova.pdf \
+			 Figs/genoprob1.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/genoprob1.pdf: R/genoprob_fig.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
 
 Figs/%.pdf: R/%_fig.R

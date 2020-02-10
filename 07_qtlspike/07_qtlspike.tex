@@ -130,6 +130,61 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 \end{frame}
 
 
+
+
+\begin{frame}{Interval mapping}
+
+{\hilit Lander \& Botstein (1989)}
+
+\bbi
+  \item Assume a {\hilit single} QTL model.
+  \item Each position in the genome, one at a time, is posited as the
+  putative QTL.
+  \item Let $\mathsf{q = }$ 0/1/2 if the (unobserved) QTL genotype is
+  AA/AB/BB. \\[12pt]
+        Assume $\mathsf{y | q \sim N(\mu_q, \sigma)}$
+  \item Given genotypes at linked markers, $\mathsf{y \sim}$ mixture of normal
+  dist'ns with mixing proportions $\mathsf{\Pr(q \ | \ \text{marker data})}$
+\ei
+
+\end{frame}
+
+
+\begin{frame}{Genotype probabilities}
+
+
+\only<1>{\figw{Figs/genoprob1.pdf}{1.0}}
+\only<2>{\figw{Figs/genoprob2.pdf}{1.0}}
+\only<3>{\figw{Figs/genoprob3.pdf}{1.0}}
+\only<4>{\figw{Figs/genoprob4.pdf}{1.0}}
+\only<5>{\figw{Figs/genoprob5.pdf}{1.0}}
+\only<6>{\figw{Figs/genoprob6.pdf}{1.0}}
+
+\bigskip
+
+{\small
+Calculate {\hilit $\text{Pr}(q \ | \ \text{marker data})$}, assuming
+
+\sbi
+\item No crossover interference
+\item No genotyping errors
+\ei
+
+\bigskip
+
+Or use the {\hilit hidden Markov model (HMM)} technology
+
+\sbi
+\item To allow for genotyping errors
+\item To incorporate dominant markers
+\item {\hilit (Still assume no crossover interference.)}
+\ei
+}
+
+\end{frame}
+
+
+
 \begin{frame}{References}
 \vspace{-7mm}
 
