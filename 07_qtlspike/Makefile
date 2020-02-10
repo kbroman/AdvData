@@ -11,6 +11,7 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/genodata.pdf \
 			 Figs/geneticmap.pdf \
 			 Figs/anova.pdf \
+			 Figs/backcross.pdf \
 			 Figs/genoprob1.pdf
 	xelatex $<
 
