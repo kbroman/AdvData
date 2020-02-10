@@ -4,10 +4,13 @@
 
 - The simplest things can be the most important
 
+- Consider taking logs, especially for ratios or when values span
+  several orders of magnitude.
+
 - Including data summaries in an analysis report can help to catch
   errors
 
-- file organization, documentation, version control: investments that
+- File organization, documentation, version control: investments that
   pay off in the long term
 
 - Computer simulations have a lot of great uses
