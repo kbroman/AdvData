@@ -18,7 +18,7 @@ hist(sug$pheno$heart_wt, breaks=34, main="", yaxt="n", ylab="", xlab="Heart weig
 
 par(mar=c(5.1, 4.1, 1.1, 1.1), las=1)
 plot(sug$pheno[,c("bw", "heart_wt")], xlab="Body weight", ylab="Heart weight",
-     pch=21, bg="slateblue", lwd=2)
+     pch=21, bg="lightblue")
 rug(sug$pheno$bw, side=1, col="slateblue", ticksize=0.02)
 rug(sug$pheno$heart_wt, side=2, col="slateblue", ticksize=0.02)
 
