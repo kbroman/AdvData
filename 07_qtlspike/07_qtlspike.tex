@@ -78,6 +78,58 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 
 
 
+\begin{frame}[c]{ANOVA at marker loci}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+\bi
+\item Also known as {\hilit marker regression}.
+\item Split mice into groups according to genotype at a marker.
+\item Do a t-test / ANOVA.
+\item Repeat for each marker.
+\ei
+
+\column{0.5\textwidth}
+
+\figw{Figs/anova.pdf}{1.0}
+
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{ANOVA at marker loci}
+
+\begin{columns}
+\column{0.5\textwidth}
+
+{\hilit Advantages}
+
+\bi
+\item Simple.
+\item Easily incorporates covariates.
+\item Easily extended to more complex models.
+\item Doesn't require a genetic map.
+\ei
+
+
+\column{0.5\textwidth}
+
+{\hilit Disadvantages}
+
+\bi
+\item Must exclude individuals with missing genotype data.
+\item Imperfect information about QTL location.
+\item Suffers in low density scans.
+\item {\vhilit Only considers one QTL at a time.}
+\ei
+
+\end{columns}
+
+\end{frame}
+
+
 \begin{frame}{References}
 \vspace{-7mm}
 

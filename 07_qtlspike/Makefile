@@ -9,7 +9,8 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/lodcurve_insulin_with_effects.pdf \
 			 Figs/pheno.pdf \
 			 Figs/genodata.pdf \
-			 Figs/geneticmap.pdf
+			 Figs/geneticmap.pdf \
+			 Figs/anova.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
