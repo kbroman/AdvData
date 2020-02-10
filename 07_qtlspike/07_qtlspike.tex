@@ -239,6 +239,161 @@ conditional on the genotypes at the two markers.
 
 
 
+
+
+\begin{frame}[c]{Interval mapping}
+
+
+  \bbi
+  \itemsep18pt
+
+\item[] Let $\mathsf{p_{ij} = \text{Pr}(q_i = j | \text{marker data})}$
+
+\item[] $\mathsf{y_i | q_i \sim N(\mu_{q_i},\sigma^2)}$
+
+\item[] $\mathsf{\text{Pr}(y_i | \text{marker data},\mu_0,\mu_1,\sigma) =
+\sum_j p_{ij} \, f(y_i; \mu_j,\sigma)}$
+
+\qquad where $\mathsf{f(y; \mu,\sigma)= \exp[-(y-\mu)^2/(2\sigma^2)] / \sqrt{2 \pi
+\sigma^2}}$
+
+
+\item[] {\hilit Log likelihood}: \hspace{5mm}
+$\mathsf{l(\mu_0,\mu_1,\sigma) = \sum_i \log \text{Pr}(y_i | \text{marker
+data},\mu_0,\mu_1,\sigma)}$
+
+\item[] Maximum likelihood estimates ({\hilit MLEs})
+of $\mathsf{\mu_0}$, $\mathsf{\mu_1}$, $\mathsf{\sigma}$:
+
+\qquad values for which $\mathsf{l(\mu_0,\mu_1,\sigma)}$ is maximized.
+\ei
+
+\end{frame}
+
+
+
+
+\begin{frame}{EM algorithm}
+
+
+\vspace*{-8mm}
+\bbi
+
+\item[] {\hilit E step}:
+
+\qquad Let \hspace{5mm} $w_{ij}^{(k)} = \text{Pr}(q_i = j |
+y_i,\text{marker data},\hat{\mu}_0^{(k-1)},
+\hat{\mu}_1^{(k-1)},\hat{\sigma}^{(k-1)})$ \\[12pt]
+
+\hspace{29mm} $ = \frac{p_{ij} \, f(y_i; \hat{\mu}_j^{(k-1)},\hat{\sigma}^{(k-1)})}{ \sum_j p_{ij} \, f(y_i; \hat{\mu}_j^{(k-1)},\hat{\sigma}^{(k-1)})}$
+
+
+\item[] {\hilit M step}:
+
+\qquad Let \hspace{5mm} $\hat{\mu}_j^{(k)} = \sum_i y_i w_{ij}^{(k)} /
+\sum_i w_{ij}^{(k)}$ \\[12pt]
+
+\hspace{20mm} $\hat{\sigma}^{(k)} = \sqrt{ \sum_i \sum_j w_{ij}^{(k)} (y_i-\hat{\mu}_j^{(k)})^2/n}$
+
+
+\item[] {\hilit The algorithm}: \\[6pt]
+
+\qquad Start with $w_{ij}^{(1)} = p_{ij}$; iterate the E \& M steps until convergence.
+
+\ei
+
+\end{frame}
+
+
+
+\begin{frame}[c]{\href{http://www.biostat.wisc.edu/~kbroman/D3/em_alg/}{Interactive illustration}}
+
+\centerline{\href{http://www.biostat.wisc.edu/~kbroman/D3/em_alg/}{\includegraphics[width=0.7\textwidth]{Figs/em_alg_illustration.png}}}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{LOD scores}
+
+ The LOD score is a measure of the {\hilit strength of
+evidence} for the presence of a QTL at a particular
+location.
+
+\bbi
+\itemsep18pt
+
+\item[] $\text{LOD}(\lambda) = \log_{10}$ likelihood ratio comparing the hypothesis of a \\
+
+\hspace{25mm} QTL at position $\lambda$ versus that of no QTL \\[8pt]
+
+\hspace{14mm} $= \log_{10} \left\{ \frac{\text{Pr}(y | \text{QTL at $\lambda$}, \hat{\mu}_{0\lambda},
+\hat{\mu}_{1\lambda}, \hat{\sigma}_\lambda)}{\text{Pr}(y | \text{no QTL}, \hat{\mu},
+\hat{\sigma})} \right\}$
+
+ \item[] $\hat{\mu}_{0\lambda}, \hat{\mu}_{1\lambda}, \hat{\sigma}_\lambda$ are the MLEs,
+assuming a single QTL at position $\lambda$.
+
+
+ \item[] {\hilit No QTL model:}
+
+\bi
+  \item[] {\color{foreground} The phenotypes are independent and identically
+distributed (iid) $\text{N}(\mu, \sigma^2)$}.
+\ei
+
+\ei
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{\href{http://www.biostat.wisc.edu/~kbroman/D3/lod_and_effect/}{Interactive plot}}
+
+\centerline{\href{http://www.biostat.wisc.edu/~kbroman/D3/lod_and_effect/}{\includegraphics[width=0.75\textwidth]{Figs/interactive_lod_curve.png}}}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Interval mapping}
+
+\begin{columns}
+
+\column{0.5\textwidth}
+
+{\hilit Advantages}
+
+\bi
+\item Takes proper account of missing data.
+\item Allows examination of positions between markers.
+\item Gives improved estimates of QTL effects.
+\item Provides pretty graphs.
+\ei
+
+
+\column{0.5\textwidth}
+
+{\hilit Disadvantages}
+
+\bi
+\item Increased computation time.
+\item Requires specialized software.
+\item Difficult to generalize.
+\item {\vhilit Only considers one QTL at a time.}
+\ei
+
+
+\end{columns}
+
+\end{frame}
+
+
+
 \begin{frame}{References}
 \vspace{-7mm}
 
