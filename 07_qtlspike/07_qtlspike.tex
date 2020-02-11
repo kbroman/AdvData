@@ -142,11 +142,11 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
   \item Assume a {\hilit single} QTL model.
   \item Each position in the genome, one at a time, is posited as the
   putative QTL.
-  \item Let $\mathsf{q = }$ 0/1/2 if the (unobserved) QTL genotype is
+  \item Let $\mathsf{g = }$ 0/1/2 if the (unobserved) QTL genotype is
   AA/AB/BB. \\[12pt]
-        Assume $\mathsf{y | q \sim N(\mu_q, \sigma)}$
+        Assume $\mathsf{y | g \sim N(\mu_g, \sigma)}$
   \item Given genotypes at linked markers, $\mathsf{y \sim}$ mixture of normal
-  dist'ns with mixing proportions $\mathsf{\text{Pr}(q \ | \ \text{marker data})}$
+  dist'ns with mixing proportions $\mathsf{\text{Pr}(g \ | \ \text{marker data})}$
 \ei
 
 \end{frame}
@@ -169,7 +169,7 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 \bigskip
 
 {\small
-Calculate {\hilit $\mathsf{\text{Pr}(q \ | \ \text{marker data})}$}, assuming
+Calculate {\hilit $\mathsf{\text{Pr}(g \ | \ \text{marker data})}$}, assuming
 
 \sbi
 \item No crossover interference
@@ -249,9 +249,9 @@ conditional on the genotypes at the two markers.
   \bbi
   \itemsep18pt
 
-\item[] Let $\mathsf{p_{ij} = \text{Pr}(q_i = j | \text{marker data})}$
+\item[] Let $\mathsf{p_{ij} = \text{Pr}(g_i = j | \text{marker data})}$
 
-\item[] $\mathsf{y_i | q_i \sim N(\mu_{q_i},\sigma^2)}$
+\item[] $\mathsf{y_i | g_i \sim N(\mu_{g_i},\sigma^2)}$
 
 \item[] $\mathsf{\text{Pr}(y_i | \text{marker data},\mu_0,\mu_1,\sigma) =
 \sum_j p_{ij} \, f(y_i; \mu_j,\sigma)}$
@@ -283,7 +283,7 @@ of $\mathsf{\mu_0}$, $\mathsf{\mu_1}$, $\mathsf{\sigma}$:
 
 \item[] {\hilit E step}:
 
-\qquad Let \hspace{5mm} $w_{ij}^{(k)} = \text{Pr}(q_i = j |
+\qquad Let \hspace{5mm} $w_{ij}^{(k)} = \text{Pr}(g_i = j |
 y_i,\text{marker data},\hat{\mu}_0^{(k-1)},
 \hat{\mu}_1^{(k-1)},\hat{\sigma}^{(k-1)})$ \\[12pt]
 
