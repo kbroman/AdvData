@@ -13,5 +13,5 @@ pdf("../Figs/listeria_lod.pdf", height=5.5, width=9.75, pointsize=18)
 par(mar=c(4.1, 0.6, 0.6, 0.6))
 plot(out, lod=1:3, col=c("black", "slateblue", "violetred"), ylab="LOD score")
 legend("topright", lwd=2, col=c("black", "slateblue", "violetred"),
-       c(expression(paste("p, ", mu)),  expression(p), expression(mu)))
+       c(expression(paste(pi, ", ", mu)),  expression(pi), expression(mu)))
 dev.off()
