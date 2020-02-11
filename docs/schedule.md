@@ -13,7 +13,7 @@ description: Schedule for BMI 826, Advanced data analysis
 | 30 Jan    |    | [_R Markdown_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](04_rmarkdown.pdf)
 | 4 Feb     |    | [EM algorithm: T cell frequencies ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](05_tcells.pdf)
 | 6 Feb     |    | [_Know the command line; know your editor_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](06_cmdline.pdf)
-| 11 Feb    |    | EM algorithm: QTL mapping with a cure model
+| 11 Feb    |    | [EM algorithm: QTL mapping with a cure model ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](07_qtlspike.pdf)
 | 13 Feb    |    | _Git and GitHub_
 | 18 Feb    |    | Model misspecification: Estimating allele frequencies
 | 20 Feb    |    | _Git/GitHub laboratory_ \[[**homework 1 due**](hw1.html)\]
