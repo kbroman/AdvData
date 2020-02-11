@@ -17,6 +17,10 @@
 
 - The EM algorithm is really useful; use the log likelihood as a diagnostic
 
+- Don't just cram your data into the standard approach
+
+- Cramming your data into the standard approach might work fine
+
 
 ## Principles
 
