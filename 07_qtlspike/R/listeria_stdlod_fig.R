@@ -14,11 +14,11 @@ yli <- c(0, ymx)
 
 pdf("../Figs/listeria_stdlod.pdf", height=5.5, width=9.75, pointsize=18)
 par(mar=c(4.1, 4.1, 0.6, 0.6))
-plot(out, ylab="LOD score", ylim=yli)
+plot(out, ylab="LOD score", ylim=yli, bandcol="gray92")
 dev.off()
 
 pdf("../Figs/listeria_stdlodB.pdf", height=5.5, width=9.75, pointsize=18)
 par(mar=c(4.1, 4.1, 0.6, 0.6))
-plot(out_2p, col="gray70", ylim=yli, ylab="LOD score")
+plot(out_2p, col="gray60", ylim=yli, ylab="LOD score", bandcol="gray92")
 plot(out, add=TRUE)
 dev.off()
