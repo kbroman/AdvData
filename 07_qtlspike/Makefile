@@ -14,7 +14,9 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/backcross.pdf \
 			 Figs/genoprob1.pdf \
 			 Figs/mixtures.pdf \
-			 Figs/listeria_hist.pdf
+			 Figs/listeria_hist.pdf \
+			 Figs/listeria_lod.pdf \
+			 Figs/listeria_effects.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
