@@ -13,7 +13,8 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/anova.pdf \
 			 Figs/backcross.pdf \
 			 Figs/genoprob1.pdf \
-			 Figs/mixtures.pdf
+			 Figs/mixtures.pdf \
+			 Figs/listeria_hist.pdf
 	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
