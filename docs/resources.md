@@ -69,6 +69,28 @@ description: Resources for BMI 826, Advanced data analysis
 - [Enable linux in Windows 10](https://bit.ly/386qcRn)
 
 
+## Git/GitHub
+
+- Karl's [git/github guide](https://kbroman.org/github_tutorial)
+- [GitHub](https://github.com)
+- [Education discount on GitHub personal account](http://education.github.com) (allows
+  private repositories)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+  (from [Jenny Bryan](https://jennybryan.org/)'s [Data Science course](https://stat545.com/)
+- The [git documentation](https://git-scm.com/doc)
+- The [github help pages](https://help.github.com)
+- [Software carpentry notes on git](https://swcarpentry.github.io/git-novice/)
+- [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
+- [Karthik Ram's slides](http://karthik.github.io/git_intro/#/slide-title)
+- [&ldquo;Try git&rdquo; tutorial](http://try.github.io)
+- [git - the simple guide](http://rogerdudler.github.io/git-guide/)
+- [magit](https://magit.vc), an emacs mode for git
+- [Tutorial on magit](http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/);
+  [also this one](http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html)
+- [&ldquo;Excuse me, do you have a moment to talk about version control?&rdquo](https://peerj.com/preprints/3159/)
+- [GitHub and RStudio](https://rstudio.com/resources/webinars/rstudio-essentials-webinar-series-managing-part-2/)
+
+
 ## Karl's tutorials
 
 - [git/GitHub tutorial](https://kbroman.org/github_tutorial)
