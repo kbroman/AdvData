@@ -624,6 +624,41 @@ Part of a {\tt .git/config} file:
 \end{frame}
 
 
+\begin{frame}{Destroy it and start over}
+
+  \bbi
+\item Why?
+  \bi
+\item You commit something you shouldn't have (large and/or private)
+\item You are embarrassed by your repository's history
+\item You can't figure out the mess you've made
+  \ei
+
+\item Pick the repository you like and destroy the other one
+  \bi
+\item For example, get your local directory in the state you like and destroy
+  everything else
+  \ei
+
+\item Local repository
+  \bi
+  \item If you delete the {\tt .git} subdirectory, it'll
+    no longer be a git repository
+    \ei
+
+\item GitHub repository
+  \bi
+  \item Go to the settings for the repository and head down to
+  the Danger Zone
+  \ei
+
+  \ei
+
+\end{frame}
+
+
+
+
 \begin{frame}{Branching and merging}
 
 \bbi
@@ -832,21 +867,6 @@ or
 }
 \end{frame}
 
-\begin{frame}[c]{Delete GitHub repo}
-
-\figh{Images/RStudio12.png}{0.80}
-
-\note{To learn git and GitHub, you'll want to create some test
-  repositories and play around with them for a while. You may want to
-  delete them later.
-
-  On your computer, if you delete the {\tt .git} subdirectory, it'll
-  no longer be a git repository.
-
-  On GitHub, go to the settings for the repository and head down to
-  the Danger Zone.
-}
-\end{frame}
 
 
 \begin{frame}
