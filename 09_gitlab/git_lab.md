@@ -41,7 +41,7 @@ We'll work in pairs: **User A** and **User B**
 
         git clone https://github.com/userB/TestRepo
 
-- Change a file, and another file
+- Change a file, and add another file
 
         cd TestRepo
         [change/copy files]
