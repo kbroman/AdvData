@@ -106,6 +106,70 @@ it probably is.
 \end{frame}
 
 
+\begin{frame}[c]{Estimating allele frequencies}
+
+  Usually, you would use the {\hilit founders} in the pedigrees. \\
+  \qquad (assumed unrelated)
+
+  \bigskip \bigskip
+
+  What if you only have {\vhilit sibships}?
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Estimating allele frequencies with sibpairs}
+
+  {\hilit Method 1}: Use a random sibling from each
+
+  \onslide<2->{
+
+    $$ \text{var}(\hat{p}^{(1)}) = \frac{p(1-p)}{2n}$$
+
+  }
+
+
+  \bigskip \bigskip \bigskip
+
+  {\hilit Method 2}: Use everyone, ignoring relationships
+
+
+  \onslide<2->{
+
+    $$ \text{var}(\hat{p}^{(2)}) = \only<2>{\, \text{\bf ?}}
+    \only<3>{(3/4) \, \left(\frac{p(1-p)}{2n}\right)}
+    $$
+  }
+
+\end{frame}
+
+
+
+\begin{frame}[c]{My favorite equations}
+  \begin{eqnarray*}
+    \text{E}(X) & = & \text{E}[ \text{E}(X|Z) ] \\[18pt]
+    \text{var}(X) & = & \text{E}[ \text{var}(X|Z) ] + \text{var}[ \text{E}(X|Z) ] \\[18pt]
+    \text{cov}(X,Y) & = & \text{E}[ \text{cov}(X,Y|Z) ] + \text{cov}[ \text{E}(X|Z), \text{E}(Y|Z) ]
+  \end{eqnarray*}
+
+  \bigskip\bigskip
+
+  \hfill {\lolit Everything is a mixture}
+
+\end{frame}
+
+
+\begin{frame}[c]{Another fave}
+  \begin{eqnarray*}
+    \text{cov}(X, aY+bZ) & = & a \, \text{cov}(X,Y) + b \, \text{cov}(X,Z) \\[18pt]
+    \text{{\lolit thus} \, var}(X+Y) & = & \text{cov}(X+Y,X+Y) \\
+    & = & \text{cov}(X+Y, X) + \text{cov}(X+Y, Y) \\
+    & = & \text{cov}(X, X) + \text{cov}(X, Y) + \text{cov}(Y,X) + \text{cov}(Y,Y) \\
+    & = & \text{var}(X) + \text{var}(Y) + 2 \, \text{cov}(X,Y)
+    \end{eqnarray*}
+\end{frame}
+
 
 
 \end{document}
