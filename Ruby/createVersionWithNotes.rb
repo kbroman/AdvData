@@ -20,6 +20,11 @@ ifile.readlines.each do |z|
     do_2nd_sub = false
   end
 
+  if do_2nd_sub and /\\documentclass\[aspectratio=169,12pt,t\]{beamer}/ =~ z
+    z = z.sub("[aspectratio=169,12pt,t]", "[aspectratio=169,12pt,t,handout]")
+    do_2nd_sub = false
+  end
+
   ofile.write("\\def\\notescolors{1}\n") if /^\\input{/ =~ z # add line saying to use notes colors
 
   ofile.write(z)
