@@ -1,11 +1,8 @@
-STEM = 07_qtlspike
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LEC = 07_qtlspike
 
-../docs/$(STEM).pdf: $(STEM).pdf
-	cp $< $@
+include ../Makefile_lectures.mk
 
-$(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
-			 Figs/intercross.pdf \
+FIGS=		 Figs/intercross.pdf \
 			 Figs/lodcurve_insulin_with_effects.pdf \
 			 Figs/pheno.pdf \
 			 Figs/genodata.pdf \
@@ -18,7 +15,6 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/listeria_lod.pdf \
 			 Figs/listeria_effects.pdf \
 			 Figs/listeria_stdlod.pdf
-	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

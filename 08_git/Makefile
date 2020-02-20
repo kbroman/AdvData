@@ -1,8 +1,3 @@
-STEM = 08_git
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LEC = 08_git
 
-../docs/$(STEM).pdf: $(STEM).pdf
-	cp $< $@
-
-$(STEM).pdf: $(STEM).tex ../LaTeX/header.tex
-	xelatex $<
+include ../Makefile_lectures.mk

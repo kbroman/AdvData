@@ -1,8 +1,8 @@
-# R_OPTS: --vanilla without --no-environ
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LEC = 11_samplemixups
 
-11_samplemixups.pdf: 11_samplemixups.tex \
-								   Figs/data_fig.png          \
+include ../Makefile_lectures.mk
+
+FIGS=							   Figs/data_fig.png          \
 								   Figs/lodcurve_insulin.pdf  \
 								   Figs/xchr_fig.pdf          \
 								   Figs/plate_errors.pdf      \
@@ -17,7 +17,6 @@ R_OPTS=--no-save --no-restore --no-init-file --no-site-file
 								   Figs/eve_1.pdf             \
 								   Figs/insulin_lod.pdf       \
 								   Figs/expr_swaps.pdf
-	xelatex 11_samplemixups
 
 Figs/data_fig.png: R/data_fig.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
@@ -54,6 +53,3 @@ Figs/insulin_lod.pdf: R/insulin_fig.R
 
 Figs/expr_swaps.pdf: R/expr_swaps.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
-
-../docs/11_samplemixups.pdf: 11_samplemixups.pdf
-	cp $< $@

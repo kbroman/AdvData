@@ -1,16 +1,12 @@
-STEM = 05_tcells
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LEC = 05_tcells
 
-../docs/$(STEM).pdf: $(STEM).pdf
-	cp $< $@
+include ../Makefile_lectures.mk
 
-$(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
-			 Figs/mean_response.pdf \
+FIGS=		 Figs/mean_response.pdf \
 			 Figs/model_distribution.pdf \
 			 Figs/em_loglik_wrong.pdf \
 			 Figs/em_loglik_right.pdf \
 			 Figs/multiple_modes.pdf
-	xelatex $<
 
 Figs/mean_response.pdf: R/plot_mean_response.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

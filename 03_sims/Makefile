@@ -1,11 +1,8 @@
-STEM = 03_sims
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LEC = 03_sims
 
-../docs/$(STEM).pdf: $(STEM).pdf
-	cp $< $@
+include ../Makefile_lectures.mk
 
-$(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
-			 Figs/intercross.pdf \
+FIGS=		 Figs/intercross.pdf \
 			 Figs/lodcurve_insulin_with_effects.pdf \
 			 Figs/congenic.pdf \
 			 Figs/ail.pdf \
@@ -22,7 +19,6 @@ $(STEM).pdf: $(STEM).tex ../LaTeX/header.tex \
 			 Figs/coincidence_ni.pdf \
 			 Figs/3pt_symmetry.pdf \
 			 Figs/3pt_markov1.pdf
-	xelatex $<
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

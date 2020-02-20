@@ -1,8 +1,3 @@
-STEM = 06_cmdline
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LEC = 06_cmdline
 
-../docs/$(STEM).pdf: $(STEM).pdf
-	cp $< $@
-
-$(STEM).pdf: $(STEM).tex ../LaTeX/header.tex
-	xelatex $<
+include ../Makefile_lectures.mk

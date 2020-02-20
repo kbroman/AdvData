@@ -1,5 +1,4 @@
-LECNUM=01
-LEC=$(LECNUM)_intro
+LEC=01_intro
 
 include ../Makefile_lectures.mk
 
