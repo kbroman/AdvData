@@ -189,6 +189,52 @@ it probably is.
 
 
 
+\begin{frame}{Back to that SE}
+
+
+  Let X$_i$ = number of 1 alleles in sib $i$.
+
+  \bigskip
+
+  We want $\text{var}(X_1 + X_2)$
+
+  \bigskip
+
+  \begin{eqnarray*}
+  \text{And so really } {\hilit \text{cov}(X_1, X_2)} & = & \text{E}[\text{cov}(X_1, X_2 | \text{IBD})] + \text{cov}[E(X_1|\text{IBD}), E(X_2|\text{IBD})] \\[12pt]
+   & = & {\hilit \text{E}[\text{cov}(X_1, X_2|\text{IBD})]} \\[12pt]
+   & = & \sum_{k=0}^{2} \text{cov}(X_1, X_2|\text{IBD}=k) \, \text{Pr}(\text{IBD}=k)
+   \end{eqnarray*}
+
+\end{frame}
+
+
+
+\begin{frame}{Also}
+
+\bigskip
+
+  \begin{eqnarray*}
+    \text{cov}(X,Y) & = & \text{E}(XY) - \text{E}(X) \text{E}(Y) \\[24pt]
+    \text{cov}(X,Y|Z) & = & \text{E}(XY|Z) - \text{E}(X|Z) \text{E}(Y|Z)
+   \end{eqnarray*}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+
+  \figh{Figs/broman2001_table4.png}{0.9}
+
+\vspace{3mm}
+
+\hfill \footnotesize {\lolit Broman (2001)
+  \href{https://doi.org/10.1002/gepi.2}{doi:10.1002/gepi.2}}
+
+\end{frame}
+
+
 \begin{frame}{Lessons}
 
   \bbi
@@ -201,6 +247,25 @@ it probably is.
   \ei
 
   \end{frame}
+
+
+
+\begin{frame}{Method 3}
+
+{\hilit Account for relationships in the estimate}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Method 4}
+
+{\hilit Make use of the multiple markers on a chromosome}
+
+
+\end{frame}
 
 
 
