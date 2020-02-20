@@ -11,3 +11,5 @@ refs
 *.toc
 *.vrb
 notes.txt
+*_notes.pdf
+*_notes.tex

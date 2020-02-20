@@ -1,13 +1,11 @@
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file
+LECNUM=01
+LEC=$(LECNUM)_intro
 
-../docs/01_intro.pdf: 01_intro.pdf
-	cp $< $@
+include ../Makefile_lectures.mk
 
-01_intro.pdf: 01_intro.tex ../LaTeX/header.tex \
-			  Figs/autozygosity.pdf \
-			  Figs/ceph_pedigrees.pdf \
-			  Figs/chr22rev.pdf
-	xelatex $^
+FIGS=Figs/autozygosity.pdf \
+	 Figs/ceph_pedigrees.pdf \
+	 Figs/chr22rev.pdf
 
 Figs/autozygosity.pdf: R/autozyg_fig.R R/chrompic_chr6_fam884.txt
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
