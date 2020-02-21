@@ -33,7 +33,14 @@
 \frame{
   \titlepage
 
-  \note{}
+\note{
+   This is a second case study, whose central lesson concerns the
+   value of computer simulation, but which also concerns sort of a
+   deep dive into a crazy probability problem that started out as a
+   computer simulation but turned into a combination of simulation,
+   numeric calculations, and analytic derivations (partly through
+   symbolic, computational algebra).
+}
 
 } }
 
@@ -43,6 +50,32 @@
 
 \vspace*{-1mm} \hspace*{-2mm}
 \figw{Figs/inbredmice.jpg}{1.2}
+
+\note{
+  My own research is in genetics, and I focus large on mouse genetics.
+
+  Mice have a lot of advantages for biomedical research. One advantage
+  is that you can generate inbred lines. That is, by repeated
+  brother-sister matings, you can create a line that is entirely
+  homozygous.
+
+  The mice in this picture are members of an inbred strain, and so all
+  are genetically identical. And mice like humans have two copies of
+  every chromosome (one from their father and one from their mother),
+  and because of the inbreeding those two copies are identical. So if
+  you take a male and female from this strain and mate them, you get
+  the same thing back.
+
+  Thus, the mice you work with today are the same as the mice you'll
+  work two years from now. And you can completely eliminate genetic
+  variation from your studies. Or you can introduce genetic variation
+  in exactly the way you want.
+
+  In particular, you can make very large crosses. A particular female
+  mouse can only give so many offspring, but because you have
+  unlimited copies of her, you can expand any cross to be as large as
+  you would like.
+}
 
 \end{frame}
 
@@ -64,6 +97,22 @@
 \href{http://daviddeen.com}{\scriptsize \lolit \tt daviddeen.com}
 \end{minipage}
 }
+
+\note{
+   Of course, we're not really interested in curing mouse disease.
+   Well, some of my collaborators are interested in mice specifically,
+   but most studies of mice are carried out in order to learn about
+   humans. And mice have a remarkable amount in common with humans.
+
+   I like to think of mice as models for humans in three ways. First,
+   the particular genes involved in a trait (say blood pressure) in
+   the mouse could also be involved in the corresponding human trait.
+   Second, the genetic architecture underlying a trait in the mouse
+   (and the pathways and such) can tell us something about the genetic
+   architecture of human traits. Finally, the methods we develop for
+   gene mapping in mice might carry over to direct human studies.
+}
+
 \end{frame}
 
 
@@ -72,6 +121,10 @@
 
 \begin{frame}[c]{Intercross}
 \figw{Figs/intercross.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -82,12 +135,19 @@
 
 \vspace{5mm}
 \figw{Figs/lodcurve_insulin_with_effects.pdf}{0.96}
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Congenic line/NIL}
 
 \figw{Figs/congenic.pdf}{1.0}
+
+\note{
+}
 
 \end{frame}
 
@@ -98,6 +158,9 @@
 
   \figw{Figs/ail.pdf}{1.0}
 
+\note{
+}
+
 \end{frame}
 
 
@@ -106,6 +169,9 @@
   \only<1>{\figw{Figs/rilines.pdf}{1.0}}
   \only<2>{\figw{Figs/riself.pdf}{1.0}}
 
+\note{
+}
+
 \end{frame}
 
 
@@ -113,12 +179,20 @@
 
   \figw{Figs/ri8.pdf}{1.0}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{MAGIC}
 
   \figw{Figs/ri8self.pdf}{1.0}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -130,12 +204,20 @@
 
   \figh{Figs/hs.pdf}{0.9}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Collaborative Cross}
 
   \figw{Figs/ri8.pdf}{1.0}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -148,16 +230,28 @@
   \only<4>{\figw{Figs/ri8genome4.pdf}{1.0}}
   \only<5>{\figw{Figs/ri8genome5.pdf}{1.0}}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Recombination fraction}
   \figw{Figs/basic_genetics.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Simulation results}
   \figw{Figs/rf_by_sim.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -165,12 +259,20 @@
 
   \figw{Figs/haldane_title.pdf}{0.9}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Result for selfing}
 
   \figw{Figs/haldane_selfing.png}{0.9}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -180,11 +282,19 @@
   \only<1>{\figw{Figs/haldane_sibmating3.png}{0.9}}
   \only<2>{\figw{Figs/haldane_sibmating4.png}{0.9}}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Simulation results}
   \figw{Figs/rf_by_sim_genformula.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -198,6 +308,10 @@
 \verb|               data = data.frame(r=r, R=R),| \\
 \verb|               start = list(a=4, b=6))| \\
 \verb|    summary(out)|
+}
+
+
+\note{
 }
 
 \end{frame}
@@ -222,6 +336,10 @@
 \verb|    b    6.023       0.016|
 }
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -244,11 +362,23 @@
 \verb|    b    6.023       0.016      b    6.005       0.012|
 }
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Simulation results}
   \figw{Figs/rf_by_sim_moredata.pdf}{1.0}
+
+\note{
+}
+
+
+\note{
+}
+
 \end{frame}
 
 
@@ -274,6 +404,10 @@ X_1, \dots, X_n) = Pr(X_{n+1} \ | \ X_n)}$}
 
 \centerline{\hilit $\pi_j = \mathsf{Pr(X_n \rightarrow j \ | \ X_0)}$}
 \ei
+
+
+\note{
+}
 
 \end{frame}
 
@@ -302,6 +436,10 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 \item[] For selfing, this gives a system of 3 linear equations.
 \ei
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -309,6 +447,10 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 \begin{frame}[c]{Equations for selfing}
 
   \figw{Figs/haldane_selfing_equations.png}{0.9}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -318,12 +460,20 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 
   \figw{Figs/haldane_sibmating_equations.png}{0.9}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Result for sib-mating}
 
   \figw{Figs/haldane_sibmating3.png}{0.9}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -360,6 +510,10 @@ Negative interference { \hilit $>$ 1  }
   \ei
 
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -367,6 +521,10 @@ Negative interference { \hilit $>$ 1  }
 \begin{frame}[c]{Coincidence}
 \only<1>{\figw{Figs/coincidence_ni.pdf}{1.0}}
 \only<2>{\figw{Figs/coincidence_i.pdf}{1.0}}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -397,12 +555,20 @@ by symmetry
 
 \item Even {\vhilit counting} the states was difficult.
 \ei
+
+\note{
+}
+
 \end{frame}
 
 
 
 \begin{frame}[c]{Coincidence}
 \figw{Figs/coincidence_8way.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -420,6 +586,10 @@ $$ \mathsf{C = \frac{(1+6r)[280 + 1208r - 848r^2 + 5c(7-28r - 368r^2 + 344r^3)
 }
 
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -431,6 +601,10 @@ $\mathsf{Pr(M_2 = x \ | \ M_1 = A, M_2 \ne A, M_3 = A)}$
 }
 \figw{Figs/3pt_symmetry.pdf}{1.0}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -440,6 +614,10 @@ $\mathsf{Pr(M_2 = x \ | \ M_1 = A, M_2 \ne A, M_3 = A)}$
 $ \mathsf{log_2 \left\{ \frac{Pr(M_3 = A \ | \ M_2 = A, M_1 = x)}{Pr(M_3 = A \ | \ M_2 = A)} \right\} }$
 }
 \figw{Figs/3pt_markov1.pdf}{1.0}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -451,6 +629,10 @@ $ \mathsf{log_2 \left\{ \frac{
     Pr(M_3 = A \ | \ M_2 = {\vhilit B})}\right\}}$
 }
 \figw{Figs/3pt_markov2.pdf}{1.0}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -465,6 +647,10 @@ $ \mathsf{log_2 \left\{ \frac{
 }
 \figw{Figs/3pt_markov3.pdf}{1.0}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -476,6 +662,10 @@ $ \mathsf{log_2 \left\{ \frac{
     Pr(M_3 = A \ | \ M_2 = {\vhilit E})}\right\}}$
 }
 \figw{Figs/3pt_markov4.pdf}{1.0}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -495,43 +685,83 @@ $ \mathsf{log_2 \left\{ \frac{
 \item 10,000 simulation replicates
 \ei
 
+
+\note{
+}
+
   \end{frame}
 
 
 \begin{frame}[c]{No. generations to fixation}
 \figw{Figs/ngen_fix.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{No. generations to 99\% fixation}
 \figw{Figs/ngen99.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Percent genome not fixed}
 \figw{Figs/prophet.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{No. breakpoints}
 \figw{Figs/nbrks.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Segment lengths}
 \figw{Figs/lseg_noarrows.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Segment lengths}
 \figw{Figs/lseg.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Probability a segment is inherited intact}
 \figw{Figs/probintact.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Length of smallest segment}
 \figw{Figs/lsmseg.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{No. segments $<$ 1 cM}
 \figw{Figs/nsegsm1.pdf}{0.9}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -539,6 +769,10 @@ $ \mathsf{log_2 \left\{ \frac{
 \begin{frame}[c]{Collaborative Cross}
 
   \figw{Figs/ri8.pdf}{1.0}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -558,17 +792,29 @@ $ \mathsf{log_2 \left\{ \frac{
       of $\mathsf{k}$ and the recombination fraction}
 \ei
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Crazy table}
 \figw{Figs/preCC_hap_prob_table.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Lesson}
 
   \centerline{\large Computer simulations are hugely valuable.}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -583,6 +829,10 @@ $ \mathsf{log_2 \left\{ \frac{
     \item Evaluate sensitivity/robustness of a method
     \ei
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -594,6 +844,10 @@ $ \mathsf{log_2 \left\{ \frac{
     \item Numerical calculations
     \item Analytic calculations
     \ei
+
+
+\note{
+}
 
 \end{frame}
 
@@ -620,6 +874,10 @@ $ \mathsf{log_2 \left\{ \frac{
     intercross populations. G3 2:199--202
 
   \ei
+
+
+\note{
+}
 
 \end{frame}
 
