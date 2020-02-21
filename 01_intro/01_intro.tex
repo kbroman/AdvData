@@ -189,6 +189,15 @@
 Byrne et al., Theor Appl Genet 91:869--875, 1995}
 
 \note{
+  A genetic map specifies the order of a set of markers along
+  chromosomes.
+
+  This is part of a genetic map for eucalyptus trees. It is the first
+  map that I had looked at in detail.
+
+  The original genetic maps were for observeable mutations, in
+  Drosophila (fruit flies). Later markers were more directly
+  DNA-based, and really chosen due to the convenience of measurement.
 }
 
 \end{frame}
@@ -200,6 +209,18 @@ Byrne et al., Theor Appl Genet 91:869--875, 1995}
 \figh{Figs/meiosis.png}{0.95}
 
 \note{
+  Distances on a genetic map are according to recombination at
+  meiosis. Meiosis is the cell division process that produces sperm
+  and egg cells. DNA duplicates, and then homologous chromosomes find
+  each other and become intimately associated with each other and then
+  actually exchange material at locations called chiasmata. Two cell
+  divisions later you have gametes with one copy of each chromosome,
+  which will generally be mosaics of the original chromosomes, with
+  the points of exchange called crossovers.
+
+  Distance on a genetic map is measured by the frequency of
+  crossovers. Two points are d cM apart if there is an average of d
+  crossovers in the interval per 100 meiotic products.
 }
 
 \end{frame}
@@ -246,6 +267,15 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 \end{center}
 
 \note{
+  We can use this sort of marker information to order markers along
+  chromosomes. Consider a case where the parent cell has ABC on one
+  chromosome and abc on the other chromosome. There are 8 possible
+  daughter cells. The {\hilit least} frequent of them will indicate
+  which of the three possible marker orders is the true one.
+
+  With M markers, there are M!/2 possible orderings, which is too many
+  to consider exhaustively, so we need heuristic methods to try to
+  find the good ones.
 }
 
 \end{frame}
@@ -257,6 +287,9 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 \figw{Figs/ceph_pedigrees.pdf}{1.0}
 
 \note{
+   In my postdoc, I focused on data on a set of large 8 human
+   families. A mother/father pair with 10-15 offspring. Most of the
+   families also included data on the grandparents.
 }
 
 \end{frame}
@@ -285,6 +318,12 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 \ei
 
 \note{
+  The main tasks were to assemble genotype data from multiple sources,
+  get an understanding of the different marker names, figure out which
+  markers were actually duplicates even though they didn't look like
+  duplicates, and the {\hilit mostly} to determine the order of the
+  markers while simultaneously identifying genotyping errors. In the
+  end I removed 765 out of nearly one million genotypes as likely errors.
 }
 
 \end{frame}
@@ -322,14 +361,25 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 1332-17 pa {\color{green} 0000-----0000--o00o00-000-000-0000o-0-000-0000--00000---000-00-0o0000}...
 
 }
+
 \end{center}
 
+
 \note{
+    I spent a lot of time looking at output like this, from the software
+    CRIMAP which I had used to order and Q/C the data.
+
+    Each row is one chromosome (``ma'' for maternal and ``pa'' for
+    paternal). The 1's and 0's indicate grandfather's and grandmother's
+    DNA; the dashes mean indeterminate. The i's and o's mean the
+    grandparents' genotypes weren't informative and so grandparental
+    origin was determined based on surrounding markers.
 }
+
 
 \end{frame}
 
-\begin{frame}[c]{CRIMAP chrompic}
+\begin{frame}<handout:0>[c]{CRIMAP chrompic}
 
 \begin{center}
 
@@ -361,6 +411,10 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 \end{center}
 
 \note{
+    I spent most of my time hunting for misplaced 1's amidst surrounding 0's, or
+    misplaced 0's amidst surrounding 1's, and then trying to decide if it
+    was an error that should be deleted, or if the marker should maybe be
+    moved somewhere else.
 }
 
 \end{frame}
@@ -399,6 +453,13 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 \end{center}
 
 \note{
+    The result of the work was a set of plain text files with the
+    marker positions on each chromosome.
+
+    Perhaps surprising is that much of the positive feedback I got
+    about the work was really about the ease of use of these
+    plain-text files. Most other genetic maps were distributed as
+    images rather than providing the direct data.
 }
 
 \end{frame}
@@ -409,6 +470,14 @@ For {\hilit $\mathsf{M = {\vhilit 100}}$}, {\hilit $\mathsf{M!/2
 \figh{Figs/markersearch.jpg}{0.8}
 
 \note{
+    I also created a simple perl script and web form, where you could
+    paste in a set of marker names, and it would pull out the
+    locations of just those markers.
+
+    This was hardly any work for me, but it was hugely useful to the
+    community. And probably the most important thing I learned from
+    this project is that it's these little things that can have the
+    biggest impact.
 }
 
 \end{frame}
