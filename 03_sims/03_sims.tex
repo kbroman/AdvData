@@ -123,6 +123,29 @@
 \figw{Figs/intercross.pdf}{1.0}
 
 \note{
+  To learn about the genetics of a trait, we can perform one of a
+  series of crosses; the most common is the intercross. You take two
+  strains that differ in the trait of interest. Say the blue strain
+  has low blood pressure and the pink strain has high blood pressure.
+  You cross them and get the F$_1$ hybrid, which will get a copy of
+  each chromosome. Then you cross F$_1$ siblings to get intercross
+  progeny.
+
+  The intercross mice will get a chromosome from each parent that
+  could be the blue or pink chromosome intact but will more generally
+  be a mosaic of the two chromosomes as a result of recombination at
+  meiosis (the process of cell division that gives rise to sperm and
+  egg cells).
+
+  We would gather a bunch of intercross mice, measure the blood
+  pressure of each (which could be the hardest part of this project),
+  and then measure genotype along the chromosomes. We would then look
+  for regions of the genome where genotype (whether a mouse was
+  homoyzogous blue, heterozygous, or homozygous pink) is associated
+  with the phenotype (blood pressure).
+
+  Regions of the genome that affect a quantitative trait like blood
+  pressure are called ``quantitative trait loci'' (QTL).
 }
 
 \end{frame}
@@ -137,16 +160,48 @@
 \figw{Figs/lodcurve_insulin_with_effects.pdf}{0.96}
 
 \note{
+  So we would then scan along the genome, at each position measuring
+  the association between genotype and phenotype and plotting some
+  test statistic.
+
+  Effectively, we perform an ANOVA at each genomic position. (For
+  historical reasons, we generally plot a different test statistic,
+  the LOD score, which is a log$_{10}$ likelihood ratio comparing the
+  hypothesis of genotype/phenotype association to the null hypothesis
+  of no association.)
+
+  Where the test statistic is large, there is some association between
+  genotype and phenotype. So there will be a difference among the
+  average trait values for the different genotypes, as seen here on
+  chromosome 2, which is clearly not blood pressure (but rather, I
+  think, log insulin level).
 }
 
 \end{frame}
 
 
-\begin{frame}[c]{Congenic line/NIL}
+\begin{frame}[c]{Congenic line}
 
 \figw{Figs/congenic.pdf}{1.0}
 
 \note{
+  When we find a QTL, our goal is then to try to identify the gene
+  underneath that location. The traditional approach is to form what's
+  called a {\hilit congenic line}, where you take the blue strain and
+  insert a chunk of the pink strain into it. If this new line shows a
+  difference in phenotype from the blue strain, you have shown that
+  something in that region is affecting the trait.
+
+  You'd then do a series of crosses to break up that region into
+  smaller and smaller pieces until you are able to pinpoint the
+  particular gene that is responsible for the effect.
+
+  This is very time consuming and expensive, and it is often not
+  successful. QTL are usually mapped to very large intervals, like
+  half a chromosome, and it takes a huge effort to fine map down to
+  the gene level.
+
+  So there's been a lot of effort to devise ways to speed up the process.
 }
 
 \end{frame}
@@ -159,6 +214,15 @@
   \figw{Figs/ail.pdf}{1.0}
 
 \note{
+  One approach is to do repeated generations of crosses to break up
+  the chromosomes into smaller pieces. These are called advanced
+  intercross lines. After 10 generations, you've broken up the
+  chromosomes into much smaller pieces, and so the correlation among
+  genotypes is much reduced and as a consequence your mapping
+  precision is much higher.
+
+  But this is really time consuming; you can only do about four
+  generations of mice per year, so 10 generations is 2.5 years.
 }
 
 \end{frame}
@@ -167,9 +231,35 @@
 \begin{frame}[c]{Recombinant inbred lines}
 
   \only<1>{\figw{Figs/rilines.pdf}{1.0}}
-  \only<2>{\figw{Figs/riself.pdf}{1.0}}
+  \only<2|handout 0>{\figw{Figs/riself.pdf}{1.0}}
 
 \note{
+  Another approach is to create what are called recombinant inbred
+  lines. You start with an intercross and then do repeated sibling
+  mating to generate a new inbred line that has bits of each of the
+  founder lines. Because of the multiple generations of crossing, you
+  end up with more dense crossovers that occured in different
+  generations. You do this multiple times in parallel to create a
+  panel of lines that you can use for mapping.
+  (Note that many plant species, you can do the same thing but using
+  selfing rather than sib-mating: repeatedly crosses of a given plant
+  to itself. The progress to inbreeding is much more rapid in that
+  case.)
+
+  This is also a lot of work, but the advantage here is that the final
+  lines become a permanent resource. Once you've developed the lines,
+  they can be shared among labs to study many different phenotypes.
+  And you only need to genotype each line one time.
+  There are a number of different panels of mouse RIL, but until
+  recently they have been rather limited (like 10-15 lines from a
+  given pair of founders). The BXD lines have been expanded
+  considerably recently; there are like 80 or so BXD lines.
+
+  But in addition to the disadvantage of the cost and time to develop
+  such a panel, because they involve just two strains they are of
+  interest only for traits that show a difference between those two
+  particular founders. For example, the BXD panel may not be useful
+  for your trait of interest.
 }
 
 \end{frame}
