@@ -7,8 +7,8 @@ description: Schedule for BMI 826, Advanced data analysis
 
 | Date      | &nbsp;&nbsp;&nbsp;&nbsp;   | Topic/Reading  |
 | :-------- | -- | :----- |
-| 21 Jan    |    | [Introductory case study ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](01_intro.pdf)
-| 23 Jan    |    | [_Reproducible research_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](02_reprores.pdf)
+| 21 Jan    |    | [Introductory case study ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](01_intro.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](01_intro_notes.pdf)
+| 23 Jan    |    | [_Reproducible research_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](02_reprores.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](02_reprores_notes.pdf)
 | 28 Jan    |    | [Simulations: genomes of recombinant inbred lines ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](03_sims.pdf)
 | 30 Jan    |    | [_R Markdown_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](04_rmarkdown.pdf)
 | 4 Feb     |    | [EM algorithm: T cell frequencies ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](05_tcells.pdf)
