@@ -568,7 +568,7 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \vspace{4mm}
 
 \hfill {\scriptsize \lolit
-Broman et al., Am J Hum Genet 63:861--869, 1998}
+Broman and Weber, Am J Hum Genet 66:1911--1926, 2000}
 
 \note{
    What I was really interested in was crossover interference: the
@@ -580,6 +580,10 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 
    So the next thing I was going to look at was this dependence in
    crossover locations.
+
+  In thinking about how best to handle that interval censoring, I was
+  reminded of some cases where there were really large,
+  non-informative intervals.
 }
 
 \end{frame}
@@ -593,6 +597,16 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \figw{Figs/autozygosity.pdf}{1.0}
 
 \note{
+  These are the maternal and paternal chromosomes 6 in one family. The
+  purple and green are the grandmother and grandfather DNA; the gray
+  is indeterminate.
+
+  Note the big chunk of gray on the maternal chromosomes, and the two
+  big chunks on the paternal chromosomes. What could be causing that?
+
+  We basically have long stretches of markers where the mother or
+  father is homozygous, where the haplotypes they got from their
+  parents were the same.
 }
 
 \end{frame}
@@ -604,6 +618,13 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \figh{Figs/autozyg_paper.png}{0.9}
 
 \note{
+  This is what is called ``autozygosity.'' Where an individual is
+  homozygous for a region because their parents are related, perhaps
+  distantly, and they received two copies of the same bit of DNA,
+  inherit from some ancestor, twice.
+
+  Have realized what I was looking at, I went and looked for all other
+  such regions, and found bunches of them in these families.
 }
 
 \end{frame}
@@ -620,6 +641,8 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \hfill {\scriptsize \lolit Broman and Weber, Am J Hum Genet 65:1493--1500, 1999}
 
 \note{
+  For example, here's a single individual who has autozygous regions
+  of various sizes on ten different chromosomes.
 }
 
 \end{frame}
@@ -631,6 +654,8 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \figh{Figs/xoi_paper.png}{0.9}
 
 \note{
+  I did then get to my analysis of crossover interference (the
+  tendency of crossovers to not be too close together).
 }
 
 \end{frame}
@@ -649,6 +674,8 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \hfill {\scriptsize \lolit Broman and Weber, Am J Hum Genet 66:1911--1926, 2000}
 
 \note{
+   A main part of the result concerned fitting different models to the
+   inter-crossover distance data.  One model fit much better than others.
 }
 
 \end{frame}
@@ -659,6 +686,8 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \figw{Figs/chr8m.png}{1.0}
 
 \note{
+  But on one particular chromosome (maternal chromosome 8), my
+  favorite model really didn't fit well at all.
 }
 
 \end{frame}
@@ -674,10 +703,31 @@ Broman et al., Am J Hum Genet 63:861--869, 1998}
 \hfill {\scriptsize \lolit Broman et al., In: \emph{Science and Statistics: A Festschrift for Terry Speed}, 2003}
 
 \note{
+  I could have just left it at that, but I was curious about what was
+  going on, and in studying the problem, I found that there were two
+  families that showed an apparent triple-crossover event in a small
+  region. This really shouldn't happen.
+
+  My initial reaction was that I had the marker order messed up; if I
+  were to invert this region, the triple crossovers would become
+  single crossovers.
+
+  But there were other families that showed a crossover in the region.
+  If I invert the region, these single crossovers will become triple
+  crossovers.
+
+  So then I thought: suppose the region is inverted in these two
+  families but not in the other families? This was a pretty crazy
+  idea, because the region is quite large (12 cM, which turned out to
+  be about 5 Mbp), and we would need individuals to be homozygous for
+  each of the two orientations to have recombination occur.
+
+  So a crazy idea: a very long inversion polymorphism where the two
+  orientations were each reasonably common.
 }
 
 \end{frame}
-p
+
 
 \begin{frame}{Chr 8p inversion}
 
@@ -688,6 +738,24 @@ p
 \hfill {\scriptsize \lolit Broman et al., In: \emph{Science and Statistics: A Festschrift for Terry Speed}, 2003}
 
 \note{
+  I posed the hypothesis to my postdoc advisor, who talked to a friend
+  whose lab had the ability to investigate this sort of thing, and
+  sure enough, we had discovered the largest common inversion
+  polymorphism in the human genome.
+
+  This picture shows chromosome 8 with the green and red lighting up
+  the two ends of the region. On the left, green is above red on both
+  chromosomes. On the right, red is above green on both chromosomes,
+  and in the middle green is above red on one chromosome and red is
+  above green on the other.
+
+  So this is the best possible example of the importance of following
+  up artifacts. Lack of model fit for a particular chromosome led me
+  to investigate the cause of the problem, which led me to postulate
+  this idea of an inversion polymorphism, which really seemed
+  kind of crazy at the time.  But it turned out to be real, and it's
+  the coolest thing I've discovered in all my work as a data
+  scientist.
 }
 
 \end{frame}
