@@ -10,17 +10,16 @@
 % end of header
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Tools for Reproducible Research}
-\subtitle{Organizing projects; exploratory data analysis}
-\author{\href{http://kbroman.org}{Karl Broman}}
+\title{Organizing projects;\\exploratory data analysis;\\collaboration}
+\author{\href{https://kbroman.org}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
-\date{\href{http://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
 \\[-4pt]
 \href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
 \\[-4pt]
 \href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
 \\[-4pt]
-{\scriptsize Course web: \href{http://kbroman.org/Tools4RR}{\tt kbroman.org/Tools4RR}}
+{\scriptsize Course web: \href{https://kbroman.org/AdvData}{\tt kbroman.org/AdvData}}
 }
 
 \begin{document}
@@ -30,10 +29,10 @@
 \frame{
   \titlepage
 
-\note{I'm trying to cover two things here: how to organize data
+\note{I'm trying to cover three things here: how to organize data
   analysis projects, so in the end the results will be reproducible
-  and clear, and how to capture the results of exploratory data
-  analysis.
+  and clear, how to capture the results of exploratory data
+  analysis, and how to organize collaborative projects.
 
   The hardest part, regarding organizing projects, concerns how to coordinate
   collaborative projects: to keep data, code, and results synchronized
@@ -46,6 +45,9 @@
 
   I'll sketch what I try to do, and the difficulties I've had. But I
   don't have all of the answers.
+
+  Regarding collaboration, the key thing is about communication, to
+  establish shared goals and procedures.
 }
 } }
 
@@ -720,36 +722,6 @@ plot(x, y, pch=21, bg="slateblue", las=1)
 \end{frame}
 
 
-
-
-\begin{frame}{I almost forgot}
-
-\vspace{64pt}
-
-\centerline{\Large Backups}
-
-\only<2|handout>{
-  \vspace{48pt}
-
-  \centerline{Next two weeks: {\hilit Clear code} and {\hilit R packages}}
-}
-
-\note{You {\nhilit must} back up your stuff.
-
-      You can generally rely on your department server, and you should
-      also make use of GitHub. But if you have other stuff on a laptop
-      or at home, you want to be sure to back that up to. Hard drives
-      are cheap.
-
-      On a Mac, I use the built-in Time Machine, but I also use
-      SuperDuper! to create a bootable clone.
-
-      Also important in all of this is writing clear, modular
-      code. With R, it's best to pull out reuseable code as an R
-      package. We'll talk about these two topics over the next two
-      weeks.
-}
-\end{frame}
 
 
 \end{document}
