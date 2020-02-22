@@ -4,65 +4,65 @@
 
 color <- qtl2::CCcolors
 
+source("meiosis_func.R")
+
 library(qtl)
 data(map10)
 L <- summary(map10)[1:20,2]
 #L <- read.csv("/Users/kbroman/Projects/MouseMaps/lengths.csv")[,4]
 L[L<51] <- 51
-#set.seed(122069)
-#par <- vector("list",8)
-#for(i in 1:8) {
-#  par[[i]] <- vector("list",20)
-#  for(j in 1:20) par[[i]][[j]] <- create.par(L[j],i)
-#}
-#my.ri8 <- vector("list",5)
-#for(k in 1:5) {
-#  if(k==1) wh <- 1:8
-#  else wh <- sample(1:8)
-#
-#  f1 <- vector("list",4)
-#  for(i in 1:4) {
-#    f1[[i]] <- vector("list",20)
-#    for(j in 1:19)
-#      f1[[i]][[j]] <- cross(par[[wh[2*i-1]]][[j]],par[[wh[2*i]]][[j]],m=10,obl=TRUE)
-#    f1[[i]][[20]] <- cross(par[[wh[2*i-1]]][[j]],par[[wh[2*i]]][[j]],m=10,obl=TRUE,xchr=TRUE,
-#                           c(TRUE,FALSE)[i %% 2 + 1])
-#  }
-#
-#  f2 <- vector("list",2)
-#  for(j in 1:19) {
-#    f2[[1]][[j]] <- cross(f1[[1]][[j]],f1[[2]][[j]],m=10,obl=TRUE)
-#    f2[[2]][[j]] <- cross(f1[[3]][[j]],f1[[4]][[j]],m=10,obl=TRUE)
-#  }
-#  f2[[1]][[20]] <- cross(f1[[1]][[20]],f1[[2]][[20]],m=10,obl=TRUE,xchr=TRUE,male=FALSE)
-#  f2[[2]][[20]] <- cross(f1[[3]][[20]],f1[[4]][[20]],m=10,obl=TRUE,xchr=TRUE,male=TRUE)
-#  my.ri8[[k]] <- temp <- f2
-#  flag <- 0; i <- 1
-#  while(flag == 0) {
-#    for(j in 1:19) {
-#      my.ri8[[k]][[1]][[j]] <- cross(temp[[1]][[j]],temp[[2]][[j]],m=10,obl=TRUE)
-#      my.ri8[[k]][[2]][[j]] <- cross(temp[[1]][[j]],temp[[2]][[j]],m=10,obl=TRUE)
-#    }
-#    my.ri8[[k]][[1]][[20]] <- cross(temp[[1]][[20]],temp[[2]][[20]],m=10,obl=TRUE,
-#                                    xchr=TRUE,male=FALSE)
-#    my.ri8[[k]][[2]][[20]] <- cross(temp[[1]][[20]],temp[[2]][[20]],m=10,obl=TRUE,
-#                                    xchr=TRUE,male=TRUE)
-#    temp <- my.ri8[[k]]
-#    if(all(sapply(my.ri8[[k]][[1]],function(a) is.null(where.het(a)))) &&
-#       all(sapply(my.ri8[[k]][[2]][-20],function(a) is.null(where.het(a)))) &&
-#       length(unlist(my.ri8[[k]][[1]][1:19])) == length(unlist(my.ri8[[k]][[2]][1:19])) &&
-#       all(unlist(my.ri8[[k]][[1]][1:19]) == unlist(my.ri8[[k]][[2]][1:19])) &&
-#       length(unlist(my.ri8[[k]][[1]][[20]]$mat)) == length(unlist(my.ri8[[k]][[2]][[20]]$mat))
-#       &&
-#       all(unlist(my.ri8[[k]][[1]][[20]]$mat) == unlist(my.ri8[[k]][[2]][[20]]$mat))) {
-#      flag <- 1
-#    }
-#    cat(k,i,"\n")
-#    i <- i + 1
-#  }
-#}
-#save(my.ri8,file="ri8_genome.RData")
-load("_cache/ri8_genome.RData.gz")
+file <- "_cache/ri8_genome.RData"
+if(file.exists(file)) {
+    load(file)
+} else {
+    set.seed(122069)
+    par <- vector("list",8)
+    for(i in 1:8) {
+        par[[i]] <- vector("list",20)
+        for(j in 1:20) par[[i]][[j]] <- create.par(L[j],i)
+    }
+    my.ri8 <- vector("list",5)
+    for(k in 1:5) {
+        if(k==1) wh <- 1:8
+        else wh <- sample(1:8)
+
+        f1 <- vector("list",4)
+        for(i in 1:4) {
+            f1[[i]] <- vector("list",20)
+            for(j in 1:20) {
+                f1[[i]][[j]] <- cross(par[[wh[2*i-1]]][[j]],par[[wh[2*i]]][[j]],m=10,obl=TRUE,
+                                      xchr=(j==20), male=(i %% 2))
+            }
+        }
+
+        f2 <- vector("list",2)
+        for(j in 1:20) {
+            f2[[1]][[j]] <- cross(f1[[1]][[j]],f1[[2]][[j]],m=10,obl=TRUE,xchr=(j==20),male=FALSE)
+            f2[[2]][[j]] <- cross(f1[[3]][[j]],f1[[4]][[j]],m=10,obl=TRUE,xchr=(j==20),male=TRUE)
+        }
+        my.ri8[[k]] <- temp <- f2
+        flag <- 0; i <- 1
+        while(flag == 0) {
+            for(j in 1:20) {
+                my.ri8[[k]][[1]][[j]] <- cross(temp[[1]][[j]],temp[[2]][[j]],m=10,obl=TRUE,xchr=(j==20),male=FALSE)
+                my.ri8[[k]][[2]][[j]] <- cross(temp[[1]][[j]],temp[[2]][[j]],m=10,obl=TRUE,xchr=(j==20),male=TRUE)
+            }
+            temp <- my.ri8[[k]]
+            if(all(sapply(my.ri8[[k]][[1]],function(a) is.null(where.het(a)))) &&
+               all(sapply(my.ri8[[k]][[2]][-20],function(a) is.null(where.het(a)))) &&
+               length(unlist(my.ri8[[k]][[1]][1:19])) == length(unlist(my.ri8[[k]][[2]][1:19])) &&
+               all(unlist(my.ri8[[k]][[1]][1:19]) == unlist(my.ri8[[k]][[2]][1:19])) &&
+               length(unlist(my.ri8[[k]][[1]][[20]]$mat)) == length(unlist(my.ri8[[k]][[2]][[20]]$mat))
+               &&
+               all(unlist(my.ri8[[k]][[1]][[20]]$mat) == unlist(my.ri8[[k]][[2]][[20]]$mat))) {
+                flag <- 1
+            }
+            cat(k,i,"\n")
+            i <- i + 1
+        }
+    }
+    save(my.ri8,file=file)
+}
 
 for(k in 1:5) {
 #  bitmap(file=paste("../Figs/ri8genome",".bmp",sep=as.character(k)), width=9, height=5, res=288,
