@@ -1,12 +1,12 @@
 LEC = 05_tcells
 
-include ../Makefile_lectures.mk
-
 FIGS=		 Figs/mean_response.pdf \
 			 Figs/model_distribution.pdf \
 			 Figs/em_loglik_wrong.pdf \
 			 Figs/em_loglik_right.pdf \
 			 Figs/multiple_modes.pdf
+
+include ../Makefile_lectures.mk
 
 Figs/mean_response.pdf: R/plot_mean_response.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

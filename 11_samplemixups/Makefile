@@ -1,7 +1,5 @@
 LEC = 11_samplemixups
 
-include ../Makefile_lectures.mk
-
 FIGS=							   Figs/data_fig.png          \
 								   Figs/lodcurve_insulin.pdf  \
 								   Figs/xchr_fig.pdf          \
@@ -17,6 +15,8 @@ FIGS=							   Figs/data_fig.png          \
 								   Figs/eve_1.pdf             \
 								   Figs/insulin_lod.pdf       \
 								   Figs/expr_swaps.pdf
+
+include ../Makefile_lectures.mk
 
 Figs/data_fig.png: R/data_fig.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

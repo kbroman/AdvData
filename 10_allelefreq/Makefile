@@ -1,11 +1,11 @@
 LEC = 10_allelefreq
 
-include ../Makefile_lectures.mk
-
 FIGS=		 Figs/gh_results_good.pdf \
 			 Figs/sibpairs.pdf \
 			 Figs/mixture_univariate.pdf \
 			 Figs/sib_chr.pdf
+
+include ../Makefile_lectures.mk
 
 Figs/gh_results_good.pdf: R/plot_gh_results.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

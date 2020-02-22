@@ -1,7 +1,5 @@
 LEC = 03_sims
 
-include ../Makefile_lectures.mk
-
 FIGS=		 Figs/intercross.pdf \
 			 Figs/lodcurve_insulin_with_effects.pdf \
 			 Figs/congenic.pdf \
@@ -19,6 +17,8 @@ FIGS=		 Figs/intercross.pdf \
 			 Figs/coincidence_ni.pdf \
 			 Figs/3pt_symmetry.pdf \
 			 Figs/3pt_markov1.pdf
+
+include ../Makefile_lectures.mk
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

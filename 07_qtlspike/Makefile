@@ -1,7 +1,5 @@
 LEC = 07_qtlspike
 
-include ../Makefile_lectures.mk
-
 FIGS=		 Figs/intercross.pdf \
 			 Figs/lodcurve_insulin_with_effects.pdf \
 			 Figs/pheno.pdf \
@@ -15,6 +13,8 @@ FIGS=		 Figs/intercross.pdf \
 			 Figs/listeria_lod.pdf \
 			 Figs/listeria_effects.pdf \
 			 Figs/listeria_stdlod.pdf
+
+include ../Makefile_lectures.mk
 
 Figs/lodcurve_insulin_with_effects.pdf: R/lodcurve_insulin.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)

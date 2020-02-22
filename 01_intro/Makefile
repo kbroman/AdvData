@@ -1,10 +1,10 @@
 LEC=01_intro
 
-include ../Makefile_lectures.mk
-
 FIGS=Figs/autozygosity.pdf \
 	 Figs/ceph_pedigrees.pdf \
 	 Figs/chr22rev.pdf
+
+include ../Makefile_lectures.mk
 
 Figs/autozygosity.pdf: R/autozyg_fig.R R/chrompic_chr6_fam884.txt
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
