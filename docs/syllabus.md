@@ -45,6 +45,13 @@ Students will be able to:
 
 Course grade will be based on 4 homework assignments, weighted equally.
 
+**Grading scale**: 92-100 (A), 87-91 (AB), 82-86 (B), 77-81 (BC), 70-76
+(C), 60-69 (D), <60 (F)
+
+Students are encouraged to discuss course content and homework
+assignments with each other, but the assignments are to be each
+student’s own, separate work.
+
 
 
 ### Religious observances or other absences
