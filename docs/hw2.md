@@ -38,20 +38,23 @@ supplement](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/table/T2/)
 
 You can use the [gee package](https://cran.r-project.org/package=gee).
 The outcome variable is `sxsmaxday`, and I believe you'll omit `VisitNum`
-0 and 1, consider only complete cases, and then fit a log-linear model
-something like this:
+0 and 1 and then fit a log-linear model something like this:
 
 ```r
 out <- gee(sxsmaxday ~ group, id=ID, family=poisson(link=log), corstr="exchangeable")
 ```
 
 b. Instead of using GEE, combine the outcomes for visits 2-4 in a
-subject by taking the sum, and then fit a log-linear model with
-`glm()`, something like this:
+subject by taking the sum, here focusing on the subjects that had
+complete data for the three visits. Then fit a log-linear model with
+`glm()`, something like the following.
 
 ```r
-out <- glm(sxsmaxday_sum ~ group, family=poisson(link=log))
+out <- glm(sxsmaxday_sum ~ group, family=quasipoisson(link=log))
 ```
+
+By using `quasipoisson()` for the family rather than `poisson()`,
+you're allowing for overdispersion in the variance.
 
 With this approach, what is the confidence interval for the treatment
 effect?
@@ -66,9 +69,6 @@ d. Turn the first eight rows of [Table
 (2017)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/) into a
 graph (or graphs), showing the treatment effects on the primary and
 secondary outcomes. Discuss your design choices.
-
-e. What do you conclude about the effect of integrated pest management
-on asthma symptoms?
 
 
 
