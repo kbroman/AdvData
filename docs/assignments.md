@@ -35,7 +35,9 @@ the analysis reports should be written individually.
 
   - supplement 1: [study protocol](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/bin/NIHMS904640-supplement-Supplement_1.pdf)
 
-  - supplement 2: [eMethods/tables/figure]https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/bin/NIHMS904640-supplement-Supplement_2.pdf)
+  - supplement 2: [eMethods/tables/figure](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/bin/NIHMS904640-supplement-Supplement_2.pdf)
+
+  - [study website](https://rdpeng.github.io/MAAIT)
 
   - data: [maait.csv](https://rdpeng.github.io/MAAIT/maait.csv)
 
