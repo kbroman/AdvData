@@ -29,7 +29,7 @@ the analysis reports should be written individually.
 
   data: [`hw1_mitesA.txt`](data/hw1_mitesA.txt), [`hw1_mitesB.txt`](data/hw1_mitesB.txt)
 
-- [Homework 2: pest management trial)(hw2.html) due 2020-03-12
+- [Homework 2: pest management trial](hw2.html) due 2020-03-12
 
   - paper: [Matsui et al. (2017)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/)
 
