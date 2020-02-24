@@ -16,13 +16,13 @@ description: Schedule for BMI 826, Advanced data analysis
 | 11 Feb    |    | [EM algorithm: QTL mapping with a cure model ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](07_qtlspike.pdf)
 | 13 Feb    |    | [_Git and GitHub_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](08_git.pdf)
 | 18 Feb    |    | [_Git/GitHub laboratory_ ![html icon](https://kbroman.org/pages/icons16/html-icon.png)](09_git_lab.html)  [![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](09_git_lab.pdf)
-| 20 Feb    |    | [Model misspecification: Estimating allele frequencies ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](10_allelefreq.pdf) \[[**homework 1 due**](hw1.html)\]
+| 20 Feb    |    | [Model misspecification: Estimating allele frequencies ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](10_allelefreq.pdf) \[[homework 1 due](hw1.html)\]
 | 25 Feb    |    | [Sample mix-ups in eQTL data ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](11_samplemixups.pdf)
 | 27 Feb    |    | _Organizing projects; capturing exploratory analysis; collaboration_
 | 3 Mar     |    | Data diagnostics for multiparent populations
 | 5 Mar     |    | _Writing clear code_
 | 10 Mar    |    | Bayes/MCMC: Transposon mutagenesis
-| 12 Mar    |    | _Wrangling messy data files_
+| 12 Mar    |    | _Wrangling messy data files_ \[[**homework 2 due**](hw2.html)\]
 | 17,19 Mar |    | **No class (spring break)** |
 | 24 Mar    |    | Bootstrap confidence intervals for QTL location
 | 26 Mar    |    | _Writing R packages; roxygen2_
