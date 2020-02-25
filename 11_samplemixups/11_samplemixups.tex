@@ -333,29 +333,78 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
    anything. There were actually 550 total mice (good to have backups
    in case one dies), but only about 500 had gene expression data in
    any one tissue, and some of the DNA samples were apparently lost.
+
+   We don't know, from these results, whether it is the DNA samples
+   that were mislabelled or the mRNA samples, but because we have six
+   sets of mRNA samples, for six different, we can compare the DNA to
+   each of the mRNA samples and in doing so it is clear that it's the
+   DNA that was wrong.
 }
 \end{frame}
 
 
 \begin{frame}[c]{Genotype mix-ups}
 \figh{Figs/plate_errors.pdf}{0.85}
-\note{}
+\note{
+  Even more incriminating, though, is the information about the
+  locations of the DNA samples. DNA samples were arrayed in a set of
+  six 8$\times$12 plates. In this figure, the black dots indicate the
+  correct DNA sample was placed in the correct well, while the arrows
+  point from where a DNA sample should have been to where it actually
+  ended up.
+
+  Two of the plates look fine, while half of each of two plates are
+  entirely messed up.
+}
 \end{frame}
 
 
 \begin{frame}[c]{Plate 1631}
 \figh{Figs/plate_errors_1631.png}{0.65}
-\note{}
+\note{
+  Plate 1631 is a good example. Again, black dots indicate that the
+  correct DNA was placed in the correct well.
+
+  The little orange and purple arrow
+  heads indicate that sample in well D7 is of unknown origin, and the
+  sample that should have been there was lost.
+
+  The pink circle around D2 indicates that that sample was duplicated:
+  it was placed in the correct well (the black dot), but it was also
+  placed in well B3. The sample that was supposed to be in B3 was
+  placed in B4, the sample that was supposed to be in B4 was in E3,
+  and the sample that was supposed to be in E3 was lost.
+
+  (The purple arrow head for D7 means that the DNA was lost but that
+  there is expression data for that sample, while the green arrow head
+  for E3 means that the DNA was lost but there is no expression data
+  for that sample.)
+}
 \end{frame}
 
 \begin{frame}[c]{Plates 1632 and 1630}
 \figh{Figs/plate_errors_1632_n_1630.png}{0.85}
-\note{}
+\note{
+  Plates 1632 and 1630 are where most of the problems are. There are
+  some long-range swaps and other misplacements of samples, but most
+  of the problems are due to a series of off-by-one and off-by two
+  errors. Note that the red X's indicate DNAs that were omitted due as
+  being of bad quality (possibly mixtures).
+}
 \end{frame}
 
 \begin{frame}[c]{Plate 1630}
 \figh{Figs/plate_errors_1630.png}{0.65}
-\note{}
+\note{
+  Consider plate 1630. The sample found in A1 really belonged back on
+  plate 1632. The sample that was supposed to be in A1 was found in
+  B1. The sample that was supposed to be in B1 was duplicated, in both
+  C1 and D1. So then we're off by two for a while: the sample that
+  should have been in C1 was in E1, and the sample that should have
+  been in D1 was in F1, etc. At well F5 we're back to being off by one
+  again, and then a DNA was lost at H7 and we're back to being
+  correct.
+}
 \end{frame}
 
 
@@ -424,13 +473,32 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 
 \begin{frame}[c]{Insulin QTL}
 \figh{Figs/insulin_lod.pdf}{0.85}
-\note{}
+\note{
+  This shows the genome scan results for insulin (one of the more
+  important clinical traits) before and after the 18\% sample mix-ups
+  were corrected. With the mix-ups in the data, we did see four QTL
+  (chr 2, 7, 12, and 19), but after correcting the mix-ups, the
+  strength of evidence for the chr 2 locus increased considerably, and
+  we see additional significant QTL on chromosomes 5, 6, and 9.
+
+  We had been studying these data for a couple of years without
+  noticing any problems. And it is sort of remarkable that with
+  $\sim$20\% of the genotypes mis-labelled, you can still get good
+  evidence for QTL. The evidence of course improves greatly when you
+  correct the mix-ups, but it's not as drammatic as you might have
+  expected.
+}
 \end{frame}
 
 
 \begin{frame}[c]{Strong eQTL}
 \figh{Figs/eqtl_lod_3.pdf}{0.85}
-\note{}
+\note{
+  The two strong eQTL that I had shown before also show dramatic
+  increases in LOD score after correcting the sample mix-ups, for
+  example the gene on chr 1 had LOD score like 150 and now has LOD
+  score over 450.
+}
 \end{frame}
 
 
@@ -465,7 +533,23 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 \end{itemize}
 
 \end{itemize}
-\note{}
+\note{
+  In summary, sample mix-ups happen. With eQTL data you can both
+  identify and correct mix-ups. There was great value in having
+  expression data from multiple tissues, in identifying the source of
+  the problems.
+
+  The general idea here has wide application for high-throughput data,
+  generally. If you have mutiple rectangles of data whose rows are
+  supposed to correspond, you should check to see if they do correspond.
+  The strategy we used for aligning two expression datasets could
+  work with little change in much broader contexts.
+
+  The article describing this work was published in 2015. A number of
+  others happened upon similar problems and similar solutions at about
+  the same time that I did, but published much sooner (2011 and 2012).
+  They're all interesting reads.
+}
 \end{frame}
 
 
@@ -499,7 +583,25 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
   check that they {\hilit actually} correspond
 
 \end{itemize}
-\note{}
+\note{
+  There are a number of important lessons to draw from this work.
+  First, don't fully trush anyone, even yourself. That seems overly
+  cynical, but really: if you care about the results, take the time to
+  double-check that previous data cleaning efforts (perhaps by you six
+  months ago) didn't skip over some critical problem.
+
+  Also, make lots of plots. The long delay in us identifying problems
+  was partly due to the fact that we had mostly focused on summary
+  plots like the LOD curves. You can't really see the problems until
+  you look at the phenotype/genotype relationships. Also, we had
+  transformed all of the expression phenotypes by taking ranks and
+  then converting them to normal quantiles. This was great for
+  eliminating the effects of outliers, but it made it hard to identify
+  problems.
+
+  [go to the next slide for an illustration of this point]
+
+}
 \end{frame}
 
 
@@ -507,7 +609,26 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 
 \figw{Figs/gve1a_nqrank.pdf}{1.0}
 
-\note{}
+\note{
+
+  For example, the panel on the left here is the plot I showed before,
+  for expression vs eQTL genotype. This is the one that had indicated
+  to me that there was a problem.
+
+  But we hadn't been looking at the plot on the left, with the
+  untransformed expression values, but rather the plot on the right,
+  in which the expression values were ranked and then transformed to
+  normal quantiles.
+
+  The odd pattern on the left is made less odd by the transformation.
+  The plot on the right is a little weird, but it looks more like
+  three overlapping normal distributions.
+
+  Transformations are great, but for diagnostic purposes, and to
+  assess the effects of covariates like QTL, it is best to return to
+  the original scale of measurement, as transformations can obscure
+  important features.
+}
 \end{frame}
 
 
@@ -541,7 +662,27 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
   check that they {\hilit actually} correspond
 
 \end{itemize}
-\note{}
+\note{
+  Returning to our lessons from this case study, we need to emphasize
+  again to follow up all aberrations. I came to the realization of
+  these sample mix-ups on the basis of just 16/500 mice whose sex
+  didn't match their X chromosome genotypes. We might have just
+  omitted the samples and moved on, but it was only by really puzzling
+  through the cause of the problem that I was able to identify the
+  much larger issue.
+
+  Related to that: take your time in data cleaning. If you spend \$5
+  million dollars gathering data, isn't it reasonable to spend a
+  month, two months, even a year on the data cleaning? Sometimes it
+  seems like my collaborators think that the more money you spend, the
+  faster you should get results. But if you really care about getting
+  the right answers, you should be willing to spend time verifying
+  that the data are in good order.
+
+  Finally, again, if you have mutiple rectangles of data whose rows
+  are supposed to correspond, you should check to see if they actually
+  do correspond.
+}
 \end{frame}
 
 
@@ -549,7 +690,16 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 
 \begin{frame}[c]{Decisions}
 \figh{Figs/gve_dist_byrow.pdf}{0.85}
-\note{}
+\note{
+  This is an extra slide to show that the evidence for the mixed-up
+  samples' true identities is strong. On the left is the plot we saw
+  before: the self-self distance vs the minimum distance.
+
+  On the right is the 2nd biggest distance vs the minimum distance.
+  That the blue and green points are well away from the diagonal
+  indicates that we can tell which sample is really the smallest;
+  there's not some nearby next-most-similar to confuse things.
+}
 \end{frame}
 
 \end{document}
