@@ -127,8 +127,8 @@ dev.off()
 pdf("../Figs/gve2a.pdf", width=9, height=6.5, pointsize=12, onefile=TRUE)
 par(mar=c(4.1,5.1,0.1,0.1), col.lab=color[1],
     bg=bgcolor, cex.axis=1.2, cex.lab=1.3, las=1)
-y2nqr <- apply(y2, 2, nqrank)
-plot(y2nqr, col=color[c(2,4,1)][g[,2]], lwd=2,
+#y2nqr <- apply(y2, 2, nqrank)
+plot(y2, col=color[c(2,4,1)][g[,2]], lwd=2,
      xlab=paste("expression  of ", e2[1]),
      ylab=paste("expression  of ", e2[2]))
 u <- par("usr")
