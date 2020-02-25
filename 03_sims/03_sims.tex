@@ -320,6 +320,9 @@
 
 
 \note{
+  Back to these 8-way recombinant inbred lines, the Collaborative
+  Cross: I became fascinated with the genotype pattern on the fixed,
+  recombinant chromosome.
 }
 
 \end{frame}
@@ -335,6 +338,11 @@
 
 
 \note{
+  Here's a picture of a Collaborative Cross genome. At any one
+  position, it's got one of the eight colors. What can we say about
+  the rate of exchanges along the fixed chromosome, and are the
+  switches equally likely among the eight colors? Can we calculate the
+  transition matrix along the chromosome?
 }
 
 \end{frame}
@@ -344,6 +352,20 @@
   \figw{Figs/basic_genetics.pdf}{1.0}
 
 \note{
+  A key quantity to consider is the recombination fraction for an
+  interval. If a parent has alleles A on one chromosome and B on the
+  other, the sperm or egg cell produced at meiosis could have a
+  parental type chromosomes, or it could have a so-called
+  ``recombinant'' chromosome, with A at one locus and B at the other.
+  The chance that meiosis produces a recombinant chromosome is called
+  the recombination fraction. It depends on the distance between the
+  two positions.
+
+  Now the question is, for an interval that has recombination fraction
+  $r$, what is the chance that the fixed Collaborative Cross
+  chromosome will have the same allele, vs switch from one allele two
+  another?  What's the analogous quantity to the recombination
+  fraction for the fixed CC chromosome?
 }
 
 \end{frame}
@@ -353,6 +375,20 @@
   \figw{Figs/rf_by_sim.pdf}{1.0}
 
 \note{
+  I had this idea one night, and thought, ``I'll just simulate it.''
+  So I started some simulations running: simulating the 8-way
+  cross followed by repeated sibling mating until fixation, using
+  intervals with different recombination fractions.
+
+  The next morning I had this curve: the relationship between
+  recombination fraction at meiosis (on the x-axis) and the chance
+  that the CC chromosome is fixed for alternate alleles (on the
+  y-axis). A nice smooth curve, and we can be confident that it hits
+  7/8 when the recombination fraction is 1/2. (If the two positions
+  are recombining completely at random, then you're picking two of the
+  eight alleles for the two loci on the fixed chromosome, equally
+  likely, and so there's a 7/8 chance that you'll pick different
+  alleles.
 }
 
 \end{frame}
@@ -364,6 +400,10 @@
 
 
 \note{
+  Well, I happened to know about this famous old paper that does this
+  sort of calculation analytically for the two-way recombinant inbred
+  line case. They cover sibling mating as well as selfing, and both
+  autosomes and the X chromosome.
 }
 
 \end{frame}
@@ -375,6 +415,11 @@
 
 
 \note{
+   The paper is pretty hard going, but they derive some simple and now
+   well-known equations, such as this one for selfing. If the
+   recombination fraction (at meiosis) between two loci is $x$, then the
+   chance the two-way RIL by selfing will be fixed for alternate
+   alleles is $2x/(1+2x)$.
 }
 
 \end{frame}
@@ -387,6 +432,14 @@
 
 
 \note{
+   For sib-mating, the result is $4x/(1+6x)$. That is, if the
+   recombination fraction between two loci is $x$, the chance that
+   two-way RIL by sibling mating will be fixed for alternate alleles
+   is $4x/(1+6x)$.
+
+   I particularly like that they say, ``Omitting some rather tedious
+   algebra.'' If you've had a look at this paper, you may be surprised
+   to then learn that there was tedious algebra {\hilit omitted}.
 }
 
 \end{frame}
@@ -396,6 +449,10 @@
   \figw{Figs/rf_by_sim_genformula.pdf}{1.0}
 
 \note{
+   So going back to my simulation results, I figured ``well, for
+   2-ways by selfing it's $2x/(1+2x)$, and for 2-ways by sib-mating
+   it's $4x/(1+6x)$, so maybe for 8-ways by sib-mating it's like $a x
+   / (1 + b x)$ for some $a$ and $b$.
 }
 
 \end{frame}
@@ -413,9 +470,6 @@
 \verb|    summary(out)|
 }
 
-
-\note{
-}
 
 \end{frame}
 
@@ -439,9 +493,6 @@
 \verb|    b    6.023       0.016|
 }
 
-
-\note{
-}
 
 \end{frame}
 
@@ -467,6 +518,10 @@
 
 
 \note{
+  How can I figure out $a$ and $b$? Non-linear regression, using
+  {\tt nls()} in R. It was immediately clear that the answer was
+  $7r/(1+6r)$ for 8-way RIL by sib-mating. I did some more simulations
+  to get more precise coefficient estimates, but the answer was clear.
 }
 
 \end{frame}
@@ -476,10 +531,12 @@
   \figw{Figs/rf_by_sim_moredata.pdf}{1.0}
 
 \note{
-}
+   Add that curve to my simulated data and it fits perfectly. A
+   triumph of computer simulation. Fancy algebra accomplished with no
+   detailed knowledge whatsover. Certainly no tedious algebra.
 
-
-\note{
+   Okay, but not entirely satisfying. And by this point I was hooked:
+   how to prove this equation?
 }
 
 \end{frame}
@@ -510,6 +567,24 @@ X_1, \dots, X_n) = Pr(X_{n+1} \ | \ X_n)}$}
 
 
 \note{
+  So they key thing here is that if you let $X_n$ denote the
+  ``parental type'' meaning the pattern of alleles at two positions
+  each of the two individuals' two chromosomes at generation $n$, then
+  the $X$'s form a Markov chain. That is, if I tell you the pattern at
+  a given generation, that's all you need to know to determine what
+  will happen at the next generation; the history of how we got there
+  doesn't matter.
+
+  The key parameters for the Markov chain are the transition
+  probabilities. That is, if I tell you the parental type at
+  generation $n$, what are the probabilities for each possible type at
+  generation $n+1$?
+
+  The key thing we're trying to determine are so-called absorption
+  probabilities. What is the chance that the Markov chain will be
+  absorbed into a particular fixation state (from which it won't be
+  able to exit), given the starting state (which is defined by the
+  cross design).
 }
 
 \end{frame}
@@ -541,6 +616,20 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 
 
 \note{
+   A key trick with Markov chains is to condition on the first step.
+   Let's focus on a particular absorbing state, say A's at both loci
+   on both chromosomes. And let $h_i$ is the probability that,
+   starting at state $i$, you'll be
+   absorved into that particular $AA|AA$ state. Then $h_i$ is start at
+   $i$, jump to state $k$, and from there be absorbed into the $AA|AA$
+   state.
+
+   So that gives us a set of linear equations that we can solve, since
+   the transition matrix $P$ is known.
+
+   For 2-way RIL by selfing, you end up with a system of three linear
+   equations. There are five distinct states, but two are absorbing and
+   so the $h$'s for them are just 0 or 1, so there are three unknowns.
 }
 
 \end{frame}
@@ -553,7 +642,12 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 
 
 \note{
+   Here's the 2-way selfing business from the Haldane and Waddington
+   paper. They are showing the 5$\times$5 transition matrix and they
+   go one to solve the set of related equations to get to that
+   $2x/(1+2x)$ solution.
 }
+
 
 \end{frame}
 
@@ -565,6 +659,9 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 
 
 \note{
+  The case of sibling mating is somewhat more complicated. There are
+  22 distinct states to keep track of, and they're showing here the
+  transition matrix.
 }
 
 \end{frame}
@@ -574,8 +671,13 @@ $\mathsf{h_i  = \sum_k  P_{ik} h_k}$}
 
   \figw{Figs/haldane_sibmating3.png}{0.9}
 
-
 \note{
+  Solving a system of equations that's a bit smaller but still rather
+  similar to those, they get to the $4x/(1+6x)$ solution.
+
+  Following this approach, I was able to prove my $7r/(1+6r)$
+  equation, but by this time I had become obsessed with the situation
+  for three points.
 }
 
 \end{frame}
@@ -615,6 +717,27 @@ Negative interference { \hilit $>$ 1  }
 
 
 \note{
+  I mentioned in the introductory lecture for this course about
+  crossover interference: the tendency of these meiotic exchanges to
+  not occur too close together. One measure of interference is to
+  consider three points along a chromosome and calculate the so-called
+  3-point coincidence, which you can view as the probability of
+  exchange in both intervals divided by what would be expected by
+  chance.
+
+  Alternatively, and my preferred definition, is to think about
+  recombination in the second interval, and ask how is the chance of a
+  recombination event in the second interval affected by the presence
+  of a recombination event in the first interval: the conditional
+  probability divided by the prior probability.
+
+  The coincidence being 1 indicates no interference, $<$ 1 indicates
+  ``positive'' interference (crossovers tend not to be close
+  together), and $>$ 1 indicates ``negative interference'' (crossovers
+  tend to be clustered).
+
+  The coincidence is generally a function of the size of the
+  intervals, measured by the recombination fraction, $r$.
 }
 
 \end{frame}
@@ -622,10 +745,30 @@ Negative interference { \hilit $>$ 1  }
 
 
 \begin{frame}[c]{Coincidence}
-\only<1>{\figw{Figs/coincidence_ni.pdf}{1.0}}
+\only<1|handout 0>{\figw{Figs/coincidence_ni.pdf}{1.0}}
 \only<2>{\figw{Figs/coincidence_i.pdf}{1.0}}
 
 \note{
+  It turns out that, for 2-way recombinant inbred lines, the
+  equivalent measure to coincidence for the fixed RIL chromosome can
+  be derived directly with little effort, as it just depends on the
+  recombination fraction for the three intervals (the two disjoint
+  intervals plus the large interval that is the union of the two).
+  The Haldane and Waddington paper has a section on this.
+
+  The solid curves here are for the case of no crossover interference,
+  with two-way RIL by selfing or sib-mating. In both cases, the curves
+  are entirely above 1, indicating {\hilit clustering} of breakpoints
+  on the fixed interval.
+
+  Using a model for meiosis in the mouse, which exhibits strong
+  positive crossover interference (the black dashed curve), we end up
+  with the dashed curves for the coincidence-type quantity for the
+  fixed chromosomes. For 2-way RILs by sib-mating, it is almost
+  entirely above 1. This indicates that even if the crossovers at
+  meiosis tend not to be close together, the breakpoints on the fixed
+  RIL chromosome will tend to be clustered. Haldane and Waddington
+  derived this, but didn't really dwell on it.
 }
 
 \end{frame}
@@ -660,6 +803,14 @@ by symmetry
 \ei
 
 \note{
+  Now I'm interested in derived this quantity for 8-way RILs by
+  sibling mating.  But it turned out that the trick used for 2-way
+  RILs doesn't work for the 8-way case. However, it turns out it's
+  sufficient to consider just 4-way RILs, because of the bottleneck
+  with two parents each with two chromosomes.
+
+  Still, it was difficult just to keep track of the possible states
+  when 3 points on 4 chromosomes are considered.
 }
 
 \end{frame}
@@ -670,6 +821,15 @@ by symmetry
 \figw{Figs/coincidence_8way.pdf}{1.0}
 
 \note{
+  Nevertheless, with some very hefty numerical calculations (not
+  simulations, or algebra), I was able to derive the green equations
+  here, which are the quantities analogous to the 3-point coincidence
+  but for the fixed chromosome in 8-way RIL by sib-mating.
+
+  Note that even with strong crossover interference, the coincidence
+  is mostly above 1, again indicating clustering of breakpoints on the
+  RIL chromosome. But really it's pretty close to 1, as for no
+  interference.
 }
 
 \end{frame}
@@ -691,6 +851,9 @@ $$ \mathsf{C = \frac{(1+6r)[280 + 1208r - 848r^2 + 5c(7-28r - 368r^2 + 344r^3)
 
 
 \note{
+  A few years later a collaborator showed me another trick to help in
+  this work, and we were able to derive the exact formula for the
+  3-point coincidence curve.
 }
 
 \end{frame}
@@ -706,6 +869,14 @@ $\mathsf{Pr(M_2 = x \ | \ M_1 = A, M_2 \ne A, M_3 = A)}$
 
 
 \note{
+  There are some other interesting things you can look at here. First,
+  concerning a sort of 3-point symmetry. If you observe A at the outer
+  two of a set of three points and know that you had a double-exchange
+  and were not A in the middle, what is the chance for each of the
+  other seven alleles in the middle? In the cross
+  A$\times$B$\times$C..., it turns out that you're unlikely to be B,
+  because you'd need a double-crossover in that first meiosis, and
+  you're more likely to be E,F,G, or H (which are all equally likely).
 }
 
 \end{frame}
@@ -720,6 +891,11 @@ $ \mathsf{log_2 \left\{ \frac{Pr(M_3 = A \ | \ M_2 = A, M_1 = x)}{Pr(M_3 = A \ |
 
 
 \note{
+   You can also investigate the Markov property for the fixed 8-way
+   RIL chromosome. If I tell you that you're A at point 2, how much
+   does knowledge of point 1 tell you about the probabilities of what
+   you end up being at point 3? Not very much in this case, with a
+   non-exchange.
 }
 
 \end{frame}
@@ -735,6 +911,11 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+   But how about if I ask about switching from B to A? Does knowledge
+   of point 1 change your understanding of that? Well, if you were
+   previously A and crossover interference is strong, you're very
+   likely to {\hilit not} switch back to A, but otherwise it doesn't
+   really matter.
 }
 
 \end{frame}
@@ -752,6 +933,9 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+   But if I ask about switching from C to A, knowledge of the
+   previous state can matter a lot. You're somehow more likely to
+   switch from back to A from C, if you were previously A.
 }
 
 \end{frame}
@@ -768,6 +952,10 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  The same goes for the last case: switching from E to A is more
+  likely if you'd previously been A. This is saying that you'll tend
+  to have chunks of E stuck into the middle of a longer stretch of A.
+  Which I did notice in simulations.
 }
 
 \end{frame}
@@ -827,11 +1015,8 @@ $ \mathsf{log_2 \left\{ \frac{
 
 \end{frame}
 
-\begin{frame}[c]{Segment lengths}
+\begin{frame}<handout:0>[c]{Segment lengths}
 \figw{Figs/lseg_noarrows.pdf}{1.0}
-
-\note{
-}
 
 \end{frame}
 
@@ -962,7 +1147,7 @@ $ \mathsf{log_2 \left\{ \frac{
   \bbi
 
   \item Haldane \& Waddington (1931) Inbreeding and Linkage.
-    16:357--374
+    Genetics 16:357--374
 
   \item Broman KW (2005) The genomes of recombinant inbred lines. Genetics 169:1133--1146
 
@@ -980,6 +1165,7 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  Here are a bunch of references for the work I've presented.
 }
 
 \end{frame}
