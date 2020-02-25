@@ -360,91 +360,66 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 
 
 \begin{frame}[c]{E vs E}
-\figh{Figs/eve_1.pdf}{0.85}
-\note{}
+\only<1|handout 0>{\figh{Figs/eve_1.pdf}{0.85}}
+\only<2|handout 0>{\figh{Figs/eve_2.pdf}{0.85}}
+\only<3|handout 0>{\figh{Figs/eve_3.jpg}{0.85}}
+\only<4|handout 0>{\figh{Figs/eve_3b.pdf}{0.85}}
+\only<5|handout 0>{\figh{Figs/eve_3c.pdf}{0.85}}
+\only<6|handout 0>{\figh{Figs/eve_3d.pdf}{0.85}}
+\only<7|handout 0>{\figh{Figs/eve_4.pdf}{0.85}}
+\only<8|handout 0>{\figh{Figs/eve_5.pdf}{0.85}}
+\only<9|handout 0>{\figh{Figs/eve_6.pdf}{0.85}}
+\only<10|handout 0>{\figh{Figs/eve_7.pdf}{0.85}}
+\only<11>{\figh{Figs/eve_8.pdf}{0.85}}
+\note{
+   We can use the same trick to look for mix-ups among the gene
+   expression data sets.
+
+   The basic scheme is to first identify a subset of expression traits
+   that are highly correlated between two tissues.
+
+   Then look at the correlation between samples, using just that
+   subset of expression traits.
+
+   When a sample is correctly labeled in both tissues, the expression
+   values should be correlated. If not, we may find another sample in
+   one tissue that is correlated, to indicate the true label.
+
+   Again, we make use of the multiple tissues to figure out the truth.
+   If we had just two tissues we could see that they were mixed up but
+   not which was the correct label.
+}
 \end{frame}
 
 
 \begin{frame}[c]{E vs E}
-\figh{Figs/eve_2.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_3.jpg}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_3b.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_3c.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_3d.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_4.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_5.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_6.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_7.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_8.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_9.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_10.pdf}{0.85}
-\note{}
-\end{frame}
-
-
-\begin{frame}[c]{E vs E}
-\figh{Figs/eve_11.pdf}{0.85}
-\note{}
+\only<1>{\figh{Figs/eve_9.pdf}{0.85}}
+\only<2|handout 0>{\figh{Figs/eve_10.pdf}{0.85}}
+\only<3|handout 0>{\figh{Figs/eve_11.pdf}{0.85}}
+\note{
+  Here's an example of a mislabelling: Mouse3598 liver looks more like
+  Mouse3599 islet, and Mouse3598 islet looks more like Mouse3599
+  liver. We use expression in the other four tissues to decide which
+  is right.
+}
 \end{frame}
 
 \begin{frame}[c]{Expression mix-ups}
 \figh{Figs/expr_swaps.pdf}{0.85}
-\note{}
+\note{
+  Here are the set of mix-ups I found in the expression data. The
+  arrows point from the correct label to how it appeared.
+
+  Each tissue had some mistakes; hypothalmous was the worst. The pink
+  circles indicate a sample duplicate. So, for example, in islet
+  sample 3295 was correctly labeled but also appeared in duplicate
+  with one sample labelled as 3296. The 3296 islet sample was lost.
+
+  Adipose had a 3-way swap. 3187 was labelled as 3200 which was
+  labelled as 3188 which was labelled as 3187. Note that most of the
+  problems concern sample numbers that are close (but not necessarily
+  immediately adjacent) in number.
+}
 \end{frame}
 
 \begin{frame}[c]{Insulin QTL}
