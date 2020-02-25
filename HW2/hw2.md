@@ -71,6 +71,12 @@ graph (or graphs), showing the treatment effects on the primary and
 secondary outcomes. Discuss your design choices.
 
 
+_Where I say, "Discuss your design choices," I am referring to your
+choices of plot type, layout, colors, and so forth. I want you to
+explain: why did you choose this particular arrangement? Every graph
+has trade-offs (for example, some comparisons are made easier, others
+are made more difficult); why did you choose this particular graph?_
+
 
 ### Resources
 
