@@ -47,6 +47,6 @@ if(file.exists(file)) {
 pdf("../Figs/insulin_lod.pdf", width=9, height=6.5, pointsize=12, onefile=TRUE)
 par(mar=c(5.1,4.1,0.1,0.1))
 plot(out.new, out.orig, col=color[1:2], ylab="LOD score")
-abline(h=quantile(operm.new, 0.95), lty=2, col="white")
+abline(h=quantile(operm.new, 0.95), lty=2, col="black")
 legend("topright", lwd=2, col=color[1:2], c("after", "before"), text.col=color[1:2], cex=1.5)
 dev.off()
