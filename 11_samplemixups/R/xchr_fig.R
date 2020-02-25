@@ -38,7 +38,7 @@ arrows(c(319,545),c(147,147),c(319,545),c(107,107),lwd=2,len=0.1)
 text(200,(287+192)/2,expression(F[1]),cex=1.5,adj=c(0.5,0.5))
 
 f1 <- create.par(100,c(1,2))
-set.seed(73990235)
+set.seed(20200223)
 f2 <- vector("list",2)
 for(i in 1:2) f2[[3-i]] <- cross(f1,f1,m=2,obl=TRUE)
 
