@@ -28,6 +28,26 @@
   \titlepage
 
 \note{
+  In this case study, I'll talk about a QTL mapping experiment where I
+  discovered that like 18\% of the genotyped samples were mixed up.
+
+  A weakness of QTL mapping has been the poor precision in estimated
+  QTL location; it's very hard to identify the underlying genes.
+  One strategy to deal with this
+  weakness is to also measure intermediate phenotypes, such as the mRNA
+  expression of all genes in a relevant tissue. We then seek to identify
+  genetic loci (called expression quantitative trait loci, eQTL) that
+  affect mRNA expression, and to find genes for which genotype is
+  associated with mRNA expression and also the clinical trait.
+
+  In a recent study with 500 intercross mice and gene expression
+  microarray data on six tissues, I identified a large number of
+  sample mix-ups in the genotype data and a smaller number of mix-ups
+  in each set of microarrays. I'll describe how I found and corrected
+  these problems. In a nutshell: the expression of some genes is so
+  strongly associated with genotype that the expression data can
+  effectively serve as a DNA fingerprint for establishing individuals'
+  identities.
 }
 } }
 
@@ -41,10 +61,10 @@
 \figw{Figs/data_fig.png}{1.15}
 
 \note{
-  The data consist of genotypes at a set of markers across the genome,
-  plus some quantitative phenotype for each mouse. The goal is to
-  identify regions of the genome where the genotype is associated with
-  the phenotype.
+  Again, I'm talking about QTL mapping. The data consist of genotypes
+  at a set of markers across the genome, plus some quantitative
+  phenotype for each mouse. The goal is to identify regions of the
+  genome where the genotype is associated with the phenotype.
 }
 \end{frame}
 
@@ -108,7 +128,15 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 
 \end{itemize}
 
-\note{}
+\note{
+  When I first got to UW-Madison, I joined a collaboration that was
+  carrying out a very large QTL mapping experiment that included about
+  500 mice with dense genotype data and numerous clinical phenotypes,
+  but also with gene expression data in six different tissues.
+
+  I had mostly been in the back of the room, heckling. But a couple of
+  years into the project, I agreed to write the first paper.
+}
 
 \end{frame}
 
@@ -117,14 +145,39 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 
 \begin{frame}[c]{Sex and the X chr}
 \figh{Figs/xchr_fig.pdf}{0.85}
-\note{}
+\note{
+  In getting ready to prepare that first paper, I decided to go back
+  to the basics and really check that all of the data were in good
+  order, starting from the raw genotype files.
+
+  I noticed that there were a number of mice whose X chromosome
+  genotype data did not match their sex. The way the cross was carried
+  out, female F$_2$ mice will be homozygous BTBR or heterozygous, and
+  male F$_2$ mice will be hemizygous (and so look like homyzogous).
+  But there were a number of females who were homozygous B6 on the X,
+  and a number males who were heterozygous. (Previously, these
+  incompatible genotypes had just been omitted.)
+
+  The number of mice with this problem ($\sim$16 out of 500) was not
+  large, but it was more than I'd expected, and I sat and pondered how
+  to figure out which was correct: sex or genotype.
+
+  I realized that I could maybe use the gene expression data to help.
+}
 \end{frame}
 
 
 \begin{frame}[c]{Strong eQTL}
 \only<1|handout 0>{\figh{Figs/eqtl_lod_1.pdf}{0.85}}
 \only<2>{\figh{Figs/eqtl_lod_2.pdf}{0.85}}
-\note{}
+\note{
+  In many cases the gene expression traits have very strong genetic
+  effects. In particular, for many genes the expression level is
+  strongly affected by genotype right at the location of the gene. For
+  other genes, expression is strongly affected by genotype at some
+  other location. A locus that effects gene expression is called an
+  expression QTL or eQTL.
+}
 \end{frame}
 
 
@@ -133,27 +186,67 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 \begin{frame}[c]{E vs G}
 \only<1|handout 0>{\figh{Figs/gve1a.pdf}{0.85}}
 \only<2>{\figh{Figs/gve1b.pdf}{0.85}}
-\note{}
+\note{
+  I looked at the gene expression versus genotype at one of these
+  eQTL and saw a very strange pattern. There was a very strong
+  association, but there were also a lot of mice whose gene expression
+  seemed to not match their genotype.
+
+  I mean, there are basically three kinds of mice, expression-wise:
+  low, high, or very high. And the low-expression mice are mostly RR,
+  while the very-high mice are mostly BB, with the high-expression
+  mice being BR. Except there are a bunch of mice that seem to be in
+  the wrong ball, expression-wise. And the 16 six-swapped mice include
+  9 that are in the wrong ball.
+
+  It's like the sex-swapped mice had been assigned to a random
+  genotype. If the genotypes are in the proportions 1:2:1, then we'd
+  expected 3/8 to be correct just by chance, which is very similar to
+  the 7/16 we see in these data.
+
+  And note that there are 43 mice that look to be in the wrong ball.
+  If they are all being assigned genotypes at random, that would
+  suggest that there are like 43 $\times$ (8/3) $\approx$ 115 problem
+  mice.
+}
 \end{frame}
 
 
 \begin{frame}[c]{kNN classifier}
 \figh{Figs/gve1c.pdf}{0.85}
-\note{}
+\note{
+  But we can use the gene expression data to figure out what we
+  {\hilit think} each mouse's genotype at this location really is. For
+  example, we can create a k-nearest-neighbor classifier, for
+  predicting genotype from gene expression.
+
+  If we do this at many strong eQTL, we could potentially reconstruct
+  the true genotypes for each mouse, from their expression data.
+}
 \end{frame}
 
 
 \begin{frame}[c]{E vs G}
 \only<1|handout 0>{\figh{Figs/gve3a.pdf}{0.85}}
 \only<2>{\figh{Figs/gve3b.pdf}{0.85}}
-\note{}
+\note{
+   Many times there will be two different genes whose expression maps
+   to a common location. We can look at their expression jointly. In
+   many cases, the gene expression clusters are even more clear. And
+   again the sex-swapped mice are seen in the wrong ball with
+   frequency like 9/16.
+}
 \end{frame}
 
 
 \begin{frame}[c]{E vs G}
 \only<1|handout 0>{\figh{Figs/gve2a.pdf}{0.85}}
 \only<2>{\figh{Figs/gve2b.pdf}{0.85}}
-\note{}
+\note{
+   Here's one more case. Again, the sex-swapped mice are in the wrong
+   ball with frequency like 9/16. The particular mice that are correct
+   or not different among the eQTL.
+}
 \end{frame}
 
 
@@ -162,34 +255,85 @@ $\sim$500 B6 $\times$ BTBR intercross mice, all ob/ob }
 \only<2|handout 0>{\figh{Figs/gve_scheme_2.pdf}{0.85}}
 \only<3|handout 0>{\figh{Figs/gve_scheme_3.pdf}{0.85}}
 \only<4>{\figh{Figs/gve_scheme_4.pdf}{0.85}}
-\note{}
+\note{
+   So this leads to our basic scheme for identifying (and correcting)
+   the sample mix-ups.
+
+   We first identify a set of expression traits with very strong eQTL.
+   We use the expression and corresponding eQTL genotypes to form
+   classifiers for predicting eQTL genotype from gene expression. This
+   gives us a matrix of inferred eQTL genotypes.
+
+   We then compare the inferred eQTL genotypes to the observed eQTL
+   genotypes. If a sample's observed eQTL genotypes don't match its
+   inferred eQTL genotype, we conclude that the labels for one or the
+   other are incorrect. And we might be able to find another row in
+   the inferred eQTL genotypes that matches its observed genotypes.
+}
 \end{frame}
 
 \begin{frame}[c]{Prop'n mismatches}
 \figh{Figs/distmatall.png}{0.85}
-\note{}
+\note{
+  For each pair of samples, one DNA (genotype) sample and one RNA
+  (gene expression) sample, we get a measure of distance as the
+  proportion of mismatches between the observed eQTL genotypes and the
+  inferred eQTL genotypes.
+
+  Here's a picture of this distance matrix. It should be blue along
+  the diagonal and red everywhere else.
+}
 \end{frame}
 
 \begin{frame}[c]{Prop'n mismatches}
 \figh{Figs/distmat001.pdf}{0.85}
-\note{}
+\note{
+  And if we look at the first 100 samples, that's exactly what we see:
+  the samples are close to themselves and not to anyone else.
+}
 \end{frame}
 
 \begin{frame}[c]{Prop'n mismatches}
 \figh{Figs/distmat201.pdf}{0.85}
-\note{}
+\note{
+  But if we look at the middle 100 samples, we find a whole bunch of
+  off-by-one and off-by-two errors. The samples are quite different
+  from the corresponding one, but their close to the one next to it or
+  two over.
+}
 \end{frame}
 
 
 \begin{frame}[c]{Prop'n mismatches}
 \figh{Figs/gve_dist.pdf}{0.85}
-\note{}
+\note{
+  If we look at histograms of the diagonal of the distance matrix (top
+  panel) and the off-diagonal values (lower panel), we find that most
+  samples are correct, but there are a bunch of values on the diagonal
+  that really are non-matching, and a bunch of values off the diagonal
+  that are indicative of matches.
+}
 \end{frame}
 
 
 \begin{frame}[c]{Decisions}
 \figh{Figs/gve_dist_byrow_left.pdf}{0.85}
-\note{}
+\note{
+   If for each row of the distance matrix we take the value on the
+   diagonal (the self-self distance) and plot it against the minimum
+   value in that row, we find a bunch of samples that look correct (in
+   blue in the lower-left corner), as they are closest to themselves
+   and that distance is small.
+
+   There are a number of samples that are wrong but ``fixable'' (in
+   green), as they are not close to themselves but they are close to
+   some other sample.
+
+   Then there are samples ``not found'' (in red) that are not close to
+   anything. There were actually 550 total mice (good to have backups
+   in case one dies), but only about 500 had gene expression data in
+   any one tissue, and some of the DNA samples were apparently lost.
+}
 \end{frame}
 
 
