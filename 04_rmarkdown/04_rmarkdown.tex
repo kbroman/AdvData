@@ -74,6 +74,26 @@
 \onslide<4->{\item To estimate some other quantity?}
 \ei }
 
+\note{
+  First, a quick note from last time: in computer simulations to
+  estimate power, or to estimate a p-value or some other quantity, how
+  many simulation replicates should you use?
+
+  For power, consider that the estimated count is binomial($n$, $p$)
+  where $n$ is the number of replicates and $p$ is the true power. The
+  estimated power will have standard error $\sqrt{p (1-p)/n}$. You
+  maybe want to choose $n$ so that this is like 1\%.
+
+  For estimating a p-value, you're in about the same situation. Your
+  estimated p-value has SE $\sqrt{p(1-p)/n}$ so choose $n$ to make
+  this as small as you'd like for the sort of p-values you're
+  expecting.
+
+  For other parameters, it depends on how variable they are. You can
+  always start with 100 and use those results to get an estimate of
+  how many more you might need.
+}
+
 \end{frame}
 
 
@@ -439,6 +459,12 @@ output: word_document
   \ei
 }
 
+\note{
+  There are a lot of great options that you can shove into that yaml
+  header. Here are some of my favorite ones. You can learn about
+  others by looking at the help file for {\tt html\_document}.
+}
+
 \end{frame}
 
 
@@ -665,6 +691,21 @@ code.
 
 \centerline{More at \href{https://rstudio.github.io/reticulate/}{\tt rstudio.github.io/reticulate/}}
 
+
+\note{
+  You can have python code chunks in an R Markdown document, and the
+  objects you create have permanence between chunks: there's a python
+  environment running continuously the way R does.
+
+  And with the reticulate package, you can get access to R objects
+  from python and vice versa. But it can be a little ugly.
+
+  One limitation is that you can't seem to use python in-line the way
+  you can with R. All I can see to do, if you want a bit of in-line
+  code to show some statistics, is to use R in-line and refer to the
+  python objects through this rather ugly {\tt py} object which
+  contains all of the python objects as a big named list.
+}
 
 \end{frame}
 
@@ -987,12 +1028,12 @@ Focus your compulsive behavior on things that matter.
 }
 \end{frame}
 
-\begin{frame}[c]{What should a report contain?}
+\begin{frame}<handout:0>[c]{What should a report contain?}
 
 \end{frame}
 
 
-\begin{frame}[c,fragile]{What should a report contain?}
+\begin{frame}<handout:0>[c,fragile]{What should a report contain?}
 
 \addtocounter{framenumber}{-1}
 
@@ -1031,6 +1072,23 @@ Focus your compulsive behavior on things that matter.
   summary}
   \ei
 
+  \note{
+    These are the things that I recommend putting into a report to
+    collaborators.
+
+    Remember that reproducibility success story of mine, where my
+    collaborator recognized that I'd used an old version of the data.
+    Make sure that you've described things in sufficient detail that
+    your collaborators will be able to see if you've messed something
+    up like that. Take the opportunity to explain what you see the
+    goals to be, so that they can correct you if you've misunderstood
+    something.
+
+    It can be helpful to tired, scatter-brained scientists to start
+    with an executive summary that hits the key points of the rest of
+    your report. Go back and write this after you've finished
+    everything else.
+}
 
 \end{frame}
 
@@ -1049,6 +1107,15 @@ Focus your compulsive behavior on things that matter.
 
   \centerline{\hilit Why this format?}
 
+  \note{
+    Scientific papers are written in a classic way, with methods
+    separated from results and results separated from the discussion
+    of them. It can be helpful to stick to this form. Your
+    collaborators have read lots of papers in this format, and so it
+    will be comfortable to them and they'll understand where to look
+    for stuff.
+}
+
 \end{frame}
 
 
@@ -1064,6 +1131,23 @@ Focus your compulsive behavior on things that matter.
 \item What do + and -- mean (regarding coefficients/effects)?
   \ei
 
+  \note{
+    Here are some further suggestions. Know your audience is the most
+    important thing, whether for a report, a paper, or a talk.
+
+    Don't show a figure without explaining it. If it's not interesting
+    enough to spend some time explaining it, then you should probably
+    just leave it out. And remember that your collaborator will maybe
+    be seeing it for the first time and so will need more guidance to
+    be able to understand it.
+
+    Finally, it is a constant source of confusion the way coefficients
+    and covariates have been coded. Is a positive estimate good or
+    bad? It's best to be explicit about this. The more questions you can
+    anticipate, the more of your discussion time that can be devoted
+    to really important things.
+  }
+
 \end{frame}
 
 
@@ -1075,6 +1159,14 @@ Focus your compulsive behavior on things that matter.
 \item RStudio Projects
 \item \href{https://here.r-lib.org/}{here} package for R
   \ei
+
+  \note{
+      For organizing projects, if you use RStudio, consider using
+      RStudio Projects. And look at the here package, which can really
+      clean up the use of paths within a project. (Is this script
+      being run from within the R directory or from a directory one up
+      from that?)
+    }
 
 \end{frame}
 
@@ -1092,6 +1184,11 @@ Focus your compulsive behavior on things that matter.
   (like resumes or letters)
   \ei
 
+  \note{
+    If you like R Markdown, you'll love these other things, for using
+    R Markdown to create websites, books, slides, or resumes.
+  }
+
 \end{frame}
 
 \begin{frame}{Interactive graphics tools}
@@ -1107,6 +1204,12 @@ Focus your compulsive behavior on things that matter.
 \item \href{https://juba.github.io/scatterD3/}{scatterD3}
   \ei
 
+  \note{
+    Finally, I find interactive graphs to be super useful in reports,
+    not just because they're fun, but also because they can enable
+    your collaborator to answer many of their questions on their own.
+    (Which gene is this one? What mouse is the outlier?)
+  }
 \end{frame}
 
 \end{document}
