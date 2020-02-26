@@ -87,7 +87,7 @@ for(i in c(2,6,8)) {
 u <- par("usr")
 legend(u[2],u[4],xjust=1,c("2-way selfing","2-way sib-mating",
                    "8-way sib-mating","","Average","95th percentile"),
-       col=c(color[c(2,6,8)],"#000070","white","white"),lwd=2,cex=1.2,
+       col=c(color[c(2,6,8)],"white","black","black"),lwd=2,cex=1.2,
        lty=c(1,1,1,1,1,2))
 dev.off()
 
