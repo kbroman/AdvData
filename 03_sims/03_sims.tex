@@ -978,6 +978,22 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  I'd started out trying to sell you on the value of computer
+  simulation, but now I've turned completely to numerical and then
+  exact symbolic calculations. Simulations have the advantage of being
+  easy to get started and get some quick solutions, but the results
+  can be both imprecise (due to simulation error) and overly specific
+  (due to difficulty of covering very general conditions).
+
+  But let's get back to another way in which simulations have a big
+  advantage over exact calculations: the ability to consider complete,
+  realistic cases. In our exact calculations, we could look at two or
+  three points along a chromosome. But there are a lot of interesting
+  questions that can only be answered by considering the whole genome
+  at once.
+
+  So here we simulate recombinant inbred lines for a mouse-like genome
+  with 20 chromosomes and a total genome length of 1665 cM.
 }
 
   \end{frame}
@@ -987,6 +1003,13 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/ngen_fix.pdf}{1.0}
 
 \note{
+  The first question: how many generations does it take to get
+  complete inbreeding. We usually think of 6 generations for 2-way RIL by
+  selfing and 20 generations for 2-way RIL by sibling mating, but here
+  were seeing like 10 generations for selfing and 36 generations for
+  sib-mating. 8-way RIL by sibmating take an extra 3 generations, but
+  note that this includes the two extra generations to just get
+  the 8 genomes together.
 }
 
 \end{frame}
@@ -995,6 +1018,12 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/ngen99.pdf}{1.0}
 
 \note{
+  If we loosen the requirement of complete fixation and just look to
+  see how long it takes to 99\% of the genome fixed, we cut off quite
+  a bit, particularly from the sib-mating cases. But still note that
+  while on average it takes 27 generations to get 99\% fixation in
+  8-way RIL by sib-mating, there is a lot of variation; you could
+  could be done in 20 or it could take 32 or so.
 }
 
 \end{frame}
@@ -1003,6 +1032,9 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/prophet.pdf}{1.0}
 
 \note{
+   What percent of the genome is not fixed? Here we show the average
+   and 95th percentiles be generation; impossible to get this
+   analytically.
 }
 
 \end{frame}
@@ -1011,6 +1043,7 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/nbrks.pdf}{1.0}
 
 \note{
+   How many crossovers are there, across the genome?
 }
 
 \end{frame}
@@ -1024,6 +1057,8 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/lseg.pdf}{1.0}
 
 \note{
+   How big are the segments between crossovers? Note all of the spikes
+   at whole chromosomes that were inherited intact.
 }
 
 \end{frame}
@@ -1032,6 +1067,8 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/probintact.pdf}{1.0}
 
 \note{
+  How likely is it that a particular segment is inherited intact, as a
+  function of the length of the segment?
 }
 
 \end{frame}
@@ -1040,6 +1077,8 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/lsmseg.pdf}{1.0}
 
 \note{
+  What is the length of the smallest segment between crossovers,
+  genome-wide?
 }
 
 \end{frame}
@@ -1048,6 +1087,10 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/nsegsm1.pdf}{0.9}
 
 \note{
+  How many inter-breakpoint segments are $<$ 1 cM?
+  An average of 11 in an 8-way RIL genome.
+
+  Easy to answer by simulation; impossible to get at any other way.
 }
 
 \end{frame}
@@ -1060,6 +1103,12 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  Finish this work on the Collaborative Cross genomes, I'd thought I
+  was done with this sort of applied probability. But then the
+  first lines started to be developed, and they were wanting to
+  genotype and phenotype them at intermediate generations, prior to
+  full inbreeding. Which led to the question: what do these lines look
+  like at the intermediate generations?
 }
 
 \end{frame}
@@ -1082,6 +1131,10 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  We've covered the fully fixed chromosome case, but how about after
+  $k$ generations of sibling mating? What are the genotype frequencies
+  at a fixed point? What are the transition probabilities from one
+  position to another?
 }
 
 \end{frame}
@@ -1091,6 +1144,12 @@ $ \mathsf{log_2 \left\{ \frac{
 \figw{Figs/preCC_hap_prob_table.pdf}{1.0}
 
 \note{
+  So I was pulled back into this sort of investigation again, and
+  while I wasn't able to solve all of the things I wanted, I was able
+  to characterize the haplotype probabilities at these intermediate
+  generations, which led to yet another rather crazy paper with this
+  especially crazy table of results. ({\hilit Just try and re-type this table,
+  copy editor; I dare you!})
 }
 
 \end{frame}
@@ -1102,6 +1161,9 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  So I'd lost track of my the central theme several times in this, but
+  the key lesson to draw from this is: computer simulations are hugely
+  valuable for data scientists.
 }
 
 \end{frame}
@@ -1119,6 +1181,14 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+  Computer simulations have lots of uses: to study probabilities (as
+  here), but also to estimate power or sample size, to evaluate how
+  statistical methods perform, and to evaluate the sensitivity or
+  robustness of a method.
+
+  Are you're concerned about whether your method will work well if the
+  data have errors or biases? Well, simulate data like you fear, and
+  see try it out!
 }
 
 \end{frame}
@@ -1135,6 +1205,24 @@ $ \mathsf{log_2 \left\{ \frac{
 
 
 \note{
+   In this work on recombinant inbred lines, I've used a combination
+   of simulations, numerical calculations and analytic calculations.
+
+   Analytic calculations can be the most satisfying, and can give you
+   generally useful closed-form solutions. But you usually have to
+   make a lot of simplifying assumptions, and it can be really hard
+   work.
+
+   Numerical calculations can have precision that approaches exact
+   results, and can at times be easier to achieve and applicable in
+   more complex cases.
+
+   But computer simulations, while being potentially noisy and having
+   to repeat everything for a variety of different cases, are often
+   easy to get going and can allow consideration of fully realistic
+   situations and to investigate complex outcomes.
+
+   {\hilit When it doubt, simulate!}
 }
 
 \end{frame}
