@@ -34,7 +34,9 @@ the primary outcome, "Maximal symptom days/2 wk".
 The analysis does not seem to be not described in much detail. The
 most detail I could find was on page 72 of the [study protocol
 supplement](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5632564/table/T2/)
-(labeled page 56).
+(labeled page 56). But the analysis doesn't seem to use site (and
+this doesn't seem to be included in the data file), even though the
+protocol said it would.
 
 You can use the [gee package](https://cran.r-project.org/package=gee).
 The outcome variable is `sxsmaxday`, and I believe you'll omit `VisitNum`
@@ -43,6 +45,12 @@ The outcome variable is `sxsmaxday`, and I believe you'll omit `VisitNum`
 ```r
 out <- gee(sxsmaxday ~ group, id=ID, family=poisson(link=log), corstr="exchangeable")
 ```
+
+Note that the first and second columns in that row, with the median,
+25th, and 75th percentiles, are also tricky. It seems like for each
+subject they took the average outcome across the last three visits,
+and that the Table 2 values are the median, 25th, and 75th percentiles
+of those averages.
 
 b. Instead of using GEE, combine the outcomes for visits 2-4 in a
 subject by taking the sum, here focusing on the subjects that had
