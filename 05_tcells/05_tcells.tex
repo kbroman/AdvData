@@ -33,7 +33,12 @@
 \frame{
   \titlepage
 
-  \note{}
+\note{
+   In this lecture, we'll look at the EM algorithm, which is a broadly
+   useful algorithm for getting maximum likelihood estimates. We'll
+   learn about it through a case study on a T cell frequency assay,
+   for measuring the effectiveness of a vaccine.
+}
 
 } }
 
@@ -63,6 +68,21 @@
 
   \end{columns}
 
+\note{
+    We're considering an assay that seeks to estimate the frequency of
+    T cells in a blood sample that respond to a particular antigen.
+    Antigens are bits of foreign protein, such as chewed-up virus.
+    Antigen-presenting cells take up these proteins and present them
+    on their surface. This ultimately leads to the proliferation of
+    specific T cells with receptors complementary to the antigen,
+    which differentiate to create memory cells (which lead to a faster
+    response later) or effector cells (which go around destroying
+    antigen).
+
+    The real goal was to determine whether a particular vaccine was
+    looking to be effective by leading to an increase in the frequency
+    of responding T-cells.
+}
 
 \end{frame}
 
@@ -92,6 +112,13 @@
 
   \end{columns}
 
+\note{
+    In the assay we're considering, you combine diluted blood cells
+    and growth medium with antigen and $^3$H-thymidine (the T in DNA,
+    but radioactive). Replicating cells take up $^3$H-thymidine, and
+    you then extract the DNA and measure the radioactivity.
+}
+
 \end{frame}
 
 
@@ -109,6 +136,17 @@
     \ei
     \ei
 
+\note{
+  The usual approaches use three wells with antigen and three cells
+  without, and just look at like the ratio of the average response.
+  This was viewed as too crude for the current context.
+
+  Alternatively, you could do a limiting dilution assay: use several
+  dilutions of cells, with many wells at each dilution. But this was
+  viewed as requiring much more blood than the subjects would
+  generally be willing to offer.
+}
+
 \end{frame}
 
 
@@ -125,10 +163,28 @@
   \end{columns}
 
 
+\note{
+    And so our collaborator was interested in trying to get by with a
+    single 8$\times$12 plate of wells, or maybe a pair of plates, at a
+    single dilution. There would be some control wells (with just
+    cells), and then a couple of sections of wells with one of the two
+    test antigens, and then some wells with Tetanus toxin (as a
+    positive control; all subjects will have been exposed to Tetanus
+    toxin, via a tetanus vaccine). The PHA wells are another positive
+    control.
+}
+
 \end{frame}
 
 \begin{frame}[c]{Data}
   \figh{Figs/lda713_data.png}{1.0}
+
+\note{
+    Here's an example data set. Higher numbers mean more
+    radioactivity, indicating cells have taken up $^3$H-thymidine into
+    their DNA.
+}
+
 \end{frame}
 
 
@@ -154,10 +210,37 @@
 
     \ei
 
+
+\note{
+    The tranditional analysis of such data was to split wells into
+    positive and negative wells according to whether they seem to have
+    one or more responding cells, or to have no responding cells.
+    Assuming that the number of responding cells in a well follows a
+    Poisson distribution, you can use the proportion of negative cells
+    to get an estimate of the average number of responding cells per
+    well.
+
+    The Poisson distribution is like a binomial(n,p) distribution
+    where n is really large and p is really small, with the mean of
+    the Poisson distribution $\lambda = n p$.
+}
+
 \end{frame}
 
 \begin{frame}[c]{Analysis}
   \figh{Figs/simple_method.png}{0.9}
+
+\note{
+   Applying the simple method to the example data, we might derive a
+   cutoff between negative and positive wells as mean + 3 SD of the
+   cells-alone wells. Then count the negative wells and convert to get
+   estimates of the number of responding cells in a well.
+
+   Ultimately, we subtract off the baseline estimate for the
+   cells-alone wells and re-scale to number of responders per million
+   cells.
+}
+
 \end{frame}
 
 
@@ -167,11 +250,31 @@
 \item Hard to choose cutoff
 \item Potential loss of information
   \ei
+
+\note{
+   But it can be hard to choose a cutoff, and there's a potential loss
+   of information by converting the quantitative values into binary
+   data.
+
+   And since we're trying to get by with just one or two plates of
+   data at a single dilution, we really want to try to extract as much
+   information as possible from the observed data.
+}
+
 \end{frame}
 
 
 \begin{frame}{Response vs no. cells}
 \figw{Figs/mean_response.pdf}{1.0}
+
+\note{
+    For a couple of subjects we had a dilution series of data. If you
+    look at the average response in each section of cells by cell
+    dilution in a subject, there is a clear dose-response relationship
+    which suggests that there's more information about the cellular
+    response than just positive/negative status of the wells.
+}
+
 \end{frame}
 
 
@@ -200,6 +303,24 @@
 
   \figw{Figs/model_distribution.pdf}{1.0}
 
+
+\note{
+    To extract more information from the quantitative response, let's
+    create a model for these observed data. It's natural to assume
+    that the number of responding cells in a well follows a Poisson
+    distribution. Let's further assume that some transformation of the
+    quantitative response is linear in the number of responding cells,
+    with normally distributed residual variation. And partly due to
+    the shape of the curves on the previous slide, we went with
+    square-root of the response.
+
+    So we have normally distributed response for wells with 0
+    responders, a shift upwards for wells with 1 responder, etc.  The
+    overall response distribution is a ``mixture'' of these normally
+    distributed components, with the relative proportions of the
+    components being according to the Poisson probabilities.
+}
+
 \end{frame}
 
 
@@ -220,6 +341,16 @@
         bk}{\sigma} \right)
       \right]
   \end{eqnarray*}
+
+
+\note{
+    Our goal is to get estimates of the mean numbers of responding
+    cells in each group of wells, as well as the plate-specific
+    parameters $a$, $b$, and $\sigma$.
+
+    We can write down the likelihood for the data; optimizing this
+    likelihood would give us the MLEs for the parameters.
+}
 
 \end{frame}
 
@@ -244,6 +375,29 @@
   \item log likelihood is non-decreasing
     \ei
     \ei
+
+
+\note{
+  The EM algorithm is a particular optimization method for getting the
+  MLEs that is useful in this sort of situation where we have missing
+  data (the $k$'s). If we {\hilit knew} the number of responding cells
+  in each well, we could estimate the averages by just taking the
+  averages of the $k$'s in each group, and we could estimate $a$, $b$,
+  and $\sigma$ by linear regression of the responses on the $k$'s.
+
+  Not knowing the $k$'s, the EM algorithm works by iterating between
+  an E step (where you get expected values for the $k$'s, given the
+  observed data and given current estimates of the parameters) and an
+  M step (where you derive new and improved estimates, using the
+  expected values of the $k$'s in place of their true (but unknown)
+  values.
+
+  The EM algorithm has a number of advantages: it is often easy to
+  implement in software, it can be super stable (meaning no matter
+  what starting values you use, the algorithm will converge to some
+  finite values that are at least reasonable), and it can be proven
+  that across iterations, the log likelihood is non-decreasing.
+}
 
 \end{frame}
 
@@ -276,6 +430,20 @@
   {\hilit M-step}: Regress y on $\text{E}(k|y)$
 
 
+
+\note{
+  For this particular model, the idea is to calculate expected values
+  for the $k$'s given the observed data and given current values for
+  the parameters, using Bayes's rule. (In practice, the sums go up to
+  some maximum $k$, like 20, where the posterior probability for $k$
+  has gotten really small.)
+
+  At the M step, you then take averages of these values, and
+  regression y on these values.
+
+  Go back and forth between the two steps until the estimates converge.
+}
+
 \end{frame}
 
 
@@ -283,8 +451,15 @@
 
 \begin{frame}{Oops, that didn't work}
 \figw{Figs/em_loglik_wrong.pdf}{1.0}
-\end{frame}
 
+\note{
+  Here's the log likelihood plotted against iteration. As you can see,
+  the thing didn't really work as it should have. The log likelihood
+  is going up and down rather than being non-decreasing, as I said it
+  should be.
+}
+
+\end{frame}
 
 
 
@@ -304,6 +479,25 @@
   \item Here, we need not just $\sum k$ and $\sum k y$, but also $\sum k^2$.
 
     \ei
+
+
+\note{
+   It turns out that, formally, you need to calculate the expected
+   value of the complete-data log likelihood function. In practice,
+   this is a linear combination of the sufficient statistics.
+
+   And in this situation the sufficient statistics include not just
+   $\sum k$ and $\sum ky$, but also $\sum k^2$.
+
+   Note taking account of $\sum k^2$ was our problem, as E($k^2$)
+   $\ne$ [E($k$)]$^2$.
+
+   This took a while for me to figure out, as I initially thought
+   there was a bug in my code, but really there was a bug in my
+   {\hilit understanding} of the EM algorithm. Calculating the log
+   likelihood and following it by iteration was a super-useful
+   diagnostic.
+}
 
 \end{frame}
 
@@ -336,12 +530,34 @@
 
 
 
+
+\note{
+   Going back to the EM algorithm, we need to include the calculation of
+   the expected value of $k^2$ given the observed data and given the
+   parameter estimates. This is easy enough, because it's just like
+   calculation the expected value of $k$.
+
+   More difficult is that the linear regression part of the M step
+   involves sort of going back-to-basics. You need to figure out where
+   the $k^2$ values enter into things and plug in E($k$) for $k$ and
+   E($k^2$) for $k^2$.
+
+   I think the easiest way to do this is to look at the $X'X$ matrix,
+   which will be 2$\times$2, and stick the E($k^2$) values in there.
+}
+
 \end{frame}
 
 
 
 \begin{frame}{Ah, that's better}
 \figw{Figs/em_loglik_right.pdf}{1.0}
+
+\note{
+  Having corrected our algorithm, here is the trace of the log
+  likelihood by iteration. Non-decreasing, as it should be.
+}
+
 \end{frame}
 
 
@@ -352,6 +568,25 @@
 \item Multiple modes
 \ei
 
+
+\note{
+  The EM algorithm may sound great, but I've swept some important
+  difficulties under the rug.
+
+  First, we need starting values. How do we get those? The easiest way
+  is to use our crude method of splitting wells into
+  positive/negative; that will give us some estimates of the $\lambda$
+  values. We can look at the relationship between the average
+  responses and those $\lambda$'s to get estimates of $a$, $b$, and
+  $\sigma$.
+
+  More difficult is that while the EM algorithm will converge to
+  something, it won't necessarily converge to the global MLEs. There
+  can be multiple modes in the likelihood surface. A solution to this
+  is to use lots of random starting points and pick the best of the
+  converged estimates.
+}
+
 \end{frame}
 
 
@@ -359,6 +594,13 @@
 
 \begin{frame}[c]{Multiple modes}
 \figw{Figs/multiple_modes.pdf}{1.0}
+
+\note{
+   Here's a particular example. I initiated the EM algorithm at 1000
+   different random starting points, and it converged to 8 different
+   sets of estimates.
+}
+
 \end{frame}
 
 
@@ -384,11 +626,41 @@
    \hline
 \end{tabular}
 
+
+\note{
+   Here are the 8 modes we found, along with their log likelihood and
+   the numbers of times they were hit, out of 1000.
+
+   This is maybe a bit concerning. Actually, it is quite concerning.
+   Our estimated mode has estimated $\lambda$'s around 3, but there's
+   another mode just slightly lower in likelihood that has the
+   estimates around 5, and another mode just below that with estimates
+   at 2.
+
+   The model is great, but the data aren't quite sufficient to fit it,
+   is what you might conclude. The different modes here have a lot in
+   common with that choice of cutoff in the traditional approach to
+   analyzing these sort of data.
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Estimate vs. starting point}
 \figw{Figs/starting_pts.pdf}{1.0}
+
+\note{
+  Here's a plot of the estimates vs the starting value that I had used
+  for that parameter. Each panel is one parameter and the 1000 points
+  are the 1000 starting points. As you can see, for most of the
+  parameters there seems no real relationship between where you start
+  and where you end up.
+
+  But the $b$ parameter (slope in response vs responding cells) shows
+  a very strong relationship: the initial value for $b$ has a big
+  effect on where you end up.
+}
+
 \end{frame}
 
 
@@ -400,6 +672,14 @@
 \item Start with an understanding of the problem and data
 \item Think about a model for the data-generating process
   \ei
+
+\note{
+    Some important principles that were guiding this work: start with
+    an understanding of the problem and the data, and think about a
+    model for the data-generating process. That led us to this
+    normal/Poisson mixture model.
+}
+
 \end{frame}
 
 
@@ -411,6 +691,13 @@
 \item Use the log likelihood as a diagnostic when implementing an EM
   algorithm
   \ei
+
+\note{
+    And what have we learned? The EM algorithm is really useful, and
+    you should use the log likelihood as a diagnostic when
+    implementing it.
+}
+
 \end{frame}
 
 
@@ -422,6 +709,20 @@
 \item Debugging the code
 \item Executing the code
   \ei
+
+
+\note{
+    Real selling points for the EM algorithm come up when you look at
+    the time involved in writing a program to give parameter
+    estimates. Programming time includes the time to formulate the
+    problem, the time to write the code, debug the code, and execute
+    the code.
+
+    Where the EM algorithm really shines is on the ``writing the
+    code'' and ``debugging the code'' sections. The EM algorithm is
+    often rather simple to code, and it comes with a built-in
+    diagnostic.
+}
 
 \end{frame}
 
@@ -437,6 +738,22 @@
 \item Our paper has like 9 citations: no one has ever really used the
   method.
   \ei
+
+
+\note{
+  What can we say about the impact of this work?
+
+  It didn't seem to have much impact, I think. The vaccine we were
+  studying didn't seem to be very effective.
+
+  The R package I wrote, implementing the method, is on GitHub, but I
+  never did put it on CRAN. I distributed it just through my personal
+  web site. No one has ever asked me about it, so probably it has
+  never been used.
+
+  The paper we wrote about this work has just like 9 citations. No one
+  has every really used the method. Bummer.
+}
 
 \end{frame}
 
@@ -461,6 +778,23 @@
   add $\sum_{ij} (c-1) \log y_{ij}$ to the log likelihood
     \ei
     \ei
+
+\note{
+    A couple of further points. Standard errors should always be
+    required. If you give an estimate, you need to give a standard
+    error.  Getting standard errors here is a bit painful. We used the
+    SEM algorithm, which uses the rate of convergence of EM. It's a
+    bit clunky, but it doesn't require writing a whole lot of new code,
+    and it seems to give reasonable results.
+
+    Further, we could more formally investigate the appropriate
+    transformation. See the Box and Cox (1964) paper, The key issue is
+    the change-of-variables in the density, so that you have to add a
+    quantity to the log likelihood. It's slightly tricky to get right,
+    but it is a nice way to use the data to determine the appropriate
+    transformation.
+}
+
 \end{frame}
 
 
