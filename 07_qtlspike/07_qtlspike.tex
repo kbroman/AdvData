@@ -34,7 +34,12 @@
 \frame{
   \titlepage
 
-  \note{}
+\note{
+  In this lecture, I'll illustrate a couple of examples of the EM
+  algorithm, via QTL mapping and with a phenotype that shows a common
+  feature: of having a spike in its distribution. We'll look at a way
+  to deal with that problem.
+}
 
 } }
 
@@ -42,6 +47,25 @@
 
 \begin{frame}[c]{Intercross}
 \figw{Figs/intercross.pdf}{1.0}
+
+\note{
+    QTL mapping is an effort to identify the genetic loci that
+    contribute to variation in some quantitative trait, like blood
+    pressure. Such loci are called quantitative trait loci (QTL).
+
+    We start with two strains that differ in the trait of interest.
+    That they show a consistent difference when raised in the same
+    environment indicates that the difference is genetic. To try to
+    identify genes contributing to the trait difference, we can
+    perform a series of different crosses; the most common is the
+    intercross.
+
+    One gathers a number of intercross progeny, measures the trait,
+    and then measures genotype at different positions along the
+    chromosomes. We then look for positions where the genotype is
+    associated with the phenotype.
+}
+
 \end{frame}
 
 
@@ -52,6 +76,13 @@
 
 \vspace{5mm}
 \figw{Figs/lodcurve_insulin_with_effects.pdf}{0.96}
+
+\note{
+    So we will scan across the genome, at each position calculating
+    some test statistic. Regions where the test statistic is large
+    will show an association between genotype and phenotype.
+}
+
 \end{frame}
 
 
@@ -65,16 +96,43 @@
 {\lolit \footnotesize
 Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 }
+
+\note{
+    As an example, here are body weight and heart weight for 150 or so
+    intercross mice.
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Genotype data}
 \figw{Figs/genodata.pdf}{1.0}
+
+\note{
+    In addition to that phenotype data, we'll have genotype data like
+    this. For each mouse, we'll have data at a variety of positions
+    across the genome, indicating homozygous blue, homozygous pink, or
+    heterozygous (shown in green).
+
+    One of the challenges is the missing data: the white pixels
+    sprinkled into the data.
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Genetic map}
 \figw{Figs/geneticmap.pdf}{1.0}
+
+\note{
+   A genetic map will indicate the locations of the genetic markers
+   along the chromosomes.
+
+   Our genotype data is rather sparse. On a given chromosome, we get
+   to see genotype only at 3-8 positions, with some pretty large gaps
+   between these positions.
+}
+
 \end{frame}
 
 
@@ -96,6 +154,19 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 \figw{Figs/anova.pdf}{1.0}
 
 \end{columns}
+
+\note{
+  The simplest analysis of this sort of data is to look at each
+  marker, one at a time, split the mice into groups according to their
+  genotype, and do analysis of variance.
+
+  We look for markers where the different genotype groups show strong
+  differences in average phenotype, as in the left panel for marker
+  D15Mit184. We are not so interested in markers where there is little
+  difference among the genotypes, as in the right panel for marker
+  D2Mit92.
+}
+
 \end{frame}
 
 
@@ -129,6 +200,10 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 
 \end{columns}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -149,21 +224,29 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
   dist'ns with mixing proportions $\mathsf{\text{Pr}(g \ | \ \text{marker data})}$
 \ei
 
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Backcross}
 \figw{Figs/backcross.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}{Genotype probabilities}
 
 
-\only<1>{\figw{Figs/genoprob1.pdf}{1.0}}
-\only<2>{\figw{Figs/genoprob2.pdf}{1.0}}
-\only<3>{\figw{Figs/genoprob3.pdf}{1.0}}
-\only<4>{\figw{Figs/genoprob4.pdf}{1.0}}
-\only<5>{\figw{Figs/genoprob5.pdf}{1.0}}
+\only<1|handout 0>{\figw{Figs/genoprob1.pdf}{1.0}}
+\only<2|handout 0>{\figw{Figs/genoprob2.pdf}{1.0}}
+\only<3|handout 0>{\figw{Figs/genoprob3.pdf}{1.0}}
+\only<4|handout 0>{\figw{Figs/genoprob4.pdf}{1.0}}
+\only<5|handout 0>{\figw{Figs/genoprob5.pdf}{1.0}}
 \only<6>{\figw{Figs/genoprob6.pdf}{1.0}}
 
 \bigskip
@@ -185,6 +268,10 @@ Or use the {\hilit hidden Markov model (HMM)} technology
 \item To incorporate dominant markers
 \item {\hilit (Still assume no crossover interference.)}
 \ei
+}
+
+
+\note{
 }
 
 \end{frame}
@@ -237,6 +324,10 @@ conditional on the genotypes at the two markers.
 \figw{Figs/mixtures.pdf}{1.0}
 
 \end{columns}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -269,6 +360,10 @@ of $\mathsf{\mu_0}$, $\mathsf{\mu_1}$, $\mathsf{\sigma}$:
 
 \qquad values for which $\mathsf{l(\mu_0,\mu_1,\sigma)}$ is maximized.
 \ei
+
+
+\note{
+}
 
 \end{frame}
 
@@ -304,6 +399,10 @@ y_i,\text{marker data},\hat{\mu}_0^{(k-1)},
 
 \ei
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -313,6 +412,10 @@ y_i,\text{marker data},\hat{\mu}_0^{(k-1)},
 \figw{Figs/em_alg_illustration.png}{0.6}
 
 \href{https://bit.ly/em_alg}{\lolit \footnotesize \tt bit.ly/em\_alg}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -348,6 +451,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 \ei
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -359,6 +466,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 \figw{Figs/interactive_lod_curve.png}{0.65}
 
 \href{https://bit.ly/D3lod}{\lolit \footnotesize \tt bit.ly/D3lod}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -396,6 +507,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 \end{columns}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -403,6 +518,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 \begin{frame}[c]{Survival after Listeria infection}
 \figw{Figs/listeria_hist.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -415,6 +534,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 \item Specially-tailored models (e.g. GLM)
   \ei
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -423,6 +546,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 \begin{frame}[c]{}
 
 \centerline{\Large \color{title} Censoring?}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -438,6 +565,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 \item Area of garage
 \ei
+
+
+\note{
+}
 
 \end{frame}
 
@@ -462,6 +593,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
   {\color{background} Assume} $\{(y_i, z_i, g)\}$ mutually independent
 
   \ei
+
+
+\note{
+}
 
 \end{frame}
 
@@ -491,6 +626,10 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
   \end{columns}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -504,16 +643,28 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
   \ei
 
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{LOD curves}
 \figw{Figs/listeria_lod.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{QTL effects}
 \figw{Figs/listeria_effects.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -529,11 +680,19 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 \ei
 
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}{Standard approach}
-\only<1>{\figw{Figs/listeria_stdlod.pdf}{1.0}}
+\only<1|handout 0>{\figw{Figs/listeria_stdlod.pdf}{1.0}}
 \only<2>{\figw{Figs/listeria_stdlodB.pdf}{1.0}}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -566,6 +725,20 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 \ei
 
+
+
+\note{
+  Here are some papers related to the work I've discussed today.
+
+  Lander and Botstein (1989) introduced this idea of interval mapping
+  of QTL, and the use of the EM algorithm to deal with missing
+  genotype data in this context.
+
+  The second is a gentler review of QTL mapping.
+
+  The last two papers concern this ``spike in the phenotype
+  distribution'' situation.
+}
 
 \end{frame}
 
