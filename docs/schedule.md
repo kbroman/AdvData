@@ -13,7 +13,7 @@ description: Schedule for BMI 826, Advanced data analysis
 | 30 Jan    |    | [_R Markdown_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](04_rmarkdown.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](04_rmarkdown_notes.pdf)
 | 4 Feb     |    | [EM algorithm: T cell frequencies ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](05_tcells.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](05_tcells_notes.pdf)
 | 6 Feb     |    | [_Know the command line; know your editor_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](06_cmdline.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](06_cmdline_notes.pdf)
-| 11 Feb    |    | [EM algorithm: QTL mapping with a cure model ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](07_qtlspike.pdf)
+| 11 Feb    |    | [EM algorithm: QTL mapping with a cure model ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](07_qtlspike.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](07_qtlspike_notes.pdf)
 | 13 Feb    |    | [_Git and GitHub_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](08_git.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](08_git_notes.pdf)
 | 18 Feb    |    | [_Git/GitHub laboratory_ ![html icon](https://kbroman.org/pages/icons16/html-icon.png)](09_git_lab.html)  [![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](09_git_lab.pdf)
 | 20 Feb    |    | [Model misspecification: Estimating allele frequencies ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](10_allelefreq.pdf)
