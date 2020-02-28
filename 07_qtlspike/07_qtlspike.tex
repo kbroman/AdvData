@@ -202,6 +202,23 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 
 
 \note{
+  Advantages of this approach are that it's simple and doesn't require
+  specialized software. You can easily incorporate covariates, but
+  replacing the ANOVA with linear regression and including extra
+  covariates. You can extend the analysis to a more complex model, for
+  example Cox proportional hazards when you have censored survival
+  times. You're just looking for association between the phenotype and
+  a categorical covariate. (Then repeat for each individual marker.)
+  You also don't need a genetic map for the markers; you're just
+  looking at them individually.
+
+  Disadvantages include that you need to omit individuals with missing
+  genotype at a marker, and you get imperfect information about QTL
+  location. The approach can suffer in low-density scans where the
+  intervals between markers are large.
+
+  The biggest disadvantage is that you're considering just one QTL at
+  a time.
 }
 
 \end{frame}
@@ -226,6 +243,25 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 
 
 \note{
+  In 1989 Lander and Botstein came up with a method, now called
+  ``interval mapping,'' to solve the first three disadvantages of
+  doing ANOVA at markers.
+
+  The idea is to use the same model as in ANOVA: that there is a
+  single QTL that affects the trait and that the residual variation
+  follows a normal distribution. But here, we allow the
+  putative QTL to be at any arbitrary position. We'll consider each
+  position in the genome, one at a time, as the QTL location, and scan
+  along each chromosome.
+
+  The challenge is that the genotype at the putative QTL will not be
+  known. However, we can use surrounding markers to calculate the
+  probability of the different possible QTL genotypes, given the
+  available marker data.
+
+  The phenotype, given QTL genotype, follows a normal distribution.
+  Given the marker data (and not knowing QTL genotype), the phenotype
+  follows a mixture of normal distributions with known mixing proportions.
 }
 
 \end{frame}
@@ -234,6 +270,13 @@ Sugiyama et al.\ (2002) Physiol Genomics 10:5--12
 \figw{Figs/backcross.pdf}{1.0}
 
 \note{
+  It's sometimes useful to think about a backcross, where you cross
+  the two parents and then cross the F$_1$ back to one of the parents.
+  All the offspring get a blue chromosome plus a recombinant
+  chromosome, so at any one position they have one of two genotypes,
+  homozygous blue or heterozygous. It can be easier to think about
+  this, with just the two possible genotypes. For QTL mapping, we'd do
+  the equivalent of a t-test.
 }
 
 \end{frame}
@@ -272,6 +315,30 @@ Or use the {\hilit hidden Markov model (HMM)} technology
 
 
 \note{
+   A crucial ingredient to this interval mapping method is the
+   probability of the different possible QTL genotypes, given the
+   available marker data.
+
+   Consider a particular position for a QTL, such as the location of
+   the triangle, and consider the available genotypes along the
+   recombinant chromosome in a backcross.
+
+   A common assumption is that there is no crossover interference,
+   meaning that the locations of exchanges are completely random,
+   according to a Poisson process. So whether or not there is an
+   exchange in one interval is indepedent of whether there is an
+   exchange in any other interval.
+
+   If we make that assumption, plus the assumption that the marker
+   genotypes have no errors, then we just need to look at the two
+   nearest typed markers, and we can do a little back-of-the envelope
+   calculation to get the probability that the individual has an A
+   allele at the QTL, given that they have B alleles at the two
+   flanking positions.
+
+   We can relax the ``no genotyping errors'' assumption with a hidden
+   Markov model, but the no interference assumption is super
+   convenient, though totally wrong.
 }
 
 \end{frame}
@@ -326,7 +393,35 @@ conditional on the genotypes at the two markers.
 \end{columns}
 
 \note{
+  Another way to think about these genotype probilities, is to think
+  about the normal mixtures.
+  Imagine a pair of markers in a backcross, with complete genotype
+  data at the markers, and a QTL that's in the interval between them,
+  a bit closer to the left marker.
+
+  In one sense, there are two kinds of mice: those that are AB at the
+  QTL, and those that are BB at the QTL. But considering the marker
+  data, there are four kinds for mice. The mice that are AB at both
+  markers will mostly also be AB at the QTL; their phenotypes will
+  follow one normal distribution. The mice that are BB at both markers
+  will largely be BB at the QTL, and their phenotypes will follow
+  another normal distribution, shifted over a bit.
+
+  The mice that are AB at the left marker and BB at the right marker
+  will include a portion of mice that are AB at the QTL and follow the
+  one normal distribution and another portion that are BB at the QTL
+  and follow the other normal distribution; overall, their phenotypes
+  will follow a blog-like distribution, the mixture of the two normal
+  distributions.
+
+  Similarly, mice that are BB at the left marker and AB at the right
+  marker will have phenotypes following a mixture of normal
+  distributions.
+
+  Our goal will be to estimate the averages for the two distributions
+  plus their common residual SD.
 }
+
 
 \end{frame}
 
@@ -363,6 +458,22 @@ of $\mathsf{\mu_0}$, $\mathsf{\mu_1}$, $\mathsf{\sigma}$:
 
 
 \note{
+
+  So in interval mapping, we consider some single position for the one
+  and only QTL, and then for each mouse we calculate the probabilities
+  for each possible QTL genotype given the available marker data.
+
+  The phenotypes are assumed to follow a normal distribution, given
+  QTL genotype. Given the marker data, they follow a mixture of
+  normals, with known mixing proportions.
+
+  We can write down the log likelihood, which is a sum of log mixture
+  probabilities, where those mixture probabilities are a sum over the
+  individual components.
+
+  The parameters to estimate are the phenotype averages for each QTL
+  genotype, plus the residual SD. We seek the MLEs, which are the
+  values for which the log likelihood is maximum.
 }
 
 \end{frame}
@@ -401,6 +512,23 @@ y_i,\text{marker data},\hat{\mu}_0^{(k-1)},
 
 
 \note{
+   The EM algorithm is super for this problem, as if we knew the QTL
+   genotype for each mouse, we could calculate the MLEs immediate as
+   the phenotype averages for the mice grouped by QTL genotype, and
+   then the residual SD.
+
+   The EM algorithm will alternate between an E step where we
+   calculate probabililties of each possible QTL genotype given not
+   just the marker data but also the phenotype, and using the current
+   estimates of the parameters, and then the M step where we
+   re-estimate the parameters. Here the new estimates of the means
+   will be weighted averages of the phenotypes, with the weights being
+   the conditional probabilities from the E step. The residual SD will
+   be estimated using a weighted sum of residuals.
+
+   Rather that start with initial estimates, we actually start by
+   jumping into the M step, using our initial QTL genotype
+   probabilities as the weights.
 }
 
 \end{frame}
@@ -415,6 +543,20 @@ y_i,\text{marker data},\hat{\mu}_0^{(k-1)},
 
 
 \note{
+  I've prepared an interactive graph at {\tt bit.ly/em\_alg} that
+  illustrates the EM algorithm in this case.
+
+  On the y-axis are the phenotypes. And on the x-axis are the initial
+  probabilities for the AB genotype given the marker data. When you
+  click ``next'' it will step through the iterations of the EM
+  algorithm. Using the available phenotype data, and with the
+  estimated genotype-specific averages indicating that mice on the
+  left (with BB genotype) have higher average phenotype than mice on
+  the right (with AB genotype), the probabilities get titled toward
+  the left. Mice with larger phenotypes get moved a bit to the left,
+  and mice with smaller phenotypers get moved a bit to the right.
+
+  After 4 iterations, there's no perceptible further movement.
 }
 
 \end{frame}
@@ -453,6 +595,9 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 
 \note{
+   For historical reasons, we measure evidence for QTL using LOD
+   scores: the log$_{10}$ likelihood ratio comparing the hypothesis of
+   a single QTL at the given location to the null hypothesis of no QTL.
 }
 
 \end{frame}
@@ -469,6 +614,22 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 
 \note{
+  Plotting these LOD scores across the genome was perhaps the biggest
+  innovation of Lander and Botstein (1989).
+
+  I've created an interactive graph to illustrate these LOD curves. In
+  this case, we are also splitting the mice by sex. Click on a
+  chromosome at the top and you'll see a blown-up view on the bottom
+  left. Click on different positions along the chromosome and you can
+  see the phenotype:genotype relationship.
+
+  It's important to look at the phenotype:genotype associations and
+  not just the summary LOD curves. While for the locus on chromosome
+  2, the RR genotype is associated with higher insulin level (which
+  corresponds to what is seen in the B and R founder strains), if you
+  click on chromosome 9 you'll see that there the effect is in the
+  opposite direction. And if you look at chr 7, you'll see that the
+  effect is much larger in males than in females.
 }
 
 \end{frame}
@@ -509,6 +670,21 @@ distributed (iid) $\text{N}(\mu, \sigma^2)$}.
 
 
 \note{
+  This interval mapping approach solves many of the weakness of just
+  doing ANOVA at the markers: it takes account of missing data, it
+  allows you to inspect positions between markers, at it gives
+  improved estimates of QTL effects because you're looking directly at
+  the QTL position. The biggest innovation, though, is graphing the
+  test statistic across the genome.
+
+  Disadvantages include that it requires increased computation time,
+  it requires special software, and it can be difficult to generalize.
+  These aren't so important anymore.
+
+  The main disadvantage is that you're still just thinking about a
+  single QTL. If you have reasonably dense markers and reasonably
+  complete genotype data, this is really no different than just doing
+  ANOVA with each individual marker.
 }
 
 \end{frame}
