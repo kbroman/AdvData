@@ -34,7 +34,14 @@
 \frame{
   \titlepage
 
-  \note{}
+\note{
+  This lecture concerns an old problem in human genetics. The main
+  topic is about estimating allele frequencies with data on correlated
+  individuals (siblings), but really about a case study in recognizing
+  and diagnosing problems, evaluating the relative quality of
+  different estimates, and on trade-offs between extracting full
+  information vs just getting reasonable answers.
+}
 
 } }
 
@@ -50,12 +57,28 @@
 
   also have {\hilit similar genotypes}
 
+\note{
+   Our interest here is in mapping disease genes in humans. Mapping
+   disease genes is, in essence, about finding genomic regions where
+   individuals with similar phenotypes also have similar genotypes.
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Affected sib pairs}
-\only<1>{\figw{Figs/sibpairs.pdf}{1.0}}
+\only<1|handout 0>{\figw{Figs/sibpairs.pdf}{1.0}}
 \only<2>{\figw{Figs/sibpairs_wdata.pdf}{1.0}}
+
+\note{
+  In the late 1990s, one of ways we tried to identify disease genes
+  was with affected sibling pair studies. You gather a bunch of pairs
+  of siblings who were both affected with a disease, and then get
+  genotype data for them, and look for genomic regions where the
+  affected sibpairs had more similar genotypes than you would expect
+  by chance.
+}
+
 \end{frame}
 
 
@@ -77,10 +100,19 @@ non-inbred sibs are IBD = 0, 1, 2
 {\color{background} non-inbred sibs} with probability = 1/4, 1/2, 1/4
 
 
+
+\note{
+
+}
+
 \end{frame}
 
 \begin{frame}[c]{Prostate cancer genome scan}
 \figw{Figs/gh_results_bad.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{Lesson}
@@ -90,19 +122,31 @@ non-inbred sibs are IBD = 0, 1, 2
 If it seems too good to be true, \\[12pt]
 it probably is.
 
+
+\note{
+}
+
 \end{frame}
 
 
 
 \begin{frame}[c]{Prostate cancer pairs}
-\only<1>{\figw{Figs/sibpairs_nopar.pdf}{1.0}}
+\only<1|handout 0>{\figw{Figs/sibpairs_nopar.pdf}{1.0}}
 \only<2>{\figw{Figs/sibpairs_nopar_wdata.pdf}{1.0}}
+
+\note{
+}
+
 \end{frame}
 
 
 
 \begin{frame}[c]{Prostate cancer genome scan -- corrected}
 \figw{Figs/gh_results_good.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -116,6 +160,10 @@ it probably is.
   \bigskip \bigskip
 
   What if you only have {\vhilit sibships}?
+
+
+\note{
+}
 
 \end{frame}
 
@@ -150,6 +198,10 @@ it probably is.
 
     \qquad \qquad {\lolit (best possible = 1.5)}}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -165,6 +217,10 @@ it probably is.
 
   \hfill {\lolit Everything is a mixture}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -176,15 +232,27 @@ it probably is.
     & = & \text{cov}(X, X) + \text{cov}(X, Y) + \text{cov}(Y,X) + \text{cov}(Y,Y) \\
     & = & \text{var}(X) + \text{var}(Y) + 2 \, \text{cov}(X,Y)
     \end{eqnarray*}
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{}
   \figh{Figs/mixture_univariate.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}[c]{}
   \figh{Figs/mixture_bivariate.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -206,6 +274,10 @@ it probably is.
    & = & \sum_{k=0}^{2} \text{cov}(X_1, X_2|\text{IBD}=k) \, \text{Pr}(\text{IBD}=k)
    \end{eqnarray*}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -218,6 +290,10 @@ it probably is.
     \text{cov}(X,Y) & = & \text{E}(XY) - \text{E}(X) \text{E}(Y) \\[24pt]
     \text{cov}(X,Y|Z) & = & \text{E}(XY|Z) - \text{E}(X|Z) \text{E}(Y|Z)
    \end{eqnarray*}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -232,6 +308,10 @@ it probably is.
 \hfill \footnotesize {\lolit Broman (2001)
   \href{https://doi.org/10.1002/gepi.2}{doi:10.1002/gepi.2}}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -245,6 +325,10 @@ it probably is.
 \item[] You might even be able to figure out the SE
   \ei
   \ei
+
+
+\note{
+}
 
   \end{frame}
 
@@ -272,6 +356,10 @@ Use {\vhilit EM algorithm}:
 \ei
 \end{minipage}
 
+
+\note{
+}
+
 \end{frame}
 
 
@@ -292,12 +380,20 @@ Use {\vhilit EM algorithm}:
 \ei
 
 
+
+\note{
+}
+
 \end{frame}
 
 
 
 \begin{frame}{Siblings' chromosomes}
 \figw{Figs/sib_chr.pdf}{1.0}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -312,6 +408,10 @@ Use {\vhilit EM algorithm}:
 \hfill \footnotesize {\lolit Broman (2001)
   \href{https://doi.org/10.1002/gepi.2}{doi:10.1002/gepi.2}}
 
+
+\note{
+}
+
 \end{frame}
 
 \begin{frame}{Method 3}
@@ -321,6 +421,10 @@ Use {\vhilit EM algorithm}:
 
 \hfill \footnotesize {\lolit Broman (2001)
   \href{https://doi.org/10.1002/gepi.2}{doi:10.1002/gepi.2}}
+
+
+\note{
+}
 
 \end{frame}
 
@@ -332,11 +436,19 @@ Use {\vhilit EM algorithm}:
 \hfill \footnotesize {\lolit Broman (2001)
   \href{https://doi.org/10.1002/gepi.2}{doi:10.1002/gepi.2}}
 
+
+\note{
+}
+
 \end{frame}
 
 
 \begin{frame}[c]{Summary}
   \figw{Figs/summary_table.png}{0.7}
+
+\note{
+}
+
 \end{frame}
 
 
@@ -350,6 +462,10 @@ Use {\vhilit EM algorithm}:
 \item Fixed problem, re-ran simulations, and... \\[18pt]
   \onslide<2->{the correct MLE was {\hilit worse} than my mistaken estimate}
  \ei
+
+
+\note{
+}
 
 \end{frame}
 
