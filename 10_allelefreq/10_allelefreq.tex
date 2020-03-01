@@ -207,8 +207,9 @@ it probably is.
 \note{
     And just how should we estimate the allele frequencies? The normal
     way is to use the founders founders in the pedigrees (here, the
-    parents). But in this case the parents are entirely absent. We
-    just have data on the siblings themselves.
+    parents), who we would generally assume to be unrelated. But in
+    this case the parents are entirely absent. We just have data on
+    the siblings themselves.
 }
 
 \end{frame}
@@ -235,7 +236,7 @@ it probably is.
 
   \onslide<2->{
 
-    $$ \text{var}(\hat{p}^{(2)}) = \only<2>{\, \text{\bf ?}}
+    $$ \text{var}(\hat{p}^{(2)}) = \only<2|handout 0>{\, \text{\bf ?}}
     \only<3->{{\vhilit (3/4)} \, \left(\frac{p(1-p)}{2n}\right)}
     $$
   }
@@ -246,6 +247,26 @@ it probably is.
 
 
 \note{
+   Well, one way is to just use a single sibling from each pair. Then
+   you have a set of unrelated individuals. Alternatively, you could
+   use the data on all of the siblings. But then you are potentially
+   overcounting some alleles.
+
+   Which one is the better estimate? Is it better to omit some data so
+   that what's left is a set of pure, independent counts? Or is it
+   better to use all of the data and ignoring the over-counting of
+   alleles.
+
+   Both methods give unbiased estimates. And the standard error for
+   the first estimate is that of a binomial proportion with sample
+   size 2$n$, where $n$ is the number of sibling pairs, since each
+   individual gives you data on 2 alleles.
+
+   I'll show in a moment that the second estimate has variance that is
+   3/4 that of the first estimate, so a relative efficiency of 4/3.
+   The best possible estimate you can get with sibling pair data has a
+   relative efficiency of 3/2, since two siblings are on average
+   giving you data on three distinct alleles.
 }
 
 \end{frame}
@@ -265,6 +286,11 @@ it probably is.
 
 
 \note{
+   How do we determine the variance of that second estimate? Well it
+   turns out that we'll be using some of my favorite equations,
+   particularly that the variance of a random variable can be
+   expressed as the mean conditional variance plus the variance of the
+   conditional mean.
 }
 
 \end{frame}
@@ -280,6 +306,9 @@ it probably is.
     \end{eqnarray*}
 
 \note{
+   Here's another of my favorite equations, which is what you need in
+   order to remember that the variance of the sum is the sum of the
+   variances plus twice the covariance.
 }
 
 \end{frame}
@@ -289,6 +318,12 @@ it probably is.
   \figh{Figs/mixture_univariate.pdf}{1.0}
 
 \note{
+   Regarding those initial equations, one way to think about them is
+   of data that are mixtures. If there are two types of individuals,
+   each following a different normal distribution, then the overall
+   average is the average of the two individual averages, and the
+   overall variance is the average of the variances plus the variance
+   of the averages.
 }
 
 \end{frame}
@@ -297,6 +332,10 @@ it probably is.
   \figh{Figs/mixture_bivariate.pdf}{1.0}
 
 \note{
+  For the covariance, think of a pair of correlated variables where
+  again the data are a mixture of a set of underlying bivariate
+  distributions. The overall covariance is the average of the
+  individual covariances plus the covariance of the averages.
 }
 
 \end{frame}
@@ -322,6 +361,17 @@ it probably is.
 
 
 \note{
+   Now back to that SE, we can focus on a particular allele, say
+   allele 1. And then we count the number of 1 alleles in each
+   sibling. We want the variance of the sum, which means we're going
+   to want to covariance of the counts for the two siblings. And it
+   turns out to be easiest to look at this in terms of the conditional
+   covariance, given the number of alleles that the two siblings share
+   IBD.
+
+   $\text{E}(X_i|\text{IBD})$ doesn't depend on the IBD status, so
+   this ends up just being a number, and so the covariance of the two
+   conditional means is 0, so that term drops out.
 }
 
 \end{frame}
@@ -339,6 +389,10 @@ it probably is.
 
 
 \note{
+   Similar to the common expansion of the variance, we can write the
+   covariance as the expected product minus the product of the two
+   expected values, and this works whether you're conditioning on some
+   other variable or not.
 }
 
 \end{frame}
