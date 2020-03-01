@@ -156,6 +156,18 @@ it probably is.
 \only<2>{\figw{Figs/sibpairs_nopar_wdata.pdf}{1.0}}
 
 \note{
+   In this prostate cancer study, the affected sibpairs are all old,
+   and there's essentially no data on the parents. In this case,
+   determining the number of alleles shared IBD turns out to be
+   particularly sensitive to the allele frequencies.
+
+   For example, if they're both 3/3 and 3 is relatively rare, that
+   it's very likely that they're IBD=2. But if 3 is quite common, then
+   they could reasonably be IBD=1 or 0.
+
+   If they both share a 6 allele, is that IBD=1, or IBD=0? If 6 is
+   rare, you'd lean towards IBD=1, but if 6 is common, it could be
+   either.
 }
 
 \end{frame}
@@ -166,6 +178,15 @@ it probably is.
 \figw{Figs/gh_results_good.pdf}{1.0}
 
 \note{
+   The unusually strong results I got were entirely due to a mistake
+   in the code that estimated the allele frequencies. If I use more
+   reasonable estimates, this is what I get. There's maybe evidence
+   for a disease locus on chr 16 and possibly also 15, but the
+   evidence isn't very strong.
+
+   And this is sort of what we'd expect given the size of this study.
+   We're hoping to find some evidence of a disease gene, but we're not
+   going to see the whole genome lighting up.
 }
 
 \end{frame}
@@ -184,6 +205,10 @@ it probably is.
 
 
 \note{
+    And just how should we estimate the allele frequencies? The normal
+    way is to use the founders founders in the pedigrees (here, the
+    parents). But in this case the parents are entirely absent. We
+    just have data on the siblings themselves.
 }
 
 \end{frame}
