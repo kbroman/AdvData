@@ -102,7 +102,12 @@ non-inbred sibs are IBD = 0, 1, 2
 
 
 \note{
-
+   In measuring genetic similarity at a locus, it's valuable to
+   distinguish between alleles being ``identical by state'' (meaning
+   they just look the same) and ``identical by descent'' (meaning that
+   they are copies of an ancestral allele). Non-inbred siblings will
+   have IBD status 0, 1, or 2, with probability 1/4, 1/2, 1/4,
+   respectively.
 }
 
 \end{frame}
@@ -111,6 +116,17 @@ non-inbred sibs are IBD = 0, 1, 2
 \figw{Figs/gh_results_bad.pdf}{1.0}
 
 \note{
+  In an affected sib-pair study, we'll scan across the genome; at each
+  point will seek to estimate the proportion of alleles shared IBD
+  between affected siblings and compare that to what is expected for
+  siblings.
+
+  The first such study I was involved in was of prostate cancer, and
+  consisted of maybe 150 affected sibling pairs. This plot (of
+  $-\log_{10}$ p-values) is an approximation of my initial results.
+  We're looking for values around 3, so these were super exciting to
+  me. I distinctly remember faxing these results to my collaborators,
+  thinking ``I am so awesome. I will conquer all diseases.''
 }
 
 \end{frame}
@@ -124,6 +140,11 @@ it probably is.
 
 
 \note{
+  But as soon as I sent that fax, I was like, ``Huh. Those results
+  seem too good to be true.''
+
+  It turns out that I'd messed up the allele frequencies and so the
+  results were all messed up.
 }
 
 \end{frame}
