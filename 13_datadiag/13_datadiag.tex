@@ -1,0 +1,127 @@
+\documentclass[aspectratio=169,12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Data diagnostics}
+\subtitle{Cleaning genotype data in multi-parent populations}
+\author{\href{https://kbroman.org}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\\[-4pt]
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{https://kbroman.org/AdvData}{\tt kbroman.org/AdvData}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{
+}
+} }
+
+
+
+\begin{frame}[c]{Diversity outbred mice}
+\figw{../03_sims/Figs/hs.pdf}{1.0}
+
+\note{
+  I want to talk about data cleaning, and I'm going to do so focusing
+  on a cleaning genotype data in Diversity Outbred mice. These mice
+  are an advanced intercross derived from eight inbred founder
+  strains.
+}
+\end{frame}
+
+
+\begin{frame}{Diversity outbred mouse data}
+
+  \bbi
+  \item 500 DO mice
+  \item GigaMUGA SNP arrays (114k SNPs)
+  \item RNA-seq data on pancreatic islets
+  \item Microbiome data (16S and shotgun sequencing)
+  \item protein and lipid measurements by mass spec
+  \item Collaboration with Alan Attie, Gary Churchill, Brian Yandell,
+    Josh Coon, Federico Rey, and many others
+    \ei
+
+\note{
+}
+
+\end{frame}
+
+
+\begin{frame}{Principles}
+
+  \bbi
+\item What might have gone wrong?
+  \item How could it be revealed?
+\only<2->{\item Also, just make a bunch of graphs.}
+\only<3->{\item If you see something weird, try to figure it out.}
+\ei
+
+\note{
+}
+
+\end{frame}
+
+
+\begin{frame}{Possible problems}
+
+\bbi
+\item Sample duplicates
+\item Sample mix-ups
+\item Bad samples
+\item Bad markers
+\item Genotyping errors in founders
+  \ei
+
+\note{
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\centerline{\Large \color{title} What to look at first?}
+
+\note{
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{Missing data per sample}
+  \only<1|handout 0>{\figw{Figs/missing_data_per_sample.pdf}{1.0}}
+  \only<2>{\figw{Figs/missing_data_per_sample_labeled.pdf}{1.0}}
+
+  \note{
+
+  }
+\end{frame}
+
+
+% swapped sex labels
+
+
+
+
+
+
+\end{document}
