@@ -77,12 +77,12 @@ plot_missing_byind <- function(label=FALSE)
 }
 
 # plot missing
-pdf("../Figs/missing_data_per_sample.pdf", height=5.5, width=9.75, pointsize=10)
+pdf("../Figs/missing_data_per_sample.pdf", height=5.5, width=9.75, pointsize=8)
 plot_missing_byind(FALSE)
 dev.off()
 
 
 # plot missing with labels
-pdf("../Figs/missing_data_per_sample_labeled.pdf", height=5.5, width=9.75, pointsize=10)
+pdf("../Figs/missing_data_per_sample_labeled.pdf", height=5.5, width=9.75, pointsize=8)
 plot_missing_byind(TRUE)
 dev.off()
