@@ -1,3 +1,4 @@
 *.pdf
 R/_cache
 Data/
+Figs/
