@@ -410,6 +410,24 @@ it probably is.
 
 
 \note{
+   The basis of the calculation is figuring out the conditional
+   distribution of $(X_1, X_2)$ given IBD status, shown here.
+   Remember $X_i$ is the number of 1 alleles in the $i$th sib.
+
+   Consider the case IBD=2. Here the two sibs have the same genotypes,
+   and so $X_1=X_2$. The frequencies are according to the
+   Hardy-Weinberg proportions: draw 2 alleles with replacement from a
+   vat with $p$ 1's,
+
+   The case IBD=0 is similarly easy. Here the two sibs have
+   independent genotypes, and so the probabilities are according to
+   the case that you draw 4 alleles with replacement from a vat with
+   $p$ 1's.
+
+   IBD=1 is like drawing three alleles with replacement from a vat of
+   $p$ 1's. In the $X_1=1,X_2=1$ case you then need to sum over the
+   two possibilities: that the allele in common between the sibs is a
+   1 or that it's not.
 }
 
 \end{frame}
@@ -428,6 +446,23 @@ it probably is.
 
 
 \note{
+   The lesson that you learn here are that omitting data are ususally
+   (making for a worse estimate), and that just ignoring correlations
+   in the data may still give you an okay estimate. And in many cases,
+   you might be able to figure out the SE of that estimate that
+   ignores the correlations.
+
+   From what I've seen, this is true quite generally. If you find
+   yourself thinking, ``Should I omit some data, so what's left is all
+   independent?'' you should hesitate and think back to this
+   situation.
+
+   I should also emphasize here that the analytic calculations I've
+   shown are not strictly necessary. We could have just as well
+   proceeded by computer simulation. We could simulate siblings'
+   genotypes and then drive the two estimates and repeat many times,
+   and we'd immediately get to the answers about unbiasedness and the
+   4/3 relative efficiency.
 }
 
   \end{frame}
