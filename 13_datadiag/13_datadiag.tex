@@ -236,13 +236,72 @@
 }
 \end{frame}
 
-% explanation of method
+\begin{frame}{Sample mix-ups: Microbiome data}
 
-% tables (361 vs 361, 360 vs 360, 360 vs 370)
+\bbi
+\item Impute genotypes at all SNPs in DNA samples
 
-% plots unlabeled and labeled
+\item Map microbiome reads to mouse genome;\\ find reads overlapping a SNP
+
+\item For each pair of samples (DNA + microbiome):
+
+  \bi
+  \itemsep10pt
+  \item Focus on reads that overlap a SNP where \\
+        that DNA sample is homozygous
+
+  \item Distance = proportion of reads where SNP allele \\
+    \hspace*{16mm} doesn't match DNA sample's genotype
+  \ei
+\ei
+
+\note{
+}
+\end{frame}
 
 
+
+\begin{frame}[c]{Microbiome DO361 vs DNA DO361}
+
+  \centering
+  \LARGE
+\input{Tabs/dna361_mb361_table.tex}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}[c]{Microbiome DO360 vs DNA DO360}
+
+  \centering
+  \LARGE
+\input{Tabs/dna360_mb360_table.tex}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}[c]{Microbiome DO360 vs DNA DO370}
+
+  \centering
+  \LARGE
+\input{Tabs/dna370_mb360_table.tex}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}[c]{Microbiome mix-ups: min vs self distance}
+
+\only<1|handout 0>{\figw{Figs/microbiome_best_vs_self.pdf}{1.0}}
+\only<2>{\figw{Figs/microbiome_best_vs_self_labeled.pdf}{1.0}}
+
+\note{
+}
+\end{frame}
 
 
 \begin{frame}[c]{}
