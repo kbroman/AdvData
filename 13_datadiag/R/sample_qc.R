@@ -5,6 +5,7 @@ library(qtl2)
 library(qtl2fst)
 library(fst)
 library(broman)
+library(glue)
 
 
 # load data
@@ -362,7 +363,13 @@ errlod_file <- "_cache/errlod.rds"
 if(file.exists(errlod_file)) {
     errlod <- readRDS(errlod_file)
 } else {
-    pr <- readRDS("~/Projects/AttieDOv2/DerivedData/Genoprobs/attie_DO500_genoprobs_v5.rds")
+    pr <- NULL
+    for(chr in c(1:19,"X")) {
+        cat(chr, "\n")
+        this_pr <- readRDS(glue::glue("~/Projects/AttieDO/CalcGenoProb/attieDO_probs{chr}.rds"))
+        if(is.null(pr)) pr <- this_pr
+        else pr <- cbind(pr, this_pr)
+    }
     errlod <- calc_errorlod(do, pr, cores=0)
     saveRDS(errlod, errlod_file)
 }
