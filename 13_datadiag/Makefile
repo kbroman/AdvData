@@ -7,7 +7,8 @@ FIGS = Figs/missing_data_per_sample.pdf \
 	   Figs/gve_dist_matrix.png \
 	   Figs/microbiome_scheme.pdf \
 	   Figs/microbiome_best_vs_self.pdf \
-	   Tabs/dna361_mb361_table.tex
+	   Tabs/dna361_mb361_table.tex \
+	   Figs/array_int.pdf
 
 include ../Makefile_lectures.mk
 
@@ -24,4 +25,7 @@ Figs/microbiome_best_vs_self.pdf: R/microbiome_figs.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
 
 Tabs/dna361_mb361_table.tex: R/microbiome_tables.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/array_int.pdf: R/sample_qc.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
