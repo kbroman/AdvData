@@ -367,9 +367,13 @@ if(file.exists(errlod_file)) {
     for(chr in c(1:19,"X")) {
         cat(chr, "\n")
         this_pr <- readRDS(glue::glue("~/Projects/AttieDO/CalcGenoProb/attieDO_probs{chr}.rds"))
+#        this_pr <- readRDS(glue::glue("~/Projects/AttieDOv2/DerivedData/Genoprobs/attie_DO500_genoprobs_v5_36state_chr{chr}.rds"))
+        rownames(this_pr[[1]]) <- sprintf("DO%03d", as.numeric(sub("^DO\\-", "", rownames(this_pr[[1]]))))
         if(is.null(pr)) pr <- this_pr
         else pr <- cbind(pr, this_pr)
     }
+    mar <- unlist(lapply(pr, function(a) dimnames(a)[[3]]))
+    suppressWarnings(do <- pull_markers(do, mar))
     errlod <- calc_errorlod(do, pr, cores=0)
     saveRDS(errlod, errlod_file)
 }
