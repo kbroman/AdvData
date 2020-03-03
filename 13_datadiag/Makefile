@@ -10,6 +10,7 @@ FIGS = Figs/missing_data_per_sample.pdf \
 	   Tabs/dna361_mb361_table.tex \
 	   Figs/array_int.pdf
 
+
 include ../Makefile_lectures.mk
 
 Figs/%.pdf: R/%.R
