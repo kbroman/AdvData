@@ -31,6 +31,10 @@
   \titlepage
 
 \note{
+  In this lecture, we'll discuss data diagnostics: studying data to
+  identify and hopefully correct problems. As usual for this class,
+  we'll focus on a particular case study, of cleaning genotype data in
+  diversity outbred mice.
 }
 } }
 
@@ -61,6 +65,11 @@
     \ei
 
 \note{
+   The data we're looking at concerns a set of 500 DO mice, as part of
+   a collaboration with a bunch of investigators at UW-Madison plus
+   Gary Churchill at the Jackson Lab. We have dense genotypes from
+   SNP arrays, plus RNA-seq data on one tissue and microbiome data,
+   mass spec data, and loads of clinical measurements.
 }
 
 \end{frame}
@@ -76,6 +85,17 @@
 \ei
 
 \note{
+  Is data cleaning something that is totally specific to a given
+  context, with no general rules? Or are there commonalities between
+  cleaning genotypes in mice and cleaning say electronic health record
+  data?
+
+  I declare that there are some general principles, and I think the
+  first one is: imagine what could have gone wrong. And then next ask
+  how it might be revealed in the data.
+
+  Further, you should just make a ton of graphs, and if you see
+  something odd, try to figure out what's going on.
 }
 
 \end{frame}
@@ -92,6 +112,13 @@
   \ei
 
 \note{
+  For these genotype data, these are the main problems: sample
+  duplicates or mix-ups. Sample mixtures, even.
+
+  Also samples being bad, or genetic markers being bad. Also
+  genotyping errors in the founder strains.
+
+  Could also be that markers are on the wrong chromosome.
 }
 
 \end{frame}
@@ -102,6 +129,8 @@
 \centerline{\Large \color{title} What to look at first?}
 
 \note{
+   A key question is what to look at first? What are the most
+   fundamental problems, and how might we find them?
 }
 
 \end{frame}
@@ -112,7 +141,14 @@
   \only<2>{\figw{Figs/missing_data_per_sample_labeled.pdf}{1.0}}
 
   \note{
+    For genotype data, I think the first thing to look at is the
+    amount of missing data. High proportions of missing data are
+    usually an indication that a DNA sample was bad.
 
+    The 500 mice were gathered in batches of 100. There were clear
+    differences in the amount of missing data by batch. But mostly,
+    there are a set of 7 samples with >10\% missing data, which should
+    probably be tossed, as probably the remaining data is bad.
   }
 \end{frame}
 
@@ -122,6 +158,9 @@
 \centerline{\Large \color{title} Swapped sex labels}
 
 \note{
+  The next thing that I always look at is whether the X chromosome
+  genotypes for the mice matches what we would expect, given the
+  reported sex.
 }
 
 \end{frame}
@@ -134,6 +173,10 @@
   \only<3>{\figw{Figs/ave_snp_int_XY_select_labeled.pdf}{1.0}}
 
 \note{
+  I've used a lot of different techniques for verifying sex from X
+  chromosome genotypes. But for these SNP array data, and probably
+  also for sequence-based genotypes, the best thing seems to be to
+  look at the intensity of alleles on the X and Y chromosomes.
 }
 \end{frame}
 
