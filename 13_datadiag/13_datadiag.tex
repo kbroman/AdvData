@@ -250,6 +250,8 @@
 \centerline{\Large \color{title} Sample mix-ups: RNA-seq data}
 
 \note{
+  Next I look at sample mix-ups, starting with the RNA-seq data. Do
+  the RNA-seq results seem to match the genotype data?
 }
 
 \end{frame}
@@ -263,6 +265,15 @@
 \only<4>{\figw{Figs/gve_scheme_4.pdf}{1.0}}
 
 \note{
+  My scheme for looking at this is very similar to the lecture last
+  week. First, for each expression trait, look for a strong eQTL.
+
+  In a twist relative to what I'd done last week, instead of trying to
+  predict genotype from expresssion, let's instead predict expression
+  from genotype. So then we have, for each mouse, a set of predicted
+  expression values. Compare those to the observed expression values
+  and calculate the correlation as a measure of similarity (or maybe
+  the RMS difference as a measure of dissimilarity).
 }
 
 \end{frame}
@@ -273,6 +284,10 @@
   \figh{Figs/gve_dist_matrix.png}{0.9}
 
 \note{
+  Turn those results into a distance matrix: for each RNA sample, how
+  similar is it to each DNA sample? Here we have just under 400 RNA
+  samples and 500 DNA samples. The leading diagonal should be saying
+  the matching samples.
 }
 
 \end{frame}
@@ -282,6 +297,11 @@
   \only<2>{\figw{Figs/gve_best_vs_self_labeled.pdf}{1.0}}
 
 \note{
+  We can plot the minimum in each row vs the value on the diagonal, we
+  get this plot. Values along the diagonal are presumed correct.
+  Values in the lower-right corner are wrong but there's some other
+  sample that their close to. If you look at the sample IDs, you can
+  probably see that there are 3 sample swaps down there.
 }
 \end{frame}
 
@@ -289,6 +309,10 @@
   \figw{Figs/gve_details.pdf}{1.0}
 
 \note{
+  Here we look at those six problem samples in more detail, by
+  plotting their distance to each other sample. We see that these are
+  clearly three pairs of sample swaps. We can't be sure whether the
+  problem is in the DNA or in the RNA.
 }
 \end{frame}
 
