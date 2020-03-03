@@ -323,6 +323,8 @@
 \centerline{\Large \color{title} Sample mix-ups: microbiome data}
 
 \note{
+  We also have a set of microbiome samples that could be used to
+  investigate sample mix-ups.
 }
 
 \end{frame}
@@ -332,6 +334,12 @@
   \figw{Figs/microbiome_scheme.pdf}{1.0}
 
 \note{
+  In this part of the study, they took mouse poop and extracted DNA
+  and then did massive parallel sequencing. The goal was to
+  characterize the populations of microorganisms in the gut of the
+  mice, but the sequences also include many that were derived from the
+  mouse house. The question is: do those mouse-derived sequences seem
+  to match the SNP genotypes we have?
 }
 \end{frame}
 
@@ -355,6 +363,11 @@
 \ei
 
 \note{
+  Our approach was first to impute the genome-wide SNP genotypes using
+  the founder sequence data, and then to look at microbiome reads that
+  overlap a SNP.  For each pair of samples (genotypes, microbiome), we
+  focused on reads where the genotype data said homozygous, and then
+  looked at whether the reads had the same or a different allele.
 }
 \end{frame}
 
@@ -367,6 +380,13 @@
 \input{Tabs/dna361_mb361_table.tex}
 
 \note{
+  Here's a pair of samples both labeled DO361. The split up the SNPs
+  into those where DO361 is homozygous for the major allele and those
+  where it's homozygous for the minor allele. Then we look count the
+  reads that overlap those SNPs, split according to whether they are
+  showing the major or minor allele. Here we see nice correspondance.
+  We can use the mismatches as an estimate of sequencing error, though
+  it could also reflect errors in the SNP genotypes.
 }
 \end{frame}
 
@@ -378,6 +398,7 @@
 \input{Tabs/dna360_mb360_table.tex}
 
 \note{
+  This sample, though, shows poor correspondance.
 }
 \end{frame}
 
@@ -389,6 +410,9 @@
 \input{Tabs/dna370_mb360_table.tex}
 
 \note{
+  If we compare that microbiome sample to a different DNA sample,
+  though, we can find one with good correspondance. And note that this
+  is one of the pairs that showed up as a mix-up when we looked at the RNA-seq data.
 }
 \end{frame}
 
@@ -399,6 +423,19 @@
 \only<2>{\figw{Figs/microbiome_best_vs_self_labeled.pdf}{1.0}}
 
 \note{
+  We can turn those frequencies of corresponding vs opposite alleles
+  into a distance matrix, and then plot the value on the diagonal vs
+  the minimum value in each row, as before. We find that most samples
+  are fine, but there are also some clear mix-ups. And then there are
+  a number of samples that are sort of in-between. Many of these turn
+  out to look like mixtures. (And some of the good samples also really
+  look like mixtures.)
+
+  Of the mix-ups, there was just one in common between the microbiome
+  data and the RNA-seq data. But while we have 500 genotyped mice,
+  only 400 were assayed for RNA-seq, and 400 were assayed for
+  microbiome, with only 300 in common. And the other mix-ups are in
+  the portion that can't be triagulated.
 }
 \end{frame}
 
