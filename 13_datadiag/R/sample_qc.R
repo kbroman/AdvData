@@ -5,6 +5,7 @@ library(qtl2)
 library(qtl2fst)
 library(fst)
 library(broman)
+library(glue)
 
 
 # load data
