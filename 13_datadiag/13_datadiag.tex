@@ -176,7 +176,19 @@
   I've used a lot of different techniques for verifying sex from X
   chromosome genotypes. But for these SNP array data, and probably
   also for sequence-based genotypes, the best thing seems to be to
-  look at the intensity of alleles on the X and Y chromosomes.
+  look at the intensity of alleles on the X and Y chromosomes. This is
+  because the chromosome dosage effects are really strong. Females
+  have two Xs and no Y chromosomes, while males have one of each.
+
+  It turns out to be important to subset the X and Y chromosome
+  markers to the ones that show a real sex difference. There seem to
+  be a lot of markers that are annotated as being on the X or Y but
+  don't actually have the expected dosage effects.
+
+  Having done that, we see two clear blobs: males with high intensity
+  on Y and low intensity on X, and females with the opposite. There
+  are a couple of clear females that are really males, plus a couple
+  of mice that look like XO females.
 }
 \end{frame}
 
@@ -185,6 +197,15 @@
   \only<2>{\figw{Figs/het_vs_Xint_labeled.pdf}{1.0}}
 
 \note{
+  Traditionally, I would focus on heterozygosity on the X chromosome.
+  That females will have some heterozygous calls and males should have
+  none. This plot shows heterozygosity on X, vs X chr intensity as
+  before. The idea is that the vertical axis here is informative, but
+  not so informative as the just the X and Y chr intensities
+  themselves.
+
+  It can take a while, and a lot of exploration, to come to the
+  {\hilit best} diagnostics for a given problem.
 }
 \end{frame}
 
@@ -195,6 +216,8 @@
 \centerline{\Large \color{title} Sample duplicates}
 
 \note{
+  The next thing to look for is sample duplication. Are there pairs of
+  samples with very similar genotype data?
 }
 
 \end{frame}
@@ -206,6 +229,15 @@
   \only<2>{\figw{Figs/percent_matching_geno_labeled.pdf}{1.0}}
 
 \note{
+  Here, I'll just look at all pairs of samples and calculation the
+  proportion of matching genotypes. A histogram of that will
+  many times show some pairs near 100\%.
+
+  Here, the average is around 50\%. There are some pairs that are
+  especially low; these all involve either DO306 or DO308, and are
+  just due to those two samples being crappy. There are also some
+  pairs that are at around 70\%. Those look to be siblings (which were
+  supposed to be avoided here).
 }
 \end{frame}
 
