@@ -621,6 +621,9 @@
 \centerline{\Large \color{title} Marker quality}
 
 \note{
+  Looking for badly behaved markers is much like looking for bad
+  samples, but we have {\hilit many} more markers to sift through
+  (115,000 vs 500 samples), and less information about each.
 }
 
 \end{frame}
@@ -631,6 +634,9 @@
   \figh{Figs/missing_data_bymar.png}{0.8}
 
 \note{
+  We can again start with the amount of missing data. Most markers
+  have very little missing data, but there are 3,000 with $>$10\%
+  missing genotypes.
 }
 \end{frame}
 
@@ -639,6 +645,9 @@
   \figh{Figs/allele_freq_bymar.png}{0.8}
 
 \note{
+  We can also look at the allele frequencies at the markers, again
+  split by the allele frequencies in the founders. There's a lot of
+  variation, but they on average they hit the target.
 }
 \end{frame}
 
@@ -646,6 +655,9 @@
   \figh{Figs/geno_freq_bymar.png}{0.8}
 
 \note{
+   The genotype frequencies are similarly informative, but except in
+   some extreme cases, it's hard to identify markers that are for sure
+   bad from what could be natural variation.
 }
 \end{frame}
 
@@ -653,6 +665,16 @@
   \figh{Figs/geno_errors_bymar.png}{0.8}
 
 \note{
+  Actually, what seems to be most useful is to use the genome
+  reconstructions which then give predicted genotypes for each mouse.
+  Just as we can use those to get estimated genotyping error rates for
+  each mouse, we can also get estimated genotyping error rates for
+  each marker. Does a marker's genotypes seem to correspond to what
+  you would expect, given the surrounding markers?
+
+  The vast majority of markers have precisely 0 apparent errors. There
+  are less than 1000 with error rates above 1\%, and just about 300
+  with really large error rates.
 }
 \end{frame}
 
@@ -660,6 +682,13 @@
   \figh{Figs/nice_markers.png}{0.8}
 
 \note{
+  Most informative, for investigating marker quality, is to look at
+  the allele intensities from the array. Here are a set of nicely
+  behaved markers, with points colored by the genotype calls (green
+  are heterozygotes; gray are missing). The genotype calls are based
+  on plots like this: cluster analysis to define the three genotype
+  clusters. All of these markers are nicely behaved and have three
+  distinct clusters in the locations where you'd expect them to be.
 }
 \end{frame}
 
@@ -667,6 +696,16 @@
   \figh{Figs/crap_markers.png}{0.8}
 
 \note{
+  Here are a set of three badly behaved markers. In the top panel, the
+  points are colored by the genotype calls. In the bottom panel, the
+  points are colored by the predicted genotypes, using the genotype
+  reconstructions and the SNP alleles in the founder strains.
+
+  In each case, it's hard to identify the three clear clusters of
+  points, and the genotype calling algorithm clearly did a bad job in
+  the top panels. The bottom panels give some sense about what's
+  really going on, and help to explain why the genotype calling went
+  so badly.
 }
 \end{frame}
 
@@ -674,6 +713,10 @@
   \figh{Figs/more_crap_markers.png}{0.8}
 
 \note{
+  Here are three more badly behaved markers. Again, the lower panels
+  with points colored by the predicted genotypes make some sense and
+  point to the nature of the problems in the genotype calls in the top
+  panels.
 }
 \end{frame}
 
@@ -681,6 +724,11 @@
   \figh{Figs/one_bad_blob_markers.png}{0.8}
 
 \note{
+  Here are a bunch of markers where the genotypes were generally
+  called correctly, but there is one additional cluster of markers
+  that got called incorrectly. These are likely cases where the
+  microarray probe sequence had an additional SNP that was present in
+  some of the founders.
 }
 \end{frame}
 
@@ -688,6 +736,14 @@
   \figh{Figs/wrong_position_markers.png}{0.8}
 
 \note{
+  Here are a set of markers that went wrong in a quite different way:
+  the genomic coordinates in the marker annotation information is
+  probably wrong. The marker genotypes are likely correct, but the
+  marker has been placed at the wrong position in the genome, and so
+  the predicted genotypes have no relation to the observed genotypes.
+
+  The marker on the right is an extreme case. This is a mitochondrial
+  marker which for some reason was annotated as being on an autosome.
 }
 \end{frame}
 
@@ -695,6 +751,9 @@
   \figh{Figs/puzzling_nocalls_markers.png}{0.8}
 
 \note{
+  I'm not sure what to make of these markers. They have groups of
+  ``no calls'' for no apparent reason; it seems like the calling
+  algorithm should have been able to calls these genotypes correctly.
 }
 \end{frame}
 
