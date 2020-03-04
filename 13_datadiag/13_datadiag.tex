@@ -445,6 +445,8 @@
 \centerline{\Large \color{title} Sample quality}
 
 \note{
+   The next thing I look at is sample quality. Are there particular
+   samples that are bad and should be omitted?
 }
 
 \end{frame}
@@ -464,6 +466,17 @@
   \figw{Figs/array_int.pdf}{1.0}
 
 \note{
+   Also of interest is to look at the distribution of intensities on
+   these SNP arrays. It's hard to look at 500 histograms, but actually
+   you can get a pretty good picture of them by plotting density
+   estimates. I've highlighted in pink the 7 samples that have very
+   high rates of missing data. But in addition, you can sort of see
+   two clusters of curves: a sort of typical curve (like all those in
+   the first batch) plus curves that have somewhat reduced median and
+   perhaps a heavy right tail.
+
+   To more precisely identify the groups of curves, you might make a
+   scatterplot of say the 1st percentile against the 99th percentile.
 }
 \end{frame}
 
@@ -473,6 +486,7 @@
   \only<2>{\figw{Figs/allele_freq_byind_fixrange.pdf}{1.0}}
 
 \note{
+
 }
 \end{frame}
 
