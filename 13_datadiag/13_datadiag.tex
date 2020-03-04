@@ -764,6 +764,9 @@
 \centerline{\Large \color{title} Founder genotyping errors}
 
 \note{
+  Another thing to look for is founder genotyping errors. The genotype
+  reconstruction is strongly dependent on the founder genotypes. Can
+  we identify any errors in that data?
 }
 
 \end{frame}
@@ -773,6 +776,19 @@
   \figh{Figs/one_founder_missing.png}{0.8}
 
 \note{
+  It turned out no; I couldn't find any cases where the founder
+  genotypes looked to be wrong. But there were some cases where one of
+  the founder genotypes were missing. For example, in this case the
+  CAST founder had a missing gneotype.
+
+  The top panel shows the called genotypes. The bottom panels show the
+  predicted genotypes if CAST is AA (left) and if CAST is BB (right).
+  It seems clear that the right panel is best and so CAST much be BB
+  at this locus.
+
+  And this also shows that we could, in principle, identify an error
+  in the founder genotypes. If CAST had been called AA here, we could
+  maybe see that it was wrong and should be BB.
 }
 \end{frame}
 
@@ -781,6 +797,10 @@
   \figh{Figs/another_founder_missing.png}{0.8}
 
 \note{
+  Here's another case. The founder NOD is missing at this SNP. If it's
+  AA we get the pattern on the left; if it's BB we get the pattern on
+  the right. It seems clear that NOD is AA, and they if it were
+  erroneously called BB we could in principle detect it.
 }
 \end{frame}
 
