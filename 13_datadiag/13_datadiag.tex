@@ -486,7 +486,15 @@
   \only<2>{\figw{Figs/allele_freq_byind_fixrange.pdf}{1.0}}
 
 \note{
+  The frequencies of the alleles at the SNPs can be an important clue
+  about whether the samples are good quality and as expected. It's
+  best to split up the markers according to the allele frequencies in
+  the founders. Define the ``minor allele'' to be the less-common one
+  in the founders, and split the markers according to their ``minor
+  allele frequency (MAF)''.
 
+  In these data, there are some gross outliers, but the rest are
+  reasonably well distributed around the expected frequency.
 }
 \end{frame}
 
@@ -495,6 +503,26 @@
   \only<2>{\figw{Figs/geno_freq_byind_labeled.pdf}{1.0}}
 
 \note{
+  We can also look at the SNP genotype frequencies, again splitting
+  the SNPs into four groups according to the minor allele frequency.
+
+  Here I make use of what's called a ``ternary'' diagram. It makes use
+  of the fact that for any point within an equilateral triangle, the
+  sum of the distances to the three sides is a constant. We can use
+  that fact to create a correspondance between points in the triangle
+  and trinomial probabilities.
+
+  In the upper-left panel, for MAF = 1/8, the points all have low
+  frequency of the AA genotype, and so are close to the left edge.
+  They are a bit closer to the lower edge (indicating low
+  heterozygosity) and far from the right edge (indicating large
+  probability of BB genotype. (Here ``B'' is the more frequent allele,
+  which is the opposite of the notation I used when looking at the
+  microbiome mix-ups.)
+
+  The outlying points are largely the samples with a lot of missing
+  data, which we'd identified before. But there's also one mouse
+  DO125, who has somewhat elevated heterozygosity.
 }
 \end{frame}
 
@@ -503,6 +531,14 @@
   \figh{Figs/geno_prob.png}{0.8}
 
 \note{
+  Further diagnostics related to the sample quality make use of a
+  reconstruction of the founder haplotypes in the DO offspring. I make
+  use of a hidden Markov model, allowing for the presence of
+  genotyping errors, to calculate the probability that each mouse has
+  each of the 36 possible genotypes (AA, AB, BB, BC, ..., HH).
+
+  Here is a depiction of the genotype probabilities for one mouse on
+  one chromosome.
 }
 \end{frame}
 
@@ -510,6 +546,18 @@
   \figh{Figs/geno_reconstruct.png}{0.8}
 
 \note{
+  Here is a depiction of the genome reconstruction for one mouse.
+  White bits are unknown; the other 8 colors correspond to inferred
+  alleles.
+
+  There are two useful diagnostics that we can derive from this
+  reconstruction. First, we can just count the total number of
+  crossovers in the genome. Bad samples often will show an excess of
+  apparent crossovers.
+
+  Second, we can use this reconstruction plus the SNP alleles in the
+  founder strains to get predicted SNP genotypes for this mouse. We
+  can then compare those to the observed SNP genotypes.
 }
 \end{frame}
 
@@ -521,6 +569,16 @@
   \only<4>{\figh{Figs/missing_v_nxo_subset_labeled.png}{0.8}}
 
 \note{
+  We first look at the relationship between percent missing data and
+  the observed number of crossovers. The mice with $>$10\% missing data
+  show an absurdly large number of crossovers, indicating that the
+  remaining genotype data looks messed up.
+
+  The other mice have aruond 300-600 crossovers, and there seems no
+  relationship between the amount of missing data and the number of
+  crossovers. Mice missing 4--6\% genotypes seem to show a normal
+  number of crossovers, indicating that their remaining genotypes are
+  probably okay.
 }
 \end{frame}
 
@@ -529,6 +587,13 @@
   \figh{Figs/nxo_by_generation.png}{0.8}
 
 \note{
+   The five batches of mice in this study are actually from different
+   generations of the cross, and the number of crossovers seen are
+   increasing with generation. So in considering the number of
+   crossovers in a mouse, it's important to compare it to the other
+   mice of its generation. Other than the seven mice with $>$10\%
+   missing genotypes (which are omitted from this figure), there are
+   no worrisome outliers.
 }
 \end{frame}
 
@@ -538,6 +603,13 @@
   \only<2>{\figh{Figs/percent_geno_errors_subset.png}{0.8}}
 
 \note{
+  Finally, we compare the observed and predicted SNP genotypes to get
+  an estimated genotyping error rate for each mouse. The mice with
+  lots of missing data have high genotyping error rates. The others
+  have rates that are on no more than like 1--2 per 1000, and most
+  have error rate like $<$5 per 10,000. Given that they also show
+  a reasonable number of crossovers, these are all acceptable levels
+  of error.
 }
 \end{frame}
 
