@@ -823,6 +823,23 @@
    \ei
 
 \note{
+  While the methods I used here are very specific to the problem and
+  data, I think the effort does point to some general principles for
+  data diagnostics, the most important of which is to think about what
+  might have gone wrong and how it might be revealed in the data.
+
+  The order in which you do things can be important. Cleaning one
+  aspect of the data and obscure other kinds of problems. As you come
+  up with new ideas of things to look for, you may need to go back to
+  the beginning and start fresh with the raw data.
+
+  The other main technique is to just make lots of graphs, and to
+  follow up any oddities you seen. Try to figure out the underlying
+  cause, and whether it is something that could affect the final
+  results or not.
+
+  In general, my basic principle is ``Don't trust; verify.'' Cynical,
+  but important.
 }
 
 \end{frame}
@@ -854,6 +871,12 @@
   \ei
 
 \note{
+  Here's a summary of the things we did. Most important was
+  identifying bad samples, as they have the biggest influence on the
+  results. To look for bad samples, we ended up just focusing on four
+  things: missing data, heterozygosity, number of crossovers, and
+  number of genotyping errors.
+
 }
 
 \end{frame}
@@ -870,6 +893,20 @@
   \ei
 
 \note{
+  My final thoughts: expect that you'll need to be going back to the
+  beginning and starting over.  That is one of reasons that it's
+  helpful to do this work within a reproducible report, in which you
+  capture the full process (what you did, what you saw, how you
+  interpreted it, why you made the decisions you made).
+
+  Interactive graphs can be super helpful for data cleaning: for
+  identifying outliers, and for identifying which markers or samples
+  you need to look at in more detail. There's nothing that you do with
+  interactive graphs that you couldn't do with a series of static
+  graphs, but that's like saying there's nothing that you can do on a
+  computer that you couldn't do on a hand calculator. The increase in
+  speed in exploring the data can ultimately give a qualitative
+  improvement in the process.
 }
 
 \end{frame}
