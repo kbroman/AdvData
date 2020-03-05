@@ -20,7 +20,7 @@ description: Schedule for BMI 826, Advanced data analysis
 | 25 Feb    |    | [Sample mix-ups in eQTL data ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](11_samplemixups.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](11_samplemixups_notes.pdf)
 | 27 Feb    |    | [_Organizing collaborative projects; capturing exploratory analysis_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](12_collab_eda.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](12_collab_eda_notes.pdf)
 | 3 Mar     |    | [Data diagnostics for multiparent populations ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](13_datadiag.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](13_datadiag_notes.pdf)
-| 5 Mar     |    | _Writing clear code_
+| 5 Mar     |    | [_Writing clear code_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](14_clearcode.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](14_clearcode_notes.pdf)
 | 10 Mar    |    | Bayes/MCMC: Transposon mutagenesis
 | 12 Mar    |    | _Wrangling messy data files_ \[[**homework 2 due**](hw2.html)\]
 | 17,19 Mar |    | **No class (spring break)** |
