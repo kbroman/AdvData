@@ -26,11 +26,11 @@ description: Schedule for BMI 826, Advanced data analysis
 | 17,19 Mar |    | **No class (spring break)** |
 | 24 Mar    |    | Bootstrap confidence intervals for QTL location
 | 26 Mar    |    | _Writing R packages; roxygen2_
-| 31 Mar    |    | Permutation test with selective genotyping
+| 31 Mar    |    | Data visualization
 | 2 Apr     |    | _Software testing and debugging_
-| 7 Apr     |    | Multiple-QTL analysis
+| 7 Apr     |    | Permutation test with selective genotyping
 | 9 Apr     |    | _Big jobs/simulations; caching computations_
-| 14 Apr    |    | High-dimensional QTL mapping results
+| 14 Apr    |    | Multiple-QTL analysis
 | 16 Apr    |    | _R Markdown for papers_
 | 21 Apr    |    | Fine-mapping an eQTL
 | 23 Apr    |    | **No class**
