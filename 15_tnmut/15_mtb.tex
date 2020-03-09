@@ -298,6 +298,112 @@ $y_i$ = no. mutants with insertion in gene $i$.
 
 
 
+\begin{frame}{The likelihood}
+
+
+  \begin{eqnarray*}
+    L(\boldsymbol{\theta} \ | \ \boldsymbol{y}) & = & {n \choose y} \prod_i (x_i \theta_i)^{y_i} / \sum_j (x_j \theta_j)^n \\[14pt]
+                     & \propto & \left\{ \begin{array}{cl} (\sum_i x_i  \theta_i)^{-n} & \text{if $\theta_i$ = 1 whenever $y_i >$ 0} \\[12pt] 0  & \text{otherwise} \end{array}\right.
+  \end{eqnarray*}
+
+
+
+  \bigskip \bigskip
+
+  {\color{title} Notes:}
+  \bi
+  \item Depends only on which $y_i>0$ and not on the specific values
+  \item The MLE is $\hat{\theta}_i = 1\{y_i > 0\}$
+    \ei
+
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{The prior}
+
+  \bigskip
+
+  $\theta_+ \sim$ uniform on \{ 0, 1, ..., N \}
+
+  \bigskip
+
+$\boldsymbol{\theta} \ | \ \theta_+ \sim$  uniform over all sequences of 0's and 1's with $\theta_+$ 1's
+
+
+  \bigskip \bigskip
+
+  {\color{title} Notes:}
+  \bi
+\item We are assuming that $\text{Pr}(\theta_i = 1) = 1/2$
+\item This is quite different from taking $\theta_i$ iid
+  Bernoulli(1/2)
+\item We are assuming that $\theta_i$ is independent of $x_i$ and the
+  length of the gene
+\item We could make use of information about the essential status of
+  particular genes (e.g. known viable knock-outs)
+  \ei
+
+
+\note{
+}
+
+\end{frame}
+
+
+
+\begin{frame}{A Gibbs sampler}
+
+\bigskip
+
+  {\color{title} Goal}: Estimate $\text{Pr}(\boldsymbol{\theta} \ | \ \boldsymbol{y})$
+
+\bigskip
+
+{\color{title} Gibbs sampler:}
+\bi
+\item Begin with some initial assignment $\boldsymbol{\theta}^{(0)}$
+\item For iteration $s$, consider each gene one at a time
+ \bi
+  \item Let $\boldsymbol{\theta}_{-i}^{(s)} = (\theta_1^{(s+1)}, ..., \theta_{i-1}^{(s+1)}, \theta_{i+1}^{(s)}, ..., \theta_N^{(s)})$
+  \item Calculate $\text{Pr}(\theta_i = 1 \ | \ \boldsymbol{\theta}_{-i}^{(s)}, \boldsymbol{y})$
+  \item Assign $\theta_i^{(s)} = 1$ at random with that probability
+ \ei
+\item Repeat many times
+  \ei
+
+\bigskip \bigskip
+
+This is an example of {\vhilit Markov chain Monte Carlo (MCMC)}.
+
+  \note{
+  }
+\end{frame}
+
+
+\begin{frame}[c]{MCMC in action}
+
+\only<1|handout 0>{\figw{Figs/mcmc1.pdf}{1.0}}
+\only<2|handout 0>{\figw{Figs/mcmc2.pdf}{1.0}}
+\only<3|handout 0>{\figw{Figs/mcmc3.pdf}{1.0}}
+\only<4|handout 0>{\figw{Figs/mcmc4.pdf}{1.0}}
+\only<5|handout 0>{\figw{Figs/mcmc5.pdf}{1.0}}
+\only<6|handout 0>{\figw{Figs/mcmc6.pdf}{1.0}}
+\only<7|handout 0>{\figw{Figs/mcmc7.pdf}{1.0}}
+\only<8|handout 0>{\figw{Figs/mcmc8.pdf}{1.0}}
+\only<9|handout 0>{\figw{Figs/mcmc9.pdf}{1.0}}
+\only<10|handout 0>{\figw{Figs/mcmc10.pdf}{1.0}}
+\only<11|handout 0>{\figw{Figs/mcmc11.pdf}{1.0}}
+\only<12|handout 0>{\figw{Figs/mcmc12.pdf}{1.0}}
+\only<13>{\figw{Figs/mcmc13.pdf}{1.0}}
+
+\note{
+}
+\end{frame}
 
 
 \end{document}
