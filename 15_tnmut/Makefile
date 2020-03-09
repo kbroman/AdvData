@@ -1,7 +1,7 @@
 LEC = 15_mtb
 
-#FIGS =
-
+FIGS = Figs/mt598.pdf \
+	   Figs/himar.pdf
 
 include ../Makefile_lectures.mk
 
