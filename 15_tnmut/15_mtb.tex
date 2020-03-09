@@ -240,4 +240,64 @@ and last 100 bp of a gene.
 
 
 
+\begin{frame}{Model}
+
+  {\color{title} Transposon inserts completely at random}
+
+  \bigskip
+
+  \bi
+\item Each TA site equally likely
+\item Genes are either completely essential or completely
+  non-essential
+  \ei
+
+
+  \note{
+  }
+  \end{frame}
+
+
+\begin{frame}{Model}
+
+\begin{columns}
+
+\column{0.15\textwidth}
+
+N genes \\[12pt]
+
+n mutants
+
+\column{0.85\textwidth}
+
+$x_i$ = no. TA sites in gene $i$ \\[12pt]
+
+$y_i$ = no. mutants with insertion in gene $i$.
+\end{columns}
+
+
+\bigskip\bigskip\bigskip
+
+  $$  \theta_i = \left\{ \begin{array}{c} 1 \\ 0 \end{array} \text{ if gene $i$ is  }
+      \begin{array}{c} \text{non-essential}  \\ \text{essential} \end{array} \right. $$
+
+
+      \bigskip\bigskip\bigskip
+
+      {\color{title} Model}: $\boldsymbol{y} \sim
+      \text{multinomial}(n,\boldsymbol{p})$ \qquad where $p_i = x_i  \theta_i / \sum_j x_j \theta_j$
+
+\bigskip\bigskip
+
+      {\color{title} Goal}: Estimate $\theta_+ = \sum_i \theta_i$
+      \qquad or \qquad $1 - \theta_+/N$
+
+  \note{
+  }
+\end{frame}
+
+
+
+
+
 \end{document}
