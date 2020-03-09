@@ -14,7 +14,7 @@ mt598[2] <- paste(temp[[2]],collapse="")
 mt598[3] <- paste(temp[[1]],collapse="")
 rm(temp)
 
-postscript("../Figs/mt598.ps", horiz=FALSE, height=2.5, width=6.5)
+pdf("../Figs/mt598.pdf", height=5.5, width=9.75, pointsize=20)
 par(mar=c(0.1,0.1,0.1,0.1))
 plot(0,0,xlim=c(0,100),ylim=c(0,100),type="n",
      xlab="",ylab="",bty="n",xaxt="n",yaxt="n")
@@ -23,14 +23,14 @@ first <- u[1]+diff(u[1:2])*0.05
 last <- u[2]-diff(u[1:2])*0.05
 mult <- (last-first)/51
 cury <- u[3]+diff(u[3:4])*5/6
-for(i in 1:5) 
+for(i in 1:5)
   text(first+(i-1)*mult,cury,substr(mt598[1],5+i,5+i),
        cex=0.8,adj=c(0.5,0.5))
 arrows(first+4.5*mult,cury+10,first+4.5*mult,cury+3,length=0.1,xpd=TRUE,col="red",lwd=2)
 segments(first+c(4.5,4.5,7.5)*mult,cury-c(5,8,5),
          first+c(4.5,7.5,7.5)*mult,cury-c(8,8,8))
 text(first+6*mult,cury-14,"start",xpd=TRUE,cex=0.8)
-for(i in 1:41) 
+for(i in 1:41)
   text(first+(i-1+5)*mult,cury,substr(mt598[2],i,i),
        cex=0.8,adj=c(0.5,0.5))
 points(first+seq(-2,-1,len=3)*mult,rep(cury,3),xpd=TRUE,cex=0.25,pch=16)
