@@ -2,7 +2,8 @@ LEC = 15_mtb
 
 FIGS = Figs/mt598.pdf \
 	   Figs/himar.pdf \
-	   Figs/mut6.pdf
+	   Figs/mut6.pdf \
+	   Figs/num_TAs.pdf
 
 include ../Makefile_lectures.mk
 
