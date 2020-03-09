@@ -1,7 +1,8 @@
-
 # create data on locations of insertions around circular genome
-#mygeneloc <- read.csv("../Data/mygeneloc.csv")
+mygeneloc <- read.csv("mygeneloc.csv")
 L <- 4403836 # genome location
+
+load("gyanu_results_nov02.RData")
 
 # determine locations of all TA insertions in (1..4403836)
 a <- taloc[taloc$obs>0,]
@@ -17,7 +18,7 @@ for(i in 1:nrow(a)) {
 }
 rm(a,g,loc,x)
 
-postscript("../Figs/circlefig.ps",horiz=FALSE,height=5,width=5)
+pdf("../Figs/circlefig.pdf",height=5,width=5)
 par(pty="s",bty="n")
 plot(0,0,type="l",xlab="",ylab="",xlim=c(-1,1),ylim=c(-1,1),xaxt="n",yaxt="n")
 x <- seq(0,L,length=501)

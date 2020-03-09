@@ -4,7 +4,8 @@ FIGS = Figs/mt598.pdf \
 	   Figs/himar.pdf \
 	   Figs/mut6.pdf \
 	   Figs/num_TAs.pdf \
-	   Figs/mcmc13.pdf
+	   Figs/mcmc13.pdf \
+	   Figs/circlefig.pdf
 
 include ../Makefile_lectures.mk
 
