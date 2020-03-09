@@ -5,7 +5,10 @@ FIGS = Figs/mt598.pdf \
 	   Figs/mut6.pdf \
 	   Figs/num_TAs.pdf \
 	   Figs/mcmc13.pdf \
-	   Figs/circlefig.pdf
+	   Figs/circlefig.pdf \
+	   Figs/overlap.pdf \
+	   Figs/operon.pdf \
+	   Figs/unif_v_binom.pdf
 
 include ../Makefile_lectures.mk
 
