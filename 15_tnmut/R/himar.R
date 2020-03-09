@@ -1,0 +1,18 @@
+# schematic of Himar1 transposon
+pdf("../Figs/himar.pdf",height=5.5,width=9)
+plot(0,0,type="n",xlab="",ylab="",xaxt="n",yaxt="n",bty="n",
+     xlim=c(0,100),ylim=c(30,100))
+arrows(15,80,85,80,code=3,lwd=3,length=0.2,col="blue")
+segments(c(25,75),c(80,80),c(25,75),c(90,90),lwd=2,col="blue")
+arrows(c(25,75),c(90,90),c(15,85),c(90,90),lwd=2,length=0.1,col="blue")
+text(40,84,"KanR",cex=1.6,font=2)
+text(60,84,"Ori R6K",cex=1.6,font=2)
+text(15,73,"Inverted end",cex=1.4,font=2)
+text(85,73,"Inverted end",cex=1.4,font=2)
+text(15,95,"T7 Promoter",cex=1.4,font=2)
+text(85,95,"T7 Promoter",cex=1.4,font=2)
+text(50,74,"2.1 kbp",font=2,cex=1.6,col="darkviolet")
+segments(c(5,95),c(69,69),c(50,50),c(40,40),lwd=2,col="red")
+arrows(50,40,50,30,lwd=2,col="red")
+rect(0,69,100,100,lwd=2)
+dev.off()
