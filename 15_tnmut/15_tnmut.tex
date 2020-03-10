@@ -6,6 +6,22 @@
 
 \input{../LaTeX/header.tex}
 
+% shortcuts
+\newcommand{\yi}{\text{y}_\text{i}}
+\newcommand{\n}{\text{n}}
+\newcommand{\xxi}{\text{x}_\text{i}}
+\newcommand{\xxj}{\text{x}_\text{j}}
+\newcommand{\one}{\text{1}}
+\newcommand{\zero}{\text{0}}
+\newcommand{\boldy}{\text{\textbf{y}}}
+\newcommand{\thetai}{{\vhilit \theta_\text{i}}}
+\newcommand{\thetaj}{{\vhilit \theta_\text{j}}}
+\newcommand{\sumi}{\sum_\text{i}}
+\newcommand{\sumj}{\sum_\text{j}}
+\newcommand{\boldtheta}{{\vhilit \boldsymbol{\theta}}}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % end of header
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -464,6 +480,74 @@ x_i/\text{B})^\text{-n} + (n - \text{A}) /
 \note{
 }
 \end{frame}
+
+
+
+
+\begin{frame}{Estimators}
+
+
+The Gibbs sampler produces ${\vhilit
+\boldtheta^\text{(0)}},  {\vhilit
+\boldtheta^\text{(1)}}, \dots, {\vhilit
+\boldtheta^\text{(S)}}$
+
+\smallskip
+
+We discard the first 200 or so samples (``burn-in'').
+
+\bigskip
+\bigskip
+
+{\color{title} Estimated number of non-essential genes}:
+$\text{E}({\vhilit \theta_+}  \ | \ \boldy)$
+
+\smallskip
+
+\hspace{30mm} ${\vhilit \theta_+^\text{(s)}} = \sumi
+{\vhilit \thetai^\text{(s)}}$ \hspace{15mm}
+${\color{title} \longrightarrow}$ \hspace{15mm}
+${\vhilit \hat{\theta}_+} = \textstyle{\frac{\one}{\text{S} -
+\text{200}} \sum_{\text{s}=\text{201}}^\text{S} {\vhilit \theta_+^\text{(s)}}}$
+
+\bigskip
+\bigskip
+
+{\color{title} Probability that gene i is non-essential}:
+$\text{E}({\vhilit \thetai} \ | \ \boldy)$ =
+$\text{Pr}({\vhilit \thetai} = \one \ | \ \boldy)$
+
+\smallskip
+
+\hspace{30mm} ${\vhilit \hat{\theta}_\text{i}} =
+\textstyle{\frac{\one}{\text{S} - \text{200}} \sum_{\text{s} =
+\text{201}}^\text{S} {\vhilit \thetai^\text{(s)}}}$
+%\hfill  [${\vhilit \hat{\theta}_\text{i}}$ is really
+%$\hat{\text{Pr}}({\vhilit \thetai} = \one \ | \ \boldy)$.]
+
+
+\bigskip
+\bigskip
+
+\hspace{10mm} {\color{title} or Rao-Blackwellize:}
+
+\smallskip
+
+\hspace{30mm} ${\vhilit \hat{\theta}_\text{i}^\star} =
+\textstyle{\frac{\one}{\text{S} - \text{200}} \sum_{\text{s} =
+\text{201}}^\text{S} \text{Pr}({\vhilit \thetai} =
+\one \ | \ \boldy, {\vhilit \boldtheta_\text{-i}^\text{(s)}})}$
+
+
+
+\note{
+}
+\end{frame}
+
+
+
+
+
 
 
 \begin{frame}{A further complication}
