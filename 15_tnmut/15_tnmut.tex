@@ -564,11 +564,11 @@ x_j \ {\vhilit
 \\
 \text{\hilit Then } \text{Pr}({\vhilit
 \boldsymbol{\theta}_\text{-i}^\text{(s)}}, {\vhilit
-\theta_i}=\text{k}) & = & \textstyle{{n \choose
+\theta_i}=\text{k}) & \propto & \textstyle{{n \choose
 \text{A}+\text{k}} / n} \\
 \text{Pr}(\boldsymbol{y} \ | \ {\vhilit
 \boldsymbol{\theta}_\text{-i}^\text{(s)}}, {\vhilit
-\theta_i}=\text{k}) & = & \textstyle{(\text{B} + \text{k} \
+\theta_i}=\text{k}) & \propto & \textstyle{(\text{B} + \text{k} \
 x_i)^\text{-n}}
 \\ \\
 \text{\hilit And so } \text{Pr}({\vhilit \theta_i} = 1
@@ -586,6 +586,14 @@ x_i/\text{B})^\text{-n} + (n - \text{A}) /
 
 
 \note{
+   Here are the details on the conditional probabilities. It's not
+   really worth digging into them, really.
+
+   The key thing is to take A to be the number of non-essential genes
+   (ignoring gene $i$) and B be the number of insertion sites in
+   non-essential genes (again ignoring gene $k$). A straightforward
+   application of Bayes's rule plus a bit of algebra leads to a
+   reasonably simple equation.
 }
 \end{frame}
 
@@ -649,6 +657,10 @@ $\text{Pr}({\vhilit \thetai} = \one \ | \ \boldy)$
 
 
 \note{
+   How do you use the MCMC results? Typically you'll discard the first
+   bunch of samples and then take like the average of the rest. Rather
+   than average the observed values, you can average the probabilities
+   that you're sampling from. That ends up giving more precise estimates.
 }
 \end{frame}
 
@@ -682,6 +694,12 @@ proximal portion of \emph{both\/} genes}.
 \end{columns}
 
 \note{
+   A further complication that I hadn't mentioned above: some of the
+   genes overlap. And those regions of overlap include transposon
+   insertion sites. This makes things a bit more complicated, but
+   basically we consider sites in the overlap regions only if they are
+   in the early bit of both genes. And insertion in such a site would
+   indicate that {\hilit both} of the genes are non-essential.
 }
 \end{frame}
 
@@ -693,6 +711,10 @@ proximal portion of \emph{both\/} genes}.
 \figw{Figs/mtb_mcmc.pdf}{1.0}
 
 \note{
+  Here are the results of the first 1000 samples, showing the percent
+  essential genes in each iteration. We start assuming that all genes
+  without a mutation are essential, but it shoots immediately towards
+  $\sim$35\%, where it then stays.
 }
 \end{frame}
 
@@ -702,6 +724,9 @@ proximal portion of \emph{both\/} genes}.
 \figw{Figs/mtb_hist.pdf}{1.0}
 
 \note{
+  Here are the results for every 50th of 500k steps. This is the
+  estimated posterior distribution of the number of essential genes.
+  We can use it to get an estimate and a ``credible'' interval.
 }
 \end{frame}
 
@@ -712,6 +737,16 @@ proximal portion of \emph{both\/} genes}.
 \figw{Figs/prob_essential.pdf}{1.0}
 
 \note{
+  We also get, for each gene, the estimated probability that it is
+  essential. The genes showing a viable mutant are all down at 0
+  (jittered vertically to better see the individual points).
+
+  For genes without a viable insertion, the chance they are essential
+  depends on the number of insertion sites. There is basically a
+  functional relationship here; the points below the main curve are
+  genes that share insertion sites with another gene. Shared insertion
+  sites that haven't been hit are less informative than insertion
+  sites in a single gene.
 }
 \end{frame}
 
@@ -750,6 +785,15 @@ be unbiased.
 \ei
 
 \note{
+  One other complication that I hadn't mentioned: genes in
+  M.\ tuberculosis exist in ``operons'' where a bunch of genes are
+  transcribed together and then translated into protein. Because of
+  this, transposon insertion could disrupt all downstream genes.
+
+  If we knew all of the operons, we could incorporate this into our
+  model. The problem is that operons aren't entirely known. There's no
+  hope but to redefine the meaning of ``essential'' to include being
+  upstream of a truly essential gene.
 }
 \end{frame}
 
@@ -761,6 +805,15 @@ be unbiased.
   \figw{Figs/sim_fig.pdf}{1.0}
 
 \note{
+  How do we know if our approach works? Well, we can simulate.
+
+  And being a frequentist at heart, I'm interested in assessing the
+  usual properties of these estimates. Consider different values for
+  the proportion of essential genes, and different sizes of mutant
+  libraries. How do our estimates behave, in terms of bias and
+  interval coverage?
+
+  Turns out, they look just fine.
 }
 \end{frame}
 
@@ -795,6 +848,17 @@ observed, have {\color{title} $>$ 75\%} chance of being essential.
 \ei
 
 \note{
+  I've described a Bayesian method for making sense of transposon
+  mutagenesis data. I came to it by first forming a natural model for
+  the data and then seeing that the usual sorts of approaches would
+  not work well.
+
+  The two key things here were the choice of prior and then forming
+  the Gibbs sampler (and showing that it worked well).
+
+  There are some critical assumptions, mostly untestable. And there
+  were some complexities that lead to a bit of ad-hoc-ery, but for the
+  most part the results seem solid.
 }
 \end{frame}
 
@@ -813,11 +877,20 @@ observed, have {\color{title} $>$ 75\%} chance of being essential.
 
   \href{https://cran.r-project.org/package=negenes}{\tt cran.r-project.org/package=negenes}
 
+\item \emph{Reproduction of the results\/}: Broman (2020)
+
+  \href{https://github.com/kbroman/Paper_ReScience2020}{\tt github.com/kbroman/Paper\_ReScience2020}
 
     \ei
 
-    \note{
-      }
+\note{
+  Here is the main paper plus a tech report about the work.
+
+  The R package is a bit of a mess, but it does still work.
+
+  The last paper was a recent effort to reproduce the original
+  results, with some interesting lessons.
+}
 \end{frame}
 
 \end{document}
