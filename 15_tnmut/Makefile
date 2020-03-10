@@ -1,4 +1,4 @@
-LEC = 15_mtb
+LEC = 15_tnmut
 
 FIGS = Figs/mt598.pdf \
 	   Figs/himar.pdf \
