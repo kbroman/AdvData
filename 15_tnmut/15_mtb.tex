@@ -416,4 +416,82 @@ This is an example of {\vhilit Markov chain Monte Carlo (MCMC)}.
 \end{frame}
 
 
+\begin{frame}{The conditional probabilities}
+
+If $y_i > 0$, then $\text{Pr}({\vhilit \theta_i} =
+1 \ | \ \boldsymbol{y}, {\vhilit
+\boldsymbol{\theta}_\text{-i}^\text{(s)}}) = 1$
+
+\vspace{10mm}
+
+If $y_i = 0$,
+
+\vspace{-15mm}
+
+\begin{eqnarray*}
+\text{{\hilit Let} A } & = & \textstyle{\sum_{\text{j} < \text{i}} {\vhilit
+\theta_j^\text{(s+1)}} + \sum_{\text{j} > \text{i}} {\vhilit
+\theta_j^\text{(s)}}} \\
+\text{B } & = & \textstyle{\sum_{\text{j} < \text{i}}
+x_j \ {\vhilit
+\theta_j^\text{(s+1)}} + \sum_{\text{j} > \text{i}}
+x_j \ {\vhilit
+\theta_j^\text{(s)}}} \\
+\\
+\text{\hilit Then } \text{Pr}({\vhilit
+\boldsymbol{\theta}_\text{-i}^\text{(s)}}, {\vhilit
+\theta_i}=\text{k}) & = & \textstyle{{n \choose
+\text{A}+\text{k}} / n} \\
+\text{Pr}(\boldsymbol{y} \ | \ {\vhilit
+\boldsymbol{\theta}_\text{-i}^\text{(s)}}, {\vhilit
+\theta_i}=\text{k}) & = & \textstyle{(\text{B} + \text{k} \
+x_i)^\text{-n}}
+\\ \\
+\text{\hilit And so } \text{Pr}({\vhilit \theta_i} = 1
+\ | \ \boldsymbol{y}, {\vhilit
+\boldsymbol{\theta}_\text{-i}^\text{(s)}}) & = &  \dots \\
+%\textstyle{\frac{{n \choose \text{A}+1} (\text{B} +
+%x_i)^\text{-n} / n}{{n \choose \text{A}+1} (\text{B} +
+%x_i)^\text{-n} / n + {n \choose \text{A}}
+%(\text{B})^\text{-n} / n}} \\
+& = & \frac{(1 +
+x_i/\text{B})^\text{-n}}{(1 +
+x_i/\text{B})^\text{-n} + (n - \text{A}) /
+(\text{A} + 1)}
+\end{eqnarray*}
+
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{A further complication}
+
+\begin{columns}
+
+  \column{0.5\textwidth}
+
+{\color{title} Many genes overlap}
+
+\bi
+
+\item Of 4250 genes, 1005 pairs overlap (mostly by exactly 4 bp).
+\item The overlapping regions contain 547 insertion sites.
+\item {\vhilit Omit TA sites in overlapping regions, unless in the
+proximal portion of \emph{both\/} genes}.
+\item The algebra gets a bit more complicated.
+\ei
+
+  \column{0.5\textwidth}
+
+\figh{Figs/overlap.pdf}{0.9}
+
+\end{columns}
+
+\note{
+}
+\end{frame}
+
+
 \end{document}
