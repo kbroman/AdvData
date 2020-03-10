@@ -3,7 +3,7 @@ LEC = 15_tnmut
 FIGS = Figs/mt598.pdf \
 	   Figs/himar.pdf \
 	   Figs/mut6.pdf \
-	   Figs/num_TAs.pdf \
+	   Figs/numTAs.pdf \
 	   Figs/mcmc13.pdf \
 	   Figs/circlefig.pdf \
 	   Figs/overlap.pdf \
