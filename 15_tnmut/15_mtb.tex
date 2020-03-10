@@ -494,4 +494,117 @@ proximal portion of \emph{both\/} genes}.
 \end{frame}
 
 
+
+
+\begin{frame}[c]{Percent essential genes in M.\ tb.}
+
+\figw{Figs/mtb_mcmc.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}[c]{Percent essential genes in M.\ tb.}
+
+\figw{Figs/mtb_hist.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{Probability each gene is essential}
+
+\figw{Figs/prob_essential.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Yet another complication}
+
+  \begin{columns}
+    \column{0.15\textwidth}
+
+\hfill {\color{title} Operon:}
+
+\column{0.85\textwidth}
+
+A group of adjacent genes that are transcribed
+together as a single unit.
+\end{columns}
+
+
+\figw{Figs/operon.pdf}{1.0}
+
+\bi
+\item Insertion at a TA site could disrupt all downstream genes
+
+\item If a gene is essential, insertion in any upstream gene would be
+non-viable
+
+\item Re-define the meaning of ``essential gene''.
+
+\item If operons were known, one could get an improved estimate of the
+proportion of essential genes.
+
+\item If one ignores the presence of operons, estimates should still
+be unbiased.
+\ei
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Frequentist properties}
+
+  \figw{Figs/sim_fig.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Summary}
+
+  \bbi
+\item Bayesian method, using MCMC, to estimate the proportion of
+essential genes in a genome with data from random transposon
+mutagenesis.
+
+\item Crucial assumptions:
+
+\bi
+\item {\hilit Randomness of transposon insertion.}
+
+\item Essentiality is an all-or-none quality.
+
+\item No relationship between essentiality and no.\ insertion
+sites.
+
+\item The 80\% rule.
+\ei
+
+\item For \emph{M.\ tuberculosis}, with data on 1400 mutants:
+\bi
+\item {\color{title} 28 -- 41\%} of genes are essential
+\item 20 genes which have $\ge$ 64 TA sites and for which no mutant has been
+observed, have {\color{title} $>$ 75\%} chance of being essential.
+\ei
+
+\ei
+
+\note{
+}
+\end{frame}
+
+
 \end{document}
