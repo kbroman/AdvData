@@ -144,6 +144,15 @@
 \figw{Figs/mt598.pdf}{1.0}
 
 \note{
+  Here's the sequence of one particular gene. It contains 3 transposon
+  insertion sites, one just before the start of the gene, one at
+  around 72 bp, and one in the stop codon.
+
+  Transposon insertion at middle site will surely disrupt the gene.
+  But insertion at the site in the stop codon would cause a small
+  increase in the protein which might not actually matter. Insertion
+  at the first site may not affect the protein product but would
+  separate the gene from its promotor.
 }
 
 \end{frame}
@@ -159,6 +168,20 @@
 \only<6>{\figh{Figs/mut6.pdf}{0.9}}
 
 \note{
+  Here's a schematic for how random transposon mutagenesis works.
+  Imagine a circular genome with just six genes, three essential (in
+  red) and three non-essential (in green). The tick marks are the
+  transposon insertion sites; yellow ticks are sites in-between genes.
+
+  We first create a set of mutants with a single transposon insertion
+  and select for viable mutants. Insertions in essential genes (red)
+  will be non-viable and won't grow. We then sequence the mutants to
+  identify the insertion sites. We'll ignore mutants where the
+  insertion was in-between genes.
+
+  Genes with viable insertions are then known to be non-essential. The
+  essential genes are the ones where, as you increase the size of the
+  mutant library, you never see a viable mutant.
 }
 
 \end{frame}
@@ -182,6 +205,14 @@ and last 100 bp of a gene.
 \ei
 
 \note{
+  So again, we identify the location of the insertion. A gene with a
+  viable insertion mutant is non-essential; we are interested in
+  trying to predict the essential ones.
+
+  There's this complication that insertion in the very distal portion
+  of an essential gene may not be sufficiently disruptive. So we used
+  a rule where we just ignore sites and mutants in the last portion of
+  the gene.
 }
 \end{frame}
 
@@ -201,6 +232,10 @@ and last 100 bp of a gene.
 \ei
 
 \note{
+  Our data consists of the number and locations of genes, the number
+  and locations of the insertion sites in each gene, and then we have
+  $n$ viable mutants with exactly one traponson insertion, for which
+  we know the insertion site.
 }
 \end{frame}
 
@@ -218,6 +253,14 @@ and last 100 bp of a gene.
   \ei
 
 \note{
+  For the Mycobacterium tuberculosis genome, there are 74k
+  insertion sites: 66k within a gene, and 58k within the proximal
+  portion of the gene that we'll consider.
+
+  Of the 4250 genes, 4204 have at least one insertion site.
+
+  The histogram shows the number of insertion sites. Typically about
+  10; max near 200.
 }
 \end{frame}
 
@@ -251,6 +294,12 @@ and last 100 bp of a gene.
 }
 
 \note{
+  The transposon mutagenesis data includes 1425 insertion mutants, of
+  which 1025 are within the proximal portion of a gene. There were 770
+  unique genes hit. 21 specific sites were hit twice.
+
+  The questions are: what is the proportion of essential genes? Which
+  genes are likely essential?
 }
 \end{frame}
 
@@ -270,6 +319,9 @@ and last 100 bp of a gene.
 
 
   \note{
+     We first form a model for the process: that the transposon
+     inserts completely at random, with each TA site equally likely.
+     And that genes are completely essential or completely non-essential.
   }
   \end{frame}
 
@@ -288,7 +340,7 @@ n mutants
 
 $x_i$ = no. TA sites in gene $i$ \\[12pt]
 
-$y_i$ = no. mutants with insertion in gene $i$.
+$y_i$ = no. mutants with insertion in gene $i$
 \end{columns}
 
 
@@ -309,6 +361,16 @@ $y_i$ = no. mutants with insertion in gene $i$.
       \qquad or \qquad $1 - \theta_+/N$
 
   \note{
+     Let $x_i$ be the number of insertion sites in gene $i$ (of $N$)
+     and $y_i$ be the number of mutants with insertion in gene $i$ (of
+     $n$). That's our data.
+
+     Let $\theta_i$ = 1 if the gene is non-essential and 0 if
+     essential. Those are our parameters. Then $\boldsymbol{y}$ is
+     multinomial($n$,$\boldsymbol{p}$) where $p_i$ is the proportion
+     of TA sites in gene $i$, among TA sites in non-essential genes.
+
+     We want to estimate $\theta_+ = \sum_i \theta_i$
   }
 \end{frame}
 
@@ -334,6 +396,19 @@ $y_i$ = no. mutants with insertion in gene $i$.
 
 
 \note{
+  The likelihood ends up depending only on which $y_i>0$ and not on
+  the specific values.
+
+  Maximum likelihood works particularly badly in this sort of
+  situation. The MLE of $\theta_+$ is just the minimum possible value
+  that is consistent with the data. (That the genes with observed
+  mutants are non-essential and all other genes are essential.)
+
+  It took a while to understand the mutagenesis data, but once we did
+  we came almost directly to this model. It is similar to species
+  counting sorts of problems. Gather and classify a random sample of
+  organisms from some environment and try to infer something about the
+  diversity of the population.
 }
 \end{frame}
 
@@ -366,6 +441,22 @@ $\boldsymbol{\theta} \ | \ \theta_+ \sim$  uniform over all sequences of 0's and
 
 
 \note{
+  There seemed no real hope but to bite the bullet and do Bayes. That
+  is, take our parameters to be random, make some assumption about
+  their prior distribution, and then calculate the posterior
+  distribution given the observed data.
+
+  You might naturally say something like $\theta_i \sim$ iid coin
+  tosses, but this leads to a very concentrated prior on the number of
+  essential genes.
+
+  So I instead thought: put a flat prior on the number of essential
+  genes, and then given the number, take the identity of the
+  particular genes that are essential to be random.
+
+  This means the $\theta_i$ are dependent, but seems to correspond
+  reasonably well to what we know. But note that were assuming that
+  each gene is equally likely to be essential.
 }
 
 \end{frame}
@@ -377,6 +468,9 @@ $\boldsymbol{\theta} \ | \ \theta_+ \sim$  uniform over all sequences of 0's and
 \figw{Figs/unif_v_binom.pdf}{1.0}
 
 \note{
+  Just to hammer this home: here's a comparison on the marginal
+  distribution of $\theta_+$ under the $\theta_i$ iid prior vs the
+  prior we used.
 }
 \end{frame}
 
@@ -407,6 +501,12 @@ $\boldsymbol{\theta} \ | \ \theta_+ \sim$  uniform over all sequences of 0's and
 This is an example of {\vhilit Markov chain Monte Carlo (MCMC)}.
 
   \note{
+     Our goal is to estimate the posterior distribution
+     $\text{Pr}(\boldsymbol{\theta} \ | \ \boldsymbol{y})$. The Gibbs
+     simpler is a natural way to do so, it's an example of Markov
+     chain Monte Carlo.
+
+     You form a Markov chain whose limiting distribution is the target distribution.
   }
 \end{frame}
 
@@ -428,6 +528,14 @@ This is an example of {\vhilit Markov chain Monte Carlo (MCMC)}.
 \only<13>{\figw{Figs/mcmc13.pdf}{1.0}}
 
 \note{
+   Here's an illustration of the Gibbs sampler for a portion of the
+   data. Each dot is a parameter (for a gene): red is essential and
+   green is non-essential. We start by assuming that all of the genes
+   without viable mutants are essential (red). Each column is one
+   iteration of the Gibbs sampler, and each row is one gene.
+
+   We can estimate the probability that a gene is essential by looking
+   at the proportion of red dots in its row.
 }
 \end{frame}
 
