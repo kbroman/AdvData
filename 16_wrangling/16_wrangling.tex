@@ -313,22 +313,32 @@
 
 
 
-\begin{frame}{Stepping through a file in R}
+\begin{frame}[fragile,c]{Stepping through a file in R}
+
+\begin{lstlisting}
+  filecon <- open("huge_data.txt", "r")
+  while(TRUE) {
+
+    line <- readLines(filecon, n=1)
+    if( grepl("^\\[Data\\]", line) )  break
+
+  }
+
+  data <- readLines(filecon)
+  close(filecon)
+\end{lstlisting}
+
 
 \note{
-  {\tt readLines()}
+  I often use {\tt readLines()} to slurp up an entire file as a vector
+  of character strings.
 
-  slurping it all in vs
-  opening/closing a file for reading.
+  For really big files, I might want to read one or a few lines at a
+  time instead, and throw out all but the stuff that matters. You can
+  do this in R!
 
-file() and readLines() to read bits at a time.
-con <- file("blah.txt", open="r")
-readLines(con, n=5)
-readLines(con, n=5)
-close(con)
-
-
-  If it's really big, if there's a header to parse first, if we just want a small part of it.
+  This particular example will skip over a header that ends with
+  [Data] and then read in everything after that.
 }
 \end{frame}
 
@@ -338,11 +348,40 @@ close(con)
 
 
 
-\begin{frame}{Regular expressions}
+\begin{frame}[fragile]{Regular expressions}
+
+  \only<1|handout 0>{\figh{Figs/xkcd_regular_expressions.png}{0.8}
+
+    \vspace{4mm}
+
+    \hfill \href{https://xkcd.com/208}{\tt xkcd.com/208} }
+  \only<2|handout 0>{\figh{Figs/regex_cover.jpg}{0.9} }
+
+  \only<3>{
+    \bigskip
+
+  {\hilit {\tt grep()}, {\tt grepl()}, {\tt sub()}, {\tt gsub()}}
+
+  \bigskip
+
+  \bi
+\item {\tt \textasciicircum} and {\tt \$} match the beginning and end of a line
+\item {\tt [034]} for any one of several things; {\tt [0-9]} for a range
+\item {\tt [{\textasciicircum}034]} for something {\hilit other} than this set of things
+\item {\tt {\textbackslash}s} for white space
+\item {\tt .} match any one character
+\item {\tt +} match the last bit 1 or more times
+\item {\tt *} match the last bit 0 or more times
+\item parentheses to group bits for use with {\tt +} and {\tt *}
+\item when substituting, can use {\tt {\textbackslash}1}, {\tt {\textbackslash}2}, ... in place of
+  matched groups
+\item In R, most backslashes need to be made double-backslashes.
+\ei
+}
 
 \note{
-  In R, {\tt grep}, {\tt grepl}, {\tt sub}, {\tt gsub}.
-  Can use {\tt \\1}, {\tt \\2} in the substitutions.
+  Regular expression are {\vhilit} hugely useful for the data
+  wrangling work.
 }
 \end{frame}
 
