@@ -316,7 +316,7 @@
 \begin{frame}[fragile,c]{Stepping through a file in R}
 
 \begin{lstlisting}
-  filecon <- open("huge_data.txt", "r")
+  filecon <- file("huge_data.txt", "r")
   while(TRUE) {
 
     line <- readLines(filecon, n=1)
@@ -494,7 +494,7 @@
 \item Sometimes converting excel $\rightarrow$ csv loses precision
 \item {\tt get()} to grab an object from a character string with its
   name
-\item {\tt eval(parse( ))} to evaluate a charcter string as R code
+\item {\tt eval(parse( ))} to evaluate a character string as R code
   \ei
 
   \note{
