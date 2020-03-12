@@ -112,4 +112,235 @@
 
 
 
+\begin{frame}{Being self-sufficient}
+
+  \bbi
+\item {\hilit C}
+\item {\hilit P}erl (or python or ruby \only<2>{or R})
+\item {\hilit R}
+  \ei
+
+    \note{
+      I've long said that for a data scientist to be self-sufficient,
+      they should be savvy with multiple programming languages.
+
+      R for data analysis. C for when you need high-performance, and
+      for like 15 years I used Perl for manipulating data files plus
+      shell scripting.
+
+      But I'd now say use Python or Ruby instead of Perl; probably
+      Python. And really, I think we can now do everything we want to
+      do in R. It's a perfectly sufficient general programming language.
+    }
+
+\end{frame}
+
+
+
+
+\begin{frame}{Key techniques}
+
+  \bbi
+\item stepping through a file
+\item regular expressions
+  \bi
+  \item search and replace patterns
+  \ei
+\item parsing individual lines in a file
+\item matching vectors
+\item construct meta data
+\item system calls
+  \ei
+
+    \note{
+    }
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}{Stepping through a file in R}
+
+\note{
+  {\tt readLines()}
+
+  slurping it all in vs
+  opening/closing a file for reading.
+
+file() and readLines() to read bits at a time.
+con <- file("blah.txt", open="r")
+readLines(con, n=5)
+readLines(con, n=5)
+close(con)
+
+
+  If it's really big, if there's a header to parse first, if we just want a small part of it.
+}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Regular expressions}
+
+\note{
+  In R, {\tt grep}, {\tt grepl}, {\tt sub}, {\tt gsub}.
+  Can use {\tt \\1}, {\tt \\2} in the substitutions.
+}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Parsing strings}
+
+\note{
+  A lot of {\tt strsplit()} and then messing about with lists.
+
+  Consider {\tt stringr} package.
+}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Matching vectors}
+
+\note{
+  Mostly {\tt match()}. Need to check for missing values in the result.
+
+  Often use this to reorder the rows or columns in one data set to
+  match the rows or columns in another data set.
+}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Construct meta data}
+
+
+
+\note{
+  This is an example meta data file that I set up because each batch
+  of subjects in a project had the data organized completely
+  differently.
+
+  I identified the variables of interest and chose a fixed set of
+  names.
+
+  Then for each batch, I worked out which file it was in, the name of
+  the column to look for, and then I also needed a column ``offset''
+  because to find week 4 measurements for variable X, you might look
+  for the column that is two to the right from the one labeled Y.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}{R challenges}
+
+  \bbi
+\item {\tt stringsAsFactors}
+\item {\tt check.names} in {\tt read.csv()}
+\item dealing with factors
+  \bi
+\item levels
+\item converting to/from strings
+  \ei
+  \ei
+
+\note{
+ Mention the forcats package.
+}
+\end{frame}
+
+
+\begin{frame}{Further tips}
+
+\bbi
+\item Avoid using numeric indices
+  \bi
+\item refer to data by variable name and individual ID
+\item this will be more {\hilit robust}
+  \ei
+\item {\tt glue} package vs {\tt paste}, {\tt paste0}
+\item {\tt stopifnot()} to assert things that should be true
+\item {\tt cbind} and {\tt rbind}, but padding with missing values
+\item Sometimes converting excel -> csv loses precision
+  \ei
+
+  \note{
+  }
+\end{frame}
+
+
+
+
+\begin{frame}{Verify everything}
+
+\bbi
+\item subject IDs unique?
+\item derived columns
+\item [other stuff from eda lecture]
+\ei
+
+  \note{
+  }
+\end{frame}
+
+
+
+
+\begin{frame}{Reproducible reports}
+
+\bbi
+\item You want all of this work to be reproducible
+\item Consider combining the data reorganization with the data
+  cleaning
+  \bi
+    \item a lot of double-checking is happening when reorganizing
+  \ei
+\item Or clean each file one at a time
+  \bi
+    \item do the detailed diagnostics and cross-checks with data that are
+      in a more convenient form
+  \ei
+\item Include diagnostic plots
+  \bi
+    \item Plot stuff vs time
+    \item Scatterplots of different variables
+    \item Look at missing data pattern
+  \ei
+\item Explain your thought process and observations
+  \ei
+
+  \note{
+  }
+\end{frame}
+
+
+
+
+
+
+
+
 \end{document}
