@@ -516,6 +516,8 @@
 \ei
 
   \note{
+    You really should verify everything. Don't trust that things
+    match; everything that can go wrong, will.
   }
 \end{frame}
 
@@ -565,6 +567,71 @@
 \end{frame}
 
 
+
+\begin{frame}[c]{Batch effect}
+
+\only<1|handout 0>{\figh{Figs/il3.pdf}{0.85}}
+\only<2>{\figh{Figs/il3_log.pdf}{0.85}}
+
+\note{
+Here's an example of a clear batch effect. You can really only tell if
+you plot the variable by the order of measurement, and it's much more
+clear if you take logs.
+}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Messed up units}
+
+\figh{Figs/adipose_weight.pdf}{0.85}
+
+\note{
+Here's a case where a variable was recorded in the wrong units (g
+rather than mg) for a few individuals)
+
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Outliers}
+
+\figh{Figs/body_weight.pdf}{0.85}
+
+\note{
+In this particular case, it turned out that the day 10 weights for two
+subjects got swapped.
+
+When you look at this sort of situation, ask yourself how you might
+find this problem if you have 20 weight measurements and 1500
+individuals.
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Summary}
+
+  \bbi
+\item Be prepared for anything
+\item Double-check everything
+\item Take your time and keep things organized
+\item Python is a good skill to have, but you {\vhilit can} just do R
+  \ei
+
+\note{
+  Summaries are always helpful.
+}
+
+\end{frame}
 
 
 

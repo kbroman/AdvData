@@ -1,6 +1,8 @@
 LEC = 16_wrangling
 
-#FIGS =
+FIGS=Figs/il3.pdf \
+	 Figs/adipose_weight.pdf \
+	 Figs/body_weight.pdf
 
 
 include ../Makefile_lectures.mk
