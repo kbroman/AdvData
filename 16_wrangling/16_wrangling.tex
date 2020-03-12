@@ -393,10 +393,17 @@
 
 \begin{frame}{Parsing strings}
 
-\note{
-  A lot of {\tt strsplit()} and then messing about with lists.
+  \bbi
+\item I use a lot of {\tt strsplit()}
+\item The output is a list of vectors so is not pretty
+\item Also look at the {\tt stringr} package
+\item To put things back together, use {\tt paste()}, {\tt paste0()},
+  or the {\tt glue} package.
+\ei
 
-  Consider {\tt stringr} package.
+\note{
+  Messing about with strings is not as easy as in perl, python or
+  ruby, but it is more and more do-able.
 }
 \end{frame}
 
@@ -407,10 +414,19 @@
 
 \begin{frame}{Matching vectors}
 
-\note{
-  Mostly {\tt match()}. Need to check for missing values in the result.
+  \bbi
+\item I spend a lot of time matching two vectors, say of subject IDs
+\item I mostly use {\tt match()}, eg {\tt match(old\_ids, new\_ids)}
+\item Check for {\tt NA}s, which indicate unmatched values
+\item May want to check that the values on right are unique
+\item Often do something like {\tt olddata[ match(new\_ids, old\_ids), ]}
+\ei
 
-  Often use this to reorder the rows or columns in one data set to
+\note{
+  Matching IDs is a constant; I mostly use {\tt match()}. Don't assume
+  that the values are unique or that they're all present.
+
+  I often use this to reorder the rows or columns in one data set to
   match the rows or columns in another data set.
 }
 \end{frame}
@@ -455,10 +471,12 @@
 \item levels
 \item converting to/from strings
   \ei
+\item Consider the {\tt forcats} package
   \ei
 
 \note{
- Mention the forcats package.
+  Categorical data is a problem not just for R, but R does have a lot
+  of pain points.
 }
 \end{frame}
 
@@ -471,13 +489,16 @@
 \item refer to data by variable name and individual ID
 \item this will be more {\hilit robust}
   \ei
-\item {\tt glue} package vs {\tt paste}, {\tt paste0}
 \item {\tt stopifnot()} to assert things that should be true
 \item {\tt cbind} and {\tt rbind}, but padding with missing values
-\item Sometimes converting excel -> csv loses precision
+\item Sometimes converting excel $\rightarrow$ csv loses precision
+\item {\tt get()} to grab an object from a character string with its
+  name
+\item {\tt eval(parse( ))} to evaluate a charcter string as R code
   \ei
 
   \note{
+    Here are some misc.\ further tips.
   }
 \end{frame}
 
@@ -488,8 +509,10 @@
 
 \bbi
 \item subject IDs unique?
-\item derived columns
-\item (other stuff from eda lecture)
+\item identifiers that don't match the typical pattern?
+\item subjects in one file but not in another?
+\item re-calculate and verify any derived values (like ratios)
+\item data repeated in multiple files the same?
 \ei
 
   \note{
@@ -515,19 +538,31 @@
   \ei
 \item Include diagnostic plots
   \bi
-    \item Plot stuff vs time
+    \item Plot stuff vs time or by batch
     \item Scatterplots of different variables
+    \item Consider taking logs
     \item Look at missing data pattern
   \ei
 \item Explain your thought process and observations
   \ei
 
   \note{
+    It is critical that the data re-formatting process be
+    reproducible. You are {\hilit very} likely to be doing it more
+    than once.
+
+    You often are doing data diagnostics and reformatting
+    at the same time.
+    Maybe have one long R Markdown or Jupyter
+    document that does both? Or maybe it's best to rearrange each
+    file, one at a time, and then do the serious diagnostics after
+    you've gotten it all into a simpler form.
+
+    For diagnostics, you want to plot each variable against time, or
+    by bath. And make scatterplots of different variables. The missing
+    data pattern is also often quite informative about problems.
   }
 \end{frame}
-
-
-
 
 
 
