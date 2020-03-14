@@ -1,0 +1,44 @@
+\documentclass[aspectratio=169,12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{The bootstrap}
+\subtitle{Confidence intervals for QTL location}
+\author{\href{https://kbroman.org}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\\[-4pt]
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{https://kbroman.org/AdvData}{\tt kbroman.org/AdvData}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{
+  In this lecture, we'll look at the bootstrap; a method to get
+  standard errors and confidence intervals by resampling one's own
+  data. But then we'll proceed to an example where the bootstrap
+  performs terribly.
+}
+} }
+
+
+
+
+\end{document}
