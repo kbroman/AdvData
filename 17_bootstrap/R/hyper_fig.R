@@ -2,8 +2,10 @@ library(qtl)
 source("my.plot.scanone.R")
 source("hyper_analysis.R")
 
-pink <- rgb(255, 0.4*256-1, 255, maxColorValue=255)
-blue <- rgb(0.4*256-1,  0.8*256-1, 255, maxColorValue=255)
+#pink <- rgb(255, 0.4*256-1, 255, maxColorValue=255)
+#blue <- rgb(0.4*256-1,  0.8*256-1, 255, maxColorValue=255)
+pink <- broman::brocolors("web")["fuchsia"]
+blue <- broman::brocolors("web")["blue"]
 green <- broman::brocolors("web")["green"]
 purple <- broman::brocolors("web")["purple"]
 orange <- broman::brocolors("web")["orange"]
