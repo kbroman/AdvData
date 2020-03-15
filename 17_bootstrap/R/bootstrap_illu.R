@@ -44,7 +44,7 @@ text(45, 50, "Sample n=1000", col=blue, adj=c(0, 0.5), cex=1.3)
 
 # sample
 par(mar=c(3.1, 1.1, 0.1, 1.1))
-hist(samp, breaks=seq(0, mx, len=61), main="", yaxt="n", xlab="", ylab="")
+hist(samp, breaks=seq(0, mx, len=61), main="", yaxt="n", xlab="", ylab="", xaxs="i")
 u <- par("usr")
 est_qu <- quantile(samp, 0.95)
 segments(est_qu, 0, est_qu, diff(u[3:4])*0.2, lwd=3, col=pink)
@@ -78,7 +78,7 @@ text(45, 50, "Sample n=1000", col=blue, adj=c(0, 0.5), cex=1.3)
 par(mar=c(3.1, 1.1, 0.1, 1.1))
 new_samp <- rchisq(n, df)*m
 new_samp <- new_samp[new_samp <= mx]
-hist(new_samp, breaks=seq(0, mx, len=61), main="", yaxt="n", xlab="", ylab="")
+hist(new_samp, breaks=seq(0, mx, len=61), main="", yaxt="n", xlab="", ylab="", xaxs="i")
 est_qu <- quantile(new_samp, 0.95)
 u <- par("usr")
 segments(est_qu, 0, est_qu, diff(u[3:4])*0.2, lwd=3, col=pink)
@@ -98,7 +98,7 @@ text(45, 50, "[Repeat 1000 times]", col=blue, adj=c(0, 0.5), cex=1.3)
 qu_boot <- replicate(1000, quantile(rchisq(n, df)*m, 0.95))
 
 par(mar=c(3.1, 1.1, 0.1, 1.1))
-hist(qu_boot, breaks=seq(0, mx, len=121), main="", yaxt="n", xlab="", ylab="")
+hist(qu_boot, breaks=seq(0, mx, len=121), main="", yaxt="n", xlab="", ylab="", xaxs="i")
 u <- par("usr")
 text(sum(u[1:2]*c(0.2,0.8)), sum(u[3:4]*c(0.3,0.7)),
      "Distribution of\nEstimate", col=purple, cex=1.2)
