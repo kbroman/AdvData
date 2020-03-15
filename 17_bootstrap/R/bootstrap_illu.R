@@ -105,3 +105,11 @@ text(sum(u[1:2]*c(0.2,0.8)), sum(u[3:4]*c(0.3,0.7)),
 
 
 dev.off()
+
+
+####
+# 1. just left side
+# 2. add simulation stuff on right side
+# 3. add fitted curve in lower-left
+# 4. add fitted curve in top-right and draw samples from that
+# 5. put empirical distribution in top-right and draw samples from that
