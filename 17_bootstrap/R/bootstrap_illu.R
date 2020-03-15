@@ -21,7 +21,7 @@ layout(cbind(c(rep(1,5), 2, rep(3,5)), c(rep(4,3), 5, rep(6,3), 7, rep(8,3))),
 
 
 # population distribution
-par(mar=c(3.1, 1.1, 0.1, 1.6))
+par(mar=c(3.1, 1.1, 0.1, 1.1))
 x <- seq(0, mx, len=251)
 y <- dchisq(x/m, df)/m
 plot(x, y, type="l", lwd=2, yaxs="i", yaxt="n", ylab="", xlab="", xaxs="i", bty="n",
@@ -43,7 +43,7 @@ arrows(40, 100, 40, 0, len=0.15, col=blue, lwd=2)
 text(45, 50, "Sample n=1000", col=blue, adj=c(0, 0.5), cex=1.3)
 
 # sample
-par(mar=c(3.1, 1.1, 0.1, 1.6))
+par(mar=c(3.1, 1.1, 0.1, 1.1))
 hist(samp, breaks=seq(0, mx, len=61), main="", yaxt="n", xlab="", ylab="")
 u <- par("usr")
 est_qu <- quantile(samp, 0.95)
@@ -57,7 +57,7 @@ text(sum(u[1:2]*c(0.3,0.7)), sum(u[3:4]*c(0.3,0.7)),
 
 
 
-par(mar=c(3.1, 1.1, 0.1, 1.6))
+par(mar=c(3.1, 1.1, 0.1, 1.1))
 x <- seq(0, mx, len=251)
 y <- dchisq(x/m, df)/m
 plot(x, y, type="l", lwd=2, yaxs="i", yaxt="n", ylab="", xlab="", xaxs="i", bty="n",
@@ -75,7 +75,7 @@ arrows(40, 100, 40, 0, len=0.15, col=blue, lwd=2)
 text(45, 50, "Sample n=1000", col=blue, adj=c(0, 0.5), cex=1.3)
 
 # sample
-par(mar=c(3.1, 1.1, 0.1, 1.6))
+par(mar=c(3.1, 1.1, 0.1, 1.1))
 new_samp <- rchisq(n, df)*m
 new_samp <- new_samp[new_samp <= mx]
 hist(new_samp, breaks=seq(0, mx, len=61), main="", yaxt="n", xlab="", ylab="")
@@ -97,7 +97,7 @@ text(45, 50, "[Repeat 1000 times]", col=blue, adj=c(0, 0.5), cex=1.3)
 # bootstrap results
 qu_boot <- replicate(1000, quantile(rchisq(n, df)*m, 0.95))
 
-par(mar=c(3.1, 1.1, 0.1, 1.6))
+par(mar=c(3.1, 1.1, 0.1, 1.1))
 hist(qu_boot, breaks=seq(0, mx, len=121), main="", yaxt="n", xlab="", ylab="")
 u <- par("usr")
 text(sum(u[1:2]*c(0.2,0.8)), sum(u[3:4]*c(0.3,0.7)),
