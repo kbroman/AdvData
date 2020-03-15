@@ -8,7 +8,7 @@ hyper <- calc.genoprob(hyper, step=1)
 
 out <- scanone(hyper)
 
- load bootstrap results
+# load bootstrap results
 b <- matrix(ncol=2, nrow=1250*8)
 for(i in 0:7) {
   attach(paste0("boot0", i, ".RData"))
