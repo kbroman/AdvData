@@ -1,11 +1,16 @@
 LEC = 17_bootstrap
 
-FIGS = Figs/hyper_lod.pdf
+FIGS = Figs/hyper_lod.pdf \
+	   Figs/coveraget.pdf \
+	   Figs/mle1.pdf
 
 include ../Makefile_lectures.mk
 
-Figs/%.pdf: R/%.R
+Figs/hyper_lod.pdf: R/hyper_fig.R R/my.plot.scanone.R R/bootlod.RData R/hyper_analysis.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
 
-Figs/hyper_lod.pdf: R/hyper_fig.R R/my.plot.scanone.R R/bootlod.RData R/hyper_analysis.R
+Figs/coveraget.pdf: R/coverage-plots.R R/boot-summary.RData
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/mle1.pdf: R/hist-plot.R R/boot-summary.RData
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
