@@ -44,8 +44,8 @@
   \figh{Figs/bootstrap_cover.jpg}{0.9}
 
 \note{
-  The bootstrap is crazy useful. Efron has a big book about it, but
-  I'd start with this one.
+  The bootstrap is crazy useful. Brad Efron has a big book about it, but
+  I'd start with this shorter one with Rob Tibshirani.
 
   As I've emphasized before, computer simulation is really useful. The
   bootstrap can be seen as an extension of that point.
@@ -177,7 +177,7 @@
   nature of the estimate.
 
   How can we tell if it works? Well, we could simulate. Basically, we
-  could create a {\vhilit nested bootstrap}.
+  could create a {\hilit nested bootstrap}.
 }
 \end{frame}
 
@@ -193,6 +193,18 @@
 
 
 \note{
+  The idea is to treat your data as the true population distribution.
+  Sample from it and you have some data.
+
+  Then take that data and apply the bootstrap method to it: treat it
+  as the population distribution (or fit a model to get an estimated
+  population distribution) and then simulate from it, calculate your
+  estimate, and repeat many times. So that gives you one
+  bootstrap-based SE.
+
+  You then go back and get a new sample of data from your observed
+  data, and then apply the bootstrap again, and then repeat many
+  times.
 }
 \end{frame}
 
@@ -207,6 +219,22 @@
 
 
 \note{
+   The result of this is you have a bunch of estimates of your
+   parameter, for different samples from your data, plus you have a
+   bootstrap-based SE for each.
+
+   On the top panel here, I show the estimated quantiles from 1000
+   samples from my data. The odd multimodal features are due to the
+   discrete nature of my original data. The SD of these estimates is
+   2.14. That's sort of the ``real'' standard error of my estimate.
+
+   In the lower panel, I show the estimated SE (by the bootstrap) from
+   each of 1000 samples from my original data. The average SE is 2.01,
+   which is a bit smaller than the SD of the top histogram.
+
+   So the bootstrap is slightly under-estimating the SE, and it's not
+   particularly well estimated (with an SD of like 0.5). But we can
+   see that it is not {\hilit too} badly behaved.
 }
 \end{frame}
 
