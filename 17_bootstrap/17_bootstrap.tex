@@ -55,6 +55,27 @@
 
 
 
+\begin{frame}[c]{Example}
+
+\only<1|handout 0>{\figw{Figs/bootstrap_illu_1.pdf}{1.0}}
+\only<2>{\figw{Figs/bootstrap_illu_2.pdf}{1.0}}
+
+\note{
+  Consider the case that you are seeking to estimate the 95th
+  percentile of some population.
+
+  You have data on a random sample with $n$=1000. What can you say
+  about the standard error of the sample estimate? How could we figure
+  this out?
+
+  Well, if we {\hilit knew} the population distribution, we could
+  simulate from it. Simulate a sample of size $n$=1000, calculate the
+  95th percentile, and then repeat that a bunch of times. The
+  distribution of the estimates is what we're interested it; the SD is
+  the standard error we're looking for.
+}
+\end{frame}
+
 
 \begin{frame}{}
 
