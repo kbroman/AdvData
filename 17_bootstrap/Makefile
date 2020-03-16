@@ -3,7 +3,8 @@ LEC = 17_bootstrap
 FIGS = Figs/hyper_lod.pdf \
 	   Figs/coveraget.pdf \
 	   Figs/mle1.pdf \
-	   Figs/bootstrap_illu_1.pdf
+	   Figs/bootstrap_illu_1.pdf \
+	   Figs/nested_bootstrap_1.pdf
 
 include ../Makefile_lectures.mk
 
@@ -17,4 +18,7 @@ Figs/mle1.pdf: R/hist-plot.R R/boot-summary.RData
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
 
 Figs/bootstrap_illu_1.pdf: R/bootstrap_illu.R
+	cd R;R CMD BATCH $(R_OPTS) $(<F)
+
+Figs/nested_bootstrap_1.pdf: R/nested_bootstrap.R
 	cd R;R CMD BATCH $(R_OPTS) $(<F)
