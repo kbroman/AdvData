@@ -77,6 +77,63 @@
 \end{frame}
 
 
+
+\begin{frame}[c]{Parametric bootstrap}
+
+\only<1|handout 0>{\figw{Figs/bootstrap_illu_3.pdf}{1.0}}
+\only<2>{\figw{Figs/bootstrap_illu_4.pdf}{1.0}}
+
+\note{
+  But of course we don't know the population distribution. But we
+  might have a model for it (for example, that it follows a scaled
+  chi-square distribution). We could use our data to estimate the
+  population distribution.
+
+  We could then simulate from the estimated population distribution,
+  and determine the distribution (and so the SE) of our estimate in
+  the case that the population follows that estimated distribution.
+
+  This is called the {\hilit parametric bootstrap}: you have a model
+  for the underlying population, you use your data to estimate that
+  model, and then you simulate from the model in order to get an
+  understanding of your target estimator.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Non-parametric bootstrap}
+
+\only<1|handout 0>{\figw{Figs/bootstrap_illu_5.pdf}{1.0}}
+\only<2>{\figw{Figs/bootstrap_illu_6.pdf}{1.0}}
+
+\note{
+  But if we have enough data, we could use the data itself (the
+  {\hilit empirical distribution}) as an estimate of the population
+  distribution. We could then simulate from {\vhilit that}.
+
+  In other words, we make draws {\hilit with replacement} from our
+  observed data, to create a new sample of the same size. We calculate
+  our estimate with this re-sampled data, and then repeat many times,
+  to get an estimate of the distribution of the estimator.
+
+  This is called the {\hilit non-parametric bootstrap}: skip modeling
+  the underlying population and just use your data to approximate the
+  population, then simulate (re-sample) from that empirical
+  distribution in order to get an understanding of your target
+  estimator.
+}
+\end{frame}
+
+
+
+
+
+
+
+
 \begin{frame}{}
 
 \figh{Figs/visscher1996.png}{0.9}
