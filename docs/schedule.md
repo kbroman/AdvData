@@ -5,6 +5,10 @@ tagline: (subject to change)
 description: Schedule for BMI 826, Advanced data analysis
 ---
 
+**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through at least 10 April,
+lectures and office hours will be strictly online. [**More information here**](online.html).
+
+
 | Date      | &nbsp;&nbsp;&nbsp;&nbsp;   | Topic/Reading  |
 | :-------- | -- | :----- |
 | 21 Jan    |    | [Introductory case study ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](01_intro.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](01_intro_notes.pdf)
