@@ -133,6 +133,56 @@
 
 
 
+\begin{frame}[c]{}
+
+  \centering
+  \Large
+  \color{title}
+
+  Don't think ``{\hilit re-sampling}''
+
+  \bigskip \bigskip
+
+  Think ``{\hilit simulate from an estimate of the population}''
+
+\note{
+  Folks often focus on the re-sampling aspect of the bootstrap. But I
+  think it's better to focus on estimating the population distribution
+  and then simulating from that estimate.
+
+  The key idea in the bootstrap is not resampling, but estimating the
+  population distribution with the empirical distribution.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{}
+
+  \centering
+  \Large
+
+  How can we tell if the bootstrap works?
+
+
+\note{
+  The bootstrap works well in lots of cases. It's dependent on having
+  a reasonably large dataset. And its performance depends on the
+  nature of the estimate.
+
+  How can we tell if it works? Well, we could simulate. Basically, we
+  could create a {\vhilit nested bootstrap}.
+}
+\end{frame}
+
+
+
+
+
+
+
 
 \begin{frame}{}
 
