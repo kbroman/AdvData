@@ -29,7 +29,7 @@ open up discussion threads on Canvas.
 To get to the online lecture, go to the
 [course Canvas site](https://canvas.wisc.edu/courses/192687) and click
 "BBCollaborate Ultra" on the left. You can also use the [guest
-url](http://bit.ly/lec826_sp2020), <http://bit.ly/lec826_sp2020>.
+url](https://bit.ly/lec826_sp2020), <https://bit.ly/lec826_sp2020>.
 
 There's also an option to join by phone, at least for the audio. You
 could download the slides separately and follow along.
