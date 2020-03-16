@@ -22,7 +22,7 @@ description: Schedule for BMI 826, Advanced data analysis
 | 3 Mar     |    | [Data diagnostics for multiparent populations ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](13_datadiag.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](13_datadiag_notes.pdf)
 | 5 Mar     |    | [_Writing clear code_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](14_clearcode.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](14_clearcode_notes.pdf)
 | 10 Mar    |    | [Bayes/MCMC: Transposon mutagenesis ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](15_tnmut.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](15_tnmut_notes.pdf)
-| 12 Mar    |    | [_Wrangling messy data files_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](16_wrangling.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](16_wrangling_notes.pdf) \[[**homework 2 due**](hw2.html)\]
+| 12 Mar    |    | [_Wrangling messy data files_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](16_wrangling.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](16_wrangling_notes.pdf)
 | 17,19 Mar |    | **No class (spring break)** |
 | 24 Mar    |    | Bootstrap confidence intervals for QTL location
 | 26 Mar    |    | _Writing R packages; roxygen2_
