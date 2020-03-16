@@ -145,7 +145,7 @@ par(mar=c(3.1, 1.1, 0.1, 1.1))
 hist(boot_qu, breaks=100, main="", yaxt="n", xlab="", ylab="", xaxs="i", prob=TRUE)
 u <- par("usr")
 text(sum(u[1:2]*c(0.99, 0.01)), sum(u[3:4]*c(0.15,0.85)),
-     "1000 simulated quantiles", adj=c(0, 0.5), col=blue, cex=1.3)
+     "1000 simulated quantiles", adj=c(0, 0.5), col=purple, cex=1.3)
 text(sum(u[1:2]*c(0.15, 0.85)), sum(u[3:4]*c(0.5,0.5)),
      paste0("SD = ", broman::myround(sd(boot_qu), 2)),
      adj=c(0.5, 0.5), col=blue, cex=1.3)
@@ -157,7 +157,7 @@ abline(v=sd(boot_qu), col=pink, lwd=2)
 abline(v=mean(boot_se), col=blue, lwd=2)
 u <- par("usr")
 text(sum(u[1:2]*c(0.2, 0.8)), sum(u[3:4]*c(0.5,0.5)),
-     "1000 bootstrap SEs", adj=c(0.5, 0.5), col=blue, cex=1.3)
+     "1000 bootstrap SEs", adj=c(0.5, 0.5), col=purple, cex=1.3)
 text(mean(boot_se)-0.05,  sum(u[3:4]*c(0.03,0.97)), xpd=TRUE,
      paste0("mean = ", broman::myround(mean(boot_se), 2)),
      adj=c(1, 0.5), col=blue, cex=1.3)
