@@ -32,9 +32,10 @@ To get to the online lecture, go to the
 url](https://bit.ly/lec826_sp2020), <https://bit.ly/lec826_sp2020>.
 
 There's also an option to join by phone, at least for the audio. You
-could download the slides separately and follow along.
-
-    +1-571-392-7650 PIN: 708 672 6278
+could download the slides separately and follow along. But I think
+each student needs to get a unique PIN, so go to the [BBCollaborate
+session](https://bit.ly/lec826_sp2020) to get the call-in number and
+your PIN.
 
 I expect that I'll start with everyone muted and have you ask
 questions either in chat or by electronically raising your hand (and
@@ -50,9 +51,12 @@ for BBCollaborate Ultra if you want to test out your audio in advance.
 
 I also plan to hold office hours using [BBCollaborate
 Ultra](https://it.wisc.edu/services/web-conferencing/).
-Go to <https://bit.ly/offhrs_sp2020>. You can also join that by phone:
+Go to <https://bit.ly/offhrs_sp2020>.
 
-    +1-571-392-7650 PIN: 711 518 6218
+You can also join the office hours by phone, but again I think each
+student needs to get a unique PIN, so go to the [BBCollaborate
+session](https://bit.ly/offhrs_sp2020) to get the call-in number and
+your PIN.
 
 I will be available there Tuesdays 9:30-10:30 and Fridays 10:30-11:30,
 starting 24 March.
