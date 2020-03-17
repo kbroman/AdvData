@@ -254,6 +254,14 @@
 \figh{Figs/visscher1996.png}{0.9}
 
 \note{
+   When you have mapped a QTL (a genetic locus that affects a
+   quantitative trait), it is important to establish a confidence
+   interval for the location of the QTL. This can guide further
+   experiments: how precisely have you mapped the locus, and are there
+   any reasonable candidate genes in the region.
+
+   Peter Visscher and colleagues suggested using the bootstrap to get
+   such a confidence interval. Lots of people were using it.
 }
 \end{frame}
 
@@ -269,6 +277,19 @@
 \hfill {\footnotesize \lolit Data from Sugiyama et al.\ (2001) Genomics 71:70--77}
 
 \note{
+   The usual method of getting a confidence interval for QTL location
+   was the LOD support interval: drop down from the maximum likelihood
+   some fixed amount. In other words, look at the region where the LOD
+   score is within some amount of its maximum.
+
+   This ends up being the traditional sort of ``invert the
+   hypothesis test'' approach for constructing a confidence interval,
+   as the difference in LOD scores is a log$_{10}$ likelihood ratio.
+
+   But various simulation studies showed that this doesn't behave as a
+   real confidence interval. Coverage depends on a bunch of things,
+   including the strength of the QTL effect, but also the type of
+   cross and the relative locations of the markers to the QTL.
 }
 
 \end{frame}
@@ -286,7 +307,18 @@
 \hfill {\footnotesize \lolit Data from Sugiyama et al.\ (2001) Genomics 71:70--77}
 
 \note{
+  Another approach is an approximate Bayes interval. Basically take
+  10$^{\text{LOD}}$ and treat it as if it were a real likelihood.
+  Assume that the QTL location is uniform along the chromosome (as the
+  prior distribution), and so re-scale the likelihood so that it
+  integrates to 1, and you have the posterior. Drop down some amount
+  from the maximum until you get a region that covers 95\% of the
+  area, and take that as a 95\% Bayes credible interval.
+
+  This hadn't been much studied, but it was one of the other
+  approaches that I had considered using.
 }
+
 \end{frame}
 
 
@@ -301,6 +333,22 @@
 \hfill {\footnotesize \lolit Data from Sugiyama et al.\ (2001) Genomics 71:70--77}
 
 \note{
+  Well, the thing is that the bootstrap in this context tended to
+  behave rather strangely. Here are the bootstrap results for this
+  dataset. They don't look quite right. I mean, they don't really
+  reflect what you might perceive to be the uncertainty in QTL
+  location.
+
+  (Note that in the top graph, the dashed curve is the LOD curve with
+  the original data. The three colored curves are results with
+  different bootstrap samples.)
+
+  The fact is, these LOD curves tend to achieve their maximum at the
+  markers, and as a result, the bootstrap results have spikes at the
+  marker positions, which makes the whole thing behave a bit wonky.
+
+  I looked at these results and thought, ``We really should
+  investigate this bootstrap thing. Does it really work here?''
 }
 \end{frame}
 
@@ -319,6 +367,9 @@
 \figh{Figs/manichaikul2006.png}{0.9}
 
 \note{
+   We ended up writing this paper. The results are well summarized in
+   the title. Nevertheless, Visscher's paper has $>$ 3$\times$ as
+   many citations as mine. ;)
 }
 \end{frame}
 
