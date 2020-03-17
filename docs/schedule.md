@@ -34,9 +34,9 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 2 Apr     |    | _Software testing and debugging_
 | 7 Apr     |    | Permutation test with selective genotyping
 | 9 Apr     |    | _Big jobs/simulations; caching computations_
-| 14 Apr    |    | Multiple-QTL analysis
+| 14 Apr    |    | Building regression models: Multiple-QTL analysis
 | 16 Apr    |    | _R Markdown for papers_
 | 21 Apr    |    | Fine-mapping an eQTL
-| 23 Apr    |    | **No class**
+| 23 Apr    |    | _Containers for reproducibility_
 | 28 Apr    |    | Developing, maintaining, and supporting software: R/qtl
 | 30 Apr    |    | _Software/data licenses, copyright, and human subjects/HIPAA_
