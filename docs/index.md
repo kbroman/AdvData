@@ -23,7 +23,7 @@ project-based homework assignments.
 
 **Office hours**: Tu 9:30-10:30, Fr 10:30-11:30, or by appointment
 
-**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through at least 10 April,
+**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through the rest of the semester,
 lectures and office hours will be strictly online. [**More information here**](online.html).
 
 - [schedule](schedule.html)

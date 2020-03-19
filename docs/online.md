@@ -4,7 +4,7 @@ title: BMI 826 online lectures/office hours
 description: Information about the online delivery of lectures and office hours for BMI 826 (Advanced Data Analysis)
 ---
 
-**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through at least 10 April,
+**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through the rest of the semester,
 lectures and office hours will be strictly online.
 
 ### Lectures
