@@ -28,7 +28,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 10 Mar    |    | [Bayes/MCMC: Transposon mutagenesis ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](15_tnmut.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](15_tnmut_notes.pdf)
 | 12 Mar    |    | [_Wrangling messy data files_ ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](16_wrangling.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](16_wrangling_notes.pdf)
 | 17,19 Mar |    | **No class (spring break)** |
-| 24 Mar    |    | Bootstrap confidence intervals for QTL location
+| 24 Mar    |    | [Bootstrap confidence intervals for QTL location ![pdf icon](https://kbroman.org/pages/icons16/pdf-icon.png)](17_bootstrap.pdf) [![notes icon](https://kbroman.org/pages/icons16/notes-icon.png)](17_bootstrap_notes.pdf)
 | 26 Mar    |    | _Writing R packages; roxygen2_
 | 31 Mar    |    | Data visualization
 | 2 Apr     |    | _Software testing and debugging_
