@@ -268,14 +268,62 @@ Then stage, commit, and push.
 
 ### Add a ReadMe
 
+It's always a good idea to include a ReadMe file, particularly for
+packages on GitHub, as it's the ReadMe file that serves as sort of the
+home page for the software.
+
+The key things to include in the ReadMe are the purpose, how to
+install, and a bit about usage.
+
+To create a Markdown-based ReadMe file, do the following:
+
 ```r
-use_readme_md
+use_readme_md()
 ```
+
+This creates a `README.md` file and then opens it for editing.
+
+Many people are making R Markdown based ReadMe files for their R
+packages, with working R code and graphs and such. If you want to do
+that, look at `use_readme_rmd()`.
+
 
 
 
 ### Add a vignette
 
+The three main things people look at are the ReadMe file, the examples
+in the help file, and tutorials. And in my experience, tutorials are
+the most popular.
+
+In the context of R packages, tutorials are called "vignettes". You
+can create one in R Markdown using the following:
+
 ```r
 use_vignette("simBrM", "Simulate Brownian motion")
 ```
+
+Run `check()` and `install()` to make sure that there are no errors.
+
+To install the vignette with the package, you need to do:
+
+```r
+install(build_vignettes=TRUE)
+```
+
+You should then be able to see the vignette listed when you do the
+following:
+
+```r
+vignette(package="simBrM")
+```
+
+And you can open the vignette with the following:
+
+```r
+vignette("simBrM")
+```
+
+I recommend creating an introductory vignette that has the same name
+as the package. But you can include as many vignettes as you would
+like. Users really appreciate having many focused tutorials.
