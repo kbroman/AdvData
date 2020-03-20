@@ -216,8 +216,16 @@ to do a quicker, temporary install-and-load, for development purposes.
 
 ### Add documentation
 
-So let's add some documentation. Open up the `R/simBrM.R` file. Put
-the cursor inside the first function, `simBrM()`. We can get a
+So let's add some documentation.
+
+First, let's set things up to use Roxygen2 with markdown.
+
+```r
+use_roxygen_md()
+```
+
+Now we'll open up the `R/simBrM.R` file and start writing the documentation.
+Put the cursor inside the first function, `simBrM()`. We can get a
 skeleton of Roxygen2 documentation through the menu bar: Code &rarr;
 Insert Roxygen Skeleton.
 
@@ -232,12 +240,6 @@ directives, of functions that we use. This will lead to changes in the
 #' @importFrom stats rnorm
 ```
 
-Also, I've used a bit of markdown in the documentation. So I should
-add the following to the `DESCRIPTION` file:
-
-```
-Roxygen: list(markdown=TRUE)
-```
 
 We then process the documentation:
 
