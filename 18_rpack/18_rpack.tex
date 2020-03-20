@@ -69,6 +69,10 @@
      feature of R. Packages on CRAN are basically guaranteed to be
      installable, as they are regularly built, installed, and tested
      on multiple systems.
+
+     Moreover, the introduction of the R package {\hilit devtools}
+     including the function {\tt install\_github()}, makes it even
+     easier to share your R package with folks.
 }
 \end{frame}
 
@@ -80,6 +84,9 @@
 \note{The Writing R Extensions manual is the key source for the
   specifications of R packages. It's rough going in parts, but if you want to
   get a package on CRAN, you should read it.
+
+  But you can delay reading this for quite some time. Put it aside and
+  come back to it later.
 }
 \end{frame}
 
@@ -96,8 +103,9 @@
   \href{http://alyssafrazee.com/2014/03/06/RSkittleBrewer.html}{alyssafrazee.com/2014/03/06/RSkittleBrewer.html}}
 
 
-\note{I was going to write a short example R package, but Alyssa
-  Frazee saved me the effort. Her package is a perfect little example
+\note{
+  Alyssa Frazee wrote a small R package with color schemes based on a
+  common type of candy in the US. Her package is a perfect little example
   to illustrate how to write a package.
 
   It's also a great example of a small but really useful package.
@@ -126,12 +134,19 @@ RSkittleBrewer/
     man/plotSmarties.Rd
 \end{lstlisting}
 
+\vspace{36pt}
+
+\hfill {\tt \footnotesize \lolit
+  \href{https://github.com/alyssafrazee/RSkittleBrewer}{github.com/alyssafrazee/RSkittleBrewer}}
+
 \note{
   In the simplest form, an R package is a directory containing: a {\tt DESCRIPTION}
   file (describing the package), a {\tt NAMESPACE} file (indicating
   which functions are available to users), an {\tt R/} directory
   containing R code in {\tt .R} files, and a {\tt man/} directory
   containing documentation in {\tt .Rd} files.
+
+  There may be other things, but these are the only critical ones.
 }
 \end{frame}
 
@@ -144,20 +159,24 @@ Package: RSkittleBrewer
 Version: 1.1
 Author: Alyssa Frazee
 Maintainer: Alyssa Frazee <afrazee@jhsph.edu>
-License: MIT + file LICENSE
-Title: fun with R colors
-Description: for those times you want to make plots with...
+Title: Fun with R Colors
+Description: For those times you want to make plots with
+    candy-themed color schemes.
 URL: https://github.com/alyssafrazee/RSkittleBrewer
+License: MIT + file LICENSE
+Imports: graphics, stats, grDevices
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
 \end{lstlisting}
 
 \note{
   The {\tt DESCRIPTION} file is pretty self-explanatory. It just
   contains basic information about the package and its author.
-
-  The simplest way to create this sort of file is to copy and edit one
+  One way to create this sort of file is to copy and edit one
   from some other package.
 
-  The only part that might be unclear is the {\tt License} field. You
+  One part that might be unclear is the {\tt License} field. You
   need to choose a license. We'll talk about this on the very last day
   of the course.
 
@@ -169,8 +188,12 @@ URL: https://github.com/alyssafrazee/RSkittleBrewer
   basically just says ``Do what you want, but don't blame me.''
 
   An R package with the MIT license needs to also include a {\tt
-  LICENSE} file or R will complain; copy and edit the one from the
+  LICENSE} file or R will complain. You could copy and edit the one from the
   RSkittleBrewer package.
+
+  Imports and Suggests indicate which packages this package depends
+  on. VignetteBuilder to include an R Markdown based tutorials.
+  RoxygenNote gets added automatically by the documentation package.
 }
 \end{frame}
 
