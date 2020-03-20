@@ -208,15 +208,72 @@ undocumented code and a note about not importing the functions
 
 But if we run `install()` it will still install our package, which we
 can load with `library(simBrM)`. This will make `simBrM()` and
-`plotBrM()` available to us.
+`plotBrM()` available to us. Note that we could also use `load_all()`
+to do a quicker, temporary install-and-load, for development purposes.
 
 
 
 
 ### Add documentation
 
+So let's add some documentation. Open up the `R/simBrM.R` file. Put
+the cursor inside the first function, `simBrM()`. We can get a
+skeleton of Roxygen2 documentation through the menu bar: Code &rarr;
+Insert Roxygen Skeleton.
 
+The key things are: a title; maybe also a description. Then
+descriptions of each parameter and of the returned object. Finally,
+add some examples.
+
+For each function, we'll also want to add some `@importFrom`
+directives, of functions that we use. This will lead to changes in the
+
+```r
+#' @importFrom stats rnorm
+```
+
+Also, I've used a bit of markdown in the documentation. So I should
+add the following to the `DESCRIPTION` file:
+
+```
+Roxygen: list(markdown=TRUE)
+```
+
+We then process the documentation:
+
+```r
+document()
+```
+
+We should also add `Imports: stats, graphics` to the `DESCRIPTION`
+file.
+
+```r
+use_package("stats")
+use_package("graphics")
+```
+
+It says we should refer to the functions with `stats::` and
+`graphics::`, so maybe we should go back and edit those things.
+
+But then finally, let's check the package with `check()` and install
+it with `install()`.
+
+Then stage, commit, and push.
+
+
+
+
+### Add a ReadMe
+
+```r
+use_readme_md
+```
 
 
 
 ### Add a vignette
+
+```r
+use_vignette("simBrM", "Simulate Brownian motion")
+```
