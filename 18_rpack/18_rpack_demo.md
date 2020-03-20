@@ -89,6 +89,12 @@ use_git()
 It will ask me a couple of questions about making an initial
 commit and will restart RStudio.
 
+
+
+
+
+### Edit DESCRIPTION
+
 I'll next edit the `DESCRIPTION` file. I'll click on it in the
 Files pane and will edit the `Title`, `Authors@R`, and
 `Description` fields.
