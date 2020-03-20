@@ -10,6 +10,10 @@ I will demonstrate the use of the
 package. I'll be doing this in [RStudio
 desktop](https://rstudio.com/products/rstudio/download/#download).
 
+
+
+
+
 ### Start with some functions
 
 I think it's best to start with some functions that we want to put
@@ -28,7 +32,7 @@ function(n, sigma=1)
     apply(x, 2, cumsum)
 }
 
-plot_simBrM <-
+plotBrM <-
 function(x, pointcolor=c("slateblue", "violetred"), ...)
 {
     stopifnot(is.matrix(x), ncol(x)>=2, nrow(x)>=2)
@@ -47,6 +51,11 @@ function(x, pointcolor=c("slateblue", "violetred"), ...)
 
 Our goal is to make a package containing these functions.
 
+
+
+
+
+
 ### Create package skeleton
 
 We first use `usethis::create_package()` to create a directory for
@@ -64,6 +73,10 @@ the basic files and subdirectories that are needed, including to
 make the package directory an [RStudio
 Project](https://r4ds.had.co.nz/workflow-projects.html), and then
 open up another copy of RStudio with that project open.
+
+
+
+
 
 ### Make it a git repository
 
@@ -86,6 +99,10 @@ sentences (start with capital letter and end with period).
 
 I'll then click the Git pane in RStudio and stage and commit the
 change.
+
+
+
+
 
 ### Put it on GitHub
 
@@ -134,3 +151,72 @@ Then you can try again to make the connection to GitHub:
 ```r
 use_github()
 ```
+
+
+
+### Try it out
+
+Let's try installing the package.
+
+```r
+install()
+```
+
+We can also check that the package conforms to R's requirements.
+
+```r
+check()
+```
+
+
+
+
+### Add a license
+
+We got a warning about a non-standard license, so let's go ahead and
+add a license.  I generally choose between the [MIT]() and [GPL-3]().
+(MIT if I can, GPL-3 if I need to.) We'll talk more about this at the
+end of the course.
+
+```r
+use_mit_license("Karl Broman")
+```
+
+This will add a couple of `LICENSE` files and edit the `DESCRIPTION`
+file. Commit the changes and push them to GitHub.
+
+Now if we run `check()`, it is clean.
+
+
+
+
+
+### Add the functions
+
+But wait, our package doesn't actually contain any code! Let's add our
+R functions by pasting them into an R file, in the `R/` subdirectory.
+
+```r
+use_r("simBrM")
+```
+
+Paste in the code from the top of this page.
+
+Now if you run `check()` again, it'll give a warning about
+undocumented code and a note about not importing the functions
+`plot()`, `points()`, and `rnorm()`.
+
+But if we run `install()` it will still install our package, which we
+can load with `library(simBrM)`. This will make `simBrM()` and
+`plotBrM()` available to us.
+
+
+
+
+### Add documentation
+
+
+
+
+
+### Add a vignette
