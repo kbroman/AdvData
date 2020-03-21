@@ -11,6 +11,15 @@ description: Resources for BMI 826, Advanced data analysis
 - [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
 - [Implementing reproducible research (book; chapter PDFs online)](http://implementing.reproducibleresearch.org)
 
+## R packages
+
+- [Hilary Parker](https://hilaryparker.com)'s [Writing an R package from scratch](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
+- [Hadley](http://hadley.nz)'s [R packages book](http://r-pkgs.had.co.nz/)
+- [Jeff Leek](http://jtleek.com/)'s [Developing R packages](https://kbroman.org/Tools4RR/pages/resources.html)
+- [Karl's R package tutorial](https://kbroman.org/pkg_primer)
+- [Stat 545](https://stat545.com) on [Writing R packages](https://stat545.com/package-overview.html)
+
+
 ## Make
 
 - [GNU make](http://www.gnu.org/software/make)
