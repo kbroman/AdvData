@@ -158,6 +158,11 @@ Then you can try again to make the connection to GitHub:
 use_github()
 ```
 
+This will create the repository at GitHub, push your materials there,
+and also change the `DESCRIPTION` file to include the GitHub URL.
+
+Stage, commit, and push the change to the `DESCRIPTION` file.
+
 
 
 ### Try it out
