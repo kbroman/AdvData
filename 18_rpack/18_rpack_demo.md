@@ -33,7 +33,7 @@ function(n, sigma=1)
 }
 
 plotBrM <-
-function(x, pointcolor=c("slateblue", "violetred"), ...)
+function(x, pointcolor=c("springgreen", "violetred"), ...)
 {
     stopifnot(is.matrix(x), ncol(x)>=2, nrow(x)>=2)
 
