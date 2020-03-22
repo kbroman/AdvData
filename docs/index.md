@@ -21,7 +21,10 @@ project-based homework assignments.
 **Instructor**: [Karl Broman](https://kbroman.org),
 [2126 Genetics-Biotechnology Center](https://map.wisc.edu/s/2tie3nen)
 
-**Office hours**: Tu 9:30-10:30, Fr 10:30-11:30, or by appointment
+**Office hours**: Tu 9:30-10:30, Fr 10:30-11:30, or by appointment.
+Connect with me using [BBCollaborate
+Ultra](https://it.wisc.edu/services/web-conferencing/);
+go to <https://bit.ly/offhrs_sp2020>.
 
 **[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through the rest of the semester,
 lectures and office hours will be strictly online. [**More information here**](online.html).
