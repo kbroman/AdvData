@@ -43,7 +43,7 @@ the analysis reports should be written individually.
 
   - codebook: [codebook.csv](https://rdpeng.github.io/MAAIT/codebook.csv), [codebook.xlsx](https://rdpeng.github.io/MAAIT/codebook.xlsx)
 
-- [Homework 3](hw3.html) due 2020-04-09
+- [Homework 3: data wrangling and diagnostics](hw3.html) due 2020-04-09
 
   data: [`hw3_rawdata.zip`](hw3_rawdata.zip)
 
