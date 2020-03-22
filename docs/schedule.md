@@ -33,7 +33,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 31 Mar    |    | Data visualization
 | 2 Apr     |    | _Software testing and debugging_
 | 7 Apr     |    | Permutation test with selective genotyping
-| 9 Apr     |    | _Big jobs/simulations; caching computations_
+| 9 Apr     |    | _Big jobs/simulations; caching computations_ \[**[homework 3](hw3.html) due**\]
 | 14 Apr    |    | Building regression models: Multiple-QTL analysis
 | 16 Apr    |    | _R Markdown for papers_
 | 21 Apr    |    | Fine-mapping an eQTL
