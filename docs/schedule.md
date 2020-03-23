@@ -30,7 +30,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 17,19 Mar |    | **No class (spring break)** |
 | 24 Mar    |    | [Bootstrap confidence intervals for QTL location ![pdf icon](icons/pdf-icon.png)](17_bootstrap.pdf) [![notes icon](icons/notes-icon.png)](17_bootstrap_notes.pdf)
 | 26 Mar    |    | [_Writing R packages; roxygen2_ ![pdf icon](icons/pdf-icon.png)](18_rpack.pdf) [![notes icon](icons/notes-icon.png)](18_rpack_notes.pdf) [![html icon](icons/html-icon.png)](18_rpack_demo.html)
-| 31 Mar    |    | Data visualization
+| 31 Mar    |    | [Data visualization ![pdf icon](icons/pdf-icon.png)](19_datavis.pdf) [![notes icon](icons/notes-icon.png)](19_datavis_notes.pdf)
 | 2 Apr     |    | _Software testing and debugging_
 | 7 Apr     |    | Permutation test with selective genotyping
 | 9 Apr     |    | _Big jobs/simulations; caching computations_ \[**[homework 3](hw3.html) due**\]
