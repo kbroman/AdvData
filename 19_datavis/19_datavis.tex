@@ -332,6 +332,17 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figw{Figs/which_comparison.pdf}{1.0}
 
 \note{
+  There are a variety of different plots in which you might be
+  comparing two values, A and B. Which one is easiest?
+
+  It's easiest if you're comparing positions, and if they're right
+  next to each other. Move them apart or compress them or offset the
+  lengths, and they become harder. Hardest of all is the pie chart,
+  where you're comparing areas or maybe angles.
+
+  This is important for when you are designing a visualization. There
+  are often a variety of comparisons that you want to be making. But
+  think about which ones are the most important ones.
 }
 \end{frame}
 
@@ -349,6 +360,16 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \only<2|handout 0>{\figh{Figs/circles_2.pdf}{0.75}}
 
 \note{
+  Another key principle is to not distort the quantities. Here, the
+  sizes of the genomes are proportional to the diameters of the
+  circles. But one naturally focuses on the areas of the circles.
+
+  If you change the figure so that the values are proportional to the
+  areas, you get a more realistic view of the data. The wheat genome
+  is like 5$\times$ that of the human, and the human genome is like
+  20$\times$ that of arabidopsis (a model plant). But it's still
+  pretty hard to see that without showing the numbers, because humans
+  just aren't so good at comparing areas.
 }
 \end{frame}
 
@@ -365,6 +386,8 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figh{Figs/circles_3.pdf}{0.75}
 
 \note{
+   This plot is not nearly so interesting, but it does a much better
+   job of conveying the values.
 }
 \end{frame}
 
@@ -402,6 +425,16 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
   \end{columns}
 
 \note{
+   In any data visualizations, you're encoding quantities or
+   categories using visual features. There are a variety of choices
+   you can make, and they vary enormously in the ease of the reader of
+   decoding the values.
+
+   Position is easier then length which is easier than angle which is
+   maybe easier than area which is easier than shading or color.
+
+   Shape is easier than color which is easier than texture (like
+   cross-hatching) which is easier than line width.
 }
 \end{frame}
 
@@ -415,6 +448,10 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figh{Figs/histograms_1.pdf}{0.85}
 
 \note{
+  Another important technique is to align axes to ease comparisons. If
+  you're comparing the heights of women and men, it is much easier to
+  do so with them stacked on top of each other rather than
+  side-by-side.
 }
 \end{frame}
 
@@ -428,6 +465,11 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figh{Figs/histograms_2.pdf}{0.85}
 
 \note{
+  You also want to use common axes as much as possible, as in the
+  panels on the left.
+
+  If you allow the axes to differ, as in the panels on the right, the
+  reader has a much harder time comparing the values.
 }
 \end{frame}
 
@@ -442,6 +484,14 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figw{Figs/direct_labels.pdf}{1.0}
 
 \note{
+   Another thing I really like to emphasize is the value of placing
+   labels directly in the plot (as in the right panel) rather than
+   using a separate legend (as in the left panel) or even worse
+   explaining the colors in the figure caption.
+
+   It is arguably more difficult to place labels directly on the plot.
+   It generally requires some extra effort to get the labels right.
+   But for a figure in a paper or talk, it's often worth the effort.
 }
 \end{frame}
 
@@ -454,6 +504,16 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figw{Figs/alphabet.pdf}{1.0}
 
 \note{
+   Never sort things alphabetically. It's basically always better to
+   sort by the value, or sort by the value of one variable and have
+   related panels in that same order.
+
+   In the panel on the right, you can immediately see important
+   relationships (such as by health care spending differences by
+   continent).
+
+   The alphabetical order in the panel on the left is good only for
+   looking up a particular country, and that's not worth it.
 }
 \end{frame}
 
@@ -466,6 +526,23 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figw{Figs/include_zero.pdf}{1.0}
 
 \note{
+  A common question is whether you should include 0 in the y-axis.
+  In bar charts, I think it is misleading to not include 0. But much
+  of the time, it's better to not use bars and just use line segments
+  or dots, and then in that case it can be useful to focus just on the
+  interval with the data.
+
+  Here, we're looking at detection rates near 100\%, and it's much
+  better to focus on the high-end of the range, so we can see the
+  differences. Thus, it's best to omit the bars.
+
+  I'd also say that if you have something that's constrained to
+  0--100\%, it's best to have the y-axis constrained to those limits.
+  Having the range go above 100\% or below 0\% is a bit silly.
+
+  The choice of whether you should include 0 or not is partly
+  dependent on the audience. Will they be misled by using a focused
+  interval, or not?
 }
 \end{frame}
 
@@ -477,6 +554,24 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figh{Figs/tableB.png}{0.7}
 
 \note{
+  This is a really bad table. It's actually taken from the Journal of
+  the American Statistical Association, which is the flagship
+  journal for the largest society of statisticians in the US.
+  Statisiticians can be really terrible at data visualization. They
+  are often lazy and revert to tables, and their tables are often
+  terrible, like this one.
+
+  There are way too many digits shown. We almost never can measure
+  things to more than 3 digits. And you can just tell, looking down
+  each column, than no more than 3 digits are needed to tell the
+  key story.
+
+  Also, leading 0's are omitted. If we need five digits in 0.38267,
+  then we should show the same precision in 0.44600.
+
+  Related to that, the numbers are centered, rather than being aligned
+  at the decimal point. {\hilit Always} align numbers at the decimal
+  point.
 }
 \end{frame}
 
@@ -486,6 +581,10 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 \figh{Figs/tableA.png}{0.7}
 
 \note{
+  Here's the same table, corrected. Two digits is really sufficient;
+  the previous table had 3$\times$ as many digits as were necessary.
+  Also, don't drop the ending 0's and line things up the numbers at
+  the decimal point.
 }
 \end{frame}
 
@@ -503,6 +602,9 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 Feigen et al., Lancet 383:245-255, 2014, Table 1
 
 \note{
+   Here's a table from the Lancet. Epidemiologists are expert in
+   creating terrible tables. There is so much that is wrong with this
+   table.
 }
 \end{frame}
 
@@ -522,6 +624,17 @@ Feigen et al., Lancet 383:245-255, 2014, Table 1
 \ei
 
 \note{
+  Here's a summary of what was wrong with that Lancet table.
+
+  It's interesting to note that it tends to be easier to compare
+  numbers vertically rather than horizontally. So arrange the table so
+  that the key comparisons are with numbers near each other, and
+  ideally going up-and-down rather than side-to-side.
+
+  Even better would be to show these data as a graph. Seldom is one
+  interested in the detailed quantitative values; rather, you'd be
+  looking for qualitative differences which would be much easier to
+  see in a graph.
 }
 \end{frame}
 
