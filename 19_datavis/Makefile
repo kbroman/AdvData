@@ -1,6 +1,6 @@
 LEC = 19_datavis
 
-FIGS = Figs/fig1a.png Figs/fig3a.png Figs/fig5a.png Figs/fig2a_rev.png Crashes/crashes.pdf Crashes/crashes_scatter.pdf Crashes/Figs/chalabi-dearmona-distracted.png Crashes/Figs/chalabi-dearmona-speeding.png Crashes/Figs/chalabi-dearmona-drinking.png Crashes/crashes_errors.pdf Figs/piecharts.pdf Figs/ease_comparisons_1.pdf Figs/which_comparison.pdf
+FIGS = Figs/fig1a.png Figs/fig3a.png Figs/fig5a.png Figs/fig2a_rev.png Crashes/crashes.pdf Crashes/crashes_scatter.pdf Crashes/Figs/chalabi-dearmona-distracted.png Crashes/Figs/chalabi-dearmona-speeding.png Crashes/Figs/chalabi-dearmona-drinking.png Crashes/crashes_errors.pdf Figs/piecharts.pdf Figs/ease_comparisons_1.pdf Figs/which_comparison.pdf Figs/circles_1.pdf
 
 include ../Makefile_lectures.mk
 
@@ -36,4 +36,7 @@ Figs/ease_comparisons_1.pdf: R/ease_comparisons.R
 	cd $(<D);R CMD BATCH $(<F)
 
 Figs/%.pdf: R/%.R
+	cd $(<D);R CMD BATCH $(<F)
+
+Figs/circles_1.pdf: R/circles_fig.R
 	cd $(<D);R CMD BATCH $(<F)
