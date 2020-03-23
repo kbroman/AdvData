@@ -1,6 +1,6 @@
 LEC = 19_datavis
 
-FIGS = Figs/fig1a.png Figs/fig3a.png Figs/fig5a.png Figs/fig2a_rev.png Crashes/crashes.pdf Crashes/crashes_scatter.pdf Crashes/Figs/chalabi-dearmona-distracted.png Crashes/Figs/chalabi-dearmona-speeding.png Crashes/Figs/chalabi-dearmona-drinking.png Crashes/crashes_errors.pdf
+FIGS = Figs/fig1a.png Figs/fig3a.png Figs/fig5a.png Figs/fig2a_rev.png Crashes/crashes.pdf Crashes/crashes_scatter.pdf Crashes/Figs/chalabi-dearmona-distracted.png Crashes/Figs/chalabi-dearmona-speeding.png Crashes/Figs/chalabi-dearmona-drinking.png Crashes/crashes_errors.pdf MoreFigs/piecharts.pdf
 
 include ../Makefile_lectures.mk
 
@@ -31,3 +31,6 @@ Crashes/crashes_errors.pdf: Crashes/compare_measurements.R Crashes/data.R Crashe
 Crashes/Figs/%.png:
 	cd $(@D);wget 'https://espnfivethirtyeight.files.wordpress.com/2014/10/$(@F)'
 	touch $@
+
+MoreFigs/piecharts.pdf: MoreR/piecharts.R
+	cd $(<D);R CMD BATCH $(<F)
