@@ -313,175 +313,72 @@ Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 
 
 
+
+\begin{frame}{Ease comparisons}
+
+{\hilit (align axes)}
+
+\figh{Figs/histograms_1.pdf}{0.85}
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Ease comparisons}
+
+{\hilit (use common axes)}
+
+\figh{Figs/histograms_2.pdf}{0.85}
+
+\note{
+}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[c]{Use labels not legends}
+
+\figw{Figs/direct_labels.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Don't sort alphabetically}
+
+\figw{Figs/alphabet.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Must you include 0?}
+
+\figw{Figs/include_zero.pdf}{1.0}
+
+\note{
+}
+\end{frame}
+
+
+
+
 \end{document}
-
-\headsize \color{yellow}
-\hfill
-\begin{minipage}{6.25in}
-\centering
-Ease comparisons
-
-\bigskip
-
-\color{blue} \smallersize
-(align things vertically)
-\end{minipage}
-
-\vfill
-
-<<histograms>>=
-par(mfrow=c(2,2), bg=bgcolor, fg="white", col="white",
-    col.axis="white", col.lab="white")
-set.seed(85588489)
-fem <- rnorm(600, 64, 2.8)
-mal <- rnorm(600, 68, 2.8)
-jt <- c(fem, mal)
-br <- seq(min(jt), max(jt), len=51)
-hist(fem, breaks=br, yaxt="n", ylab="", main="Women",
-     xlab="Height (in)", col.main=pink)
-hist(mal, breaks=br, yaxt="n", ylab="", main="Men",
-     xlab="Height (in)", col.main=blue)
-hist(mal, breaks=br, yaxt="n", ylab="", main="Men",
-     xlab="Height (in)", col.main=blue)
-@
-
-
-\newpage
-
-
-\headsize \color{yellow}
-\hfill
-\begin{minipage}{6.25in}
-\centering
-Ease comparisons
-
-\bigskip
-
-\color{blue} \smallersize
-(use common axes)
-\end{minipage}
-
-\vfill
-
-<<histograms2>>=
-par(mfcol=c(2,2), bg=bgcolor, fg="white", col="white",
-    col.axis="white", col.lab="white")
-hist(fem, breaks=51, yaxt="n", ylab="", main="Women",
-     xlab="Height (in)", col.main=pink)
-hist(mal, breaks=51, yaxt="n", ylab="", main="Men",
-     xlab="Height (in)", col.main=blue)
-hist(fem, breaks=br, yaxt="n", ylab="", main="Women",
-     xlab="Height (in)", col.main=pink)
-hist(mal, breaks=br, yaxt="n", ylab="", main="Men",
-     xlab="Height (in)", col.main=blue)
-@
-
-
-\newpage
-
-
-\headsize \color{yellow}
-\hfill
-\begin{minipage}{6.25in}
-\centering
-Use labels not legends
-\end{minipage}
-
-\vfill
-
-<<direct_label>>=
-@
-
-
-
-
-
-
-\newpage
-
-
-\headsize \color{yellow}
-\hfill
-\begin{minipage}{6.25in}
-\centering
-Don't sort alphabetically
-\end{minipage}
-
-\vfill
-
-<<alphabet>>=
-load("Data/health.RData")
-
-par(mfrow=c(1,2), bg=bgcolor, las=1, fg="white",
-    col.lab="white", col.axis="white",
-    mar=c(5.1, 10.1, 1.1, 1.1))
-
-plot(0, 0, type="n", xlab="Health care spending (% GDP)",
-     ylab="", yaxt="n", xlim=c(0, max(health[,2])*1.05), xaxs="i",
-     ylim=c(nrow(health), 0)+0.5, yaxs="i")
-axis(side=2, at=1:25, health[,1])
-abline(v=seq(5, 15, by=5), col="gray25")
-abline(h=seq(1, 25, by=5), col=blue)
-points(health[,2], 1:25, pch=16)
-axis(side=2, at=seq(1, 25, by=5), rep("", 5), col.ticks=blue)
-
-o <- order(health[,2], decreasing=TRUE)
-plot(0, 0, type="n", xlab="Health care spending (% GDP)",
-     ylab="", yaxt="n", xlim=c(0, max(health[,2])*1.05), xaxs="i",
-     ylim=c(nrow(health), 0)+0.5, yaxs="i")
-axis(side=2, at=1:25, health[o,1])
-abline(v=seq(5, 15, by=5), col="gray25")
-abline(h=seq(1, 25, by=5), col=blue)
-points(health[o,2], 1:25, pch=16)
-axis(side=2, at=seq(1, 25, by=5), rep("", 5), col.ticks=blue)
-@
-
-
-
-
-
-
-\newpage
-
-
-\headsize \color{yellow}
-\hfill
-\begin{minipage}{6.25in}
-\centering
-Must you include 0?
-\end{minipage}
-
-\vfill
-
-<<include_0>>=
-par(mfrow=c(1,2), bg=bgcolor, las=1, fg="white",
-    col.lab="white", col.axis="white")
-rate <- c(96.5, 98.1, 99.2)
-b <- barplot(rate, col=c(blue, green, pink), ylab="Detection rate (%)",
-             ylim=c(0, 120), col.lab="white", yaxs="i",
-             border=c(blue, green, pink), xlab="Method",
-             names.arg=rep("", 3), cex.lab=1.5, cex.axis=1.5)
-u <- par("usr")
-rect(u[1], u[3], u[2], u[4], border="white")
-axis(side=1, at=b, LETTERS[1:3], col.axis="white", col="white",
-     cex.axis=1.5, tick=FALSE)
-text(b, rate+5, paste0(rate, "%"))
-
-plot(0, 0, type="n", ylim=c(95, 100), yaxs="i",
-     xlim=c(0.5, 3.5), xaxt="n", xlab="Method",
-     cex.lab=1.5, cex.axis=1.5, ylab="Detection rate (%)")
-abline(h=96:99, col="gray25")
-x <- 1:3
-xd <- 0.2
-se <- sqrt(rate*(100-rate)/1000)
-segments(x, rate-se, x, rate+se, lwd=2, col=c(blue, green, pink))
-segments(x-xd/2, rate-se, x+xd/2, rate-se, lwd=2, col=c(blue, green, pink))
-segments(x-xd/2, rate+se, x+xd/2, rate+se, lwd=2, col=c(blue, green, pink))
-segments(x-xd, rate, x+xd, rate, lwd=3, col=c(blue, green, pink))
-axis(side=1, at=1:3, LETTERS[1:3], cex.axis=1.5)
-@
-
-
 
 
 
@@ -704,7 +601,7 @@ Summary II
 \itemsep18pt
 
 
-\item Align things vertically to ease comparisons
+\item Align axes to ease comparisons
 
 \item Use common axis limits to ease comparisons
 
