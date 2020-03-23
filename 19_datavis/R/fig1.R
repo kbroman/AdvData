@@ -10,11 +10,12 @@ load("fig1.RData")
 #bitmap(file="../Figs/fig1a.bmp", width=6, height=5, res=288,
 #       pointsize=14)
 
-bgcolor <- rgb(0.135, 0.135, 0.135, maxColorValue=1)
+bgcolor <- "white"
+fgcolor <- "black"
 
 png(file="../Figs/fig1a.png", width=1200, height=1000, res=288,
     pointsize=12)
-par(las=1,fg="white",col="white",col.axis="white",col.lab="white",
+par(las=1,fg=fgcolor,col=fgcolor,col.axis=fgcolor,col.lab=fgcolor,
     bg=bgcolor,mar=c(5.1,4.1,0.1,0.1))
 plot(z,c(x,y),type="n",
      xlim=c(0.5,2.5),xaxt="n",xlab="Group",ylab="Response",lwd=2)
@@ -31,11 +32,10 @@ me <- c(mean(x),mean(y))
 ci <- cbind(t.test(x)$conf.int, t.test(y)$conf.int)
 
 library(broman)
-cicolor <- brocolors("crayons")["Cornflower"]
+cicolor <- brocolors("web")["blue"]
 
 segments(c(1.2,1.8),me,c(1.3,1.7),me,lwd=2,col=cicolor)
 segments(c(1.25,1.75),ci[1,],c(1.25,1.75),ci[2,],lwd=2,col=cicolor)
 segments(c(1.225,1.775),ci[1,],c(1.275,1.725),ci[1,],lwd=2,col=cicolor)
 segments(c(1.225,1.775),ci[2,],c(1.275,1.725),ci[2,],lwd=2,col=cicolor)
 dev.off()
-
