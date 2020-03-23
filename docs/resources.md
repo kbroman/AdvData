@@ -36,6 +36,20 @@ description: Resources for BMI 826, Advanced data analysis
 - [drake for R](https://docs.ropensci.org/drake/)
 - [Snakemake for python](https://docs.ropensci.org/drake/)
 
+## Data visualization
+
+- Naomi Robbins, [Creating more effective graphs](https://smile.amazon.com/gp/product/0985911123?ie=UTF8&tag=7210-20)
+
+- Edward Tufte: [The visual display of quantitative information](https://smile.amazon.com/gp/product/0961392142?ie=UTF8&tag=7210-20), [Envisioning information](https://smile.amazon.com/gp/product/0961392118?ie=UTF8&tag=7210-20), [Visual explanations](https://smile.amazon.com/gp/product/0961392126?ie=UTF8&tag=7210-20)
+
+- Gelman et al. (2002) Let's practice what we preach: turning tables
+  into graphs. The American Statistician 56:121-130.
+  [doi:10.1198/000313002317572790](https://doi.org/10.1198/000313002317572790)
+  [![pdf icon](icons/pdf-icon.png)](http://www.stat.columbia.edu/~gelman/research/published/dodhia.pdf)
+
+- Nature Methods columns: <https://bit.ly/points_of_view>
+
+
 ## R Markdown
 
 - [R Markdown documentation](https://rmarkdown.rstudio.com)
