@@ -199,6 +199,10 @@ via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt
 \end{columns}
 
 \note{
+  Always consider transforming the data by taking logs. This is
+  particular important if the data span multiple orders of magnitude,
+  which is particularly common for cytokines and gene expression
+  measurements.
 
 }
 \end{frame}
@@ -209,11 +213,16 @@ via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt
 
 \only<1|handout 0>{\figh{Figs/fig5c.png}{0.85}}
 \only<2|handout 0>{\figh{Figs/fig5d.png}{0.85}}
-\only<3>{\figh{Figs/fig5e.png}{0.85}}
-\only<4|handout 0>{\figh{Figs/fig5f.png}{0.85}}
+\only<3|handout 0>{\figh{Figs/fig5e.png}{0.85}}
+\only<4>{\figh{Figs/fig5f.png}{0.85}}
 \only<5|handout 0>{\figh{Figs/fig5b.png}{0.85}}
 
 \note{
+   This is a plot of gene expression values from two replicate
+   microarrays. The values are so skewed, that unless you take logs,
+   the figure is dominated by a few very large points. 50\% of the
+   data are below the pink line, and 99\% of the data are below the
+   blue line. If we take logs, we get to see more of the data.
 }
 \end{frame}
 
@@ -226,6 +235,17 @@ via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt
 \figh{Figs/fig5a.png}{0.85}
 
 \note{
+   Also, if you're interested in the differences between the two
+   arrays, it's best to subtract the values and look at the
+   differences directly. The differences on the log scale are the same
+   as the log ratios.
+
+   This prevents us all from having to rotate our heads 45 degrees to
+   look for points off the diagonal.
+
+   This is sometimes called an ``MA plot,'' though I'm not sure why
+   ``M'' and ``A.'' I'd call it a difference-vs-average plot.
+   Note how it also makes more complete use of the space.
 }
 \end{frame}
 
@@ -239,7 +259,16 @@ via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt
 Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 
 \note{
-  }
+  Ratios are another case where it can be important to take logs.
+
+  I've shown this figure before; it's a bit of an embarrassment to me
+  now. This is a plot of a female/male ratio. When female $>$ male, the
+  values span from 1 to infinity, whereas if male $>$ female, the
+  values are smashed between 0 and 1.
+
+  If I'd taken logs, there'd be a nice symmetry between the ratios $>$
+  1 and those $<$ 1.
+}
 \end{frame}
 
 
