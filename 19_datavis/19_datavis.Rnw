@@ -73,6 +73,8 @@ bgcolor <- rgb(0.1, 0.1, 0.1, maxColorValue=1)
 \end{frame}
 
 
+
+
 \begin{frame}[c]{Show the data}
 
 \begin{columns}
@@ -83,7 +85,13 @@ bgcolor <- rgb(0.1, 0.1, 0.1, maxColorValue=1)
 
 \column{0.5\textwidth}
 
-\figw{Figs/fig1c.png}{1.0}
+\only<1|handout 0>{\figw{Figs/fig1c.png}{1.0}}
+\only<2|handout 0>{\figw{Figs/fig1d.png}{1.0}}
+\only<3>{\figw{Figs/fig1e.png}{1.0}}
+\only<4|handout 0>{\figw{Figs/fig1f.png}{1.0}}
+\only<5|handout 0>{\figw{Figs/fig1g.png}{1.0}}
+\only<6|handout 0>{\figw{Figs/fig1h.png}{1.0}}
+
 
 \end{columns}
 
@@ -91,332 +99,60 @@ bgcolor <- rgb(0.1, 0.1, 0.1, maxColorValue=1)
 
 }
 
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Avoid pie charts}
+
+
+\begin{columns}
+\column{0.5\textwidth}
+
+\figw{Figs/fig2a_rev.png}{1.0}
+
+
+\column{0.5\textwidth}
+
+\only<1|handout 0>{\figw{Figs/fig2c.png}{1.0}}
+\only<2|handout 0>{\figw{Figs/fig2d.png}{1.0}}
+\only<3>{\figw{Figs/fig2e.png}{1.0}}
+
+\end{columns}
+
+\note{
+
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Avoid pie charts}
+
+\only<1|handout 0>{\figh{Figs/piecharts.pdf}{0.81}}
+\only<2|handout 0>{\figh{Figs/piecharts_3d.pdf}{0.81}}
+\only<3>{\figh{Figs/piecharts_3d_w_bars.pdf}{0.81}}
+\only<4|handout 0>{\figh{Figs/piecharts_w_bars.pdf}{0.81}}
+
+\bigskip
+
+\hfill \lolit \footnotesize
+via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt @MonaChalabi}
+(\href{https://bit.ly/pie_vs_barchart}{\tt bit.ly/pie\_vs\_barchart})
+
+\note{
+}
+\end{frame}
+
+
+
+
 \end{document}
 
 
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Show the data
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1a.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1d.png}
-\end{minipage}
-
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Show the data
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1a.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1e.png}
-\end{minipage}
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Show the data
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1a.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1f.png}
-\end{minipage}
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Show the data
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1a.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1g.png}
-\end{minipage}
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Show the data
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1a.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig1h.png}
-\end{minipage}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newpage
-
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig2a_rev.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig2c.png}
-\end{minipage}
-
-
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig2a_rev.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig2d.png}
-\end{minipage}
-
-
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{30mm}
-
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig2a_rev.png}
-\end{minipage}
-\hspace{25mm}
-\begin{minipage}[t]{4.5in}
-\vspace*{0cm}
-
-\includegraphics[width=4.5in]{Figs/fig2e.png}
-\end{minipage}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newpage
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{18mm}
-
-<<piecharts, fig.height=6, fig.width=8>>=
-x <- list(18:22, c(20,20,19,21,20))
-for(i in 1:2) names(x[[i]]) <- LETTERS[seq(along=x[[i]])]
-
-par(bg=bgcolor, fg="white")
-par(mar=rep(1.1, 4))
-par(mfrow=c(2,2))
-for(i in 1:2)
-  pie(x[[i]], LETTERS[1:5], col=brewer.pal(5, "Set2"))
-@
-
-\hfill \smallestsize \color{blue}
-via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt @MonaChalabi}
-(\href{https://bit.ly/pie_vs_barchart}{\tt bit.ly/pie\_vs\_barchart})
-
-\newpage
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{18mm}
-
-<<piecharts_3d, fig.height=6, fig.width=8>>=
-par(bg=bgcolor, fg="white")
-par(mar=rep(1.1, 4))
-par(mfrow=c(2,2))
-for(i in 1:2)
-    pie3D(x[[i]], labels=LETTERS[1:5], explode=0.1, col=brewer.pal(5, "Set2"),
-          mar=rep(1,4), labelcex=1)
-@
-
-\hfill \smallestsize \color{blue}
-via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt @MonaChalabi}
-(\href{https://bit.ly/pie_vs_barchart}{\tt bit.ly/pie\_vs\_barchart})
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{18mm}
-
-<<piecharts_3d_w_bars, fig.height=6, fig.width=8>>=
-par(bg=bgcolor, fg="white", col.axis="white")
-par(mfrow=c(2,2))
-par(mar=rep(1.1, 4))
-for(i in 1:2)
-    pie3D(x[[i]], labels=LETTERS[1:5], explode=0.1, col=brewer.pal(5, "Set2"),
-          mar=rep(1,4), labelcex=1)
-par(mar=c(6.1, 4.1, 1.1, 1.1))
-for(i in 1:2)
-    barplot(x[[i]], names=LETTERS[1:5], col=brewer.pal(5, "Set2"), las=1,
-            ylim=c(0, 22))
-@
-
-\hfill \smallestsize \color{blue}
-via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt @MonaChalabi}
-(\href{https://bit.ly/pie_vs_barchart}{\tt bit.ly/pie\_vs\_barchart})
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Avoid pie charts
-\end{minipage}
-
-\vspace{18mm}
-
-<<piecharts_w_bars, fig.height=6, fig.width=8>>=
-par(bg=bgcolor, fg="white", col.axis="white")
-par(mfrow=c(2,2))
-par(mar=rep(1.1, 4))
-for(i in 1:2)
-  pie(x[[i]], LETTERS[1:5], col=brewer.pal(5, "Set2"))
-par(mar=c(6.1, 4.1, 1.1, 1.1))
-for(i in 1:2)
-    barplot(x[[i]], names=LETTERS[1:5], col=brewer.pal(5, "Set2"), las=1,
-            ylim=c(0, 22))
-@
-
-\hfill \smallestsize \color{blue}
-via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt @MonaChalabi}
-(\href{https://bit.ly/pie_vs_barchart}{\tt bit.ly/pie\_vs\_barchart})
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
