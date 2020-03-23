@@ -174,115 +174,45 @@ via \href{https://twitter.com/MonaChalabi/status/527121946073632768/photo/1}{\tt
 \end{frame}
 
 
-\end{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c]{Consider logs}
 
+\only<1|handout 0>{\figh{Figs/fig5c.png}{0.85}}
+\only<2|handout 0>{\figh{Figs/fig5d.png}{0.85}}
+\only<3>{\figh{Figs/fig5e.png}{0.85}}
+\only<4|handout 0>{\figh{Figs/fig5f.png}{0.85}}
+\only<5|handout 0>{\figh{Figs/fig5b.png}{0.85}}
 
-\newpage
-
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Consider logs
-\end{minipage}
-
-\vspace{30mm}
-
-\centerline{\includegraphics[height=6in]{Figs/fig5c.png}}
-
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Consider logs
-\end{minipage}
-
-\vspace{30mm}
-
-\centerline{\includegraphics[height=6in]{Figs/fig5d.png}}
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Consider logs
-\end{minipage}
-
-\vspace{30mm}
-
-\centerline{\includegraphics[height=6in]{Figs/fig5e.png}}
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Consider logs
-\end{minipage}
-
-\vspace{30mm}
-
-\centerline{\includegraphics[height=6in]{Figs/fig5f.png}}
-
-\newpage
-
-\addtocounter{page}{-1}
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Consider logs
-\end{minipage}
-
-\vspace{30mm}
-
-\centerline{\includegraphics[height=6in]{Figs/fig5b.png}}
-
-\newpage
-
-
-\headsize \color{yellow}
-\hfill \begin{minipage}{5.75in}
-\centering
-Take differences
-\end{minipage}
-
-\vspace{30mm}
-
-\centerline{\includegraphics[height=6in]{Figs/fig5a.png}}
+\note{
+}
+\end{frame}
 
 
 
-\newpage
-\thispagestyle{empty}
 
-\headsize \color{yellow}
-\hfill \begin{minipage}{6.75in}
-\centering
-Another ``take logs'' example
-\end{minipage}
 
-\vspace{30mm}
+\begin{frame}[c]{Consider differences}
 
-\centerline{\includegraphics[height=5in]{MoreFigs/broman_fig1.jpg}}
+\figh{Figs/fig5a.png}{0.85}
 
-\vfill \hfill \smallestsize \color{blue}
+\note{
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{Another ``{\hilit take logs}'' example}
+
+\figh{MoreFigs/broman_fig1.jpg}{0.80}
+
+\vfill \hfill \footnotesize \lolit
 Broman et al., Am J Hum Genet 63:861-869, 1998, Fig. 1
 
+\note{
+  }
+\end{frame}
 
-
-\newpage
+\end{document}
 
 
 \headsize \color{yellow}
