@@ -14,7 +14,7 @@ set.seed(20200324)
 ```
 
 
-This is a short example to illustrate the bootstrap. We'll use the
+This is a short example to illustrate the bootstrap, in R code. We'll use the
 example from [lecture](https://kbroman.org/AdvData/17_bootstrap.pdf),
 of estimating the 95th percentile of a population.
 
@@ -47,7 +47,8 @@ Let's start with the more generic non-parametric bootstrap.
 We'll perform 1000 bootstrap replicates.
 
 I'll use `sample()` to sample with replacement from the data. I can do
-all 1000 bootstrap replicates at the same time, and then take the 95th
+all 1000 bootstrap replicates at the same time, arrange them to form
+a matrix with 1000 columns, and then take the 95th
 percentile of each column.
 
 ```{r nonparametric_bootstrap}
@@ -73,20 +74,26 @@ my estimate of the standard error of my estimate.
 
 ### Parametric bootstrap
 
-Suppose I used were to model the data as a scaled chi-square
-distribution. How could I use the parametric bootstrap in that case?
+Suppose I happened to know that a scaled chi-square
+distribution would be a good model for the underlying population.
+How could I use the parametric bootstrap in that case?
 
 Well I first need to estimate the two parameters to get a fitted
 model: the degrees of freedom and the multiplier. I could use the
-method-of-moments for this.
+[method of moments](https://en.wikipedia.org/wiki/Method_of_moments_(statistics)) for this.
 
 The variance of the scaled chi-squared is (2 m^2^ df) and the mean is
 (m df). So I could estimate m by var/mean/2 =
 `r myround(m_hat <- var(dat)/mean(dat)/2, 2)` and then estimate df by
-mean/m̂  = `r myround(df_hat <- mean(dat)/m_hat, 2)`.
+mean/m̂  = `r myround(mean(dat)/m_hat, 2)`.
+
+```{r parameter_estimates}
+m_hat <- var(dat)/mean(dat)/2
+df_hat <- mean(dat)/m_hat
+```
 
 I then simulate from the fitted model with those estimates as the
-parameters, and then take the quantile of simulated data set.
+parameters, and then take the quantile of each simulated data set.
 
 ```{r parametric_bootstrap}
 pboot_data <- matrix( rchisq(n_boot*n, df_hat)*m_hat, ncol=n_boot )
