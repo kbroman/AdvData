@@ -28,23 +28,23 @@ open up discussion threads on Canvas.
 
 To get to the online lecture, go to the
 [course Canvas site](https://canvas.wisc.edu/courses/192687) and click
-"BBCollaborate Ultra" on the left. You can also use the [guest
-url](https://bit.ly/lec826_sp2020), <https://bit.ly/lec826_sp2020>.
+"BBCollaborate Ultra" on the left. We'll be using the general
+"Course Room". You can also use the [guest
+url](https://bit.ly/bb826_sp2020), <https://bit.ly/bb826_sp2020>.
 
 There's also an option to join by phone, at least for the audio. You
 could download the slides separately and follow along. But I think
-each student needs to get a unique PIN, so go to the [BBCollaborate
-session](https://bit.ly/lec826_sp2020) to get the call-in number and
-your PIN.
+each student needs to get a unique PIN, so go to the [course Canvas
+site](https://canvas.wisc.edu/courses/192687) to get the call-in
+number and your PIN.
 
 I expect that I'll start with everyone muted and have you ask
 questions either in chat or by electronically raising your hand (and
 at that point you could turn on your microphone, and your video camera
 if you wish).
 
-There's a [course
-room](https://us.bbcollab.com/guest/fa00f2b58c214533800f00a44ac85a75)
-for BBCollaborate Ultra if you want to test out your audio in advance.
+The [BBCollaborate course room](https://bit.ly/bb826_sp2020)
+is open all the time, if you want to test out your audio/video in advance.
 
 
 ### Office hours
