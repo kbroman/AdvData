@@ -61,7 +61,7 @@ the histogram are the locations of my actual data points. Gaps between
 data points are what leads to the gaps in the histogram.
 
 ```{r bootstrap_histogram}
-par(mar=c(3.1, 1.1, 1.1, 1.1))
+par(mar=c(4.1, 1.1, 1.1, 1.1))
 hist(boot_results, breaks=2*sqrt(n_boot), main="", ylab="", yaxt="n",
      xlab="estimated 95th percentile")
 rug(dat)
@@ -83,7 +83,7 @@ method-of-moments for this.
 The variance of the scaled chi-squared is (2 m^2^ df) and the mean is
 (m df). So I could estimate m by var/mean/2 =
 `r myround(m_hat <- var(dat)/mean(dat)/2, 2)` and then estimate df by
-mean/m = `r myround(df_hat <- mean(dat)/m_hat, 2)`.
+mean/m̂  = `r myround(df_hat <- mean(dat)/m_hat, 2)`.
 
 I then simulate from the fitted model with those estimates as the
 parameters, and then take the quantile of simulated data set.
@@ -98,7 +98,7 @@ the histogram are the locations of my actual data points, but note
 that we don't see the odd gaps that we'd seen before.
 
 ```{r parametric_bootstrap_histogram}
-par(mar=c(3.1, 1.1, 1.1, 1.1))
+par(mar=c(4.1, 1.1, 1.1, 1.1))
 hist(pboot_results, breaks=2*sqrt(n_boot), main="", ylab="", yaxt="n",
      xlab="estimated 95th percentile")
 rug(dat)
