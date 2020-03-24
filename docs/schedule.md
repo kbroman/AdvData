@@ -28,7 +28,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 10 Mar    |    | [Bayes/MCMC: Transposon mutagenesis ![pdf icon](icons/pdf-icon.png)](15_tnmut.pdf) [![notes icon](icons/notes-icon.png)](15_tnmut_notes.pdf)
 | 12 Mar    |    | [_Wrangling messy data files_ ![pdf icon](icons/pdf-icon.png)](16_wrangling.pdf) [![notes icon](icons/notes-icon.png)](16_wrangling_notes.pdf)
 | 17,19 Mar |    | **No class (spring break)** |
-| 24 Mar    |    | [Bootstrap confidence intervals for QTL location ![pdf icon](icons/pdf-icon.png)](17_bootstrap.pdf) [![notes icon](icons/notes-icon.png)](17_bootstrap_notes.pdf)
+| 24 Mar    |    | [Bootstrap confidence intervals for QTL location ![pdf icon](icons/pdf-icon.png)](17_bootstrap.pdf) [![notes icon](icons/notes-icon.png)](17_bootstrap_notes.pdf) [![html icon](icons/html-icon.png)](17_bootstrap_example.html)
 | 26 Mar    |    | [_Writing R packages; roxygen2_ ![pdf icon](icons/pdf-icon.png)](18_rpack.pdf) [![notes icon](icons/notes-icon.png)](18_rpack_notes.pdf) [![html icon](icons/html-icon.png)](18_rpack_demo.html)
 | 31 Mar    |    | [Data visualization ![pdf icon](icons/pdf-icon.png)](19_datavis.pdf) [![notes icon](icons/notes-icon.png)](19_datavis_notes.pdf)
 | 2 Apr     |    | _Software testing and debugging_
