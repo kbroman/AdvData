@@ -21,6 +21,10 @@ in the R package. We will use a pair of functions: one for simulating
 Brownian motion, and the second for plotting the results.
 
 ```r
+# simulate Brownian motion
+# n = number of steps
+# sigma = SD of step size
+# output is an nx2 matrix of positions
 simBrM <-
 function(n, sigma=1)
 {
@@ -32,6 +36,10 @@ function(n, sigma=1)
     apply(x, 2, cumsum)
 }
 
+# plot Brownian motion
+# x = matrix with two columns
+# pointcolor = color of start and end points
+# ... = passed to plot()
 plotBrM <-
 function(x, pointcolor=c("springgreen", "violetred"), ...)
 {
