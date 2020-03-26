@@ -267,58 +267,6 @@ plotSmarties()
 \end{frame}
 
 
-\begin{frame}[fragile]{Building, installing, and checking}
-
-\vspace{24pt}
-
-\begin{lstlisting}
-R CMD build RSkittleBrewer
-R CMD INSTALL RSkittleBrewer_1.1.tar.gz
-R CMD check RSkittleBrewer_1.1.tar.gz
-
-R CMD check --as-cran RSkittleBrewer_1.1.tar.gz
-
-R CMD INSTALL --library=~/Rlibs RSkittleBrewer_1.1.tar.gz
-# (~/.Renviron file contains R_LIBS=~/Rlibs)
-
-# On windows:
-R CMD INSTALL --build RSkittleBrewer_1.1.tar.gz
-\end{lstlisting}
-
-\bigskip
-\begin{lstlisting}
-# also consider (within R):
-library(devtools)
-build("/path/to/RSkittleBrewer")
-build("/path/to/RSkittleBrewer", binary=TRUE)
-\end{lstlisting}
-
-\note{
-  To install your package, you first need to {\nhilit build} it. {\tt
-    R CMD build} creates the {\tt .tar.gz} source file that you'd
-  distribute.
-
-  You then use {\tt R CMD INSTALL} to install the package. You may
-  want to use {\tt --library=/some/dir} to install to a different
-  directory, in which case you need to set {\tt R\_LIBS} in your {\tt
-    {\textasciitilde}/.Renviron} file.
-
-  {\tt R CMD check} runs extensive checks of the package, including
-  running all of the examples in the help files.
-  Pay attention to any errors, warnings, or notes, and revise the
-  package to avoid them. This is particularly true if you want to
-  submit the package to CRAN.
-
-  Before submitting to CRAN, be sure to run {\tt R CMD check} with the
-  lesser-known {\tt --as-cran} flag, which checks further things.
-
-  On Windows, use {\tt R CMD INSTALL --build} to create a {\tt .zip}
-  file of the ``compiled'' package. You can also use the {\tt build()}
-  function from the devtools package.
-}
-\end{frame}
-
-
 \begin{frame}[fragile]{Roxygen2 comments}
 
 \vspace{24pt}
@@ -373,6 +321,7 @@ RSkittleBrewer <-
 
 
 
+
 \begin{frame}[fragile]{Makefile}
 
 \vspace{24pt}
@@ -405,6 +354,8 @@ Makefile
    CMD check} otherwise.
 }
 \end{frame}
+
+
 
 
 \begin{frame}[fragile]{Include a {\tt README} or {\tt README.md} file}
@@ -446,6 +397,8 @@ names that correspond to that Skittle flavor.
 \end{frame}
 
 
+
+
 \begin{frame}[c]{}
 
 
@@ -456,6 +409,65 @@ names that correspond to that Skittle flavor.
   There's more, but you should start with just that stuff.
 }
 \end{frame}
+
+
+
+
+\begin{frame}[fragile]{Building, installing, and checking}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+R CMD build RSkittleBrewer
+R CMD INSTALL RSkittleBrewer_1.1.tar.gz
+R CMD check RSkittleBrewer_1.1.tar.gz
+
+R CMD check --as-cran RSkittleBrewer_1.1.tar.gz
+
+R CMD INSTALL --library=~/Rlibs RSkittleBrewer_1.1.tar.gz
+# (~/.Renviron file contains R_LIBS=~/Rlibs)
+
+# On windows:
+R CMD INSTALL --build RSkittleBrewer_1.1.tar.gz
+\end{lstlisting}
+
+\bigskip
+\begin{lstlisting}
+# also consider (within R):
+library(devtools)
+build("/path/to/RSkittleBrewer")
+build("/path/to/RSkittleBrewer", binary=TRUE)
+\end{lstlisting}
+
+\note{
+  To install your package, you first need to {\nhilit build} it. {\tt
+    R CMD build} creates the {\tt .tar.gz} source file that you'd
+  distribute.
+
+  You then use {\tt R CMD INSTALL} to install the package. You may
+  want to use {\tt --library=/some/dir} to install to a different
+  directory, in which case you need to set {\tt R\_LIBS} in your {\tt
+    {\textasciitilde}/.Renviron} file.
+
+  {\tt R CMD check} runs extensive checks of the package, including
+  running all of the examples in the help files.
+  Pay attention to any errors, warnings, or notes, and revise the
+  package to avoid them. This is particularly true if you want to
+  submit the package to CRAN.
+
+  Before submitting to CRAN, be sure to run {\tt R CMD check} with the
+  lesser-known {\tt --as-cran} flag, which checks further things.
+
+  On Windows, use {\tt R CMD INSTALL --build} to create a {\tt .zip}
+  file of the ``compiled'' package. You can also use the {\tt build()}
+  function from the devtools package.
+}
+\end{frame}
+
+
+
+
+
 
 
 \begin{frame}{Package vignettes}
