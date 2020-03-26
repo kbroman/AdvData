@@ -20,7 +20,11 @@ description: Resources for BMI 826, Advanced data analysis
 - [Stat 545](https://stat545.com) on [Writing R packages](https://stat545.com/package-overview.html)
 - [devtools](https://devtools.r-lib.org)
 - [usethis](https://usethis.r-lib.org)
-
+- [Build an R package with
+  usethis](https://www.rostrum.blog/2019/11/01/usethis/) by [Matt
+  Dray](https://twitter.com/mattdray)
+- [usethis workflow for package development](https://www.hvitfeldt.me/blog/usethis-workflow-for-package-development/
+) by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt)
 
 ## Make
 
