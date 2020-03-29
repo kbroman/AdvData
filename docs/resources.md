@@ -18,8 +18,8 @@ description: Resources for BMI 826, Advanced data analysis
 - [Jeff Leek](http://jtleek.com/)'s [Developing R packages](https://kbroman.org/Tools4RR/pages/resources.html)
 - [Karl's R package tutorial](https://kbroman.org/pkg_primer)
 - [Stat 545](https://stat545.com) on [Writing R packages](https://stat545.com/package-overview.html)
-- [devtools](https://devtools.r-lib.org)
-- [usethis](https://usethis.r-lib.org)
+- [devtools](https://devtools.r-lib.org) package
+- [usethis](https://usethis.r-lib.org) package
 - [Build an R package with
   usethis](https://www.rostrum.blog/2019/11/01/usethis/) by [Matt
   Dray](https://twitter.com/mattdray)
