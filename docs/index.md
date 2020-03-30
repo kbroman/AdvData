@@ -26,7 +26,7 @@ Connect with me using [BBCollaborate
 Ultra](https://it.wisc.edu/services/web-conferencing/);
 go to <https://bit.ly/offhrs_sp2020>.
 
-**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through the rest of the semester,
+**[COVID-19](https://covid19.wisc.edu)**: For the rest of the semester,
 lectures and office hours will be strictly online. [**More information here**](online.html).
 
 - [schedule](schedule.html)

@@ -4,7 +4,7 @@ title: BMI 826 online lectures/office hours
 description: Information about the online delivery of lectures and office hours for BMI 826 (Advanced Data Analysis)
 ---
 
-**[COVID-19](https://covid19.wisc.edu)**: Starting 24 March, and through the rest of the semester,
+**[COVID-19](https://covid19.wisc.edu)**: For the rest of the semester,
 lectures and office hours will be strictly online.
 
 ### Lectures
@@ -58,8 +58,7 @@ student needs to get a unique PIN, so go to the [BBCollaborate
 session](https://bit.ly/offhrs_sp2020) to get the call-in number and
 your PIN.
 
-I will be available there Tuesdays 9:30-10:30 and Fridays 10:30-11:30,
-starting 24 March.
+I will be available there Tuesdays 9:30-10:30 and Fridays 10:30-11:30.
 
 If you would like to get ahold of me at a different time or using a
 different method, let me know by email.
