@@ -726,6 +726,75 @@ test_that("running mean with constant x or position", {
 \end{frame}
 
 
+\begin{frame}{Debugging}
+
+
+\vspace{72pt}
+
+  \centerline{It's not you, it's me.}
+
+
+\vspace{36pt}
+
+  \hspace{40mm}
+  \href{https://kbroman.org/blog/2015/09/24/its-not-you-its-me/}{\tt
+    \footnotesize kbroman.org/blog/2015/09/24/its-not-you-its-me}
+
+  \bigskip
+
+  \hspace{40mm}
+  \href{https://kbroman.org/blog/2017/08/08/eof-within-quoted-string/}{\tt
+    \footnotesize kbroman.org/blog/2017/08/08/eof-within-quoted-string}
+
+  \note{
+    My initial reaction is to blame others, but most of the time,
+    problems end up being my own fault.
+
+    Before blaming others, look to yourself.
+
+    And update library dependencies in case the problem you're seeing
+    had already been identified and corrected.
+  }
+\end{frame}
+
+
+\begin{frame}{More debugging suggestions}
+
+  \bbi
+\item Read before typing
+\item Examine the most recent change
+\item Look for familiar patterns
+\item Study the numerology of failures
+\item Keep records of what you've done to find the bug
+\item Try an independent implementation
+  \ei
+
+  \note{
+    Here are a number of additional, quick suggestions. They're partly
+    taken from the great book Kernighan and Pike, The Practice of
+    Programming.
+
+    ``Read before typing'' means look at your code carefully before
+    you start hacking away at it.
+
+    Look for familiar patterns: we each have some set of common
+    mistakes; look for them.
+
+    Study the numerology of failures: what can you detect, from the
+    set of cases that are causing problems? Can you see a hint of the
+    cause?
+
+    Keep records of what you've done to find the bug, so that you're
+    not repeating yourself, and so that you can start to put together
+    a pattern.
+
+    You may want to just reimplement the whole thing somewhat
+    differently. Doing so can help to clarify the problem.
+  }
+\end{frame}
+
+
+
 
 \begin{frame}{Summary}
 
