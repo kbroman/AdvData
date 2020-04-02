@@ -36,6 +36,9 @@ description: Resources for BMI 826, Advanced data analysis
   Programming](https://smile.amazon.com/gp/product/020161586X?ie=UTF8&tag=7210-20) (book)
 - [Testing chapter](http://r-pkgs.had.co.nz/tests.html) in [Hadley
   Wickham](http://hadley.nz/)'s [R packages](http://r-pkgs.had.co.nz/) book
+- Julia Silge blog post [Beginner's guide to Travis](https://juliasilge.com/blog/beginners-guide-to-travis/)
+- [Automated checking chapter](http://r-pkgs.had.co.nz/check.html) in [Hadley
+  Wickham](http://hadley.nz/)'s [R packages](http://r-pkgs.had.co.nz/) book
 
 
 ## Make
