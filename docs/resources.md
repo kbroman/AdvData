@@ -26,6 +26,18 @@ description: Resources for BMI 826, Advanced data analysis
 - [usethis workflow for package development](https://www.hvitfeldt.me/blog/usethis-workflow-for-package-development/
 ) by [Emil Hvitfeldt](https://twitter.com/Emil_Hvitfeldt)
 
+## Testing/debugging
+
+- [Jenny Bryan](https://jennybryan.org) talk, "[Object of type closure is not subsettable](https://resources.rstudio.com/rstudio-conf-2020/object-of-type-closure-is-not-subsettable-jenny-bryan)"
+- Richard Cotton, [Testing R
+  Code](https://smile.amazon.com/gp/product/1498763650?ie=UTF8&tag=7210-20)
+  (book)
+- Kernighan and Pike, [The Practice of
+  Programming](https://smile.amazon.com/gp/product/020161586X?ie=UTF8&tag=7210-20) (book)
+- [Testing chapter](http://r-pkgs.had.co.nz/tests.html) in [Hadley
+  Wickham](http://hadley.nz/)'s [R packages](http://r-pkgs.had.co.nz/) book
+
+
 ## Make
 
 - [GNU make](http://www.gnu.org/software/make)
