@@ -88,6 +88,13 @@ description: Resources for BMI 826, Advanced data analysis
   resumes or letters)
 
 
+## Jupyter notebooks
+
+- [Publication ready Jupyter
+  notebooks](https://dev.to/alephthoughts/publication-ready-jupyter-notebooks-47ca),
+  blog post by [Abhishek Sharma](https://alephthoughts.com)
+
+
 ## Unix command line
 
 - [Survival guide for Unix newbies](http://matt.might.net/articles/basic-unix/)
