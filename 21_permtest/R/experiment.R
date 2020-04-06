@@ -74,7 +74,7 @@ plot_data <-
     text(33, 71, paste("=", myround(SE, 1)), adj=c(0, 0.5), cex=1.5)
 
     text(30, 45, "t", adj=c(1, 0.5), cex=1.5)
-    text(33, 45, paste("=", myround(out$stat, 2)), adj=c(0, 0.5), cex=1.5)
+    text(33, 45, paste("=", myround(-out$stat, 2)), adj=c(0, 0.5), cex=1.5)
     if(show_pval) {
         text(99, 45, paste("P =", myround(out$p.value, 2)), adj=c(1, 0.5), cex=1.5)
     }
