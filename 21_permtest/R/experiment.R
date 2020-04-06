@@ -45,6 +45,68 @@ for(i in 1:2) {
 dev.off()
 
 
+dat$ttt <- factor(dat$ttt, c("C", "T"))
+
 dir <- "_cache"
 if(!dir.exists(dir)) dir.create(dir)
 saveRDS(dat, file.path(dir, "experiment_data.rds"))
+
+
+
+plot_data <-
+    function(dat, show_pval=TRUE)
+{
+    par(mfrow=c(1,2))
+    par(mar=c(3.1, 3.1, 1.1, 1.1))
+    dotplot(dat$ttt, dat$resp, xlab="Response", ylab="Group", rotate=TRUE,
+            mgp.x=c(1.8,0.3,0), mgp.y=c(1.8, 0.2, 0))
+
+    plot(0,0,type="n", xaxt="n", yaxt="n", xlim=c(0,100), ylim=c(0,100),
+         xaxs="i", yaxs="i", bty="n")
+
+    eff <- diff(tapply(dat$resp, dat$ttt, mean)) # 5.9
+    out <- t.test(as.numeric(dat$resp) ~ dat$ttt)
+    SE <- out$stderr # 2.1
+
+    text(30, 85, expression(bar(Y)[T] - bar(Y)[C]), adj=c(1, 0.5), cex=1.5)
+    text(33, 86, paste("=", myround(eff, 1)), adj=c(0, 0.5), cex=1.5)
+    text(30, 72, expression(hat(SE)), adj=c(1, 0.5), cex=1.5)
+    text(33, 71, paste("=", myround(SE, 1)), adj=c(0, 0.5), cex=1.5)
+
+    text(30, 45, "t", adj=c(1, 0.5), cex=1.5)
+    text(33, 45, paste("=", myround(out$stat, 2)), adj=c(0, 0.5), cex=1.5)
+    if(show_pval) {
+        text(99, 45, paste("P =", myround(out$p.value, 2)), adj=c(1, 0.5), cex=1.5)
+    }
+
+    text(30, 18, "95% CI", adj=c(1, 0.5), cex=1.5)
+    text(33, 18, paste0("= (", myround(-out$conf.int[2], 1), ", ",
+                       myround(-out$conf.int[1], 1), ")"), adj=c(0, 0.5), cex=1.5)
+}
+
+
+pdf("../Figs/experiment_results.pdf", height=5, width=10, pointsize=14)
+plot_data(dat)
+dev.off()
+
+
+
+pdf("../Figs/perm_results1.pdf", height=5, width=10, pointsize=14)
+plot_data(list(ttt=dat$ttt, resp=sample(dat$resp)),
+          show_pval=FALSE)
+dev.off()
+
+pdf("../Figs/perm_results2.pdf", height=5, width=10, pointsize=14)
+plot_data(list(ttt=dat$ttt, resp=sample(dat$resp)),
+          show_pval=FALSE)
+dev.off()
+
+pdf("../Figs/perm_results3.pdf", height=5, width=10, pointsize=14)
+plot_data(list(ttt=dat$ttt, resp=sample(dat$resp)),
+          show_pval=FALSE)
+dev.off()
+
+pdf("../Figs/perm_results4.pdf", height=5, width=10, pointsize=14)
+plot_data(list(ttt=dat$ttt, resp=sample(dat$resp)),
+          show_pval=FALSE)
+dev.off()
