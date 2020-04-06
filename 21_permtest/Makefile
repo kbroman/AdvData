@@ -1,6 +1,6 @@
 LEC = 21_permtest
 
-#FIGS =
+FIGS = Figs/experiment.pdf
 
 include ../Makefile_lectures.mk
 
