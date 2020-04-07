@@ -161,4 +161,28 @@
 
 
 
+
+\begin{frame}{How many permutations?}
+
+  \bbi
+  \item Typically n = 1,000 or 10,000
+  \item Focus on getting a good estimate of the p-value
+  \item X = number of permutations $\ge$ observed value \\[8pt]
+    \hspace{3mm} $\sim$ binomial(n, p) where p = true p-value
+  \item With small datasets, may be able to do an {\hilit exhaustive enumeration}.
+    \ei
+
+\note{
+    How many permutation replicates to do? I view it as an effort to
+    estimate the p-value, or to estimate the significance threshold
+    with $\alpha=0.05$ or so.
+
+    Typically I'll do 1,000 or 10,000. In some cases (for example,
+    when I'm trying to control some false discovery rate), I may need
+    to do many more.
+}
+\end{frame}
+
+
+
 \end{document}
