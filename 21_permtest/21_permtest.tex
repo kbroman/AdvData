@@ -361,6 +361,16 @@
 
 \figh{Figs/block_experiment.pdf}{0.9}
 
+\note{
+  Now, consider the case of a randomized block experiment, where the
+  experimental units were split into blocks and then treatment groups
+  assigned at random within each block. Here the six blocks are
+  indicated by the darker lines.
+
+  How to apply a permutation test in this case? You can't permute
+  across all values. But you could do a stratified permutation test,
+  permuting within each block.
+}
 \end{frame}
 
 
@@ -373,6 +383,9 @@
   A common strategy in QTL mapping to save on the cost of genotyping
   is to just genotype the top and bottom portion of subjects, by
   phenotype.
+
+  This leads to a situation where you have two strata of individuals:
+  those with a lot of genotype data and those with little genotype data.
 }
 \end{frame}
 
@@ -385,6 +398,10 @@
   A friend asked about what to do for significance thresholds in the
   case of selective genotyping. This is a very short paper
   demonstrating the use of a stratified permutation test.
+
+  In retrospect, it seems pretty obvious. But it's still important.
+  And I bring it up here because it can be a very useful technique.
+  Our datasets often are stratified in different ways.
 }
 \end{frame}
 
