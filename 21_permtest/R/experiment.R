@@ -209,3 +209,78 @@ for(i in 1:2) {
 
 }
 dev.off()
+
+
+### perms that are stratified by block vs not
+
+perm_dat <-
+    function(dat, by_block=TRUE)
+    {
+        if(by_block) {
+            ublock <- unique(dat$block)
+            for(i in ublock) {
+                dat$ttt[dat$block==i] <- sample(dat$ttt[dat$block==i])
+            }
+        } else {
+            dat$ttt <- matrix(sample(dat$ttt), ncol=4)
+        }
+
+        dat
+    }
+
+anal_byblock <-
+    function(dat)
+    {
+        anova(aov(as.numeric(dat$resp) ~ as.factor(dat$ttt) + as.factor(dat$block)))[1,4]
+    }
+
+
+block_perms_file <- "_cache/block_perms.rds"
+if(file.exists(block_perms_file)) {
+    block_perms <- readRDS(block_perms_file)
+} else {
+    block_perms <- list(by_block=replicate(10000, anal_byblock(perm_dat(dat))),
+                        overall=replicate(10000, anal_byblock(perm_dat(dat, FALSE))))
+
+    saveRDS(block_perms, block_perms_file)
+}
+
+obs <- anal_byblock(dat)
+
+
+pdf("../Figs/hist_block_perms.pdf", height=5, width=8, pointsize=14)
+
+par(mar=c(4.1, 0.1, 1.6, 0.1), mfrow=c(2,1))
+
+for(i in 1:2) {
+    hist(block_perms[[i]], breaks=seq(0, max(unlist(block_perms)), len=401), xlim=c(0,10),
+         xlab="F statistic", ylab="", yaxt="n", mgp=c(2.1, 0.8, 0),
+         main=paste(c("Stratified", "Normal")[i], "permutations"))
+
+    u <- par("usr")
+    arrows(obs, u[3]+diff(u[3:4])*0.25, obs, u[3]+diff(u[3:4])*0.06, col=purple, lwd=2, len=0.1)
+    text(obs, u[3]+diff(u[3:4])*0.34, myround(obs, 1), col=purple)
+
+    text(obs+1, u[3]+diff(u[3:4])*0.34, paste0("(P = ", myround(mean(block_perms[[i]] >= obs), 3), ")"), col=purple)
+
+}
+
+dev.off()
+
+
+
+
+pdf("../Figs/qqplot_block_perms.pdf", height=5, width=5, pointsize=14)
+
+par(mar=c(4.1, 4.1, 0.6, 0.6))
+
+ymx <- max(unlist(block_perms))
+
+qqplot(block_perms[[1]], block_perms[[2]],
+       xlab="F stat, stratified perms",
+       ylab="F stat, normal perms",
+       las=1, pch=21, bg="lightblue", cex=0.5,
+       xlim=c(0, ymx), ylim=c(0, ymx))
+qqline2(log2(block_perms[[1]]), log2(block_perms[[2]]), lwd=2, col=green)
+
+dev.off()
