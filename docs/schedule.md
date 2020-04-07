@@ -32,7 +32,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 26 Mar    |    | [_Writing R packages; roxygen2_ ![pdf icon](icons/pdf-icon.png)](18_rpack.pdf) [![notes icon](icons/notes-icon.png)](18_rpack_notes.pdf) [![html icon](icons/html-icon.png)](18_rpack_demo.html) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/a9d241445a19460bb06429d3d32070fe)
 | 31 Mar    |    | [Data visualization ![pdf icon](icons/pdf-icon.png)](19_datavis.pdf) [![notes icon](icons/notes-icon.png)](19_datavis_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/e5afadd7e66c4a24a453eb7bf603de9d)
 | 2 Apr     |    | [_Software testing and debugging_ ![pdf icon](icons/pdf-icon.png)](20_testdebug.pdf) [![notes icon](icons/notes-icon.png)](20_testdebug_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/a0212f2f8d34490db3b81ed1a56c9135)
-| 7 Apr     |    | Permutation test with selective genotyping
+| 7 Apr     |    | [Permutation test with selective genotyping ![pdf icon](icons/pdf-icon.png)](21_permtest.pdf) [![notes icon](icons/notes-icon.png)](21_permtest_notes.pdf)
 | 9 Apr     |    | _Big jobs/simulations; caching computations_ \[**[homework 3](hw3.html) due**\]
 | 14 Apr    |    | Building regression models: Multiple-QTL analysis
 | 16 Apr    |    | _R Markdown for papers_
