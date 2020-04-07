@@ -62,6 +62,10 @@
 
   I find the permutation test to be more natural, and it only relies
   on the assumption of random assignment of treatment groups.
+
+  In a permutation test, you compare the observed test statistic to
+  the distribution of values you get when the treatment group
+  assignments are shuffled/randomized/permuted.
 }
 \end{frame}
 
@@ -97,7 +101,7 @@
   We've superposed a t distribution with 22 degrees; note how closely
   it matches.
 
-  Fisher noted the close correspondance between the theoretical
+  RA Fisher noted the close correspondance between the theoretical
   t-distribution and the permutation distribution, and used this to
   justify use of probabilities from the t-distribution. The
   permutation results were what he wanted, but they were too difficult
@@ -196,38 +200,118 @@
 
 
 
-- plot of genotypes + phenotype
+\begin{frame}[c]{QTL data}
 
-- genome scan + permutation scans
+\figh{Figs/geno_and_pheno.pdf}{0.9}
 
-- histogram of permutation results
-  -> p-values and thresholds
+\note{
+  Here are some example QTL data: genotypes across the genome for a
+  set of individuals, plus a quantitative phenotype.
 
-- multiple testing
-  - many examples
-    - gene expression
-    - GWAS
-    - 1000s of predictors in an epi study
-  - most stringent approach: control family-wise error rate (FWER)
-  - Bonferroni can be too conservative
-  - take max statistic
+  Note the correlations in genotypes within each chromosome.
+}
+\end{frame}
 
-- If test statistic varies
 
-  - taking max(X\_j) assumes that the X\_j have a common null
+\begin{frame}[c]{QTL genome scan}
+
+\only<1|handout 0>{\figh{Figs/qtl_scan.pdf}{0.9}}
+\only<2|handout 0>{\figh{Figs/perm_scan_1.pdf}{0.9}}
+\only<3|handout 0>{\figh{Figs/perm_scan_2.pdf}{0.9}}
+\only<4|handout 0>{\figh{Figs/perm_scan_3.pdf}{0.9}}
+\only<5>{\figh{Figs/perm_scan_4.pdf}{0.9}}
+
+\note{
+  Here are the QTL mapping results. The gray curves are the results
+  for four successive permutations of the rows of the genotypes
+  relative to the phenotypes.
+}
+\end{frame}
+
+
+\begin{frame}[c]{Permutation results}
+
+\figh{Figs/qtl_perm_results.pdf}{0.9}
+
+\note{
+  For each permutation, we take the genome-wide maximum test
+  statistic.
+
+  I find it important to always look at the distribution of
+  these maxima. It should always look like this, sort of a chi-square
+  distribution. If the signifiance threshold is unusually high, it
+  could be that there's something weird in the data that's causing
+  problems.
+
+  We can pick off our value in this distribution and calculate a
+  p-value that adjusts for the scan across the genome. Or we can use
+  the 95th or 99th or 90th percentile as a significance threshold.
+}
+\end{frame}
+
+
+\begin{frame}{Multiple testing}
+
+  \bbi
+  \item {\vhilit Many} examples
+    \bi
+    \item gene expression or proteomic studies
+    \item genome-wide association studies
+    \item 1000s of predictors in an epi study
+    \ei
+  \item Most stringent approach: control family-wise error rate (FWER)
+  \item A Bonferroni adjustment can be too conservative
+  \item Take max statistic in each permutation replicate
+    \ei
+
+\note{
+   Adjusting for the genome scan in QTL mapping is one instance of the
+   ``multiple testing'' problem. We use the most stringent approach,
+   of controlling the ``family-wise error rate'' where ``family''
+   refers to the set of hypotheses (the genomic positions).
+
+   A Bonferroni adjustment is common (multiply the p-values by the
+   number of tests) but it can be much too conservative when there are
+   many correlated tests.
+
+   Adjusting for the number of tests can be easy in the context of a
+   permutation test, by taking the maximum statistic.
+}
+\end{frame}
+
+
+\begin{frame}{If test statistic varies}
+
+  \bbi
+  \item taking max(X$_{\text{j}}$) assumes that the X$_{\text{j}}$ have a common null
     distribution
 
-  - if not, you'd want to normalize so they do
+  \item if not, you'd want to normalize so they do
 
-  - One approach: use the permutation results to do so
+  \item One approach: use the permutation results to do so
 
-  - for each column of permutation results, turn values into ranks
-  - then find the maximum rank in each row
-  - find where the observed statistics rank within each column
+  \bi \item for each column of permutation results, turn values into ranks
+  \item then find the maximum rank in each row
+  \item find where the observed statistics rank within each column
+    \item This gives adjusted p-values that account for the search
+      \ei
+      \ei
 
-  -> adjusted p-values that account for the search
+\note{
+  The max statistic assumes that the individual test statistics are
+  similar in distribution. If that's not true, they may need to be
+  normalized so that they are.
 
-  (note need to increase the number of permutation replicates)
+  One way to do this is to use the permutation results to force each
+  statistic to have the same marginal distribution. The simplest way
+  to do this is to turn things into ranks and then take the maximum
+  rank for each permutation replicate.
+
+  (Note there will be a need to increase the number of permutation replicates.)
+}
+\end{frame}
+
+
 
 
 \begin{frame}{Abuse of p-values}
