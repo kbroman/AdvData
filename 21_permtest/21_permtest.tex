@@ -85,4 +85,80 @@
 
 
 
+\begin{frame}[c]{10,000 permutations}
+
+\only<1|handout 0>{\figh{Figs/perm_hist.pdf}{0.9}}
+\only<2|handout 0>{\figh{Figs/perm_hist_with_t.pdf}{0.9}}
+\only<3>{\figh{Figs/perm_hist_with_arrow.pdf}{0.9}}
+
+\note{
+  Here are the t statistics from 10,000 permutations of our data.
+
+  We've superposed a t distribution with 22 degrees; note how closely
+  it matches.
+
+  Fisher noted the close correspondance between the theoretical
+  t-distribution and the permutation distribution, and used this to
+  justify use of probabilities from the t-distribution. The
+  permutation results were what he wanted, but they were too difficult
+  to obtain at the time, and the t-distribution provided a good
+  approximation.
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{Assumptions for the permutation test}
+
+\centering
+
+  {\large The observations are {\vhilit exchangeable} \\[8pt]
+    under the null hypothesis.}
+
+\note{
+  The only assumption for the permutation test is that the
+  observations are exchangeable. Basically this means that the labels
+  don't matter. It's a weaker assumption than that they are
+  independent and identically distributed.
+
+  For a randomized experiment, this is true by design.
+
+  Basically you want the data to be as if they were assigned to
+  treatment groups at random.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}{What test statistic?}
+
+  \bbi
+  \item Anything will be {\hilit valid}
+  \item Focus on {\vhilit power}
+  \item Robustness can still be important
+    \bi
+  \item[] For example, resistance to outliers
+    \ei
+  \ei
+
+\note{
+  Here, we used the t statistic. But you can use {\hilit any}
+  statistic you want with the permutation test.
+
+  Much of the time, we choose statistics based on their null
+  distribution being something we can approximate. But we don't care
+  about that, since we can simulate to get an approximation of the
+  permutation distribution.
+
+  The focus is on {\hilit power}: what statistic will best show the
+  expected effect? But note that we may still need to worry about
+  robustness, as things like outliers can distort the permutation
+  distribution and so weaken our ability to see real effects.
+}
+\end{frame}
+
+
+
 \end{document}

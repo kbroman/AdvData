@@ -51,6 +51,10 @@ dir <- "_cache"
 if(!dir.exists(dir)) dir.create(dir)
 saveRDS(dat, file.path(dir, "experiment_data.rds"))
 
+out <- t.test(as.numeric(dat$resp) ~ dat$ttt)
+t_stat <- -out$stat
+
+
 
 
 plot_data <-
@@ -109,4 +113,45 @@ dev.off()
 pdf("../Figs/perm_results4.pdf", height=5, width=10, pointsize=14)
 plot_data(list(ttt=dat$ttt, resp=sample(dat$resp)),
           show_pval=FALSE)
+dev.off()
+
+
+
+# permutations
+perm_file <- "_cache/perms.rds"
+if(file.exists(perm_file)) {
+    perm_t <- readRDS(perm_file)
+} else {
+    perm_t <- replicate(10000, t.test(sample(dat$resp) ~ dat$ttt)$stat)
+    saveRDS(perm_t, perm_file)
+}
+
+pdf("../Figs/perm_hist.pdf", height=5, width=10)
+par(mar=c(4.1, 1.1, 1.1, 1.1))
+xmax <- max(abs(perm_t))
+hist(perm_t, xlab="t statistic", ylab="", yaxt="n", main="",
+     prob=TRUE, breaks=seq(-xmax, xmax, len=201))
+dev.off()
+
+pdf("../Figs/perm_hist_with_t.pdf", height=5, width=10)
+par(mar=c(4.1, 1.1, 1.1, 1.1))
+xmax <- max(abs(perm_t))
+hist(perm_t, xlab="t statistic", ylab="", yaxt="n", main="",
+     prob=TRUE, breaks=seq(-xmax, xmax, len=201))
+u <- par("usr")
+x <- seq(-xmax, xmax, len=251)
+lines(x, dt(x, 22), lwd=2, col=green)
+dev.off()
+
+pdf("../Figs/perm_hist_with_arrow.pdf", height=5, width=10)
+par(mar=c(4.1, 1.1, 1.1, 1.1))
+xmax <- max(abs(perm_t))
+hist(perm_t, xlab="t statistic", ylab="", yaxt="n", main="",
+     prob=TRUE, breaks=seq(-xmax, xmax, len=201))
+u <- par("usr")
+x <- seq(-xmax, xmax, len=251)
+lines(x, dt(x, 22), lwd=2, col=green)
+
+arrows(t_stat, u[3]+diff(u[3:4])*0.25, t_stat,  u[3]+diff(u[3:4])*0.08, col=purple, lwd=3, len=0.1)
+text(t_stat, u[3]+diff(u[3:4])*0.28, myround(t_stat, 2), cex=1.5, adj=c(0.5, 0), col=purple)
 dev.off()
