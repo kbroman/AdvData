@@ -196,10 +196,93 @@
 
 
 
+- plot of genotypes + phenotype
+
+- genome scan + permutation scans
+
+- histogram of permutation results
+  -> p-values and thresholds
+
+- multiple testing
+  - many examples
+    - gene expression
+    - GWAS
+    - 1000s of predictors in an epi study
+  - most stringent approach: control family-wise error rate (FWER)
+  - Bonferroni can be too conservative
+  - take max statistic
+
+- If test statistic varies
+
+  - taking max(X\_j) assumes that the X\_j have a common null
+    distribution
+
+  - if not, you'd want to normalize so they do
+
+  - One approach: use the permutation results to do so
+
+  - for each column of permutation results, turn values into ranks
+  - then find the maximum rank in each row
+  - find where the observed statistics rank within each column
+
+  -> adjusted p-values that account for the search
+
+  (note need to increase the number of permutation replicates)
+
+
+\begin{frame}{Abuse of p-values}
+
+\vspace{-12pt}
+
+  \bbi
+\item Focusing on strict, arbitrary thresholds like 0.05
+\item Not looking at the confidence interval for the effect
+\item Ignoring multiple comparisons
+\item Turning science into true/false questions
+  \ei
+
+  \only<2->{
+
+    \centering
+    \large
+
+
+    \vspace{36pt}
+
+    But I still like p-values.
+
+  }
+
+  \only<3->{
+
+    \vspace{18pt}
+
+    It's useful to ask, ``{\hilit Could this just be noise?}''
+
+  }
+
+\note{
+  P-values are much maligned. And permutation tests are really all
+  about p-values.
+
+  But I still like them. I find it useful to ask, ``Could this all
+  just be noise?'' If the answer is ``Yes,'' maybe you shouldn't
+  bother doing much further.
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{Randomized block design}
+
+
+\end{frame}
+
+
 
 \begin{frame}[c]{Selective genotyping}
 
-\figh{Figs/sel_geno.png}{0.9}
+\figh{Figs/sel_geno.png}{0.85}
 
 \note{
   A common strategy in QTL mapping to save on the cost of genotyping
@@ -222,6 +305,21 @@
 
 
 
+\begin{frame}{Summary}
 
+  \bbi
+\item Permutation tests, when appropriate, are the most natural
+  of significance test.
+\item Permutation tests can make it easy to control for multiple
+  testing.
+\item Stratified permutation tests accommodate a common
+  non-exchangeable situtation.
+\item Many are quite negative about p-values, but I still like them.
+  \ei
+
+\note{
+  Always good to have a summary.
+}
+\end{frame}
 
 \end{document}
