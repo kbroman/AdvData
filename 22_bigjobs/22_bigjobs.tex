@@ -107,7 +107,7 @@ and suppose I noticed a simple way to speed it up.
 \note{
   It may not seem like ``big jobs'' are that big of a deal, but in my
   mind this is the only real difficulty in reproducible research.
-
+  Well, this and {\hilit collaboration}.
   Okay, there's also the difficulty that some data can't be generally
   distributed due to confidentiality issues.
 
@@ -225,6 +225,13 @@ application-level processing.}
   code. Unless the {\nhilit code} changes, in which case you {\nhilit
   do} want to re-run it (and any other code that may depend on the
   results).
+
+  I've also found it can be useful to split out parts of an R Markdown
+  document so that they can be re-used separately later. For example,
+  major figures in an analysis report would be best made through
+  separate scripts, since you might want to then incorporate them into
+  a talk or into a paper, and it can be hard to extract the relevant
+  code from a long analysis document.
 }
 \end{frame}
 
