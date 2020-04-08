@@ -266,7 +266,34 @@ if(file.exists(file)) {
   then in this chunk that is run but isn't shown.
 
   You need to be very careful about dependencies.
+
+  {\tt saveRDS()} and {\tt readRDS()} are also really useful, for
+  saving and loading single objects
 }
+\end{frame}
+
+
+
+\begin{frame}<handout:0>[c,fragile]{Manual caching}
+
+\addtocounter{framenumber}{-1}
+
+
+\begin{lstlisting}
+```{r a_code_chunk}
+file <- "cache/myfile.rds"
+
+if(file.exists(file)) {
+  object <- readRDS(file)
+} else{
+
+  ....
+
+  saveRDS(object, file)
+}
+```
+\end{lstlisting}
+
 \end{frame}
 
 
