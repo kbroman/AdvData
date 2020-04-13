@@ -1,6 +1,8 @@
 LEC = 23_modelbuilding
 
-#FIGS =
+FIGS = Figs/pheno.pdf \
+	   Figs/geneticmap.pdf \
+	   Figs/genodata.pdf
 
 include ../Makefile_lectures.mk
 
