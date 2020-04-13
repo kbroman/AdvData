@@ -5,7 +5,8 @@ FIGS = Figs/pheno.pdf \
 	   Figs/genodata.pdf \
 	   Figs/alod.pdf \
 	   Figs/meffects.pdf \
-	   Figs/epistasis_bc.pdf
+	   Figs/epistasis_bc.pdf \
+	   Figs/alod_c4.pdf
 
 include ../Makefile_lectures.mk
 
