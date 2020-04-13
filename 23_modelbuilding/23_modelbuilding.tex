@@ -252,25 +252,20 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \begin{frame}{Target}
 
 
-\hfill \begin{minipage}{10in}
-\begin{itemize}
-\itemsep24pt
+\bbi
+
 \item Selection of a model includes two types of errors:
-
-
-\begin{quote} \begin{itemize}
+\bi
 \item Miss important terms (QTLs or interactions)
 \item Include extraneous terms
-\end{itemize} \end{quote}
+\ei
 
 \item Unlike in hypothesis testing, we can make {\hilit both errors} at
 the same time.
 
-\item {\color{myyellow} Identify as many correct terms as possible, while
-{\hilit controlling the rate of inclusion of extraneous terms}.}
-
-\end{itemize}
-\end{minipage}
+\item {\hilit Identify as many correct terms as possible, while \\
+{\vhilit controlling the rate of inclusion of extraneous terms}.}
+\ei
 
 \end{frame}
 
@@ -288,6 +283,9 @@ the same time.
 \bbi
 
 \item Goal: identify the major players
+  \bi
+  \item {\vhilit not} prediction
+  \ei
 
 \item A continuum of ordinal-valued covariates (the genetic loci)
 
@@ -323,11 +321,13 @@ the same time.
 \item Reduce residual variation
 \item Conditional LOD score:
 
-\hspace{1in} $ \displaystyle{\mathsf{\lod(q_2 \ | \ q_1) = \text{log}_{10}
+\hspace{3em} $ \displaystyle{\mathsf{\lod(q_2 \ | \ q_1) = \text{log}_{10}
     \left\{\frac{\text{Pr}(\text{data} \ | \ q_1, q_2)}{
     \text{Pr}(\text{data} \ | \ q_1)}\right\} }}$
 \ei
 
+
+\bigskip
 
 \item Piece together the putative QTL from the 1d and 2d scans
 
@@ -340,6 +340,8 @@ the same time.
 \ei
 
 \end{frame}
+
+
 
 
 
