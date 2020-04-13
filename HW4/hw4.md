@@ -10,9 +10,10 @@ The goal of this project is to build a model for predicting diabetes.
 We will consider data from the [NHANES
 survey](https://wwwn.cdc.gov/nchs/nhanes/).
 
-I've extracted data for a set of 16 predictor variables for the first
-three waves of the survey (1999-2003). We will define diabetes to be
-having been diagnosed or having fasting glucose >= 126 mg/dL.
+I extracted data for a set of 16 predictor variables for the first
+three waves of the survey (1999-2003). I defined diabetes to be
+having been diagnosed or having fasting glucose >= 126 mg/dL. I
+excluded subjects < 20 years old, or pregnant.
 
 In the zip file [`hw4_data.zip`](hw4_data.zip), there is a
 data file plus a data dictionary, both as CSV files.
