@@ -24,14 +24,14 @@ example age started smoking and household income.
 
 1. Build a model to predict diabetes from the other variables, for
    example using logistic regression, a nearest neighbor classifier,
-   or other means. Discuss your choice.
+   or other means. Discuss your choices.
 
 
 2. Discuss your handling of missing data.
 
 
 3. Assess the performance of your predictions. What are the
-   specificity and sensitivity, or the true and false positive rates?
+   specificity and sensitivity?
    Use separate training and test sets, or k-fold cross validation.
 
 
