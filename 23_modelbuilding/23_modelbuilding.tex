@@ -159,222 +159,6 @@ Sugiyama et al. Genomics 71:70-77, 2001
 
 
 
-\begin{frame}[c]{2-dim, 2-QTL scan}
-
-\hfill \begin{minipage}[t]{10in}
-For all pairs of positions, fit the following models:
-
-\vspace{10mm}
-
-\hfill
-\begin{minipage}{9in}
-{\lolit
-$\mathsf{\text{H}_f: y = \mu + \beta_1 q_1 + \beta_2 q_2 +
-      \gamma q_1 q_2 + \epsilon}$
-
-\vspace{5mm}
-
-$\mathsf{\text{H}_a: y = \mu + \beta_1 q_1 + \beta_2 q_2 +
-      + \epsilon}$
-
-\vspace{5mm}
-
-$\mathsf{\text{H}_1: y = \mu + \beta_1 q_1 + \epsilon}$
-
-\vspace{5mm}
-
-$\mathsf{\text{H}_0: y = \mu + \epsilon}$
-
-}
-\end{minipage}
-
-\vspace{20mm}
-
-log$_{\mathsf{10}}$ likelihoods:
-
-\vspace{5mm}
-
-\hfill
-\begin{minipage}{9in}
-{\lolit
-
-$\mathsf{l_f(s,t)}$ \hspace{2cm}
-$\mathsf{l_a(s,t)}$ \hspace{2cm}
-$\mathsf{l_1(s)}$ \hspace{2cm}
-$\mathsf{l_0}$ \hspace{2cm}
-}
-\end{minipage}
-
-
-\end{minipage}
-
-
-\end{frame}
-
-
-
-
-
-
-\begin{frame}{2-dim, 2-QTL scan}
-
-
-LOD scores:
-
-\vspace{5mm}
-
-\hspace{1cm}
-\begin{minipage}{5in}
-{\lolit
-\begin{eqnarray*}
-\mathsf{\lod_f(s,t)}& = &\mathsf{l_f(s,t) - l_0} \\[24pt]
-\mathsf{\lod_a(s,t)}& = &\mathsf{l_a(s,t) - l_0} \\[24pt]
-\mathsf{\lod_i(s,t)}& = &\mathsf{l_f(s,t) - l_a(s,t)} \\[24pt]
-\mathsf{\lod_1(s)}&   = &\mathsf{l_1(s) - l_0} \\[24pt]
-\end{eqnarray*}
-}
-
-\end{minipage}
-\end{frame}
-
-
-
-
-
-
-
-\begin{frame}[c]{Results: $\mathsf{\lod_i}$ and $\mathsf{\lod_f}$}
-
-\figw{Figs/2dscan_allchr.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-\begin{frame}[c]{Results: $\mathsf{\lod_i}$ and $\mathsf{\lod_f}$}
-
-\figw{Figs/2dscan_selchr.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-\begin{frame}{Summaries}
-
-\hfill \begin{minipage}[t]{10in}
-Consider each pair of chromosomes, {\lolit $\mathsf{(j, k)}$}, \\
-and let {\lolit $\mathsf{c(s)}$} denote the chromosome for
-  position {\lolit $\mathsf{s}$}.
-
-\bigskip
-\footnotesize
-\begin{minipage}{6in}
-{\lolit
-\begin{eqnarray*}
-\mathsf{\M_f(j,k)}& = &\mathsf{ \max_{c(s)=j, c(t)=k} \lod_f(s,t)} \\
-\mathsf{\M_a(j,k)}& = &\mathsf{ \max_{c(s)=j, c(t)=k} \lod_a(s,t)} \\
-\mathsf{\M_1(j,k)}& = &\mathsf{ \max_{c(s)=j \text{ or } k} \lod_1(s)} \\[12pt]
-\mathsf{\M_i(j,k)}& = &\mathsf{ \M_f(j,k) - \M_a(j,k)}\\
-\mathsf{\M_{fv1}(j,k)}& = &\mathsf{ \M_f(j,k) - \M_1(j,k)}\\
-\mathsf{\M_{av1}(j,k)}& = &\mathsf{ \M_a(j,k) - \M_1(j,k)}
-\end{eqnarray*}
-}
-\end{minipage}
-\end{minipage}
-
-\end{frame}
-
-
-
-
-
-
-
-\begin{frame}[c]{Results: $\mathsf{\lod_i}$ and $\mathsf{\lod_{fv1}}$}
-
-\figw{Figs/2dscan_selchr_fv1.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-\begin{frame}{Thresholds}
-
-
-\hfill \begin{minipage}[t]{9.5in}
-A pair of chromosomes {\lolit $\mathsf{(j,k)}$} is considered interesting if:
-
-\bigskip
-
-{\lolit
-\centerline{$ \mathsf{\M_f(j,k)} > \mathsf{ T_f }$ \hspace{5mm} {\hilit and }
-\hspace{5mm}
-{\hilit \{} $ \mathsf{\M_{fv1}(j,k)} > \mathsf{ T_{fv1} }$
-{\hilit or }
-$ \mathsf{\M_i(j,k)} > \mathsf{ T_i }$  {\hilit \}}}
-
-\bigskip
-
-\centerline{\hilit or }
-
-\bigskip
-
-\centerline{$ \mathsf{\M_a(j,k)} > \mathsf{ T_a }$ \hspace{5mm} {\hilit and }
-\hspace{5mm}
-$ \mathsf{\M_{av1}(j,k)} > \mathsf{ T_{av1} }$ }
-}
-
-
-\bigskip
-
-where the thresholds {\lolit $\mathsf{(T_f, T_{fv1}, T_i, T_a,
-    T_{av1})}$} are determined by a permutation test with a 2d scan
-
-\end{minipage} \hspace{0.5in}
-
-
-\end{frame}
-
-
-
-
-
-
-
-
-\begin{frame}[fragile]{2d scan summary}
-
-
-
-\begin{verbatim}
-                   pos1f pos2f lod.full lod.fv1 lod.int
-            c1:c4   71.3  30.0    14.36    6.78    0.27
-            c6:c15  55.0  20.5     6.91    4.95    2.92
-            c1:c1   39.3  78.3     5.10    1.58    0.09
-
-
-                   pos1a pos2a  lod.add lod.av1
-            c1:c4   68.3  30.0    14.09    6.50
-            c6:c15  24.0  22.5     3.99    2.03
-            c1:c1   48.3  79.3     5.02    1.50
-\end{verbatim}
-
-
-
-\end{frame}
-
 
 
 
@@ -394,57 +178,6 @@ where the thresholds {\lolit $\mathsf{(T_f, T_{fv1}, T_i, T_a,
 
 
 
-\begin{frame}[c]{Chr 1: $\mathsf{\lod_i}$ and $\mathsf{\lod_{av1}}$}
-
-\figw{Figs/2dscan_chr1.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-\begin{frame}{Hypothesis testing?}
-
-\vspace{2cm}
-
-
-\hfill \begin{minipage}[t]{10in}
-\begin{itemize}
-\itemsep20mm
-\item In the past, QTL mapping has been regarded as a task of
-  {\hilit hypothesis testing}.
-
-\vspace{10mm}
-
-\hspace{15mm} {\lolit Is this a QTL?}
-
-\vspace{10mm}
-
-Much of the focus has been on adjusting for test multiplicity.
-
-\item It is better to view the problem as one of {\hilit model
-  selection}.
-
-\vspace{10mm}
-
-\hspace{15mm} {\lolit What set of QTL are well supported?}
-
-\hspace{15mm} {\lolit Is there evidence for QTL-QTL
-  interactions?}
-
-\vspace{10mm}
-
-{\hilit Model} $\mathsf{=}$ a defined set of QTL and QTL-QTL interactions
-\\
-(and possibly covariates and QTL-covariate interactions).
-
-\end{itemize}
-\end{minipage}
-
-\end{frame}
 
 
 
@@ -460,7 +193,7 @@ Much of the focus has been on adjusting for test multiplicity.
   \begin{columns}
     \column{0.5\textwidth}
 
-\bbi
+\bi
 \item Class of models
     \bi
 \item Additive models
@@ -468,6 +201,8 @@ Much of the focus has been on adjusting for test multiplicity.
 \item + higher-order interactions
 \item Regression trees
 \ei
+
+\bigskip
 
 \item Model fit
  \bi
@@ -482,14 +217,16 @@ Much of the focus has been on adjusting for test multiplicity.
 
 \column{0.5\textwidth}
 
-\bbi
+\bi
 \item Model comparison
 \bi
 \item Estimated prediction error
 \item AIC, BIC, penalized likelihood
 \item Bayes
-\item
+\item[]
 \ei
+
+\bigskip
 
 \item Model search
 \bi
