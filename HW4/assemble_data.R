@@ -152,16 +152,31 @@ for(i in seq_along(dat)) {
     combined[[i]] <- do.call("rbind", dat[[i]])
 }
 
-# find the rows that are in all datasets
-seqn <- lapply(combined, "[[", "SEQN")
-tab <- table(unlist(seqn))
-in_all <- names(tab)[tab==11]
 
-# make the IDs the row names
-# subset to the subjects in all datasets
+# not missing diabetes individuals
+diq <- setNames(combined$DIQ$DIQ010, combined$DIQ$SEQN)
+has_diabetes_data <- names(diq)[!is.na(diq) & diq <= 2]
+
+glu <- setNames(combined$LAB10AM$LBXGLUSI, combined$LAB10AM$SEQN)
+has_glu <- names(glu)[!is.na(glu)]
+
+keep <- unique(c(has_diabetes_data, has_glu))
+
+# drop and pad the datasets
 for(i in seq_along(combined)) {
-    rownames(combined[[i]]) <- combined[[i]][,"SEQN"]
-    combined[[i]] <- combined[[i]][in_all,]
+    # drop individuals that don't have diabetes phenotype
+    combined[[i]] <- combined[[i]][combined[[i]]$SEQN %in% keep,]
+
+    # pad with the missing individuals
+    to_add <- keep[!(keep %in% combined[[i]]$SEQN)]
+    x <- matrix(nrow=length(to_add), ncol=ncol(combined[[i]]))
+    colnames(x) <- colnames(combined[[i]])
+    x <- as.data.frame(x)
+    x$SEQN <- to_add
+    combined[[i]] <- rbind(combined[[i]], x)
+
+    rownames(combined[[i]]) <- combined[[i]]$SEQN
+    combined[[i]] <- combined[[i]][keep,]
 }
 
 # paste them all together
@@ -175,17 +190,33 @@ combined <- combined[,c("SEQN", data_dictionary$variable_name)]
 # drop pregnant
 combined <- combined[is.na(combined$SEQ060) | combined$SEQ060 != 1,]
 
+# drop those <20
+combined <- combined[combined$RIDAGEYR >= 20,]
+
 # alcohol > 365 -> NA
 combined$ALQ120Q[!is.na(combined$ALQ120Q) & combined$ALQ120Q>365] <- NA
 
 # BPQ020 == 9 -> NA
 combined$BPQ020[!is.na(combined$BPQ020) & combined$BPQ020==9] <- NA
 
-# MCQ250A == 9 -> NA
-combined$MCQ250A[!is.na(combined$MCQ250A) & combined$MCQ250A==9] <- NA
+# MCQ250A == 7 or 9 -> NA
+combined$MCQ250A[!is.na(combined$MCQ250A) & combined$MCQ250A>=7] <- NA
+
+# age smoking  > 800 -> NA
+combined$SMD030[!is.na(combined$SMD030) & combined$SMD030 > 150] <- NA
+
+# activity >= 7 -> NA
+combined$PAQ180[!is.na(combined$PAQ180) & combined$PAQ180>=7] <- NA
+
+# education >= 7 -> NA
+combined$DMDEDUC2[!is.na(combined$DMDEDUC2) & combined$DMDEDUC2>=7] <- NA
+
+# household income >=77 -> NA
+combined$INDHHINC[!is.na(combined$INDHHINC) & combined$INDHHINC>=77] <- NA
+
 
 # diabetes: DIQ010 not missing and == 1
-# LBXGLUSI >
+# LBXGLUSI >= 7.0
 
 # better names for the variables
 better_names <-
@@ -200,7 +231,7 @@ better_names <-
       DMDEDUC2="education",
       INDHHINC="household_income",
       LBXTC="cholesterol",
-      MCQ250A="relatives",
+      MCQ250A="diabetic_relatives",
       PAQ180="activity",
       RIAGENDR="gender",
       RIDAGEYR="age",
@@ -236,13 +267,30 @@ combined$diabetic[!is.na(combined$diabetic) & combined$diabetic>2] <- NA
 combined$diabetic[!is.na(combined$glucose) & combined$glucose >= 7] <- 1
 
 # update data dictionary
-data_dictionary[18,2] <- "diabetic (1=yes, 2=no), based on doctor diagnosis or glucose >= 126 mg/dL"
+data_dictionary[18,2] <- "diabetic, based on doctor diagnosis or glucose >= 126 mg/dL"
 data_dictionary[18,3:8] <- NA
+
 
 # drop columns
 combined <- combined[,1:18]
 data_dictionary <- data_dictionary[1:18,]
 combined <- combined[!is.na(combined$diabetic),]
+
+# add codes
+data_dictionary <- cbind(data_dictionary,
+                         codes=c(NA,NA,NA,NA,NA,NA,NA,
+                                 "1=yes, 2=no",
+                                 "1=less than 9th grade, 2=9-11th, 3=high school, 4=some college, 5=college grad",
+                                 "1=<$5k,2=$5-10k,3=$10-15k,4=$15-20k,5=$20-25k,6=$25-35k,7=$35-45k,8=$45-55k,9=$55-65k,10=$65-75k,11=>$75k,12=>$20k,13=$<20k",
+                                 NA, "1=yes, 2=no",
+                                 "1=does not walk much; 2=walks a lot; 3=light work; 4=heavy work",
+                                 "1=female, 2=male",
+                                 NA, "1=mexican american, 2=other hispanic, 3=non-hispanic white, 4=non-hispanic black, 5=other",
+                                 NA, "1=yes, 2=no"))
+
+
+combined$id <- as.numeric(combined$id)
+data_dictionary <- data_dictionary[,c(1,9,2:8)]
 
 # save to CSV files
 write.table(combined, "nhanes_diabetes.csv", row.names=FALSE, col.names=TRUE,
