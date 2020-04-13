@@ -362,7 +362,6 @@ the same time.
 
 \begin{frame}[fragile,c]{Drop-one-QTL table}
 
-
 \begin{verbatim}
                                   df    LOD   %var
                 1@68.3             1   6.30   11.0
@@ -372,27 +371,21 @@ the same time.
                 6@61.0 : 15@17.5   1   5.68    9.9
 \end{verbatim}
 
-
-
-
 \end{frame}
 
+
+
+
+
+
 \begin{frame}{Automation}
-
-
-\hfill \begin{minipage}{10in}
-\begin{itemize}
-\itemsep24pt
-
+\bbi
 \item Assistance to non-specialists
 
 \item Understanding performance
 
 \item Many phenotypes
-
-\end{itemize}
-\end{minipage}
-
+\ei
 
 \end{frame}
 
@@ -404,142 +397,49 @@ the same time.
 \begin{frame}{Additive QTL}
 
 
-\hfill \begin{minipage}{10in}
+\vspace{-2mm}
 
-Simple situation:
+\bi
+\item[] \hspace{-2em} Simple situation:
 
-\lolit
-\begin{itemize}
+\bi
 \item Dense markers
 \item Complete genotype data
 \item No epistasis
+\ei \ei
 
-\end{itemize}
-
-\vspace{2cm}
+\bigskip \bigskip
 
 \centerline{
 $\mathsf{y  = \mu + \sum \beta_j \, q_j + \epsilon}$ \hspace{1cm}
        {\hilit which $\mathsf{\beta_j \ne 0}$?}
 }
 
-\vspace{2cm}
+\bigskip \bigskip
 
-{\color{myyellow}
+{\hilit
 $\mathsf{ \plod(\gamma) = \lod(\gamma) -
     {\hilit T} \, |\gamma| }$
 }
 
 
-\end{minipage}
+\bigskip
 
-\end{frame}
-
-
-
-
-
-
-\begin{frame}{Additive QTL}
-
-
-\hfill \begin{minipage}{10in}
-
-Simple situation:
-
-\lolit
-\begin{itemize}
-\item Dense markers
-\item Complete genotype data
-\item No epistasis
-
-\end{itemize}
-
-\vspace{2cm}
-
-\centerline{
-$\mathsf{y  = \mu + \sum \beta_j \, q_j + \epsilon}$ \hspace{1cm}
-       {\hilit which $\mathsf{\beta_j \ne 0}$?}
-}
-
-\vspace{2cm}
-
-{\color{myyellow}
-$\mathsf{ \plod(\gamma) = \lod(\gamma) -
-    {\hilit T} \, |\gamma| }$
-}
-
-\vspace{2cm}
-
-\begin{minipage}[t]{1.4in}
-\vspace*{0mm}
-
+\only<2>{
 0 vs 1 QTL:
-\end{minipage}
-\begin{minipage}[t]{6in}
-\vspace*{0mm}
 
-\lolit
-$\mathsf{\plod(\emptyset) = 0}$ \\[16pt]
-$\mathsf{\plod(\{\lambda\}) =
+{\lolit
+\qquad $\mathsf{\plod(\emptyset) = 0}$ \\
+\qquad $\mathsf{\plod(\{\lambda\}) =
     \lod(\lambda) - {\hilit T}}$
-\end{minipage}
+} }
 
 
-\end{minipage}
-
-
-
-\end{frame}
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Additive QTL}
-
-
-\hfill \begin{minipage}{10in}
-
-Simple situation:
-
-\lolit
-\begin{itemize}
-\item Dense markers
-\item Complete genotype data
-\item No epistasis
-
-\end{itemize}
-
-\vspace{2cm}
-
-\centerline{
-$\mathsf{y  = \mu + \sum \beta_j \, q_j + \epsilon}$ \hspace{1cm}
-       {\hilit which $\mathsf{\beta_j \ne 0}$?}
-}
-
-\vspace{2cm}
-
-{\color{myyellow}
-$\mathsf{ \plod(\gamma) = \lod(\gamma) -
-    {\hilit T} \, |\gamma| }$
-}
-
-\vspace{2cm}
-
-\begin{minipage}[t]{10in}
-\vspace*{0mm}
-
-For the mouse genome: \\[6pt]
-\hspace*{0.5in} $\mathsf{\hilit T}$ = {\lolit
+\only<3|handout 0>{
+For the mouse genome: \\
+\qquad $\mathsf{\hilit T}$ = {\lolit
   2.69} (BC) or {\lolit 3.52} (F$_{\mathsf{2}}$)
-\end{minipage}
-
-\end{minipage}
+}
 
 
 
@@ -597,7 +497,7 @@ $\mathsf{y  = \mu + \sum \beta_j \, q_j + \sum \gamma_{jk} \, q_j \,
 
 \vspace{3cm}
 
-{\color{myyellow}
+{\hilit
 $\mathsf{ \plod(\gamma) = \lod(\gamma) -
     {\hilit T_m} \, |\gamma|_m - {\hilit T_i} \, |\gamma|_i }$
 }
