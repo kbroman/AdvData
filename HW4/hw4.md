@@ -39,7 +39,7 @@ example age started smoking and household income.
    are most important for predicting diabetes?
 
 
-## Related work
+### Related work
 
 - Yu et al. (2010) Application of support vector machine modeling for
   prediction of common diseases: the case of diabetes and pre-diabetes.
