@@ -19,7 +19,7 @@ In the zip file [`hw4_data.zip`](hw4_data.zip), there is a
 data file plus a data dictionary, both as CSV files.
 
 Note that some of the variables have some strange categories, for
-example age started smoking and household income.
+example `age_smoking` and `household_income`.
 
 
 
