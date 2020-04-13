@@ -24,6 +24,7 @@
 }
 
 \newcommand{\lod}{\text{LOD}}
+\newcommand{\plod}{\text{pLOD}}
 \newcommand{\M}{\text{M}}
 
 \begin{document}
@@ -268,25 +269,21 @@ LOD scores:
 
 \begin{frame}{Summaries}
 
-\vspace{15mm}
-
-
 \hfill \begin{minipage}[t]{10in}
 Consider each pair of chromosomes, {\lolit $\mathsf{(j, k)}$}, \\
 and let {\lolit $\mathsf{c(s)}$} denote the chromosome for
   position {\lolit $\mathsf{s}$}.
 
-\vspace{5mm}
-
-\hspace{1in}
+\bigskip
+\footnotesize
 \begin{minipage}{6in}
 {\lolit
 \begin{eqnarray*}
-\mathsf{\M_f(j,k)}& = &\mathsf{ \max_{c(s)=j, c(t)=k} \lod_f(s,t)} \\[12pt]
-\mathsf{\M_a(j,k)}& = &\mathsf{ \max_{c(s)=j, c(t)=k} \lod_a(s,t)} \\[12pt]
-\mathsf{\M_1(j,k)}& = &\mathsf{ \max_{c(s)=j \text{ or } k} \lod_1(s)} \\[36pt]
-\mathsf{\M_i(j,k)}& = &\mathsf{ \M_f(j,k) - \M_a(j,k)}\\[12pt]
-\mathsf{\M_{fv1}(j,k)}& = &\mathsf{ \M_f(j,k) - \M_1(j,k)}\\[12pt]
+\mathsf{\M_f(j,k)}& = &\mathsf{ \max_{c(s)=j, c(t)=k} \lod_f(s,t)} \\
+\mathsf{\M_a(j,k)}& = &\mathsf{ \max_{c(s)=j, c(t)=k} \lod_a(s,t)} \\
+\mathsf{\M_1(j,k)}& = &\mathsf{ \max_{c(s)=j \text{ or } k} \lod_1(s)} \\[12pt]
+\mathsf{\M_i(j,k)}& = &\mathsf{ \M_f(j,k) - \M_a(j,k)}\\
+\mathsf{\M_{fv1}(j,k)}& = &\mathsf{ \M_f(j,k) - \M_1(j,k)}\\
 \mathsf{\M_{av1}(j,k)}& = &\mathsf{ \M_a(j,k) - \M_1(j,k)}
 \end{eqnarray*}
 }
@@ -294,7 +291,6 @@ and let {\lolit $\mathsf{c(s)}$} denote the chromosome for
 \end{minipage}
 
 \end{frame}
-
 
 
 
@@ -314,16 +310,13 @@ and let {\lolit $\mathsf{c(s)}$} denote the chromosome for
 
 
 
-
 \begin{frame}{Thresholds}
-
-\vspace{20mm}
 
 
 \hfill \begin{minipage}[t]{9.5in}
 A pair of chromosomes {\lolit $\mathsf{(j,k)}$} is considered interesting if:
 
-\vspace{25mm}
+\bigskip
 
 {\lolit
 \centerline{$ \mathsf{\M_f(j,k)} > \mathsf{ T_f }$ \hspace{5mm} {\hilit and }
@@ -332,11 +325,11 @@ A pair of chromosomes {\lolit $\mathsf{(j,k)}$} is considered interesting if:
 {\hilit or }
 $ \mathsf{\M_i(j,k)} > \mathsf{ T_i }$  {\hilit \}}}
 
-\vspace{36pt}
+\bigskip
 
 \centerline{\hilit or }
 
-\vspace{36pt}
+\bigskip
 
 \centerline{$ \mathsf{\M_a(j,k)} > \mathsf{ T_a }$ \hspace{5mm} {\hilit and }
 \hspace{5mm}
@@ -344,7 +337,7 @@ $ \mathsf{\M_{av1}(j,k)} > \mathsf{ T_{av1} }$ }
 }
 
 
-\vspace{25mm}
+\bigskip
 
 where the thresholds {\lolit $\mathsf{(T_f, T_{fv1}, T_i, T_a,
     T_{av1})}$} are determined by a permutation test with a 2d scan
@@ -354,9 +347,15 @@ where the thresholds {\lolit $\mathsf{(T_f, T_{fv1}, T_i, T_a,
 
 \end{frame}
 
-\begin{frame}{2d scan summary}
 
-\vspace{40mm}
+
+
+
+
+
+
+\begin{frame}[fragile]{2d scan summary}
+
 
 
 \begin{verbatim}
@@ -376,51 +375,36 @@ where the thresholds {\lolit $\mathsf{(T_f, T_{fv1}, T_i, T_a,
 
 \end{frame}
 
-\begin{frame}{Estimated effects}
-
-\vfill
-
-\centerline{\includegraphics{Figs/ieffects.pdf}}
-
-
-\end{document}
 
 
 
+
+
+
+\begin{frame}[c]{Estimated effects}
+
+\figw{Figs/ieffects.pdf}{1.0}
 
 \end{frame}
 
-\begin{frame}{Chr 1: $\mathsf{\lod_i}$ and $\mathsf{\lod_{av1}}$}
-
-\vfill
-
-\centerline{\includegraphics{Figs/2dscan_chr1.pdf}}
 
 
-%\end{frame}
-%
-%\begin{frame}{%Summaries}
-%
-%\vspace{15mm}
-%
-%
-%
-%\setlength{\tabcolsep}{0.15in}
-%\renewcommand{\arraystretch}{1.5}
-%\begin{center} \begin{tabular}{cccccccccccc} \\ \hline
-%  chr      & \hspace{5mm} & \multicolumn{2}{c}{positions} & $\mathsf{\lod_f}$
-%& $\mathsf{\lod_{fv1}}$ & $\mathsf{\lod_i}$ &
-%\hspace{5mm} &  \multicolumn{2}{c}{positions} & $\mathsf{\lod_a}$
-%& $\mathsf{\lod_{av1}}$ \\ \hline
-%1 $\times$ 4 & & 68 & 30 &  14.04  &  \color{myhotpink} 6.43 &  0.295  &  &  68 & 30 &
-%13.74 &  \color{myhotpink} 6.14 \\
-%6 $\times$ 15 && 62 & 18 &   7.89  &  \color{myhotpink} 5.96 & \color{myhotpink} 3.960  &  &  25 & 20 &
-%3.93 &   2.00 \\ \hline
-%\end{tabular} \end{center}
 
 
+
+
+
+\begin{frame}[c]{Chr 1: $\mathsf{\lod_i}$ and $\mathsf{\lod_{av1}}$}
+
+\figw{Figs/2dscan_chr1.pdf}{1.0}
 
 \end{frame}
+
+
+
+
+
+
 
 \begin{frame}{Hypothesis testing?}
 
@@ -462,50 +446,50 @@ Much of the focus has been on adjusting for test multiplicity.
 
 \end{frame}
 
-\begin{frame}{Model selection}
 
 
-\hspace{0.5in}
-\begin{minipage}[t]{4in}
-\vspace*{0mm}
 
-\begin{itemize}
+
+
+
+
+
+\begin{frame}[c]{Model selection}
+
+
+  \begin{columns}
+    \column{0.5\textwidth}
+
+\bbi
 \item Class of models
-    \begin{itemize}
+    \bi
 \item Additive models
 \item + pairwise interactions
 \item + higher-order interactions
 \item Regression trees
-\end{itemize}
-
-\vspace{15mm}
+\ei
 
 \item Model fit
- \begin{itemize}
+ \bi
 \item Maximum likelihood
 \item Haley-Knott regression
 \item extended Haley-Knott
 \item Multiple imputation
 \item MCMC
-\end{itemize}
+\ei
 
-\end{itemize}
+\ei
 
-\end{minipage} \hspace{1in}
-\begin{minipage}[t]{4in}
-\vspace*{0mm}
+\column{0.5\textwidth}
 
-\begin{itemize}
+\bbi
 \item Model comparison
-\begin{itemize}
+\bi
 \item Estimated prediction error
 \item AIC, BIC, penalized likelihood
 \item Bayes
 \item
-\end{itemize} }
-
-\vspace{15mm}
-
+\ei
 
 \item Model search
 \bi
@@ -513,15 +497,20 @@ Much of the focus has been on adjusting for test multiplicity.
 \item Backward elimination
 \item Stepwise selection
 \item Randomized algorithms
-\end{itemize}
+\ei
 
-
-\end{itemize}
-
-\end{minipage}
-
+\ei
+\end{columns}
 
 \end{frame}
+
+
+
+
+
+
+
+
 
 \begin{frame}{Target}
 
@@ -543,30 +532,23 @@ the same time.
 \item {\color{myyellow} Identify as many correct terms as possible, while
 {\hilit controlling the rate of inclusion of extraneous terms}.}
 
-%\item You {\hilit can't know} the performance of your procedure with your
-%data---you need to know the truth.
-%
-%\item You {\color{myyellow} can know}:
-%
-%\begin{quote} \begin{itemize}
-%\setlength{\rightskip}{0pt plus 1fil} % makes ragged right
-%\item How a particular procedure performs in simulated cases
-%\item How a procedure performs in simulated data close to what you've inferred
-%\end{itemize} \end{quote}
-
-
 \end{itemize}
 \end{minipage}
 
-
 \end{frame}
+
+
+
+
+
+
+
+
 
 \begin{frame}{What is special here?}
 
 
-\hfill \begin{minipage}{10in}
-\begin{itemize}
-\itemsep24pt
+\bbi
 
 \item Goal: identify the major players
 
@@ -574,72 +556,72 @@ the same time.
 
 \item Association among the covariates
 
-\begin{itemize}
+\bi
 \item Loci on different chromosomes are independent
 \item Along chromosome, a very simple (and known) correlation
   structure
-\end{itemize}
+\ei
 
-\end{itemize}
-\end{minipage}
-
-
-
-
+\ei
 
 \end{frame}
+
+
+
+
+
+
+
+
+
 
 \begin{frame}{Exploratory methods}
 
 
-\hfill
-\begin{minipage}{10in}
-\begin{itemize}
-\itemsep36pt
+\bbi
 \item Condition on a large-effect QTL
 
 
-\begin{itemize}
+\bi
 \item Reduce residual variation
 \item Conditional LOD score:
-
-\vspace{1cm}
 
 \hspace{1in} $ \displaystyle{\mathsf{\lod(q_2 \ | \ q_1) = \text{log}_{10}
     \left\{\frac{\text{Pr}(\text{data} \ | \ q_1, q_2)}{
     \text{Pr}(\text{data} \ | \ q_1)}\right\} }}$
-\end{itemize}
+\ei
+
 
 \item Piece together the putative QTL from the 1d and 2d scans
 
-\begin{itemize}
+\bi
 \item Omit loci that no longer look interesting (drop-one-at-a-time analysis)
 \item Study potential interactions among the identified loci
 \item Scan for additional loci (perhaps allowing interactions), conditional on these
-\end{itemize}
+\ei
 
-\end{itemize}
-\end{minipage}
-
-
-
-
+\ei
 
 \end{frame}
 
-\begin{frame}{Controlling for chr 4}
-
-\vfill
-
-\centerline{\includegraphics{Figs/alod_c4.pdf}}
 
 
 
+\begin{frame}[c]{Controlling for chr 4}
 
+\figw{Figs/alod_c4.pdf}{1.0}
 
 \end{frame}
 
-\begin{frame}{Drop-one-QTL table}
+
+
+
+
+
+
+
+
+\begin{frame}[fragile]{Drop-one-QTL table}
 
 
 \vspace{40mm}
@@ -679,6 +661,10 @@ the same time.
 \end{frame}
 
 
+
+
+
+
 \begin{frame}{Additive QTL}
 
 
@@ -709,15 +695,14 @@ $\mathsf{ \plod(\gamma) = \lod(\gamma) -
 }
 
 
-
-
 \end{minipage}
-
-
 
 \end{frame}
 
-\addtocounter{page}{-1}
+
+
+
+
 
 \begin{frame}{Additive QTL}
 
@@ -771,6 +756,12 @@ $\mathsf{\plod(\{\lambda\}) =
 
 \end{frame}
 
+
+
+
+
+
+
 \addtocounter{page}{-1}
 
 \begin{frame}{Additive QTL}
@@ -819,6 +810,13 @@ For the mouse genome: \\[6pt]
 
 \end{frame}
 
+
+
+
+
+
+
+
 \begin{frame}{Experience}
 
 
@@ -844,6 +842,12 @@ For the mouse genome: \\[6pt]
 
 
 \end{frame}
+
+
+
+
+
+
 
 \begin{frame}{Epistasis}
 
@@ -875,9 +879,12 @@ $\mathsf{ \plod(\gamma) = \lod(\gamma) -
 
 \end{minipage}
 
-
-
 \end{frame}
+
+
+
+
+
 
 \begin{frame}{Idea 1}
 
@@ -899,6 +906,12 @@ Imagine there are two additive QTL and consider a 2d, 2-QTL scan.
 
 
 \end{frame}
+
+
+
+
+
+
 
 \addtocounter{page}{-1}
 
@@ -932,6 +945,12 @@ For the mouse genome: \\[12pt]
 
 \end{frame}
 
+
+
+
+
+
+
 \begin{frame}{Idea 2}
 
 
@@ -952,6 +971,12 @@ Imagine there is one QTL and consider a 2d, 2-QTL scan.
 
 
 \end{frame}
+
+
+
+
+
+
 
 \addtocounter{page}{-1}
 
@@ -983,36 +1008,25 @@ For the mouse genome: \\[12pt]
 
 \end{minipage}
 
+\end{frame}
 
 
 
 
 
+\begin{frame}[c]{Models as graphs}
 
-
+\figw{Figs/models.pdf}{1.0}
 
 \end{frame}
 
-\begin{frame}{Models as graphs}
-
-\vfill
-
-\centerline{\includegraphics{Figs/models.pdf}}
 
 
 
 
+\begin{frame}[c]{Results}
 
-
-
-\end{frame}
-
-\begin{frame}{Results}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models1.pdf}}
+\figw{Figs/hyper_models1.pdf}{1.0}
 
 
 
@@ -1025,7 +1039,7 @@ For the mouse genome: \\[12pt]
 \vfill
 
 
-\centerline{\includegraphics{Figs/hyper_models2.pdf}}
+\figw{Figs/hyper_models2.pdf}{1.0}
 
 
 
@@ -1038,7 +1052,7 @@ For the mouse genome: \\[12pt]
 \vfill
 
 
-\centerline{\includegraphics{Figs/hyper_models3.pdf}}
+\figw{Figs/hyper_models3.pdf}{1.0}
 
 
 \end{frame}
@@ -1048,12 +1062,20 @@ For the mouse genome: \\[12pt]
 \vfill
 
 
-\centerline{\includegraphics{Figs/lod_profile.pdf}}
+\figw{Figs/lod_profile.pdf}{1.0}
 
 
 \end{frame}
 
-\begin{frame}{Drop-one-QTL table}
+
+
+
+
+
+
+
+
+\begin{frame}[fragile]{Drop-one-QTL table}
 
 
 \vspace{40mm}
@@ -1071,145 +1093,142 @@ For the mouse genome: \\[12pt]
 \end{frame}
 
 
-\begin{frame}{Add an interaction?}
+\begin{frame}[c]{Add an interaction?}
 
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models4.pdf}}
-
-
-
-\end{frame}
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Add an interaction?}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models5.pdf}}
-
-
-
-\end{frame}
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Add an interaction?}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models6.pdf}}
-
-
-
-\end{frame}
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Add an interaction?}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models7.pdf}}
-
-
-
-\end{frame}
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Add an interaction?}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models8.pdf}}
-
-
-
+\figw{Figs/hyper_models4.pdf}{1.0}
 
 \end{frame}
 
 
-\begin{frame}{Add another QTL?}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models9.pdf}}
 
 
 
-\end{frame}
+
+
 
 
 \addtocounter{page}{-1}
 
-\begin{frame}{Add another QTL?}
+\begin{frame}[c]{Add an interaction?}
 
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models10.pdf}}
-
-
+\figw{Figs/hyper_models5.pdf}{1.0}
 
 \end{frame}
+
+
+
+
+
+
+
 
 
 \addtocounter{page}{-1}
 
-\begin{frame}{Add another QTL?}
+\begin{frame}[c]{Add an interaction?}
 
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models11.pdf}}
-
-
+\figw{Figs/hyper_models6.pdf}{1.0}
 
 \end{frame}
 
 
 
-\begin{frame}{Add a pair of QTL?}
-
-\vfill
-
-
-\centerline{\includegraphics{Figs/hyper_models12.pdf}}
 
 
 
 
 
 
-%\end{frame}
-%
-%\begin{frame}{%To do}
-%
-%
-%\hfill \begin{minipage}{10in}
-%
-%\begin{itemize}
-%\itemsep18pt
-%\item Improve search procedures
-%\item Measuring model uncertainty
-%\item Measuring uncertainty in QTL location
-%\end{itemize}
-%
-%\end{minipage}
+\addtocounter{page}{-1}
 
+\begin{frame}[c]{Add an interaction?}
 
-
-
+\figw{Figs/hyper_models7.pdf}{1.0}
 
 \end{frame}
+
+
+
+
+
+
+
+
+
+\addtocounter{page}{-1}
+
+\begin{frame}[c]{Add an interaction?}
+
+\figw{Figs/hyper_models8.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\begin{frame}[c]{Add another QTL?}
+
+\figw{Figs/hyper_models9.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+\addtocounter{page}{-1}
+
+\begin{frame}[c]{Add another QTL?}
+
+\figw{Figs/hyper_models10.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\addtocounter{page}{-1}
+
+\begin{frame}[c]{Add another QTL?}
+
+\figw{Figs/hyper_models11.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[c]{Add a pair of QTL?}
+
+\figw{Figs/hyper_models12.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+
+
 
 \begin{frame}{Summary}
 
