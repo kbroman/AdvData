@@ -441,9 +441,6 @@ For the mouse genome: \\
   2.69} (BC) or {\lolit 3.52} (F$_{\mathsf{2}}$)
 }
 
-
-
-
 \end{frame}
 
 
@@ -455,27 +452,20 @@ For the mouse genome: \\
 
 \begin{frame}{Experience}
 
-
-\hfill \begin{minipage}{10in}
-
-\begin{itemize}
-\itemsep18pt
+\bbi
 \item Controls rate of inclusion of extraneous terms
 \item Forward selection over-selects
-\item {\lolit Forward selection followed by backward elimination} works as well
-  as {\lolit MCMC}
-
+\item {\vhilit Forward selection followed by backward elimination} works as well
+  as MCMC
 \item {\hilit Need to define performance criteria}
 \item {\hilit Need large-scale simulations}
-\end{itemize}
+\ei
 
-\vspace{6cm}
+\bigskip \bigskip \bigskip
 
-
-\hfill Broman \& Speed, JRSS B 64:641-656, 2002
-
-\end{minipage}
-
+\footnotesize
+\hfill Broman \& Speed, JRSS B 64:641-656, 2002 \\
+\hfill \href{https://doi.org/10.1111/1467-9868.00354}{\tt 10.1111/1467-9868.00354}
 
 \end{frame}
 
@@ -487,15 +477,14 @@ For the mouse genome: \\
 
 \begin{frame}{Epistasis}
 
-
-\hfill \begin{minipage}{10in}
+\bigskip \bigskip \bigskip
 
 \centerline{
 $\mathsf{y  = \mu + \sum \beta_j \, q_j + \sum \gamma_{jk} \, q_j \,
     q_k + \epsilon}$
 }
 
-\vspace{3cm}
+\bigskip \bigskip \bigskip
 
 {\hilit
 $\mathsf{ \plod(\gamma) = \lod(\gamma) -
@@ -503,17 +492,13 @@ $\mathsf{ \plod(\gamma) = \lod(\gamma) -
 }
 
 
-\vspace{15mm}
+\bigskip \bigskip \bigskip
 
-\hspace{3cm} $\mathsf{\hilit T_m}$ = as chosen previously
+\hspace{3em} $\mathsf{\hilit T_m}$ = as chosen previously
 
-\vspace{15mm}
+\bigskip
 
-\hspace{3cm} $\mathsf{\hilit T_i}$ = ?
-
-
-
-\end{minipage}
+\hspace{3em} $\mathsf{\hilit T_i}$ = ?
 
 \end{frame}
 
@@ -663,59 +648,23 @@ For the mouse genome: \\[12pt]
 \begin{frame}[c]{Results}
 
 \figw{Figs/hyper_models1.pdf}{1.0}
-
-
-
-\end{frame}
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Results}
-
-\vfill
-
-
 \figw{Figs/hyper_models2.pdf}{1.0}
-
-
-
-\end{frame}
-
-\addtocounter{page}{-1}
-
-\begin{frame}{Results}
-
-\vfill
-
-
 \figw{Figs/hyper_models3.pdf}{1.0}
 
-
 \end{frame}
+
+
 
 \begin{frame}{Profile LOD curves}
 
-\vfill
-
-
 \figw{Figs/lod_profile.pdf}{1.0}
-
 
 \end{frame}
 
 
 
 
-
-
-
-
-
-\begin{frame}[fragile]{Drop-one-QTL table}
-
-
-\vspace{40mm}
-
+\begin{frame}[fragile,c]{Drop-one-QTL table}
 
 \begin{verbatim}
                                   df    LOD   %var
@@ -729,133 +678,25 @@ For the mouse genome: \\[12pt]
 \end{frame}
 
 
+
+
 \begin{frame}[c]{Add an interaction?}
 
 \figw{Figs/hyper_models4.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}[c]{Add an interaction?}
-
 \figw{Figs/hyper_models5.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}[c]{Add an interaction?}
-
 \figw{Figs/hyper_models6.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}[c]{Add an interaction?}
-
 \figw{Figs/hyper_models7.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}[c]{Add an interaction?}
-
 \figw{Figs/hyper_models8.pdf}{1.0}
 
 \end{frame}
 
 
 
-
-
-
-
-
-
-
 \begin{frame}[c]{Add another QTL?}
 
 \figw{Figs/hyper_models9.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}[c]{Add another QTL?}
-
 \figw{Figs/hyper_models10.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-
-
-
-
-\addtocounter{page}{-1}
-
-\begin{frame}[c]{Add another QTL?}
-
 \figw{Figs/hyper_models11.pdf}{1.0}
-
-\end{frame}
-
-
-
-
-
-
-\begin{frame}[c]{Add a pair of QTL?}
-
 \figw{Figs/hyper_models12.pdf}{1.0}
 
 \end{frame}
