@@ -1,0 +1,506 @@
+\documentclass[aspectratio=169,12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{18 years of R/qtl}
+\subtitle{maintaining, supporting, and sustaining \\ scientific software}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{https://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
+\\[-4pt]
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{https://kbroman.org/AdvData}{\tt kbroman.org/AdvData}}
+}
+
+\begin{document}
+
+% title slide
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+  \note{
+    This lecture is about developing and maintaining scientific
+    software, and the value of this endeavor for academic data
+    scientists.
+}
+} }
+
+
+
+\begin{frame}[c]{18 years of R/qtl}
+
+\figw{Figs/rqtl_lines_code.pdf}{1.0}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{}
+
+\vspace*{-1mm} \hspace*{-2mm}
+\figw{Figs/inbredmice.jpg}{1.2}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\vspace*{18mm}
+
+\centerline{
+\begin{minipage}[t]{50mm}
+\includegraphics[height=50mm]{Figs/da-vinci-man.jpg}
+\end{minipage}
+\hspace{15mm}
+\begin{minipage}[t]{50mm}
+\includegraphics[height=50mm]{Figs/vitruvian_mouse.jpg}
+\hspace{5mm}
+\href{http://daviddeen.com}{\scriptsize \lolit \tt daviddeen.com}
+\end{minipage}
+}
+\end{frame}
+
+
+\begin{frame}[c]{Intercross}
+\figh{Figs/intercross.pdf}{1.0}
+\end{frame}
+
+
+\begin{frame}[c]{Data}
+
+\hspace{0mm}
+
+\figw{Figs/data_fig.png}{1.15}
+\end{frame}
+
+
+
+\begin{frame}[c]{QTL mapping}
+
+\vspace{5mm}
+\figh{Figs/lodcurve_insulin_with_effects.pdf}{0.75}
+\end{frame}
+
+
+\begin{frame}[c]{18 years of R/qtl}
+
+\figw{Figs/rqtl_lines_code.pdf}{1.0}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\vspace*{16.7mm}
+
+\centerline{\Large Why?}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+
+\centerline{\Large Good things}
+
+\vspace{4mm}
+
+\onslide<2>{
+\begin{itemize}
+\lolit
+  \item some of the code
+  \item basics of the user interface
+  \item diagnostics and data visualization
+  \item quite comprehensive
+  \item quite flexible
+\end{itemize}
+}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\vspace*{16.7mm}
+
+\centerline{\Large Bad things}
+
+\end{frame}
+
+
+\begin{frame}[c]{Input file}
+
+\figh{Figs/datafile.pdf}{0.6}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Stupidest code ever}
+
+\begin{center}
+\begin{minipage}[c]{9.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=9.3cm]
+n <- ncol(data)
+temp <- rep(FALSE,n)
+for(i in 1:n) {
+  temp[i] <- all(data[2,1:i]=="")
+  if(!temp[i]) break
+}
+if(!any(temp)) stop("...")
+n.phe <- max((1:n)[temp])
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\vspace{3mm}
+
+\hfill \href{http://kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}{\scriptsize \lolit \tt kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+  \large
+
+  {\hilit Open source} {\lolit means}
+
+  everyone can see my stupid mistakes
+
+  \bigskip \bigskip \bigskip
+
+  \onslide<2>{
+    {\hilit Version control} {\lolit means}
+
+  everyone can see every stupid mistake I've ever made
+}
+
+\end{frame}
+
+
+\begin{frame}{}
+
+\vspace*{16.7mm}
+
+\centerline{\Large Documentation}
+
+\end{frame}
+
+
+
+\begin{frame}{}
+
+\vspace*{16.7mm}
+
+\centerline{\Large Support}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{QTL mapping}
+
+\vspace{5mm}
+\figh{Figs/lodcurve_insulin_with_effects.pdf}{0.9}
+\end{frame}
+
+
+
+\begin{frame}[c]{Congenic line}
+
+\figw{Figs/congenic.pdf}{1.0}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Improving precision}
+
+  \vspace{-20mm}
+
+  \bbi
+\item more recombinations
+\item more individuals
+\item more precise phenotype
+\item lower-level phenotypes
+\bi
+\item transcripts, proteins, metabolites
+  \ei
+  \ei
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Advanced intercross lines}
+
+  \figh{Figs/ail.pdf}{0.9}
+
+\end{frame}
+
+
+\begin{frame}[c]{Recombinant inbred lines}
+
+  \figh{Figs/rilines.pdf}{0.9}
+
+\end{frame}
+
+
+\begin{frame}[c]{Collaborative Cross}
+
+  \figh{Figs/ri8.pdf}{0.9}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{Heterogeneous stock}
+
+  \vspace{2mm}
+
+  \figh{Figs/hs.pdf}{0.9}
+
+\end{frame}
+
+
+\begin{frame}[c]{Genome-scale phenotypes}
+
+\vspace*{5mm}
+
+\figh{Figs/mouse_on_chips.png}{0.75}
+\hfill
+\href{https://biochem.wisc.edu/faculty/attie}{\scriptsize \lolit Alan
+  Attie} \hspace{8mm}
+
+\end{frame}
+
+
+
+\begin{frame}{Challenges: {\color{foreground} diagnostics}}
+
+\vspace{2mm}
+
+\figw{Figs/weird_correlation_matrix.png}{0.65}
+
+\vspace{3mm}
+
+\hfill \href{http://kbroman.org/blog/2012/04/25/microarrays-suck}{\scriptsize \lolit \tt kbroman.org/blog/2012/04/25/microarrays-suck}
+
+\end{frame}
+
+
+\begin{frame}{Challenges: {\color{foreground} diagnostics}}
+
+  \vspace{8mm}
+
+\figw{Figs/many_boxplots.png}{0.85}
+
+\vspace{3mm}
+
+\hfill
+\href{https://bit.ly/many_boxplots}{\scriptsize
+  \lolit \tt bit.ly/many\_boxplots}
+
+\end{frame}
+
+
+\begin{frame}[c]{Challenges: {\color{foreground} scale of results}}
+
+\only<1>{\figw{Figs/scale_fig1.pdf}{1.0}}
+\only<2>{\figw{Figs/scale_fig2.pdf}{1.0}}
+
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Challenges: {\color{foreground} organizing, automating}}
+
+\only<1>{\figw{Figs/batches_fig1.pdf}{1.0}}
+\only<2>{\figw{Figs/batches_fig2.pdf}{1.0}}
+\only<3>{\figw{Figs/batches_fig3.pdf}{1.0}}
+\only<4>{\figw{Figs/batches_fig4.pdf}{1.0}}
+\only<5>{\figw{Figs/batches_fig5.pdf}{1.0}}
+\only<6>{\figw{Figs/batches_fig6.pdf}{1.0}}
+\only<7>{\figw{Figs/batches_fig7.pdf}{1.0}}
+
+\end{frame}
+
+
+\begin{frame}[c]{Challenges: {\color{foreground} metadata}}
+
+
+  \centerline{What the heck is {\hilit \tt "FAD\_NAD SI 8.3\_3.3G"}?}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+\centerline{\Large What was the question again?}
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+
+  \vspace*{5mm}
+
+\figh{Figs/rqtl2_3d.png}{0.85}
+
+
+\vspace{3mm}
+
+\hfill \href{https://ropenscilabs.github.io/miner_book}{\scriptsize \lolit \tt ropenscilabs.github.io/miner\_book}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{R/qtl2}
+
+\vspace*{-16.2mm}
+
+  \vspace{21mm}
+
+  \bbi
+\item High-density genotypes
+\item High-dimensional phenotypes
+\item Multi-parent populations
+\item Linear mixed models
+  \ei
+
+  \vspace{25mm}
+
+\hfill \href{http://kbroman.org/qtl2}{\small \tt kbroman.org/qtl2}
+
+\end{frame}
+
+
+
+\begin{frame}[c]{R/qtl2: \color{foreground} Let's not make the same mistakes}
+
+  \bbi
+\only<1>{
+\item C++ and Rcpp
+\item Roxygen2 for documentation
+\item Unit tests
+\item A single ``switch'' for cross type
+}
+\only<2>{
+{\lolit
+\item C++ and Rcpp
+\item Roxygen2 for documentation
+\item Unit tests
+\item A single ``switch'' for cross type
+}
+}
+\onslide<2>{
+\item Yet another data input format
+\item Flatter data structures, but still complex
+}
+\ei
+
+\end{frame}
+
+
+
+\begin{frame}{}
+
+\vspace*{16.7mm}
+
+\centerline{\Large Sustainable academic software}
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[c]{Acknowledgments}
+
+\begin{columns}[T]
+  \begin{column}[T]{0.5\textwidth}
+    \vspace{0pt}
+\bi
+\item[] Danny Arends
+\item[] Gary Churchill
+\item[] Nick Furlotte
+\item[] Dan Gatti
+\item[] Ritsert Jansen
+\item[] Pjotr Prins
+\item[] \'Saunak Sen
+\item[] Petr Simecek
+\item[] Artem Tarasov
+\item[] Hao Wu
+\item[] Brian Yandell
+  \ei
+  \end{column} \hfill
+\begin{column}[T]{0.5\textwidth}
+\vspace*{0mm}
+
+  \bi
+\item[] Robert Corty
+\item[] Timoth\'ee Flutre
+\item[] Lars Ronnegard
+\item[] Rohan Shah
+\item[] Laura Shannon
+\item[] Quoc Tran
+\item[] Aaron Wolen
+\item[]
+\item[] NIH/NIGMS
+  \ei
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\Large
+
+Slides: \href{http://bit.ly/csu2018}{\tt bit.ly/csu2018} \quad
+\includegraphics[height=5mm]{Figs/cc-zero.png}
+
+\vspace{7mm}
+
+\href{http://kbroman.org}{\tt \lolit kbroman.org}
+
+\vspace{7mm}
+
+\href{http://kbroman.org/qtl2}{\tt kbroman.org/qtl2}
+
+\vspace{7mm}
+
+\href{https://github.com/kbroman}{\tt \lolit github.com/kbroman}
+
+\vspace{7mm}
+
+\href{https://twitter.com/kwbroman}{\tt \lolit @kwbroman}
+
+
+\end{frame}
+
+
+
+
+\end{document}
