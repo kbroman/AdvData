@@ -42,7 +42,8 @@ orig_var <- colnames(orig) # "status" (last column) is the outcome
 
 # also need these variables for diabetes trait + exclude pregnant subjects
 # DIQ010 = diabetes (via doctor)
-# LB2GLU = plasma glucose (mg/dL)
+# LB2GLU =
+# LBXGLUSI plasma glucose in SI (mg/dL / 18)
 # RHD143 = currently pregnant
 # SEQ060 = currently pregnant
 # RHQ141 = currently pregnant
@@ -286,7 +287,8 @@ data_dictionary <- cbind(data_dictionary,
                                  "1=does not walk much; 2=walks a lot; 3=light work; 4=heavy work",
                                  "1=female, 2=male",
                                  NA, "1=mexican american, 2=other hispanic, 3=non-hispanic white, 4=non-hispanic black, 5=other",
-                                 NA, "1=yes, 2=no"))
+                                 "0=never smoked cigarettes regularly",
+                                 "1=yes, 2=no"))
 
 
 combined$id <- as.numeric(combined$id)
