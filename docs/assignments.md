@@ -47,4 +47,6 @@ the analysis reports should be written individually.
 
   data: [`hw3_rawdata.zip`](hw3_rawdata.zip)
 
-- Homework 4: to be assigned 2020-04-14; due 2020-04-30
+- [Homework 4: model building for prediction](hw4.html) due 2020-04-30
+
+  data: [`hw4_data.zip`](hw4_data.zip)
