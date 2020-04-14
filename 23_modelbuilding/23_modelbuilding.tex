@@ -294,6 +294,34 @@ Sugiyama et al. Genomics 71:70-77, 2001
 
 
 
+\begin{frame}{Model selection {\lolit (or variable selection)}}
+
+
+  \bbi
+\item Subset selection
+\item L$_1$-penalized regression (the LASSO)
+\item regression forests
+\item Bayes
+\item ...
+  \ei
+
+  \note{
+    Ultimately, the question here is one of variable selection: which
+    genetic loci seem to affect the phenotype, and how do they
+    interact?
+
+    There are lots of methods for model or variable selection, but I
+    still prefer subset selection.
+
+    And much of this work is focusing on minimizing prediction error.
+    The idea is that all predictors have an effect, but there are so
+    many of them and some have such small effects that it may be
+    better to omit them, introducing a bit of bias but reducing the
+    prediction variance.
+  }
+\end{frame}
+
+
 
 
 
