@@ -738,6 +738,16 @@ For the mouse genome: \\
 \hfill \href{https://doi.org/10.1111/1467-9868.00354}{\tt 10.1111/1467-9868.00354}
 
 \note{
+   Our experience in applying this approach has been remarkably good.
+   The penalized LOD score criterion does a good job of controlling
+   the false positive rate, and while forward selection tends to
+   over-select (including some extra terms), if it's followed by a
+   backward elimination step, it works as well as the best MCMC
+   algorithm we can contrive.
+
+   It's also been clear that defining performance criteria and
+   performing large-scale simulations are important for establishing
+   the relative value of different methods.
 }
 \end{frame}
 
@@ -773,6 +783,11 @@ $\mathsf{ \plod(\gamma) = \lod(\gamma) -
 \hspace{3em} $\mathsf{\hilit T_i}$ = ?
 
 \note{
+   If we want to expand the approach to include interactions, we need
+   to also establish a penalty on interaction terms.
+
+   I focus on models where if you include an interaction term, you
+   always include both main effects.
 }
 \end{frame}
 
@@ -788,7 +803,7 @@ $\mathsf{ \plod(\gamma) = \lod(\gamma) -
 
 Imagine there are two additive QTL and consider a 2d, 2-QTL scan.
 
-\vspace{1cm}
+\vspace{10mm}
 
 \hspace*{0.5in} $\mathsf{\hilit T_i}$ = 95th percentile of the
   distribution of \\[6pt]
@@ -799,7 +814,7 @@ Imagine there are two additive QTL and consider a 2d, 2-QTL scan.
 
 \only<2>{
 
-\vspace{2cm}
+\vspace{10mm}
 
 For the mouse genome: \\[12pt]
 \hspace*{0.5in} $\mathsf{\hilit T_m}$ = {\lolit
@@ -811,6 +826,15 @@ For the mouse genome: \\[12pt]
 \end{minipage}
 
 \note{
+  My first idea for deriving a penalty on interactions was to use the
+  same approach as for main effects. So we consider a two-dimensional,
+  two QTL scan, and we derive a threshold on interaction terms, as the
+  95th percentile of the distribution of the log$_{10}$ likelihood
+  ratio comparing the best two-locus interactive model to the best
+  two-locus additive model.
+
+  The penalty is pretty harsh, but it has the property that it will
+  control the rate of inclusion of extraneous interactions.
 }
 \end{frame}
 
@@ -827,7 +851,7 @@ For the mouse genome: \\[12pt]
 
 Imagine there is one QTL and consider a 2d, 2-QTL scan.
 
-\vspace{1cm}
+\bigskip \bigskip
 
 \hspace*{0.5in} $\mathsf{\hilit T_m + T_i}$ = 95th percentile of the
   distribution of \\[6pt]
@@ -837,7 +861,7 @@ Imagine there is one QTL and consider a 2d, 2-QTL scan.
 
 \only<2>{
 
-\vspace{2cm}
+\bigskip \bigskip
 
 For the mouse genome: \\[12pt]
 \hspace*{0.5in} $\mathsf{\hilit T_m}$ = {\lolit
@@ -852,6 +876,16 @@ For the mouse genome: \\[12pt]
 \end{minipage}
 
 \note{
+  But if that idea is good, I have an even better one: compare the
+  best two-locus interactive model to the best single-locus model, and
+  take that to be the sum of the new interactive penalty and the
+  previous main-effect penalty.
+
+  This leads to a much lighter penalty on interactions. It will
+  include false interaction terms at a high rate, but it will allow
+  us greater power to detect QTL. If we care mostly about not
+  including extraneous QTL, and we don't mind falsely identifying a
+  few interactions, this approach will work well.
 }
 \end{frame}
 
@@ -864,6 +898,25 @@ For the mouse genome: \\[12pt]
 \figw{Figs/models.pdf}{1.0}
 
 \note{
+   In considering multiple-QTL models with the requirement that when
+   you include an interaction you always include both main effects,
+   it's useful to display QTL models as graphs, where the nodes are
+   the QTL and edges connecting them indicate that they interact.
+
+   We found that the approach of the light interaction penalty tends
+   to lead to models like that in panel D, with a single false QTL
+   interacting with a bunch of other QTL.
+
+   Our solution to this problem was a bit ad hoc: considering a model
+   as a graph, we allow up to one light interaction penalty for each
+   connected component, and give all the rest of the interactions a
+   heavy penalty.
+
+   So imagine the four panels here were one big QTL model with 15 QTL
+   and 11 interactions. We'd give 15 main effect penalties, 4 light
+   interaction penalties, and 7 heavy interaction penalties. (I ended
+   up mostly skipping over this detail in class, because it's a bit of
+   a pain and I was running out of time.)
 }
 \end{frame}
 
@@ -873,11 +926,16 @@ For the mouse genome: \\[12pt]
 
 \begin{frame}[c]{Results}
 
-\only<1>{\figw{Figs/hyper_models1.pdf}{1.0}}
+\only<1|handout 0>{\figw{Figs/hyper_models1.pdf}{1.0}}
 \only<2|handout 0>{\figw{Figs/hyper_models2.pdf}{1.0}}
-\only<3|handout 0>{\figw{Figs/hyper_models3.pdf}{1.0}}
+\only<3>{\figw{Figs/hyper_models3.pdf}{1.0}}
 
 \note{
+   Let's return to the example data. My exploratory analyses led to
+   this four-QTL model with an interaction between the 6 and 15 loci.
+   If we look at the drop in LOD score when we drop one QTL or drop
+   the interaction, we find that each exceeds the penalties we have
+   defined, so each piece has strong support.
 }
 \end{frame}
 
@@ -888,6 +946,22 @@ For the mouse genome: \\[12pt]
 \figw{Figs/lod_profile.pdf}{1.0}
 
 \note{
+   I find it useful to further depict the evidence for such a
+   multiple-QTL model using profile LOD curves.
+
+   In pink are the results of the genome scan on this chromosome: at
+   each point, we compare the single-QTL model with a QTL at that
+   position to the null model with no QTL.
+
+   In blue are the profile LOD curves for the four-QTL model with an
+   interaction between the chr 6 and 15 loci. For each chromosome, we
+   compare the four-QTL model with the loci on other chromosomes fixed
+   at their best positions and with the present QTL allowed to vary in
+   position, and we compare the four-QTL locus to the three-QTL locus
+   where we drop the given QTL.
+
+   The height of each curve indicates the evidence for each QTL, and
+   the curves also show the precision of localization of the QTL.
 }
 \end{frame}
 
@@ -906,6 +980,9 @@ For the mouse genome: \\[12pt]
 \end{verbatim}
 
 \note{
+   The drop-one-QTL time is as I showed before; the values match the
+   maximum height of each of the profile LOD curves on the previous
+   slide.
 }
 \end{frame}
 
@@ -921,6 +998,8 @@ For the mouse genome: \\[12pt]
 \only<5|handout 0>{\figw{Figs/hyper_models8.pdf}{1.0}}
 
 \note{
+  If we take our four-QTL model and look at adding an interaction,
+  none of them are interesting.
 }
 \end{frame}
 
@@ -934,6 +1013,17 @@ For the mouse genome: \\[12pt]
 \only<4|handout 0>{\figw{Figs/hyper_models12.pdf}{1.0}}
 
 \note{
+  We can also go through and look to add another QTL, or another QTL
+  that interacts with one of the current ones, or add a pair of
+  additional QTL.  Adding a second QTL on chr 1 comes closest to being
+  chosen, but still doesn't make it. Also interesting is the potential
+  of a pair of linked loci on chromosome 3, but they also don't quite
+  make it.
+
+  So my system of penalties results in the base model that I came to
+  from exploratory analyses. But I view that as a benefit: it gives an
+  automated procedure that anyone can use and that arrives at the
+  model that my experience tells me is most trustworthy.
 }
 \end{frame}
 
@@ -958,6 +1048,14 @@ For the mouse genome: \\[12pt]
 \ei
 
 \note{
+   QTL mapping is a variable selection problem, but it's somewhat
+   unusual in that we're not selecting variables to give better
+   predictions but rather we're interested in the major players. The
+   associations among our covariates are also unusual.
+
+   The criterion for comparing models is the most important part of
+   the problem. I discussed this penalized likelihood criterion that I
+   like; it's described further in this 2009 Genetics paper.
 }
 \end{frame}
 

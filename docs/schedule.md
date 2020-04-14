@@ -34,7 +34,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 2 Apr     |    | [_Software testing and debugging_ ![pdf icon](icons/pdf-icon.png)](20_testdebug.pdf) [![notes icon](icons/notes-icon.png)](20_testdebug_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/a0212f2f8d34490db3b81ed1a56c9135)
 | 7 Apr     |    | [Permutation test with selective genotyping ![pdf icon](icons/pdf-icon.png)](21_permtest.pdf) [![notes icon](icons/notes-icon.png)](21_permtest_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/cd7b3c1f0bf448f0b9f7ace2fc2b2528)
 | 9 Apr     |    | [_Big jobs/simulations; caching computations_ ![pdf icon](icons/pdf-icon.png)](22_bigjobs.pdf) [![notes icon](icons/notes-icon.png)](22_bigjobs_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/712047bf2da64609a75d72791a1a9803)
-| 14 Apr    |    | [Building regression models: Multiple-QTL analysis ![pdf icon](icons/pdf-icon.png)](23_modelbuilding.pdf)
+| 14 Apr    |    | [Building regression models: Multiple-QTL analysis ![pdf icon](icons/pdf-icon.png)](23_modelbuilding.pdf) [![notes icon](icons/notes-icon.png)](23_modelbuilding_notes.pdf) <!-- [![video icon](icons/video-icon.png)]() -->
 | 16 Apr    |    | _R Markdown for papers_
 | 21 Apr    |    | Fine-mapping an eQTL
 | 23 Apr    |    | _Containers for reproducibility_
