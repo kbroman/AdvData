@@ -385,6 +385,29 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \end{columns}
 
 \note{
+  Focusing on variable subset selection, I like to think of the
+  problem as being split into four parts.
+
+  First, the selection of a class of models (strictly additive models,
+  or allow pairwise interactions or higher-order terms, or consider a
+  rather different set of models such as regression trees?)
+
+  Second, how to fit the models? If there is no missing data, this
+  would just be linear regression. But with missing data in the
+  predictors, there are different ways of dealing with that.
+
+  Third, how to compare models? This ends up being the most important
+  thing. Larger models will provide a better fit, but has the fit
+  improved enough for you to incorporate the additional terms?
+
+  Finally, there are far more models than can be investigated
+  exhaustively, and so you need some way of searching the space of
+  models. In forward selection, you start with a search over all
+  single-term models and pick the best one. Then you do additional
+  single-term searches of terms to add. This creates a nested sequence
+  of models of increasing size. Backward elimination is the reverse:
+  start with a large model and then omit one term at a time. Stepwise
+  selection goes forward and back; there are also randomized algorithms.
 }
 \end{frame}
 
@@ -415,6 +438,14 @@ the same time.
 \ei
 
 \note{
+  The key thing is: what is our goal? In many cases one is interested
+  in developing a model that gives good predictions. For QTL mapping,
+  I think we're not interested in prediction but rather in identifying
+  the important terms. I view this in a hypothesis testing like way:
+  thinking about false positives and false negatives.
+
+  I view the goal to be to find as many QTL as possible, which
+  controlling the rate of inclusion of false loci.
 }
 \end{frame}
 
@@ -449,6 +480,24 @@ the same time.
 \ei
 
 \note{
+   There is a vast literature on variable selection in regression, but
+   most of it is not relevant to us, as it tends to focus on
+   minimizing prediction error.
+
+   That's not the only difference here, though. We also have this
+   strange continuum of ordinal-valued covariates. And our covariates
+   have a quite simple correlation structure. Between chromosomes,
+   they are completely independent. And along chromosomes, they have a
+   very simple correlation structure.
+
+   Compare this to the correlations among covariates in an
+   epidemiologic study, such as of health-related covariates for
+   predicting diabetes.
+
+   The simple associations among our covariates in QTL mapping mean
+   that some otherwise quite badly behaved methods actually work well.
+   For example, forward selection has a very bad reputation in
+   statistics. But in QTL analysis, it seems to perform quite well.
 }
 \end{frame}
 
