@@ -209,7 +209,26 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \figw{Figs/epistasis_bc.pdf}{1.0}
 
 \note{
+   Genetics call interactions between two genetic loci ``{\hilit
+     epistasis}.''
 
+   Here, the dots are at the average phenotype for each of the 4
+   possible two-locus genotypes in a backcross.  The difference
+   between the dots on the blue curve is the effect of QTL 1 when
+   QTL 2 is homozygous AA; the difference between the dots on the pink
+   curve is the effect of QTL 1 when QTL 2 is heterozygous AB.
+
+   In the left panel, the effect of QTL 1 is the same, irrespective of
+   the genotype at QTL 2, and so the QTL are said to be ``{\hilit
+     additive}.'' (Some people might say that they have {\hilit
+     independent} effects, but I really don't like that terminology;
+   much better to say {\hilit additive}.) Note that the effect of QTL
+   2 is also the same, no matter the genotype at QTL 1.
+
+   In the right panel, the effect of QTL of QTL 1 is larger when QTL 2
+   is heterozygous than what QTL 2 is homozygous. Similarly for QTL 2:
+   its effect depends on the genotype at QTL 1. So the QTL are said to
+   be {\hilit epistatic}: they ``interact.''
 }
 \end{frame}
 
@@ -223,6 +242,21 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \figw{Figs/epistasis_f2.pdf}{1.0}
 
 \note{
+   Here we illustrate epistasis in an intercross, where there are
+   three possible genotypes at each QTL.
+
+   In the left panel, the pattern of effect of QTL 1 is the same, no
+   matter the genotype at QTL 2. So the QTL are additive.
+
+   In the right panel, the pattern of effect of QTL 1 is different for
+   different genotypes at QTL 2, and so the QTL are epistatic; they
+   interact.
+
+   Note the potential dependence on the scale of the phenotype. If you
+   transformed the phenotype by taking logs or square-roots, the
+   figure on the left would no longer have nice parallel curves.
+
+   The figure on the right, though, cannot be repaired by transformation.
 }
 \end{frame}
 
@@ -241,6 +275,16 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \figw{Figs/ieffects.pdf}{1.0}
 
 \note{
+   Back to our example data, the QTL on chr 1 and 4 look almost
+   perfectly additive. The QTL on chr 6 and 15, however, show a strong
+   interaction. Basically you see that if you're het at chr 6 and
+   homozygous at chr 15 you have high blood pressure; otherwise you
+   have low blood pressure.
+
+   Note that the effect here is as large as the effect of the chr 4
+   locus, but it's hard to see if you don't take the possibility of
+   the interaction into account. It gets dampened by 1/2 if you
+   consider the chr 6 and 15 loci separately.
 }
 \end{frame}
 
