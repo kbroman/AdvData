@@ -626,6 +626,12 @@ the same time.
 \ei
 
 \note{
+   But I'm particularly interested in developing fully automated
+   methods: so that you have something that non-specialists can use
+   and get reasonable results, so that you can understand its
+   performance (for example, through simulation studies), and because
+   you might want to apply it to cases where you have tens of
+   thousands of phenotypes.
 }
 \end{frame}
 
@@ -682,6 +688,28 @@ For the mouse genome: \\
 }
 
 \note{
+   Consider the case of strictly additive QTL. And suppose I have
+   dense markers and complete genotype data, so I can ignore the whole
+   issue of missing data and just focus on variable selection in
+   linear regression.
+
+   The question is: which QTL locations have $\beta \ne 0$?
+
+   I've focused on a penalized LOD score approach. Consider a model (a
+   set of QTL locations) denoted $\gamma$, and let LOD$(\gamma)$
+   denote the log$_{10}$ likelihood ratio of that model vs the null
+   model. The penalized LOD score is the LOD score minus some penalty
+   on the size of the model. As I add more terms to the model, the LOD
+   score increases but so does the penalty.
+
+   The question is: what penalty to use? Well, what I want is to
+   ensure that the chance of including a false positive is controlled
+   at some rate. Imagine the null hypothesis is true, that there are
+   no QTL, and I do a search among single-QTL models (with a QTL at some
+   position $\lambda$), if I choose the penalty {\hilit T} to be the
+   significance threshold from the genome-scan permutation test, that
+   will do just what I want. I then cross my fingers and hope that it
+   works for larger models and more extensive searches.
 }
 \end{frame}
 
