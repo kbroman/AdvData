@@ -526,6 +526,11 @@ the same time.
     \text{Pr}(\text{data} \ | \ q_1)}\right\} }}$
 \ei
 
+\bigskip
+
+\item Two-dimensional, two-QTL scan to investigate linked loci or
+  interactions.
+
 
 \bigskip
 
@@ -540,6 +545,17 @@ the same time.
 \ei
 
 \note{
+   There are a variety of exploratory methods that one can consider.
+   For example, you could use a version of forward selection:
+   condition on some large effect QTL and scan for further loci.
+
+   You could perform two-dimensional, two-QTL scan; sort of the next
+   step after the single-dimensional genome scan we've often
+   discussed.
+
+   Further, you can piece together a multiple-QTL model and then look
+   at scanning for additional loci or adding interactions, or
+   dropping one term at a time, to see which ones are important.
 }
 \end{frame}
 
@@ -553,6 +569,16 @@ the same time.
 \figw{Figs/alod_c4.pdf}{1.0}
 
 \note{
+   For our example data, here are the results we get when we condition
+   on the chr 4 locus. The blue curves are the original results, and
+   the pink curves are the results conditional on the chr 4 locus.
+
+   The evidence for the chr 1 locus increases, and the size of the two
+   humps are no longer equal; evidence points more strongly towards
+   the second hump.
+
+   Not much else has changed in the rest of the genome, though. The
+   biggest change is that there are now two peaks on chr 6.
 }
 \end{frame}
 
@@ -576,6 +602,12 @@ the same time.
 \end{verbatim}
 
 \note{
+  This is what I mean by a drop-one-QTL analysis.
+
+  We take a model with chromosomes 1, 4, 6 and 15, and with the 6
+  and 15 locus interacting. We then drop one term at a time and see
+  how much the log likelihood has changed. Note that when we drop a
+  QTL, we also drop any interaction that it's involved in.
 }
 \end{frame}
 
