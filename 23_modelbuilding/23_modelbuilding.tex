@@ -98,7 +98,8 @@ Sugiyama et al. Genomics 71:70-77, 2001
 
 \note{
   I like this example because the genotyping strategy makes the
-  analysis quite difficult. There was a selective genotyping approach,
+  analysis quite difficult. The mice in this figure are sorted by
+  blood pressure. There was a selective genotyping approach,
   in which only the 46 mice with highest blood pressure and the 46
   mice with lowest blood pressure were genotyped. But then they did
   an initial analysis and genotyped all the mice at regions of
@@ -122,6 +123,10 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \ei
 
 \note{
+  Our goals are first to identify QTL and potentially interactions
+  among QTL, and secondly to get interval estimates of their location
+  and to further estimate their effects. But we're going to focus
+  solely on the first of these.
 }
 \end{frame}
 
@@ -133,6 +138,10 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \figw{Figs/alod.pdf}{1.0}
 
 \note{
+  The genome scan results for this example shows a strong QTL on
+  chromosome 4, and a double-humped QTL on chromosome 1. Next in line
+  are QTL on chr 6 and 15, but both are quite far below the
+  genome-wide threshold for statistical signifance.
 }
 \end{frame}
 
@@ -146,6 +155,16 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \figw{Figs/meffects.pdf}{1.0}
 
 \note{
+  Here are the estimated effects of these loci. For the QTL on
+  chromosomes 1, 4, and 15, the A allele leads to lower blood
+  pressure. This matches the parental strains' traits: the A strain
+  has lower blood pressure than the B strain.
+
+  On chr 6, though, the effect is in the opposite direction: the A
+  allele causes an increase in blood pressure. This is called a
+  {\hilit transgressive} QTL. The A strain has lower blood pressure,
+  but it appears to include alleles that cause increased blood
+  pressure, relative to the B allele.
 }
 \end{frame}
 
@@ -161,7 +180,22 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \item Separate linked QTL
 \item Identify interactions among QTL {\lolit (epistasis)}
 \ei
+
 \note{
+  Why go after multiple QTL? First, by taking account of large-effect
+  QTL, we can potentially increase our power to detect further, more
+  modest effect loci.
+
+  Second, we can better determine whether there are linked QTL, such
+  as the loci on chromosome 1. Does that double-hump mean there are
+  two QTL? The best way to determine that is to explicitly model two
+  QTL and compare the best two-locus model to the best single-locus
+  model.
+
+  Third, there is the possibility of interactions between QTL. That
+  the effect of one locus depends on the genotype at a second locus.
+  We can't learn about such interactions without explicitly considering
+  multiple QTL simultaneously.
 }
 \end{frame}
 
@@ -175,6 +209,7 @@ Sugiyama et al. Genomics 71:70-77, 2001
 \figw{Figs/epistasis_bc.pdf}{1.0}
 
 \note{
+
 }
 \end{frame}
 
