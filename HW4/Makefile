@@ -6,7 +6,7 @@ nhanes_diabetes.csv: assemble_data.R
 	R CMD BATCH $(R_OPTS) $<
 
 hw4_data.zip: nhanes_diabetes.csv nhanes_diabetes_data_dict.csv
-	zip $@ $<
+	zip $@ $^
 
 ../docs/%: %
 	cp $< $@
