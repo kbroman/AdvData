@@ -41,6 +41,29 @@ description: Resources for BMI 826, Advanced data analysis
   Wickham](http://hadley.nz/)'s [R packages](http://r-pkgs.had.co.nz/) book
 
 
+### LaTeX
+
+- [LyX](https://www.lyx.org), a WYSIWYG application for LaTeX, with knitr
+- [Overleaf](https://www.overleaf.com),
+  [Authorea](https://authorea.com): online collaborative LaTeX editors
+- [Setting up LaTeX](https://robjhyndman.com/hyndsight/latex-setup/) by [Rob Hyndman](https://robjhyndman.com)
+- [A not so short introduction to LaTeX](https://www.ctan.org/tex-archive/info/lshort/english/)
+- [Getting started with LaTeX (pdf)](https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/GSWLaTeX.pdf)
+- [Slides with introduction to LaTeX](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1)
+- [A hitchhiker's guide to LaTeX (pdf)](https://chaosbook.org/FAQ/lala.pdf)
+- [Detexify<sup>2</sup>](https://detexify.kirelabs.org/classify.html) -
+  LaTeX symbol classifier
+- [xtable](https://cran.r-project.org/package=xtable),
+  an R package for creating LaTeX and HTML tables
+- [xtableGallery (pdf vignette)](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
+- [UnicodeIt](http://unicodeit.net) (for Mac) - convert latex expressions into
+  unicode characters
+- [LaTeXit](https://www.chachatelier.fr/latexit/latexit-home.php) (for
+  Mac) - LaTeX-based equation editor
+- [LaTeX table generator](https://www.tablesgenerator.com/)
+- [AucTex](https://www.gnu.org/software/auctex/), for working with
+  LaTeX within emacs.
+
 ## Big jobs
 
 - [KnitR cache](https://yihui.name/knitr/demo/cache/)
