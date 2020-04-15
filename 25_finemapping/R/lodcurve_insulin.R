@@ -37,16 +37,8 @@ if(file.exists(file)) {
   save(out, g, y, me, ci, operm, file=file)
 }
 
-pdf("../Figs/lodcurve_insulin.pdf", width=10, height=6.75, pointsize=14)
-par(fg=fgcolor, col=fgcolor, col.axis=fgcolor, col.lab=fgcolor)
-par(mar=c(5.1,4.1,2.1,1.1))
-plot(out, col=color[1], ylab="LOD score", bandcol="gray92", incl.markers=FALSE, yaxs="i",
-     ylim=c(0, 9))
-abline(h=quantile(operm, 0.95), lty=2, col=color[2])
-box()
-dev.off()
 
-pdf("../Figs/lodcurve_insulin_with_effects.pdf", width=10, height=6.75, pointsize=14)
+pdf("../Figs/lodcurve_insulin_with_effects.pdf", width=10, height=5.5, pointsize=14)
 par(fg=fgcolor, col=fgcolor, col.axis=fgcolor, col.lab=fgcolor)
 par(mar=c(5.1,4.1,2.1,1.1))
 plot(out, col=color[1], ylab="LOD score", bandcol="gray92", incl.markers=FALSE, yaxs="i",
