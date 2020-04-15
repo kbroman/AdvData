@@ -48,6 +48,29 @@
 } }
 
 
+\begin{frame}[c]{R Markdown for everything}
+
+  \bbi
+\item \href{https://bookdown.org/yihui/bookdown}{bookdown} for books {\lolit (or book-like things)}
+\item \href{https://bookdown.org/yihui/blogdown}{blogdown} for websites
+\item \href{https://pkgdown.r-lib.org}{pkgdown} for package websites
+\item \href{https://slides.yihui.org/xaringan}{xaringan} for slides
+\item \href{https://pagedown.rbind.io}{pagedown} for CVs, resumes, and letters
+\item \href{https://github.com/brentthorne/posterdown}{posterdown} for posters
+  \ei
+
+  \note{
+     You can now use R Markdown for everything: books, websites,
+     package websites, slides, resumses, letters, and posters.
+
+     But I still am using \LaTeX\/ for lots of things. I should probably
+     figure out how to use R Markdown instead, but either for the fine
+     control or just because I have so much experience to draw upon, I
+     find it hard to leave \LaTeX\/ behind.
+  }
+\end{frame}
+
+
 \begin{frame}[c,fragile]{\LaTeX}
 
 \begin{lstlisting}
@@ -141,7 +164,7 @@ Karl Broman
 \end{frame}
 
 
-\begin{frame}{Why \LaTeX\/?}
+\begin{frame}{Why \LaTeX?}
 
 \bbi
 \item Fine control of document appearance
@@ -162,7 +185,7 @@ Karl Broman
   For reproducible research, we need some sort of code-based document
   system (i.e., {\nvhilit not Word!}), and \LaTeX\/ gives you the most
   fine-grained control, if you need it. Ultimately, I hope, Markdown
-  will be sufficient, but for now, we often need \LaTeX\/.
+  will be sufficient, but for now, we often need \LaTeX.
 
   The code-based control makes what you're trying to do
   transparent.  And you should treat \LaTeX\/ like code: write clearly
@@ -262,7 +285,7 @@ Focus your compulsive behavior on things that matter.
 
 
 
-\begin{frame}<handout:0>[c,fragile]{KnitR + \LaTeX $\rightarrow$ Rnw}
+\begin{frame}<handout:0>[c,fragile]{KnitR + \LaTeX\/ $\rightarrow$ Rnw}
 
 \begin{lstlisting}
 \documentclass[12pt]{article}
@@ -292,7 +315,7 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
 
 
-\begin{frame}[c,fragile]{KnitR + \LaTeX $\rightarrow$ Rnw}
+\begin{frame}[c,fragile]{KnitR + \LaTeX\/ $\rightarrow$ Rnw}
 \addtocounter{framenumber}{-1}
 
 \begin{lstlisting}
@@ -321,10 +344,10 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 \end{lstlisting}
 
 \note{
-  KnitR works well with LaTeX.
+  KnitR works well with \LaTeX.
 
   Most of what you learned about KnitR with R Markdown transfers
-  directly to working with LaTeX.
+  directly to working with \LaTeX.
 
   The main difference is the way in which code chunks are
   indicated. You use {\tt <<>>=} and {\tt @} for chunks, and
@@ -373,7 +396,7 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 \ei
 
 \note{
-  There are a few online tools for creating LaTeX documents,
+  There are a few online tools for creating \LaTeX\/ documents,
   collaboratively.
 
   I have no experience with these, but I've heard good things about
