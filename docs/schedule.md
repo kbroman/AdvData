@@ -35,7 +35,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 7 Apr     |    | [Permutation test with selective genotyping ![pdf icon](icons/pdf-icon.png)](21_permtest.pdf) [![notes icon](icons/notes-icon.png)](21_permtest_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/cd7b3c1f0bf448f0b9f7ace2fc2b2528)
 | 9 Apr     |    | [_Big jobs/simulations; caching computations_ ![pdf icon](icons/pdf-icon.png)](22_bigjobs.pdf) [![notes icon](icons/notes-icon.png)](22_bigjobs_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/712047bf2da64609a75d72791a1a9803)
 | 14 Apr    |    | [Building regression models: Multiple-QTL analysis ![pdf icon](icons/pdf-icon.png)](23_modelbuilding.pdf) [![notes icon](icons/notes-icon.png)](23_modelbuilding_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/edbbb911f6404c0880e066cb943c0df0)
-| 16 Apr    |    | _R Markdown for papers_
+| 16 Apr    |    | [_R Markdown for papers_  ![pdf icon](icons/pdf-icon.png)](24_knitrpapers.pdf) [![notes icon](icons/notes-icon.png)](24_knitrpapers_notes.pdf)
 | 21 Apr    |    | Fine-mapping an eQTL
 | 23 Apr    |    | _Containers for reproducibility_
 | 28 Apr    |    | Developing, maintaining, and supporting software: R/qtl
