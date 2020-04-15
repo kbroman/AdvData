@@ -1,7 +1,7 @@
 data.folder <- "../AttieData/"
 source("myplotgeno.R")
 
-pdf("../Figs/islet_c6_geno_C.pdf", height=6,width=10, pointsize=10)
+pdf("../Figs/islet_c6_geno_C.pdf", height=5.5,width=10, pointsize=10)
 layout(rbind(c(1,1,1), c(2,3,4)),width=c(8.5,4.5,2))
 
 ########################################
@@ -41,7 +41,7 @@ lname <- load("../Data/LDA.recomb.RData")
 qtlgn <- cl.lda$pred.test
 gn <-  genotype.test
 
-load(paste0(data.folder, "input/aligned_geno_with_pmap.RData"))
+load(paste0(data.folder, "aligned_geno_with_pmap.RData"))
 map <- pmap[["6"]][batch0]
 
 gn <- gn[Mouse,batch0]
@@ -239,7 +239,7 @@ dev.off()
 
 ######################################################################
 
-pdf("../Figs/islet_c6_geno_B.pdf", height=6,width=10, pointsize=10)
+pdf("../Figs/islet_c6_geno_B.pdf", height=5.5,width=10, pointsize=10)
 layout(rbind(c(1,1,1), c(2,3,4)),width=c(8.5,4.5,2))
 
 ########################################
@@ -279,7 +279,7 @@ lname <- load("../Data/LDA.recomb.RData")
 qtlgn <- cl.lda$pred.test
 gn <-  genotype.test
 
-load(paste0(data.folder, "input/aligned_geno_with_pmap.RData"))
+load(paste0(data.folder, "aligned_geno_with_pmap.RData"))
 map <- pmap[["6"]][batch0]
 
 gn <- gn[Mouse,batch0]
@@ -398,7 +398,7 @@ dev.off()
 
 ######################################################################
 
-pdf("../Figs/islet_c6_geno_A.pdf", height=6,width=10, pointsize=10)
+pdf("../Figs/islet_c6_geno_A.pdf", height=5.5,width=10, pointsize=10)
 layout(rbind(c(1,1,1), c(2,3,4)),width=c(8.5,4.5,2))
 
 ########################################
@@ -438,7 +438,7 @@ lname <- load("../Data/LDA.recomb.RData")
 qtlgn <- cl.lda$pred.test
 gn <-  genotype.test
 
-load(paste0(data.folder, "input/aligned_geno_with_pmap.RData"))
+load(paste0(data.folder, "aligned_geno_with_pmap.RData"))
 map <- pmap[["6"]][batch0]
 
 gn <- gn[Mouse,batch0]
