@@ -30,10 +30,69 @@
   \titlepage
 
 \note{
-  In this lecture, we'll look at the use of Docker containers to
-  further enhance reproducible research.
+  In this lecture, we'll look at the how to keep track of dependencies
+  to further enhance reproducible research. In particular, we will
+  focus on Docker containers.
 }
 } }
+
+
+
+
+
+\begin{frame}[c]{Reproducible research}
+
+\begin{quotation}
+  organize the data and code in a way \\[4pt]
+  that you can hand them to someone else \\[4pt]
+  and they can re-run the code \\[4pt]
+  and get the same results \\[4pt]
+  \quad (the same figures and tables)
+\end{quotation}
+
+\note{
+  A central theme of this course has been reproducible
+  research: organizational strategies and tools so that your
+  computational work can be reproduced.
+}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Dependency Hell}
+
+\bbi
+  \item What software does your project depend on?
+    \bi
+  \item operating system
+  \item system libraries
+  \item R or python
+  \item packages or modules
+  \item other tools (e.g. pandoc and \LaTeX)
+    \ei
+  \item Can you install all necessary dependencies?
+  \item Have dependencies changed? Do you need particular versions?
+  \item How much time does it take to set things up?
+\ei
+
+\note{
+  We have not much touched on how to keep track of dependencies. This
+  can be a major challenge. In some research areas, things are
+  evolving rapidly. And the more tools you use, the greater chance
+  that some will change over time and that things will be broken.
+
+  Even if you don't rely on much other software, it can still be a
+  huge pain for users to collect and install all of the necessary
+  tools. So much so that they end up giving up.
+}
+\end{frame}
+
+
+
 
 
 
