@@ -64,6 +64,19 @@ description: Resources for BMI 826, Advanced data analysis
 - [AucTex](https://www.gnu.org/software/auctex/), for working with
   LaTeX within emacs.
 
+
+## Docker containers
+
+- [Software carpentry tutorial](https://carpentries-incubator.github.io/docker-introduction/)
+- [Intro to Docker for reproducible research
+  (pdf)](https://arxiv.org/abs/1410.0846) by [Carl
+  Boettiger](https://www.carlboettiger.info/)
+- [Docker and reproducibility](https://reproducible-analysis-workshop.readthedocs.io/en/latest/8.Intro-Docker.html)
+- [Installing Docker](https://docs.docker.com/get-docker/)
+- [Docker hub](https://hub.docker.com)
+- [Rocker project (docker for R)](https://www.rocker-project.org/)
+
+
 ## Big jobs
 
 - [KnitR cache](https://yihui.name/knitr/demo/cache/)
