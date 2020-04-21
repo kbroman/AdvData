@@ -32,7 +32,12 @@
   \titlepage
 
 \note{
-  In this lecture, we'll look at a case study on fine-mapping an eQTL.
+  In this lecture, we'll look at a case study on fine-mapping an eQTL,
+  and determining where there is one or two eQTL in a region.
+
+  This is a case-study in the analysis of expression QTL (eQTL), where
+  you're looking for loci that affect the level of mRNA of genes (gene
+  expression).
 }
 } }
 
@@ -59,8 +64,41 @@
   Large LOD scores indicate evidence for QTL and correspond to there
   being a difference in the phenotype average for the three genotype
   groups.
+
+  But a big disappointment in QTL analysis has been that the regions
+  to which we can map them can be quite large and so include lots of
+  potential candidate genes.
 }
 \end{frame}
+
+
+\begin{frame}[c]{}
+
+\centerline{
+\large \color{title}
+\qquad \qquad
+  DNA $\longrightarrow$ RNA $\longrightarrow$ protein
+  \onslide<2>{\hilit $\longrightarrow$ phenotype}
+}
+
+\note{
+   One approach to try to speed the process is to look at
+   intermediate, molecular phenotypes.
+
+   The ``central dogman'' of molecular biology is that DNA is
+   transcribed into RNA which is then translated into protein. And
+   ultimately this is what leads to the observerable phenotypes.
+
+   So there's been a big effort to measure the RNA level of genes,
+   called ``gene expression.'' Mapping loci that affect gene
+   expression might help us to identify the loci that affect clinical
+   traits.
+
+   One can also look at protein levels, and that might be more
+   valuable, but it turns out to be much easier to measure RNA.
+}
+\end{frame}
+
 
 
 \begin{frame}[c]{Gene expression microarrays}
