@@ -106,13 +106,18 @@
 \figh{Figs/mouse_on_chips.png}{0.85}
 
 \note{
-I've mostly focused on a mapping genes affecting a single phenotype,
-but in the past decade, I've become swamped with data.
+This is a picture of a pile of gene expression microarrays, which had
+classically been used to measure mRNA.
 
-This is a picture of a pile of gene expression arrays. More and more,
-we're seeing genome-scale phenotype information. For example, in
-one of my collaborations, we have data on 500 mice, each with gene
-expression microarrays for 6 different tissues.
+In collaboration with Alan Attie, we've been studying
+a B6$\times$BTBR mouse intercross, with all mice knocked out for leptin
+(and so obese), in order to understand obesity-induced diabetes.
+
+There are 500 intercross mice, phenotyped at a large number of
+clinical traits, and also with gene expression microarray data on
+6 tissues. These were custom two-color Agilent arrays.
+In each tissue in each mouse, we measured the mRNA level in each of
+the 30,000 genes.
 
 We're interested in identifying genes that control the expression of
 other genes.
@@ -125,23 +130,17 @@ other genes.
 \figh{Figs/plot-eqtl-islet.pdf}{0.9}
 
 \note{
-    In collaboration with Alan Attie, we've been studying
-    a B6$\times$BTBR intercross, with all mice knocked out for leptin
-    (and so obese), in order to understand obesity-induced diabetes.
-
-    There are 500 intercross mice, phenotyped at a large number of
-    clinical traits, and also with gene expression microarray data on
-    6 tissues. These were custom two-color Agilent arrays.
-
     This figure shows the basic result of single-QTL genome scan for
     each expression trait, one at a time, in pancreatic islets. Each dot is
     an inferred QTL. The y-axis is the location of the corresponding
-    microarray probe, and the x-axis is the location of the QTL.
+    gene, and the x-axis is the location of the QTL.
 
-    We see a prominent diagonal, of local-eQTL, and several prominent
-    vertical bands: ``\emph{trans}-eQTL hotspots'' where genotype at a give
-    region is associated with the mRNA expression of numerous genes across
-    the genome.
+    We see a prominent diagonal, of local-eQTL, where the mRNA level
+    for a gene is affected by a QTL right at the gene.
+    There are also several prominent vertical bands:
+    ``\emph{trans}-eQTL hotspots'' where genotype at a give region is
+    associated with the mRNA expression of numerous genes across the
+    genome.
 }
 \end{frame}
 
