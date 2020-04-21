@@ -77,6 +77,45 @@ description: Resources for BMI 826, Advanced data analysis
 - [Rocker project (docker for R)](https://www.rocker-project.org/)
 
 
+## R and python environments
+
+- [renv](https://rstudio.github.io/renv/)
+- [renv: Project Environments for R](https://blog.rstudio.com/2019/11/06/renv-project-environments-for-r)
+  by [Kevin Ushey](https://kevinushey.github.io/)
+- [conda](https://docs.conda.io/en/latest/)
+- [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+
+
+### Copyright and software/data licenses
+
+- [Victoria Stodden](http://stodden.net):
+  - [What computational scientists need to know about Intellectual property law (pdf)](https://osf.io/yi8k2/)
+  - [The legal framework for reproducible scientific research (pdf)](http://www.stanford.edu/~vcs/papers/LFRSR12012008.pdf)
+- [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
+- [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
+- [The whys and hows of licensing scientific code](http://www.astrobetter.com/the-whys-and-hows-of-licensing-scientific-code/)
+  by [Jake VanderPlas](http://www.astrobetter.com/author/jakevdp/)
+- [A quick guide to software licensing for the scientist-programmer](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002598)
+  (Morin et al. PLoS Comput Biol 8:e1002598, 2012)
+- [Creative Commons licenses](https://creativecommons.org/licenses/)
+- [tl;dr legal: Software licenses in plain English](https://tldrlegal.com/)
+- [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
+- [GNU General Public License](https://www.gnu.org/copyleft/gpl.html)
+- [GPL frequently asked questions](https://www.gnu.org/licenses/gpl-faq.html)
+- [Copyright basics (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ01.pdf)
+- [Works for hire (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ09.pdf)
+- [Fair use (US Copyright Office)](http://www.copyright.gov/title17/92chap1.html#107)
+- [Copyright basics](http://library.wisc.edu/copyright/#copyright-basics)
+- [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
+- [Copyright of facts and data](http://www.lib.umich.edu/copyright/facts-and-data) \[concise\]
+- [Database legal protections](http://www.bitlaw.com/copyright/database.html) \[detailed\]
+- [VertNet guide to copyright and licenses for dataset publication](http://www.vertnet.org/resources/datalicensingguide.html)
+- UW-Madison:
+  - [Intellectual property rights](https://grad.wisc.edu/acadpolicy/#responsibleconductofresearch)
+  - [Intellectual property policies and procedures (pdf)](https://kb.wisc.edu/images/group156/32996/12.15IntellectualPropertyPoliciesandProceduresforUniversityResearch.pdf)
+  - [Copyrightable instructional materials](https://www.wisconsin.edu/uw-policies/uw-system-administrative-policies/copyrightable-instructions-materials-ownership-use-and-control/)
+
+
 ## Big jobs
 
 - [KnitR cache](https://yihui.name/knitr/demo/cache/)
