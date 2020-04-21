@@ -1,4 +1,4 @@
-LEC = 25_finemapping
+LEC = 25_transeqtl
 
 FIGS = Figs/plot-eqtl.pdf \
 	   Figs/chr6_lod.pdf \
