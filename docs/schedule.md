@@ -39,4 +39,4 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 21 Apr    |    | [Dissecting and fine-mapping _trans_-eQTL hotspots ![pdf icon](icons/pdf-icon.png)](25_transeqtl.pdf) [![notes icon](icons/notes-icon.png)](25_transeqtl_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/395f30d4f34d41f286af1ede8f4125c9)
 | 23 Apr    |    | _Containers for reproducibility_
 | 28 Apr    |    | Developing, maintaining, and supporting software: R/qtl
-| 30 Apr    |    | _Software/data licenses, copyright, and human subjects/HIPAA_ \[**[homework 4](hw4.html) due**\]
+| 30 Apr    |    | [_Software/data licenses, copyright, and human subjects/HIPAA_  ![pdf icon](icons/pdf-icon.png)](28_licenses.pdf) [![notes icon](icons/notes-icon.png)](28_licenses_notes.pdf) <!-- [![video icon](icons/video-icon.png)]() --> \[**[homework 4](hw4.html) due**\]
