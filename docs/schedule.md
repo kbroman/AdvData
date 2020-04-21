@@ -36,7 +36,7 @@ lectures and office hours will be strictly online. [**More information here**](o
 | 9 Apr     |    | [_Big jobs/simulations; caching computations_ ![pdf icon](icons/pdf-icon.png)](22_bigjobs.pdf) [![notes icon](icons/notes-icon.png)](22_bigjobs_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/712047bf2da64609a75d72791a1a9803)
 | 14 Apr    |    | [Building regression models: Multiple-QTL analysis ![pdf icon](icons/pdf-icon.png)](23_modelbuilding.pdf) [![notes icon](icons/notes-icon.png)](23_modelbuilding_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/edbbb911f6404c0880e066cb943c0df0)
 | 16 Apr    |    | [_R Markdown for papers_ ![pdf icon](icons/pdf-icon.png)](24_knitrpapers.pdf) [![notes icon](icons/notes-icon.png)](24_knitrpapers_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/c64b3a1cd55040d3be168520192d76b3)
-| 21 Apr    |    | [Dissecting and fine-mapping _trans_-eQTL hotspots ![pdf icon](icons/pdf-icon.png)](25_transeqtl.pdf) [![notes icon](icons/notes-icon.png)](25_transeqtl_notes.pdf) <!-- [![video icon](icons/video-icon.png)]() -->
+| 21 Apr    |    | [Dissecting and fine-mapping _trans_-eQTL hotspots ![pdf icon](icons/pdf-icon.png)](25_transeqtl.pdf) [![notes icon](icons/notes-icon.png)](25_transeqtl_notes.pdf) [![video icon](icons/video-icon.png)](https://us-lti.bbcollab.com/recording/395f30d4f34d41f286af1ede8f4125c9)
 | 23 Apr    |    | _Containers for reproducibility_
 | 28 Apr    |    | Developing, maintaining, and supporting software: R/qtl
 | 30 Apr    |    | _Software/data licenses, copyright, and human subjects/HIPAA_ \[**[homework 4](hw4.html) due**\]
