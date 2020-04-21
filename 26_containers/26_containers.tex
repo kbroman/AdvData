@@ -96,4 +96,43 @@
 
 
 
+\begin{frame}{Capturing dependencies}
+
+\bbi
+  \item R: \href{https://rstudio.github.io/renv}{\tt renv}
+    \bi
+  \item[] {\tt renv::init()}
+  \item[] {\tt renv::snapshot()}
+  \item[] {\tt renv::restore()}
+    \bigskip
+
+  \item[] \hspace{-8mm} {\color{foreground} Also see} \href{https://mran.microsoft.com/MRAN}{MRAN}
+    \ei
+
+\bigskip
+
+  \item Python: \href{https://docs.conda.io}{\tt conda}
+    \bi
+    \item[] {\tt conda create}
+    \item[] {\tt conda install}
+    \item[] {\tt conda activate}
+    \item[] {\tt conda env list --explicit}
+    \ei
+
+\ei
+
+\note{
+   These best ways to keep track of dependencies: for R, use the renv
+   package from RStudio. For python, use conda.
+
+   Also for R, see MRAN: Microsoft is taking daily snapshots of CRAN.
+
+}
+\end{frame}
+
+
+
+
+
+
 \end{document}
