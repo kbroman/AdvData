@@ -206,6 +206,8 @@ description: Resources for BMI 826, Advanced data analysis
   by [Kevin Ushey](https://kevinushey.github.io/)
 - [conda](https://docs.conda.io/en/latest/)
 - [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+- [venv tutorial](https://realpython.com/python-virtual-environments-a-primer)
+- [python packages](https://packaging.python.org/tutorials/packaging-projects)
 
 
 ## Copyright and software/data licenses
