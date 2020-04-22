@@ -191,10 +191,12 @@ description: Resources for BMI 826, Advanced data analysis
 - [Intro to Docker for reproducible research
   (pdf)](https://arxiv.org/abs/1410.0846) by [Carl
   Boettiger](https://www.carlboettiger.info/)
+- [ROpenSci Docker Tutorial](https://ropenscilabs.github.io/r-docker-tutorial/)
 - [Docker and reproducibility](https://reproducible-analysis-workshop.readthedocs.io/en/latest/8.Intro-Docker.html)
 - [Installing Docker](https://docs.docker.com/get-docker/)
 - [Docker hub](https://hub.docker.com)
 - [Rocker project (docker for R)](https://www.rocker-project.org/)
+- [Tutorial: running a dockerized jupyter server for data science](https://www.dataquest.io/blog/docker-data-science/)
 
 
 ## R and python environments
