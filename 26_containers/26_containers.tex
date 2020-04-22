@@ -290,6 +290,33 @@
 
 
 
+\begin{frame}{Creating a docker image}
+
+  \bbi
+  \item Start from some previous image
+  \item Use a {\tt Dockerfile}
+    \bi
+  \item explicit
+  \item human-readabb
+  \item an often-small script
+    \ei
+  \item Create a container interactively and then write it to an image
+    \ei
+
+    \note{
+      If you want to make a container for your work, you should first
+      start with an image that has the basic stuff you want.
+
+      From that, you can either create a {\tt Dockerfile} with the
+      explicit commands to generate the container you want.
+
+      Alternatively, fire up the container, modify it interactively,
+      and then write it to an image file.
+    }
+
+\end{frame}
+
+
 
 
 
