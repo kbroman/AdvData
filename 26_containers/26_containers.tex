@@ -170,4 +170,80 @@
 
 
 
+
+\begin{frame}{Docker containers}
+
+  \bbi
+\item Light-weight virtual machine
+  \bi
+\item Uses the host machine's linux kernel
+\item On Mac/Windows, containers run within {\tt boot2docker} VM
+  \ei
+\item Capture {\vhilit all} dependencies, down to the OS
+\item Binary image with everything pre-installed, including data
+\item Text-based recipes for creating the image
+\item Can build recipe starting from some previous one
+  \ei
+
+\note{
+  Docker containers are the recommended approach for fully capturing
+  all aspects of one's environments, in a way that is fully portable.
+
+  Reproducibility without the difficulties of
+}
+
+\end{frame}
+
+
+\begin{frame}{Getting started with Docker}
+
+  \bbi
+\item Download and install docker, from
+  \href{https://www.docker.com/products/docker-desktop}{\tt docker.com}
+\item Get an account at \href{https://hub.docker.com}{\tt hub.docker.com}
+  \ei
+
+\note{
+  First, install docker.
+
+  Second, get an account at \href{https://hub.docker.com}{\tt
+  hub.docker.com}, for which you can download container images, or
+  upload your own.
+
+}
+\end{frame}
+
+
+\begin{frame}{Rocker containers}
+
+  \bbi
+\item Docker containers for R
+\item Can run locally, and have RStudio in the web browser
+  \ei
+
+\note{
+  The Rocker project is an effort to create a set of Docker containers
+  suitable for R users.
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Jupyter containers}
+
+  \bbi
+\item Docker containers set up for Jupyter notebooks
+  \ei
+
+\note{
+  You can also have a docker-based Jupyter notebook accessible in a
+  browser.
+}
+
+\end{frame}
+
+
+
 \end{document}
