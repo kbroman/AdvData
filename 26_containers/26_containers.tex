@@ -273,4 +273,60 @@
 \end{frame}
 
 
+\begin{frame}[fragile,c]{Dockerfile}
+
+
+
+\begin{lstlisting}[basicstyle=\tiny\ttfamily]
+FROM java
+MAINTAINER daroczig@rapporter.net
+
+## Prepare folder for the Minecraft stuff
+RUN mkdir -p /minecraft
+
+## Download Spigot build tools
+RUN wget https://hub.spigotmc.org/jenkins/job/BuildTools/[clip]/target/BuildTools.jar -P /minecraft/
+
+## Build the Spigot server
+RUN cd /minecraft && java -jar BuildTools.jar
+
+## Symlink for the built Spigot server
+RUN ln -s /minecraft/spigot*.jar /minecraft/spigot.jar
+
+## Accept EULA
+RUN echo "eula=true" > /minecraft/eula.txt
+
+## Download and install the RaspberryJuice plugin for API access
+RUN mkdir -p /minecraft/plugins \
+    && wget https://github.com/zhuowei/RaspberryJuice/raw/master/jars/raspberryjuice-1.11.jar \
+    && mv raspberryjuice-1.11.jar /minecraft/plugins/
+
+## Open up API port
+EXPOSE 4711
+## Open up Game port
+EXPOSE 25565
+
+## Start the server
+CMD cd /minecraft; java -Xms512M -Xmx1G -XX:MaxPermSize=128M -XX:+UseConcMarkSweepGC -jar spigot.jar
+\end{lstlisting}
+
+\note{
+  This is the Dockerfile for a minecraft server, from the miner package.
+
+  {\tt https://github.com/kbroman/miner/blob/master/inst/Dockerfile}
+
+  Use {\tt docker build -t minecraft} to build it to an image named
+  {\tt minecraft}.
+
+  {\tt FROM} which takes the java image as the base for this new one
+
+  {\tt RUN} to run a command
+
+  {\tt EXPOSE} to open a port
+
+  {\tt CMD} is run when the container starts
+}
+\end{frame}
+
+
 \end{document}
