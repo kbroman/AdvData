@@ -256,7 +256,7 @@
     \bi
   \item[] A binary file with a snapshot of a container
     \ei
-  \item Dockerfile
+  \item {\tt Dockerfile}
     \bi
   \item[] Text file with recipe to create a new container
     \ei
@@ -328,5 +328,64 @@ CMD cd /minecraft; java -Xms512M -Xmx1G -XX:MaxPermSize=128M -XX:+UseConcMarkSwe
 }
 \end{frame}
 
+
+
+
+\begin{frame}{binder}
+
+  \bbi
+\item \href{https://mybinder.org}{\tt mybinder.org}
+\item add two files to a github repo $\rightarrow$ \\
+  docker container in the cloud
+  \bi
+\item {\tt runtime.txt} telling date of R
+\item {\tt install.R} with {\tt install.packages()} calls
+\item special url with {\tt ?urlpath=rstudio}
+  \ei
+\item examples:
+  \bi
+\item \href{https://kbroman.org/blog/2019/02/18/omg_binder/}{\tt kbroman.org/blog/2019/02/18/omg\_binder}
+\item \href{https://github.com/kbroman/Teaching_CTC2019}{\tt github.com/kbroman/Teaching\_CTC2019}
+  \ei
+
+  \ei
+
+  \note{
+    Binder is a magical tool for turning a github repository into a
+    docker container running in the cloud.
+
+    RStudio or a Jupyter notebook running in browser, with all your
+    stuff ready for play.
+  }
+\end{frame}
+
+
+\begin{frame}{Summary}
+
+  \bbi
+\item Want to capture the full environment for a project
+  \bi
+\item code + data
+\item dependent packages, libraries
+  \ei
+\item Want to lower the barrier to the set-up of this stuff
+\item Docker containers
+  \bi
+\item portable
+\item shareable
+\item extendable
+\item {\tt Dockerfile} script to define
+  \ei
+\item {\tt mybinder.org}
+  \bi
+\item github $\rightarrow$ docker in the cloud
+\item magical set-up
+  \ei
+  \ei
+
+  \note{
+    I always like a summary.
+  }
+\end{frame}
 
 \end{document}
