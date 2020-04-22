@@ -117,6 +117,10 @@
     \item[] {\tt conda install}
     \item[] {\tt conda activate}
     \item[] {\tt conda env list --explicit}
+    \bigskip
+
+  \item[] \hspace{-8mm} {\color{foreground} Also the built-in}
+    \href{https://realpython.com/python-virtual-environments-a-primer}{\tt venv}
     \ei
 
 \ei
@@ -127,6 +131,9 @@
 
    Also for R, see MRAN: Microsoft is taking daily snapshots of CRAN.
 
+   And for Python: I mention conda here, but that's really a general,
+   language-agnostic solution. Also consider the built-in venv solution
+   for ``virtual environments.''
 }
 \end{frame}
 
@@ -142,9 +149,9 @@
 \item data in {\tt inst/ext\_data}
 \item analyses as vignettes
   \ei
-\item Python module
+\item Python package
   \bi
-\item dependencies?
+\item define dependencies with {\tt setuptools.setup}
   \ei
   \ei
 
@@ -153,9 +160,10 @@
     package, identifying all of the package dependencies, including
     the data, and with the analyses included as vignettes.
 
-    I'm not sure what the corresponding Python module might look like,
-    but it seems like a python module could at least document the
-    appropriate dependencies in a structured way.
+    With python, it seems like you'd want to make a package, which is
+    like a set of modules plus a bunch of structured information ({\tt
+      \_\_init\_\_.py, setup.py}). In the setup, use {\tt
+      setuptools.setup} to define dependencies.
   }
 
 \end{frame}
