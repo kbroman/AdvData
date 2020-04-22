@@ -133,6 +133,33 @@
 
 
 
+\begin{frame}{Or create package/module}
+
+  \bbi
+\item R package
+  \bi
+\item dependencies in {\tt DESCRIPTION} file
+\item data in {\tt inst/ext\_data}
+\item analyses as vignettes
+  \ei
+\item Python module
+  \bi
+\item dependencies?
+  \ei
+  \ei
+
+  \note{
+    Another approach would be to make your analysis project an R
+    package, identifying all of the package dependencies, including
+    the data, and with the analyses included as vignettes.
+
+    I'm not sure what the corresponding Python module might look like,
+    but it seems like a python module could at least document the
+    appropriate dependencies in a structured way.
+  }
+
+\end{frame}
+
 
 
 \end{document}
