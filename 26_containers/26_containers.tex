@@ -214,35 +214,7 @@
 \end{frame}
 
 
-\begin{frame}{Rocker containers}
 
-  \bbi
-\item Docker containers for R
-\item Can run locally, and have RStudio in the web browser
-  \ei
-
-\note{
-  The Rocker project is an effort to create a set of Docker containers
-  suitable for R users.
-}
-
-\end{frame}
-
-
-
-
-\begin{frame}{Jupyter containers}
-
-  \bbi
-\item Docker containers set up for Jupyter notebooks
-  \ei
-
-\note{
-  You can also have a docker-based Jupyter notebook accessible in a
-  browser.
-}
-
-\end{frame}
 
 
 \begin{frame}{Docker stuff}
@@ -273,9 +245,56 @@
 \end{frame}
 
 
+
+
+
+
+\begin{frame}{Rocker images}
+
+  \bbi
+\item Docker containers for R
+\item Can run locally, and have RStudio in the web browser
+\item Poke around:
+  \bi
+  \item \href{https://hub.docker.com/u/rocker}{\tt
+    hub.docker.com/u/rocker}
+  \item \href{https://www.rocker-project.org}{\tt rocker-project.org}
+  \item \href{https://github.com/rocker-org}{\tt github.com/rocker-org}
+  \ei
+  \ei
+
+\note{
+  The Rocker project is an effort to create a set of Docker containers
+  suitable for R users.
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Jupyter images}
+
+  \bbi
+\item Docker containers set up for Jupyter notebooks
+\item Look at \href{https://hub.docker.com/u/jupyter}{jupyter}
+  \ei
+
+\note{
+  You can also have a docker-based Jupyter notebook accessible in a
+  browser.
+}
+
+\end{frame}
+
+
+
+
+
+
+
+
 \begin{frame}[fragile,c]{Dockerfile}
-
-
 
 \begin{lstlisting}[basicstyle=\tiny\ttfamily]
 FROM java
