@@ -381,6 +381,10 @@ install.packages("qtl")
 download.file("https://rqtl.org/sug.csv", "sug.csv")
 
 docker commit rqtl rstudio_rqtl
+
+docker tag e3ae59d1443f kbroman/rstudio_rqtl:firsttry
+docker login
+docker push kbroman/rstudio_rqtl
 \end{lstlisting}
 
 \note{
@@ -392,6 +396,13 @@ docker commit rqtl rstudio_rqtl
   would want it.
 
   I then use {\tt docker commit} to save it to an image file.
+
+  Finally, {\tt docker tag} to tag the current state, and {\tt docker
+  login} to log into {\tt hub.docker.com}, and {\tt docker push} to
+  push the image to {\tt hub.docker.com}.
+
+  You'll need to then go to {\tt hub.docker.com} in a browser, log
+  in, find your new repository, and add a description.
 }
 
 \end{frame}
