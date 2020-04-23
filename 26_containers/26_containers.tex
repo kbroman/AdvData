@@ -153,6 +153,7 @@
   \ei
 \item Python package
   \bi
+\item multiple modules, plus {\tt \_\_init\_\_.py} and {\tt setup.py}
 \item define dependencies with {\tt setuptools.setup}
   \ei
   \ei
@@ -267,6 +268,8 @@
   \ei
   \ei
 
+  \bigskip
+
 \begin{lstlisting}
 docker pull rstudio/rocker
 
@@ -301,7 +304,7 @@ docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
 
   \bbi
 \item Docker containers set up for Jupyter notebooks
-\item Look at \href{https://hub.docker.com/u/jupyter}{jupyter}
+\item Look at \href{https://hub.docker.com/u/jupyter}{hub.docker.com/u/jupyter}
   \ei
 
 \note{
