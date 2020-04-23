@@ -1,7 +1,6 @@
 ---
 layout: page
 title: schedule
-tagline: (subject to change)
 description: Schedule for BMI 826, Advanced data analysis
 ---
 
