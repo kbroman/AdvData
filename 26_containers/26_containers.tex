@@ -377,6 +377,34 @@ CMD cd /minecraft; java -Xms512M -Xmx1G -XX:MaxPermSize=128M -XX:+UseConcMarkSwe
 
 
 
+\begin{frame}[fragile,c]{Managing Docker stuff}
+
+\begin{lstlisting}
+  docker images
+  docker image ls
+
+  docker ps -a
+  docker container ls -a
+
+  docker container stop adoring_hamilton
+  docker container rm adoring_hamilton
+  docker image rm alpine
+\end{lstlisting}
+
+\note{
+  First two commands to list images.
+
+  Next two commands to list containers.
+
+  Last few commands to stop and remove containers and images
+}
+\end{frame}
+
+
+
+
+
+
 \begin{frame}{binder}
 
   \bbi
