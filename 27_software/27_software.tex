@@ -142,14 +142,9 @@
   Bad things are more easy to identify. Really, it's hard not to just
   see all of the bad things.
 
-  Some of the code is really terrible and complicated. Two-dimensional
-  genome scans to identify pairs of interacting loci is accomplished
-  through a function that is like 1800 lines long, and the C code
-  related to that aspect is like 20\% of the C code in the package.
-
-  Short-term efforts to fix problems were accomplished via band-aids
-  that made the code more complicated and confusing and harder to
-  maintain.
+  Some of the code is really terrible and complicated. Short-term
+  efforts to fix problems were accomplished via band-aids that made
+  the code more complicated and confusing and harder to maintain.
 
   And there was never any defined specifications on the data format or
   describing the software design, which makes it much harder for
@@ -258,6 +253,47 @@ n.phe <- max((1:n)[temp])
 \end{frame}
 
 
+
+
+\begin{frame}[c]{More typically bad code}
+
+  \large
+      The {\hilit \tt scantwo()} function is {\hilit 1446 lines} long.
+
+      \bigskip \bigskip
+
+      The related C code is 20\% of the C code in R/qtl.
+
+
+\note{
+  This sort of thing really needs to be broken up into smaller pieces.
+
+  As it is, it's really hard to extend and maintain.
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{Baroque data structures}
+
+  \large
+      {\tt attr(mycross\$geno[["X"]]\$probs, "map")}
+
+
+\note{
+  The data structures in R/qtl really got out of control: far too
+  deeply nested.
+
+  Attributes can be great, but when I learned about them, I started to
+  pile all sorts of shit in there.
+}
+\end{frame}
+
+
+
+
+
+
 \begin{frame}{}
 
 \vspace*{16.7mm}
@@ -290,7 +326,16 @@ n.phe <- max((1:n)[temp])
 
 \vspace*{16.7mm}
 
-\centerline{\Large Support}
+  \only<1>{\centerline{\Large User support}}
+
+  \only<2|handout 0>{
+    \centerline{\Large ``I tried X and it didn't work.''}}
+
+  \only<3|handout 0>{
+    \large ``Could you look at the attached 25-page Word
+      document containing code and output and tell me if I'm doing
+      something wrong?''}
+
 
 \note{
    Supporting the software, by answering users' questions, is time
@@ -315,8 +360,55 @@ n.phe <- max((1:n)[temp])
    I try to focus on my own frustrating experiences with software, and
    recall that while for me it may be the 100th time I've heard a
    particular question, for the user it's the first time.
+
+    I'd hope to build a ``community'' of people answering each other's
+    questions, but it continues to be largely me doing the answering.
 }
 \end{frame}
+
+
+\begin{frame}[c]{}
+
+  \centerline{\Large Incorporating others' code}
+
+  \note{
+    It's great to get contributions from others. But once you've incorporated
+    their features, you're responsible for maintaining and supporting
+    it.
+
+    I now think that big things should mostly be made to be separate
+    packages.
+  }
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+
+  \centerline{\Large Version control}
+
+  \note{
+    How on earth did I get by before git?
+
+    Really critical for incorporating others' changes, and for trying out
+    new things without breaking what's working.
+  }
+\end{frame}
+
+\begin{frame}[c]{}
+
+  \centerline{\Large Tests}
+
+  \note{
+    How on earth does any of this work? There are basically no tests
+    that the code works.
+
+    I'm now thoroughly in love with unit tests and
+    Hadley's testthat.
+  }
+\end{frame}
+
+
 
 
 
@@ -329,45 +421,6 @@ n.phe <- max((1:n)[temp])
 }
 \end{frame}
 
-
-
-\begin{frame}[c]{Congenic line}
-
-\figw{Figs/congenic.pdf}{1.0}
-
-\note{
-}
-\end{frame}
-
-
-
-\begin{frame}[c]{Improving precision}
-
-  \vspace{-20mm}
-
-  \bbi
-\item more recombinations
-\item more individuals
-\item more precise phenotype
-\item lower-level phenotypes
-\bi
-\item transcripts, proteins, metabolites
-  \ei
-  \ei
-
-\note{
-}
-\end{frame}
-
-
-
-\begin{frame}[c]{Advanced intercross lines}
-
-  \figh{Figs/ail.pdf}{0.9}
-
-\note{
-}
-\end{frame}
 
 
 
