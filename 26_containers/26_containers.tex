@@ -291,6 +291,9 @@ docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
   go to {\tt localhost:8787} and use login {\tt rstudio} and password
   whatever you set in that line.
 
+  Note: you need to use 8787, because that port is hard-coded in the
+  docker image.
+
   {\tt -v} to connect the current working directory (or some other
   directory) to the home directory in the container. {\tt \$(pwd)} will
   fill in the local directory using the unix command {\tt pwd} (for
@@ -317,7 +320,7 @@ docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
 \begin{lstlisting}
 docker pull jupyter/minimal-notebook
 
-docker run -v $(pwd):/home/jovyan -p 8787:8787 jupyter/minimal-notebook
+docker run -v $(pwd):/home/jovyan -p 8888:8888 jupyter/minimal-notebook
 \end{lstlisting}
 
 
@@ -330,6 +333,8 @@ docker run -v $(pwd):/home/jovyan -p 8787:8787 jupyter/minimal-notebook
   To use local directory for notebooks, the docker directory seems to
   need to be {\tt /home/jovyan}
 
+  Note you need to use port 8888 because that is hard-coded in the
+  docker image.
 }
 
 
