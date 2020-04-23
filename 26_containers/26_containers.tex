@@ -345,6 +345,10 @@ docker run -v $(pwd):/home/jovyan -p 8787:8787 jupyter/minimal-notebook
   \item an often-small script
     \ei
   \item Create a container interactively and then write it to an image
+    \bi
+  \item {\tt docker cp} to copy stuff into the container
+  \item {\tt docker commit} to save a container to an image file
+    \ei
     \ei
 
     \note{
