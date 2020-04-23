@@ -167,6 +167,31 @@
 \figh{Figs/datafile.pdf}{0.6}
 
 \note{
+  To illustrate one of the bad things, let's first look at the data
+  input format. A single comma-delimited file contains the three
+  aspects of the data: the phenotypes, the genotypes, and the marker
+  data.
+
+  Each row is an individual, the initial columns are the phenotypes,
+  and the subsequent columns are the marker genotypes. For the
+  markers, the second row indicates the chromosome assignments, and the
+  third row contains the locations. The initial cells in the second
+  and third rows need to be completely blank.
+
+  The first thing, upon reading in the data, is to split the data into
+  the three parts: the phenotypes from the genotypes and then the
+  marker map from the genotypes. We do that first by identifying the
+  first non-blank cell in the second row.
+
+  When R/qtl started to be used for larger data sets (such as with gene
+  expression phenotypes, say on 30,000 genes), users complained about
+  how long it took to load a file. I'd ask ``Well, how much data do
+  you have?'' and then say ``Well, that's a big file, it's going to
+  take a while.''
+
+  But then I had a data set with like 1500 traits and 200 mice and it
+  took a full minute to load, and that just seemed wrong, and so I
+  finally looked to see what was happening.
 }
 \end{frame}
 
@@ -196,6 +221,17 @@ n.phe <- max((1:n)[temp])
 \hfill \href{http://kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}{\scriptsize \lolit \tt kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}
 
 \note{
+  And this is what I found. In the {\tt for} loop, I'm look at the
+  first cell, and then the first two cells, then the first three
+  cells, etc., until I get to a point where they are not all empty.
+  Then I brake out of the loop.
+
+  It turned out that for my file with 1500 traits and 200 mice, it
+  took like 2 seconds to read the data but 58 seconds to find this
+  spot to split the phenotypes and genotypes.
+
+  This code is no longer in R/qtl, but it's embarrassing to see how
+  long it {\hilit was} part of the package.
 }
 \end{frame}
 
@@ -217,6 +253,7 @@ n.phe <- max((1:n)[temp])
 }
 
 \note{
+  This is one of my favorite things to say.
 }
 \end{frame}
 
