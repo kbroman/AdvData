@@ -348,7 +348,7 @@ docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
 
 
 
-\begin{frame}[fragile,c]{Dockerfile}
+\begin{frame}[fragile,c]{Example Dockerfile}
 
 \begin{lstlisting}[basicstyle=\tiny\ttfamily]
 FROM java
@@ -400,6 +400,32 @@ CMD cd /minecraft; java -Xms512M -Xmx1G -XX:MaxPermSize=128M -XX:+UseConcMarkSwe
   {\tt CMD} is run when the container starts
 }
 \end{frame}
+
+
+
+
+\begin{frame}[c]{Another example}
+
+
+  \centering
+  \Large
+
+
+  \href{https://github.com/rocker-org/rocker-versioned}{\tt
+    github.com/rocker-org/rocker-versioned}
+
+  \bigskip
+
+  \href{https://github.com/rocker-org/rocker-versioned/blob/master/rstudio/latest.Dockerfile}{\tt
+    /rstudio/latest.Dockerfile}
+
+  \note{
+    Poke through the docker files for the Rocker images.
+    You can see why you wouldn't want to start from scratch.
+  }
+
+\end{frame}
+
 
 
 
