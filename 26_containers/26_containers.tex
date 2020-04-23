@@ -249,7 +249,9 @@
 
 
 
-\begin{frame}{Rocker images}
+\begin{frame}[fragile]{Rocker images}
+
+  \vspace{-10mm}
 
   \bbi
 \item Docker containers for R
@@ -263,9 +265,19 @@
   \ei
   \ei
 
+\begin{lstlisting}
+docker pull rstudio/rocker
+
+docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
+\end{lstlisting}
+
 \note{
   The Rocker project is an effort to create a set of Docker containers
   suitable for R users.
+
+  Once you've got the rocker/rstudio image running, go to browser and
+  go to {\tt localhost:8787} and use login {\tt rstudio} and password
+  whatever you set in that line.
 }
 
 \end{frame}
@@ -387,6 +399,8 @@ CMD cd /minecraft; java -Xms512M -Xmx1G -XX:MaxPermSize=128M -XX:+UseConcMarkSwe
   docker container ls -a
 
   docker container stop adoring_hamilton
+  docker container start adoring_hamilton
+
   docker container rm adoring_hamilton
   docker image rm alpine
 \end{lstlisting}
@@ -396,7 +410,10 @@ CMD cd /minecraft; java -Xms512M -Xmx1G -XX:MaxPermSize=128M -XX:+UseConcMarkSwe
 
   Next two commands to list containers.
 
-  Last few commands to stop and remove containers and images
+  {\tt stop}/{\tt start} to pause a container and set it running
+  again.
+
+  Last two commands to remove containers and images
 }
 \end{frame}
 
