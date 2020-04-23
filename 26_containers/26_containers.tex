@@ -269,6 +269,8 @@
 docker pull rstudio/rocker
 
 docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
+
+  -v $(pwd):/home/rstudio
 \end{lstlisting}
 
 \note{
@@ -278,6 +280,14 @@ docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
   Once you've got the rocker/rstudio image running, go to browser and
   go to {\tt localhost:8787} and use login {\tt rstudio} and password
   whatever you set in that line.
+
+  {\tt -v} to connect the current working directory (or some other
+  directory) to the home directory in the container. {\tt $(pwd)} will
+  fill in the local directory using the unix command {\tt pwd} (for
+  ``print working directory'')
+
+  Changes in that directory in the container will be reflected in the
+  local directory.
 }
 
 \end{frame}
