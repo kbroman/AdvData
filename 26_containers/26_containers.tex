@@ -367,6 +367,32 @@ docker run -v $(pwd):/home/jovyan -p 8787:8787 jupyter/minimal-notebook
 
 
 
+\begin{frame}[fragile,c]{Creating a new docker image}
+
+\begin{lstlisting}
+docker run -d -e PASSWORD=rqtl --name rqtl -p 8787:8787 rocker/rstudio
+
+install.packages("qtl")
+download.file("https://rqtl.org/sug.csv", "sug.csv")
+
+docker commit rqtl rstudio_rqtl
+\end{lstlisting}
+
+\note{
+  Suppose I wanted to create a Docker image with R/qtl installed
+  plus with a dataset included.
+
+  I could start a Docker container running and then install R/qtl and
+  download a datafile, and the container is then in the state that I
+  would want it.
+
+  I then use {\tt docker commit} to save it to an image file.
+}
+
+\end{frame}
+
+
+
 
 
 \begin{frame}[fragile,c]{Example Dockerfile}
