@@ -300,17 +300,34 @@ docker run -e PASSWORD=[blah] -p 8787:8787 rocker/rstudio
 
 
 
-\begin{frame}{Jupyter images}
+\begin{frame}[fragile]{Jupyter images}
 
   \bbi
 \item Docker containers set up for Jupyter notebooks
 \item Look at \href{https://hub.docker.com/u/jupyter}{hub.docker.com/u/jupyter}
   \ei
 
+  \bigskip
+
+\begin{lstlisting}
+docker pull jupyter/minimal-notebook
+
+docker run -v $(pwd):/home/jovyan -p 8787:8787 jupyter/minimal-notebook
+\end{lstlisting}
+
+
+
+
 \note{
   You can also have a docker-based Jupyter notebook accessible in a
   browser.
+
+  To use local directory for notebooks, the docker directory seems to
+  need to be {\tt /home/jovyan}
+
 }
+
+
 
 \end{frame}
 
