@@ -139,6 +139,25 @@
 \centerline{\Large Bad things}
 
 \note{
+  Bad things are more easy to identify. Really, it's hard not to just
+  see all of the bad things.
+
+  Some of the code is really terrible and complicated. Two-dimensional
+  genome scans to identify pairs of interacting loci is accomplished
+  through a function that is like 1800 lines long, and the C code
+  related to that aspect is like 20\% of the C code in the package.
+
+  Short-term efforts to fix problems were accomplished via band-aids
+  that made the code more complicated and confusing and harder to
+  maintain.
+
+  And there was never any defined specifications on the data format or
+  describing the software design, which makes it much harder for
+  others to get involved.
+
+  Small changes in one place have implications throughout the code
+  base that are to identify, making bug fixes or further developments
+  much more difficult.
 }
 \end{frame}
 
