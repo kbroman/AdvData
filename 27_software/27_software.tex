@@ -213,7 +213,7 @@ n.phe <- max((1:n)[temp])
 
 \vspace{3mm}
 
-\hfill \href{http://kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}{\scriptsize \lolit \tt kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}
+\hfill \href{https://kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}{\scriptsize \lolit \tt kbroman.org/blog/2011/08/17/the-stupidest-r-code-ever}
 
 \note{
   And this is what I found. In the {\tt for} loop, I'm look at the
@@ -423,6 +423,12 @@ n.phe <- max((1:n)[temp])
 \figw{Figs/lodcurve_insulin_with_effects.pdf}{1.1}
 
 \note{
+  So back to the subject of the software: mapping QTL in experimental crosses.
+
+  The big problem has been the poor mapping resolution of QTL.
+
+  The solution has been first to look at multi-parent crosses and more
+  generations. And second to look at high-dimensional, genome-scale traits.
 }
 \end{frame}
 
@@ -437,24 +443,35 @@ n.phe <- max((1:n)[temp])
   \figh{Figs/hs.pdf}{0.9}
 
 \note{
+  The central data structure in R/qtl doesn't really fit these sorts
+  of multi-parent crosses. Revising things to work would be a ton of
+  work.
 }
 \end{frame}
 
 
 
-\begin{frame}[c]{Challenges: {\color{foreground} scale of results}}
+\begin{frame}[c]{Challenge: {\color{foreground} scale of results}}
 
 \only<1|handout 0>{\figw{Figs/scale_fig1.pdf}{1.0}}
 \only<2>{\figw{Figs/scale_fig2.pdf}{1.0}}
 
 \note{
+   And a general challenge I have is just the scale of the results. We
+   think of the data are being large, but even if we just associate
+   each genotype to each phenotype, we have a results object that is
+   considerably larger than either data set.
+
+   The problem is not just the calculation and storage of the results,
+   but how to make sense of them: how to find the interesting bits?
+   How to help my collaborators to explore these results on their own?
 }
 \end{frame}
 
 
 
 
-\begin{frame}[c]{Challenges: {\color{foreground} organizing, automating}}
+\begin{frame}[c]{Challenge: {\color{foreground} organizing, automating}}
 
 \only<1|handout 0>{\figw{Figs/batches_fig1.pdf}{1.0}}
 \only<2|handout 0>{\figw{Figs/batches_fig2.pdf}{1.0}}
@@ -465,6 +482,10 @@ n.phe <- max((1:n)[temp])
 \only<7>{\figw{Figs/batches_fig7.pdf}{1.0}}
 
 \note{
+  A second challenge is the strong need to organize and automate the
+  analysis so that it doesn't kill me. Because my collaborators are
+  always measuring things in waves and adding on new batches of traits
+  without thinking about the time and other resources to analyze them.
 }
 \end{frame}
 
@@ -482,6 +503,8 @@ n.phe <- max((1:n)[temp])
 \hfill \href{https://ropenscilabs.github.io/miner_book}{\scriptsize \lolit \tt ropenscilabs.github.io/miner\_book}
 
 \note{
+  The relaties of modern high-dimensional QTL data has led me to start
+  over with a completely new package: R/qtl2.
 }
 \end{frame}
 
@@ -502,9 +525,13 @@ n.phe <- max((1:n)[temp])
 
   \vspace{25mm}
 
-\hfill \href{http://kbroman.org/qtl2}{\small \tt kbroman.org/qtl2}
+\hfill \href{https://kbroman.org/qtl2}{\small \tt kbroman.org/qtl2}
 
 \note{
+  The goals of the new package have been to handle the
+  high-dimensional data, both genotypes and phenotypes, and to handle
+  these multi-parent populations. Further, we need to be able to fit
+  linear mixed models to account for population structure.
 }
 \end{frame}
 
