@@ -561,6 +561,29 @@ n.phe <- max((1:n)[temp])
 \ei
 
 \note{
+  In starting over, I don't want to make the same mistakes.
+
+  And so I'm using C++ and Rcpp rather than C and .C(). This has been
+  hugely valuable. Second, I'm using Roxygen2 for the documentation
+  and writing extensive unit tests.  Further, I'm particularly proud
+  of having a single ``switch'' for cross type. In R/qtl1, I have ``if
+  backcross this, if intercross that'' all over the place. That makes
+  extending the code to new cross types a total pain. In the new code,
+  I don't have to do that at all.
+
+  I'm also focusing on much shorter functions and trying to cut down
+  on some of the ugly repeated code. But I've not been totally
+  successful in that, and that's not my only bad tendency.
+
+  I've created yet another data input format. But here, I'm sticking
+  with just one and forcing the user to conform to my requirements
+  rather than trying to have code that adapts to every damn thing they
+  might throw at me.
+
+  Finally, I've gone with flatter data structures, but they're still
+  complex. Basically I find that there's a trade-off between the
+  complexity of the user interface and the complexity of the data, and
+  I think for my users it's better to have the user interface be simple.
 }
 \end{frame}
 
