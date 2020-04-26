@@ -4,10 +4,6 @@ title: schedule
 description: Schedule for BMI 826, Advanced data analysis
 ---
 
-**[COVID-19](https://covid19.wisc.edu)**: For the rest of the semester,
-lectures and office hours will be strictly online. [**More information here**](online.html).
-
-
 | Date      | &nbsp;&nbsp;&nbsp;&nbsp;   | Topic/Reading  |
 | :-------- | -- | :----- |
 | 21 Jan    |    | [Introductory case study ![pdf icon](icons/pdf-icon.png)](01_intro.pdf) [![notes icon](icons/notes-icon.png)](01_intro_notes.pdf)
