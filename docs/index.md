@@ -31,5 +31,5 @@ lectures and office hours will be strictly online. [**More information here**](o
 
 - [schedule](schedule.html)
 - [syllabus](syllabus.html)
-- [assignments](assignments.html) \[[homework 4](hw4.html) due 2020-04-30\]
+- [assignments](assignments.html)
 - [resources](resources.html)
