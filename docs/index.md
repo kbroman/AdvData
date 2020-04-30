@@ -33,3 +33,5 @@ lectures and office hours will be strictly online. [**More information here**](o
 - [syllabus](syllabus.html)
 - [assignments](assignments.html)
 - [resources](resources.html)
+
+[![DOI](https://zenodo.org/badge/216115891.svg)](https://zenodo.org/badge/latestdoi/216115891)
