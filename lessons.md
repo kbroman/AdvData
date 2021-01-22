@@ -21,21 +21,21 @@
 
 - Cramming your data into the standard approach might work fine
 
-- if it seems too good to be true, it probably is
+- If it seems too good to be true, it probably is
 
-- always ask: does this make sense?
+- Always ask: does this make sense?
 
-- omitting data is usually bad; crudely ignoring correlations is often
+- Omitting data is usually bad; crudely ignoring correlations is often
   perfectly fine
 
-- extracting the _full_ information from the data may not be worth
+- Extracting the _full_ information from the data may not be worth
   the effort
 
-- time to solve a computational problem includes the time to formulate a solution,
+- Time to solve a computational problem includes the time to formulate a solution,
   to write the program, to run the program, and to make sense of the
   results. Program run time is almost always the least of these.
 
-- use computer simulations to check that your software/method is
+- Use computer simulations to check that your software/method is
   giving reasonable results
 
 
