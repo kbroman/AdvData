@@ -38,6 +38,13 @@
 - Use computer simulations to check that your software/method is
   giving reasonable results
 
+- When cleaning data, think about what might have gone wrong and how
+  it might be revealed. Also just make a ton of plots.
+
+- If data are supposed to match, check that they do. If the rows in
+  two data files are supposed to be aligned, check that they do.
+
+
 
 ## Principles
 
@@ -48,13 +55,26 @@
 - Modify your desires to match the defaults; focus your compulsive
   behavior on things that matter.
 
+- In data visualization, show as much data as possible.
+
+- It can be useful to ask, "Could this just be noise?"
+
 
 ## Further lessons
 
-- the most important thing is that you get the right answer
+- The most important thing is that you get the right answer
 
-- if you find a bug, first create a test that reproduces it, then fix it
+- If you find a bug, first create a test that reproduces it, then fix it
 
-- capture the full process of data cleaning (what you did, what you
+- Capture the full process of data cleaning (what you did, what you
   saw, how you interpreted it, why you made the decisions you made),
   because you'll want that information later
+
+- With the bootstrap, don't think about "re-sampling"; rather, think
+  "simulate from an estimate of the population".
+
+- How to tell if the bootstrap works? Simulate!
+
+- Permutation tests, when appropriate, are the most natural of
+  significance test, and they can make it easy to control for multiple
+  testing.
