@@ -4,8 +4,8 @@
 
 This repository contains the materials for the course
 [Advanced data analysis](https://kbroman.org/AdvData),
-a graduate course at
-[UW-Madison](https://wisc.edu). The files for the website are in the
+a graduate course I taught at
+[UW-Madison](https://wisc.edu) in Spring, 2020. The files for the website are in the
 [`docs/`](docs/) subdirectory.
 
 ---
