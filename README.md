@@ -1,6 +1,6 @@
 ## BMI 826: Advanced data analysis
 
-[![DOI](https://zenodo.org/badge/216115891.svg)](https://zenodo.org/badge/latestdoi/216115891)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3779150.svg)](https://zenodo.org/badge/latestdoi/216115891)
 
 This repository contains the materials for the course
 [Advanced data analysis](https://kbroman.org/AdvData),
